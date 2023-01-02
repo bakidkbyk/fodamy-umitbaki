@@ -11,7 +11,7 @@
 #import <TinyConstraints/TinyConstraints-Swift.h>
 
 //! Project version number for UIComponents.
-FOUNDATION_EXPORT double UIComponentsVersionNumber;
+FOUNDATION_EXPORT double UIComponentsVersiconNumber;
 
 //! Project version string for UIComponents.
 FOUNDATION_EXPORT const unsigned char UIComponentsVersionString[];
