@@ -114,6 +114,7 @@
 				FA0A2F162962BB56004E82C6 /* Sources */,
 				FA0A2F172962BB56004E82C6 /* Frameworks */,
 				FA0A2F182962BB56004E82C6 /* Resources */,
+				7FBD54FEB6A848D669B9897F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +173,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7FBD54FEB6A848D669B9897F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fodamy-baki/Pods-fodamy-baki-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fodamy-baki/Pods-fodamy-baki-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fodamy-baki/Pods-fodamy-baki-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C18E3550FA83ADD13892F7B3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
