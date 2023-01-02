@@ -1,16 +1,44 @@
 PODS:
+  - BetterSegmentedControl (2.0.1)
+  - IQKeyboardManagerSwift (6.5.10)
+  - Kingfisher (6.3.1)
+  - MobilliumBuilders (1.4.2)
+  - MobilliumDateFormatter (1.3.0)
+  - MobilliumUserDefaults (2.0.0)
   - SwiftLint (0.47.1)
+  - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
+  - BetterSegmentedControl (~> 2.0)
+  - IQKeyboardManagerSwift (~> 6.5)
+  - Kingfisher (~> 6.3)
+  - MobilliumBuilders (~> 1.4)
+  - MobilliumDateFormatter (~> 1.2)
+  - MobilliumUserDefaults (~> 2.0)
   - SwiftLint
+  - TinyConstraints (~> 4.0)
 
 SPEC REPOS:
   trunk:
+    - BetterSegmentedControl
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - MobilliumBuilders
+    - MobilliumDateFormatter
+    - MobilliumUserDefaults
     - SwiftLint
+    - TinyConstraints
 
 SPEC CHECKSUMS:
+  BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  MobilliumBuilders: 48c29da981a9593ac7f7873d154f9a76b80ffcab
+  MobilliumDateFormatter: 747bca02d30d51937ca48c58241ed3b2d230166e
+  MobilliumUserDefaults: 002aa4bb663127d2dcc0814c17430c918a1e1445
   SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
+  TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: fefdc207aef17cfca98d5dca3489bdb657e00292
+PODFILE CHECKSUM: 5ddb1633fda5d8cb212b5ba950fa3d9673a933ca
 
 COCOAPODS: 1.11.3
