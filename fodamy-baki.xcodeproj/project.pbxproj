@@ -14,6 +14,7 @@
 		FA0A2F252962BB56004E82C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2F232962BB56004E82C6 /* Main.storyboard */; };
 		FA0A2F272962BB58004E82C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2F262962BB58004E82C6 /* Assets.xcassets */; };
 		FA0A2F2A2962BB58004E82C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2F282962BB58004E82C6 /* LaunchScreen.storyboard */; };
+		FA2DB7982962DF94004D38E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FA2DB7972962DF94004D38E2 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FA0A2F262962BB58004E82C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA0A2F292962BB58004E82C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0A2F2B2962BB58004E82C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA2DB7972962DF94004D38E2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		FA0A2F112962BB56004E82C6 = {
 			isa = PBXGroup;
 			children = (
+				FA2DB7972962DF94004D38E2 /* .swiftlint.yml */,
 				FA0A2F1C2962BB56004E82C6 /* fodamy-baki */,
 				FA0A2F1B2962BB56004E82C6 /* Products */,
 				36D08BC178FC2B56C627E3B1 /* Pods */,
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2DB7982962DF94004D38E2 /* .swiftlint.yml in Resources */,
 				FA0A2F2A2962BB58004E82C6 /* LaunchScreen.storyboard in Resources */,
 				FA0A2F272962BB58004E82C6 /* Assets.xcassets in Resources */,
 				FA0A2F252962BB56004E82C6 /* Main.storyboard in Resources */,
