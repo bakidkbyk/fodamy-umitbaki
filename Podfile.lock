@@ -10,7 +10,7 @@ PODS:
   - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 5.3)
   - BetterSegmentedControl (~> 2.0)
   - IQKeyboardManagerSwift (~> 6.5)
   - Kingfisher (~> 6.3)
@@ -43,6 +43,6 @@ SPEC CHECKSUMS:
   SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: e8819efceca95791647a079d23ac46f493dda87c
+PODFILE CHECKSUM: 3f0592e6024025bbf50784a877f4e64840df0b0a
 
 COCOAPODS: 1.11.3

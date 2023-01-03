@@ -17,7 +17,7 @@ target 'fodamy-baki' do
   pod 'MobilliumUserDefaults', '~> 2.0'
   pod 'MobilliumDateFormatter', '~> 1.2'
   pod 'Kingfisher', '~> 6.3'
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 5.3'
   
   # UI
   pod 'TinyConstraints', '~> 4.0'
@@ -30,7 +30,7 @@ target 'DataProvider' do
   project 'DataProvider/DataProvider.xcodeproj'
   
   #Helper
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 5.3'
 
   end
 
