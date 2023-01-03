@@ -45,16 +45,3 @@ target 'UIComponents' do
   pod 'BetterSegmentedControl', '~> 2.0'
   
 end
-
-target 'Utilities' do
-
-project 'Utilities/Utilities.xcodeproj'
-
-# Pods for Utilities
-
-# Generator
-
-
-# Helper
-
-end
