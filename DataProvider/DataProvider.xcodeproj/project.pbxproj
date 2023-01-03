@@ -7,122 +7,123 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		72BE580EEB3740C987901157 /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089FD029D129E79236CFD832 /* Pods_UIComponents.framework */; };
-		FA2DB7A929631242004D38E2 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = FA2DB7A829631242004D38E2 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D63F47D2646322145BAA0DA0 /* Pods_DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22323BBCE392C93D6C53C81 /* Pods_DataProvider.framework */; };
+		FAA819602964063B00B4C83A /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA8195F2964063B00B4C83A /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		089FD029D129E79236CFD832 /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ED44E755BCD015965FDC8FE /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
-		AD99C84D4F8E33FE6A8B47F3 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
-		FA2DB7A529631242004D38E2 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA2DB7A829631242004D38E2 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
+		3D06315C570B04684262DCC9 /* Pods-DataProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.debug.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.debug.xcconfig"; sourceTree = "<group>"; };
+		9D327312A71D591A66632443 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
+		B22323BBCE392C93D6C53C81 /* Pods_DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA8195C2964063B00B4C83A /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA8195F2964063B00B4C83A /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FA2DB7A229631242004D38E2 /* Frameworks */ = {
+		FAA819592964063B00B4C83A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72BE580EEB3740C987901157 /* Pods_UIComponents.framework in Frameworks */,
+				D63F47D2646322145BAA0DA0 /* Pods_DataProvider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2CEC1F57813759F1D41B770E /* Pods */ = {
+		8BB0222248273A9DB7BEDF7D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AD99C84D4F8E33FE6A8B47F3 /* Pods-UIComponents.debug.xcconfig */,
-				5ED44E755BCD015965FDC8FE /* Pods-UIComponents.release.xcconfig */,
+				3D06315C570B04684262DCC9 /* Pods-DataProvider.debug.xcconfig */,
+				9D327312A71D591A66632443 /* Pods-DataProvider.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
-		D16C04D0DF0D833D696E1D91 /* Frameworks */ = {
+		BD1106F7CA1B157C2A1B7F20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				089FD029D129E79236CFD832 /* Pods_UIComponents.framework */,
+				B22323BBCE392C93D6C53C81 /* Pods_DataProvider.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FA2DB79B29631242004D38E2 = {
+		FAA819522964063B00B4C83A = {
 			isa = PBXGroup;
 			children = (
-				FA2DB7A729631242004D38E2 /* UIComponents */,
-				FA2DB7A629631242004D38E2 /* Products */,
-				2CEC1F57813759F1D41B770E /* Pods */,
-				D16C04D0DF0D833D696E1D91 /* Frameworks */,
+				FAA8195E2964063B00B4C83A /* DataProvider */,
+				FAA8195D2964063B00B4C83A /* Products */,
+				8BB0222248273A9DB7BEDF7D /* Pods */,
+				BD1106F7CA1B157C2A1B7F20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		FA2DB7A629631242004D38E2 /* Products */ = {
+		FAA8195D2964063B00B4C83A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA2DB7A529631242004D38E2 /* UIComponents.framework */,
+				FAA8195C2964063B00B4C83A /* DataProvider.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA2DB7A729631242004D38E2 /* UIComponents */ = {
+		FAA8195E2964063B00B4C83A /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
-				FA2DB7A829631242004D38E2 /* UIComponents.h */,
+				FAA8195F2964063B00B4C83A /* DataProvider.h */,
 			);
-			path = UIComponents;
+			path = DataProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		FA2DB7A029631242004D38E2 /* Headers */ = {
+		FAA819572964063B00B4C83A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2DB7A929631242004D38E2 /* UIComponents.h in Headers */,
+				FAA819602964063B00B4C83A /* DataProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		FA2DB7A429631242004D38E2 /* UIComponents */ = {
+		FAA8195B2964063B00B4C83A /* DataProvider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA2DB7AC29631242004D38E2 /* Build configuration list for PBXNativeTarget "UIComponents" */;
+			buildConfigurationList = FAA819632964063B00B4C83A /* Build configuration list for PBXNativeTarget "DataProvider" */;
 			buildPhases = (
-				D7CDB57C9A2533C38FA786C9 /* [CP] Check Pods Manifest.lock */,
-				FA2DB7A029631242004D38E2 /* Headers */,
-				FA2DB7A129631242004D38E2 /* Sources */,
-				FA2DB7A229631242004D38E2 /* Frameworks */,
-				FA2DB7A329631242004D38E2 /* Resources */,
+				3E2A427061DA964A10747B49 /* [CP] Check Pods Manifest.lock */,
+				FAA819572964063B00B4C83A /* Headers */,
+				FAA819582964063B00B4C83A /* Sources */,
+				FAA819592964063B00B4C83A /* Frameworks */,
+				FAA8195A2964063B00B4C83A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = UIComponents;
-			productName = UIComponents;
-			productReference = FA2DB7A529631242004D38E2 /* UIComponents.framework */;
+			name = DataProvider;
+			productName = DataProvider;
+			productReference = FAA8195C2964063B00B4C83A /* DataProvider.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FA2DB79C29631242004D38E2 /* Project object */ = {
+		FAA819532964063B00B4C83A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					FA2DB7A429631242004D38E2 = {
+					FAA8195B2964063B00B4C83A = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
-			buildConfigurationList = FA2DB79F29631242004D38E2 /* Build configuration list for PBXProject "UIComponents" */;
+			buildConfigurationList = FAA819562964063B00B4C83A /* Build configuration list for PBXProject "DataProvider" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -130,18 +131,18 @@
 				en,
 				Base,
 			);
-			mainGroup = FA2DB79B29631242004D38E2;
-			productRefGroup = FA2DB7A629631242004D38E2 /* Products */;
+			mainGroup = FAA819522964063B00B4C83A;
+			productRefGroup = FAA8195D2964063B00B4C83A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA2DB7A429631242004D38E2 /* UIComponents */,
+				FAA8195B2964063B00B4C83A /* DataProvider */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FA2DB7A329631242004D38E2 /* Resources */ = {
+		FAA8195A2964063B00B4C83A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -151,7 +152,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D7CDB57C9A2533C38FA786C9 /* [CP] Check Pods Manifest.lock */ = {
+		3E2A427061DA964A10747B49 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,7 +167,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UIComponents-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DataProvider-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -176,7 +177,7 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FA2DB7A129631242004D38E2 /* Sources */ = {
+		FAA819582964063B00B4C83A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -186,7 +187,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FA2DB7AA29631242004D38E2 /* Debug */ = {
+		FAA819612964063B00B4C83A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -249,7 +250,7 @@
 			};
 			name = Debug;
 		};
-		FA2DB7AB29631242004D38E2 /* Release */ = {
+		FAA819622964063B00B4C83A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -306,10 +307,11 @@
 			};
 			name = Release;
 		};
-		FA2DB7AD29631242004D38E2 /* Debug */ = {
+		FAA819642964063B00B4C83A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD99C84D4F8E33FE6A8B47F3 /* Pods-UIComponents.debug.xcconfig */;
+			baseConfigurationReference = 3D06315C570B04684262DCC9 /* Pods-DataProvider.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -327,19 +329,21 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = UmitBakiDikbiyik.UIComponents;
+				PRODUCT_BUNDLE_IDENTIFIER = UmitBakiDikbiyik.DataProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		FA2DB7AE29631242004D38E2 /* Release */ = {
+		FAA819652964063B00B4C83A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5ED44E755BCD015965FDC8FE /* Pods-UIComponents.release.xcconfig */;
+			baseConfigurationReference = 9D327312A71D591A66632443 /* Pods-DataProvider.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -357,7 +361,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = UmitBakiDikbiyik.UIComponents;
+				PRODUCT_BUNDLE_IDENTIFIER = UmitBakiDikbiyik.DataProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -369,25 +373,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA2DB79F29631242004D38E2 /* Build configuration list for PBXProject "UIComponents" */ = {
+		FAA819562964063B00B4C83A /* Build configuration list for PBXProject "DataProvider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA2DB7AA29631242004D38E2 /* Debug */,
-				FA2DB7AB29631242004D38E2 /* Release */,
+				FAA819612964063B00B4C83A /* Debug */,
+				FAA819622964063B00B4C83A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA2DB7AC29631242004D38E2 /* Build configuration list for PBXNativeTarget "UIComponents" */ = {
+		FAA819632964063B00B4C83A /* Build configuration list for PBXNativeTarget "DataProvider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA2DB7AD29631242004D38E2 /* Debug */,
-				FA2DB7AE29631242004D38E2 /* Release */,
+				FAA819642964063B00B4C83A /* Debug */,
+				FAA819652964063B00B4C83A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FA2DB79C29631242004D38E2 /* Project object */;
+	rootObject = FAA819532964063B00B4C83A /* Project object */;
 }

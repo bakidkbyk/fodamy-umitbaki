@@ -17,6 +17,7 @@ target 'fodamy-baki' do
   pod 'MobilliumUserDefaults', '~> 2.0'
   pod 'MobilliumDateFormatter', '~> 1.2'
   pod 'Kingfisher', '~> 6.3'
+  pod 'Alamofire', '~> 5.3'
   
   # UI
   pod 'TinyConstraints', '~> 4.0'
@@ -24,15 +25,19 @@ target 'fodamy-baki' do
 
 end
 
+target 'DataProvider' do
+  
+  project 'DataProvider/DataProvider.xcodeproj'
+  
+  #Helper
+  pod 'Alamofire', '~> 5.3'
+
+  end
+
 target 'UIComponents' do
   
   project 'UIComponents/UIComponents.xcodeproj'
-  
-  # Pods for UIComponents
-  
-  # Generater
-  
-  
+
   # Helper
   pod 'MobilliumBuilders', '~> 1.4'
   pod 'IQKeyboardManagerSwift', '~> 6.5'
@@ -45,3 +50,15 @@ target 'UIComponents' do
   pod 'BetterSegmentedControl', '~> 2.0'
   
 end
+
+target 'Utilities' do
+  
+  project 'Utilities/Utilities.xcodeproj'
+  
+  # Pods for UIComponents
+  
+  # Generater
+  
+  # Helper
+  
+  end
