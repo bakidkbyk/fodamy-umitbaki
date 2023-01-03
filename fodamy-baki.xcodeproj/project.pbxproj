@@ -12,6 +12,7 @@
 		FA0A2F222962BB56004E82C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2F212962BB56004E82C6 /* ViewController.swift */; };
 		FA0A2F272962BB58004E82C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2F262962BB58004E82C6 /* Assets.xcassets */; };
 		FA0A2F2A2962BB58004E82C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2F282962BB58004E82C6 /* LaunchScreen.storyboard */; };
+		FA22246729634B7600CC8169 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA22246629634B7600CC8169 /* Utilities.framework */; };
 		FA2DB7982962DF94004D38E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FA2DB7972962DF94004D38E2 /* .swiftlint.yml */; };
 		FA2DB7B729631568004D38E2 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2DB7B629631568004D38E2 /* UIComponents.framework */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		FA0A2F262962BB58004E82C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA0A2F292962BB58004E82C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0A2F2B2962BB58004E82C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA22246629634B7600CC8169 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2DB7972962DF94004D38E2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FA2DB7AF296312A8004D38E2 /* fodamy-baki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fodamy-baki-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA2DB7B629631568004D38E2 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA22246729634B7600CC8169 /* Utilities.framework in Frameworks */,
 				FA2DB7B729631568004D38E2 /* UIComponents.framework in Frameworks */,
 				73BCAF8115919761F1E5ED49 /* Pods_fodamy_baki.framework in Frameworks */,
 			);
@@ -56,6 +59,7 @@
 		DBCAAFB09280ECDB62158E9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA22246629634B7600CC8169 /* Utilities.framework */,
 				FA2DB7B629631568004D38E2 /* UIComponents.framework */,
 				39BB1E749DD51711E3302AC4 /* Pods_fodamy_baki.framework */,
 			);
