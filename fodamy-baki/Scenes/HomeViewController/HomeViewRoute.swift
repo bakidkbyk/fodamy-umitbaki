@@ -5,13 +5,13 @@
 //  Created by Baki Dikbıyık on 3.01.2023.
 //
 
-protocol HomeViewRoute {
-    func presentHomeView()
+protocol HomePlaceOnWindowRoute {
+    func placeOnWindowHome()
 }
 
-extension HomeViewRoute where Self: RouterProtocol {
+extension HomePlaceOnWindowRoute where Self: RouterProtocol {
     
-    func presentHomeView() {
+    func placeOnWindowHome() {
         let router = HomeViewRouter()
         let viewModel = HomeViewModel(router: router)
         let viewController = HomeViewController(viewModel: viewModel)

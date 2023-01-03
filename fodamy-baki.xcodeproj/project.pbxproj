@@ -150,7 +150,6 @@
 				FAA81994296425BE00B4C83A /* Routers */,
 				FAA81996296425BE00B4C83A /* Core */,
 				FAA81999296425BE00B4C83A /* Transitions */,
-				FAA8199E296425BE00B4C83A /* Routes */,
 			);
 			name = Routing;
 			path = ../../Routing;
@@ -182,13 +181,6 @@
 				FAA8199D296425BE00B4C83A /* PushTransition.swift */,
 			);
 			path = Transitions;
-			sourceTree = "<group>";
-		};
-		FAA8199E296425BE00B4C83A /* Routes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Routes;
 			sourceTree = "<group>";
 		};
 		FAA819B32964403200B4C83A /* Base */ = {
