@@ -5,9 +5,10 @@
 //  Created by Baki Dikbıyık on 2.01.2023.
 //
 
-class ViewController: UIViewController {
+class HomeViewController: BaseViewController<HomeViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-  }
+        view.backgroundColor = .red
+    }
 }
