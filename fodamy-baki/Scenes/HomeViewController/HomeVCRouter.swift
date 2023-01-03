@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 3.01.2023.
 //
 
-final class HomeVCRouter: Router, HomeVCRouter.Routes {
-    typealias Routes = InitialVcRoute
+final class HomeVCRouter: Router {
     
 }
