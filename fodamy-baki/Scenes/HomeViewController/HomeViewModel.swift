@@ -9,14 +9,8 @@ protocol HomeViewDataSource { }
 
 protocol HomeViewEventsource { }
 
-protocol HomeViewModelProtocol: HomeViewDataSource, HomeViewEventsource {
-    
-    func showInitialViewOnWindow()
-}
+protocol HomeViewModelProtocol: HomeViewDataSource, HomeViewEventsource { }
 
 class HomeViewModel: BaseViewModel<HomeVCRouter>, HomeViewModelProtocol {
     
-    func showInitialViewOnWindow() {
-        
-    }
 }
