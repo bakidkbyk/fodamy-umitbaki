@@ -11,6 +11,6 @@ protocol HomeViewEventsource { }
 
 protocol HomeViewModelProtocol: HomeViewDataSource, HomeViewEventsource { }
 
-class HomeViewModel: BaseViewModel<HomeVCRouter>, HomeViewModelProtocol {
+class HomeViewModel: BaseViewModel<HomeViewRouter>, HomeViewModelProtocol {
     
 }

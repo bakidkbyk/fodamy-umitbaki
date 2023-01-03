@@ -25,9 +25,9 @@
 		FAA819B52964404C00B4C83A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819B42964404C00B4C83A /* BaseViewController.swift */; };
 		FAA819B72964406000B4C83A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819B62964406000B4C83A /* BaseViewModel.swift */; };
 		FAA819C32964609A00B4C83A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819BF2964609A00B4C83A /* HomeViewModel.swift */; };
-		FAA819C42964609A00B4C83A /* HomeVCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C02964609A00B4C83A /* HomeVCRouter.swift */; };
+		FAA819C42964609A00B4C83A /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C02964609A00B4C83A /* HomeViewRouter.swift */; };
 		FAA819C52964609A00B4C83A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C12964609A00B4C83A /* HomeViewController.swift */; };
-		FAA819C62964609A00B4C83A /* HomeVCRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C22964609A00B4C83A /* HomeVCRoute.swift */; };
+		FAA819C62964609A00B4C83A /* HomeViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C22964609A00B4C83A /* HomeViewRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,9 +54,9 @@
 		FAA819B42964404C00B4C83A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FAA819B62964406000B4C83A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FAA819BF2964609A00B4C83A /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		FAA819C02964609A00B4C83A /* HomeVCRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVCRouter.swift; sourceTree = "<group>"; };
+		FAA819C02964609A00B4C83A /* HomeViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
 		FAA819C12964609A00B4C83A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FAA819C22964609A00B4C83A /* HomeVCRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVCRoute.swift; sourceTree = "<group>"; };
+		FAA819C22964609A00B4C83A /* HomeViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,8 +205,8 @@
 			children = (
 				FAA819C12964609A00B4C83A /* HomeViewController.swift */,
 				FAA819BF2964609A00B4C83A /* HomeViewModel.swift */,
-				FAA819C02964609A00B4C83A /* HomeVCRouter.swift */,
-				FAA819C22964609A00B4C83A /* HomeVCRoute.swift */,
+				FAA819C02964609A00B4C83A /* HomeViewRouter.swift */,
+				FAA819C22964609A00B4C83A /* HomeViewRoute.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -346,7 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAA819C42964609A00B4C83A /* HomeVCRouter.swift in Sources */,
+				FAA819C42964609A00B4C83A /* HomeViewRouter.swift in Sources */,
 				FAA819A8296425BE00B4C83A /* Transition.swift in Sources */,
 				FAA819A6296425BE00B4C83A /* ModalTransition.swift in Sources */,
 				FAA819C52964609A00B4C83A /* HomeViewController.swift in Sources */,
@@ -355,7 +355,7 @@
 				FAA819A7296425BE00B4C83A /* PlaceOnWindowTransition.swift in Sources */,
 				FAA819B52964404C00B4C83A /* BaseViewController.swift in Sources */,
 				FAA819A5296425BE00B4C83A /* Router.swift in Sources */,
-				FAA819C62964609A00B4C83A /* HomeVCRoute.swift in Sources */,
+				FAA819C62964609A00B4C83A /* HomeViewRoute.swift in Sources */,
 				FAA819A3296425BE00B4C83A /* AppRouter.swift in Sources */,
 				FAA819B72964406000B4C83A /* BaseViewModel.swift in Sources */,
 				FA0A2F1E2962BB56004E82C6 /* AppDelegate.swift in Sources */,
