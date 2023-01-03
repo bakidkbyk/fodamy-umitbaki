@@ -22,10 +22,6 @@
 		FAA819A7296425BE00B4C83A /* PlaceOnWindowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8199B296425BE00B4C83A /* PlaceOnWindowTransition.swift */; };
 		FAA819A8296425BE00B4C83A /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8199C296425BE00B4C83A /* Transition.swift */; };
 		FAA819A9296425BE00B4C83A /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8199D296425BE00B4C83A /* PushTransition.swift */; };
-		FAA819AA296425BE00B4C83A /* UnfollowAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8199F296425BE00B4C83A /* UnfollowAlertViewRoute.swift */; };
-		FAA819AB296425BE00B4C83A /* ShareSheetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819A0296425BE00B4C83A /* ShareSheetRoute.swift */; };
-		FAA819AC296425BE00B4C83A /* SKPhotoBrowserRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819A1296425BE00B4C83A /* SKPhotoBrowserRoute.swift */; };
-		FAA819AD296425BE00B4C83A /* CommentEditDeleteAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819A2296425BE00B4C83A /* CommentEditDeleteAlertViewRoute.swift */; };
 		FAA819B52964404C00B4C83A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819B42964404C00B4C83A /* BaseViewController.swift */; };
 		FAA819B72964406000B4C83A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819B62964406000B4C83A /* BaseViewModel.swift */; };
 		FAA819C32964609A00B4C83A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819BF2964609A00B4C83A /* HomeViewModel.swift */; };
@@ -55,10 +51,6 @@
 		FAA8199B296425BE00B4C83A /* PlaceOnWindowTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceOnWindowTransition.swift; sourceTree = "<group>"; };
 		FAA8199C296425BE00B4C83A /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		FAA8199D296425BE00B4C83A /* PushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
-		FAA8199F296425BE00B4C83A /* UnfollowAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowAlertViewRoute.swift; sourceTree = "<group>"; };
-		FAA819A0296425BE00B4C83A /* ShareSheetRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheetRoute.swift; sourceTree = "<group>"; };
-		FAA819A1296425BE00B4C83A /* SKPhotoBrowserRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserRoute.swift; sourceTree = "<group>"; };
-		FAA819A2296425BE00B4C83A /* CommentEditDeleteAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentEditDeleteAlertViewRoute.swift; sourceTree = "<group>"; };
 		FAA819B42964404C00B4C83A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FAA819B62964406000B4C83A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FAA819BF2964609A00B4C83A /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -195,10 +187,6 @@
 		FAA8199E296425BE00B4C83A /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				FAA8199F296425BE00B4C83A /* UnfollowAlertViewRoute.swift */,
-				FAA819A0296425BE00B4C83A /* ShareSheetRoute.swift */,
-				FAA819A1296425BE00B4C83A /* SKPhotoBrowserRoute.swift */,
-				FAA819A2296425BE00B4C83A /* CommentEditDeleteAlertViewRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -367,15 +355,11 @@
 				FAA819A7296425BE00B4C83A /* PlaceOnWindowTransition.swift in Sources */,
 				FAA819B52964404C00B4C83A /* BaseViewController.swift in Sources */,
 				FAA819A5296425BE00B4C83A /* Router.swift in Sources */,
-				FAA819AD296425BE00B4C83A /* CommentEditDeleteAlertViewRoute.swift in Sources */,
-				FAA819AC296425BE00B4C83A /* SKPhotoBrowserRoute.swift in Sources */,
 				FAA819C62964609A00B4C83A /* HomeVCRoute.swift in Sources */,
 				FAA819A3296425BE00B4C83A /* AppRouter.swift in Sources */,
-				FAA819AB296425BE00B4C83A /* ShareSheetRoute.swift in Sources */,
 				FAA819B72964406000B4C83A /* BaseViewModel.swift in Sources */,
 				FA0A2F1E2962BB56004E82C6 /* AppDelegate.swift in Sources */,
 				FAA819C32964609A00B4C83A /* HomeViewModel.swift in Sources */,
-				FAA819AA296425BE00B4C83A /* UnfollowAlertViewRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
