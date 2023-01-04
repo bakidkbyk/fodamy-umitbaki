@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		72BE580EEB3740C987901157 /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089FD029D129E79236CFD832 /* Pods_UIComponents.framework */; };
 		FA2DB7A929631242004D38E2 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = FA2DB7A829631242004D38E2 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAAEAC7129655B9900459E43 /* ActivityIndicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7029655B9900459E43 /* ActivityIndicatorProtocol.swift */; };
+		FAAEAC7429655DCE00459E43 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7329655DCE00459E43 /* ActivityIndicatorView.swift */; };
+		FAAEAC7629655FD400459E43 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7529655FD400459E43 /* LoadingProtocol.swift */; };
+		FAAEAC782965607A00459E43 /* BlockingActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC772965607A00459E43 /* BlockingActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +21,10 @@
 		AD99C84D4F8E33FE6A8B47F3 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2DB7A529631242004D38E2 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2DB7A829631242004D38E2 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
+		FAAEAC7029655B9900459E43 /* ActivityIndicatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorProtocol.swift; sourceTree = "<group>"; };
+		FAAEAC7329655DCE00459E43 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		FAAEAC7529655FD400459E43 /* LoadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
+		FAAEAC772965607A00459E43 /* BlockingActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +78,29 @@
 		FA2DB7A729631242004D38E2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FAAEAC7229655D8700459E43 /* UIActivityIndicatorView */,
+				FAAEAC6F29655B7600459E43 /* Loading */,
 				FA2DB7A829631242004D38E2 /* UIComponents.h */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		FAAEAC6F29655B7600459E43 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEAC7029655B9900459E43 /* ActivityIndicatorProtocol.swift */,
+				FAAEAC7529655FD400459E43 /* LoadingProtocol.swift */,
+				FAAEAC772965607A00459E43 /* BlockingActivityIndicator.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		FAAEAC7229655D8700459E43 /* UIActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEAC7329655DCE00459E43 /* ActivityIndicatorView.swift */,
+			);
+			path = UIActivityIndicatorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +147,7 @@
 				TargetAttributes = {
 					FA2DB7A429631242004D38E2 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -180,6 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAEAC7129655B9900459E43 /* ActivityIndicatorProtocol.swift in Sources */,
+				FAAEAC782965607A00459E43 /* BlockingActivityIndicator.swift in Sources */,
+				FAAEAC7629655FD400459E43 /* LoadingProtocol.swift in Sources */,
+				FAAEAC7429655DCE00459E43 /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD99C84D4F8E33FE6A8B47F3 /* Pods-UIComponents.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -331,6 +365,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -340,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5ED44E755BCD015965FDC8FE /* Pods-UIComponents.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
