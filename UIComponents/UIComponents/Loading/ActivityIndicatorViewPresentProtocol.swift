@@ -2,12 +2,10 @@
 //  ActivityIndicatorViewPresentProtocol.swift
 //  UIComponents
 //
-//  Created by Mehmet Salih Aslan on 4.11.2020.
-//  Copyright © 2020 Mobillium. All rights reserved.
+//  Created by Baki Dikbıyık on 4.01.2023.
 //
 
-import UIKit
-import TinyConstraints
+import Foundation
 
 public protocol ActivityIndicatorProtocol {
     func showActivityIndicator()

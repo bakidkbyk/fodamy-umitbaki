@@ -2,8 +2,7 @@
 //  BlockingActivityIndicator.swift
 //  UIComponents
 //
-//  Created by Mehmet Salih Aslan on 4.11.2020.
-//  Copyright © 2020 Mobillium. All rights reserved.
+//  Created by Baki Dikbıyık on 4.01.2023.
 //
 
 import UIKit
@@ -14,12 +13,12 @@ final class BlockingActivityIndicator: UIView {
     
     override init(frame: CGRect) {
         self.activityIndicator = UIActivityIndicatorView(style: .gray)
-        activityIndicator.tintColor = .appWhite
-        activityIndicator.color = .appWhite
+        activityIndicator.tintColor = .black
+        activityIndicator.color = .white
         activityIndicator.startAnimating()
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         super.init(frame: frame)
-        backgroundColor = UIColor.appCinder.withAlphaComponent(0.35)
+        backgroundColor = UIColor.gray.withAlphaComponent(0.35)
         addSubview(activityIndicator)
         activityIndicator.centerInSuperview()
     }
