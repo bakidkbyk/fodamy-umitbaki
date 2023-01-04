@@ -4,8 +4,6 @@
 //
 //  Created by Baki Dikbıyık on 4.01.2023.
 //
-
-import SwiftUI
 import SwiftEntryKit
 
 public class ToastPresenter {

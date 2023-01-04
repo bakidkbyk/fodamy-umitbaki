@@ -13,6 +13,8 @@
 		FAAEAC7429655DCE00459E43 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7329655DCE00459E43 /* ActivityIndicatorView.swift */; };
 		FAAEAC7629655FD400459E43 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7529655FD400459E43 /* LoadingProtocol.swift */; };
 		FAAEAC782965607A00459E43 /* BlockingActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC772965607A00459E43 /* BlockingActivityIndicator.swift */; };
+		FAAEAC7B296567AC00459E43 /* ToastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7A296567AC00459E43 /* ToastPresenter.swift */; };
+		FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7C296569E200459E43 /* ToastWarningView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		FAAEAC7329655DCE00459E43 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		FAAEAC7529655FD400459E43 /* LoadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
 		FAAEAC772965607A00459E43 /* BlockingActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingActivityIndicator.swift; sourceTree = "<group>"; };
+		FAAEAC7A296567AC00459E43 /* ToastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresenter.swift; sourceTree = "<group>"; };
+		FAAEAC7C296569E200459E43 /* ToastWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastWarningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		FA2DB7A729631242004D38E2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FAAEAC792965679800459E43 /* Toast */,
 				FAAEAC7229655D8700459E43 /* UIActivityIndicatorView */,
 				FAAEAC6F29655B7600459E43 /* Loading */,
 				FA2DB7A829631242004D38E2 /* UIComponents.h */,
@@ -101,6 +106,15 @@
 				FAAEAC7329655DCE00459E43 /* ActivityIndicatorView.swift */,
 			);
 			path = UIActivityIndicatorView;
+			sourceTree = "<group>";
+		};
+		FAAEAC792965679800459E43 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEAC7A296567AC00459E43 /* ToastPresenter.swift */,
+				FAAEAC7C296569E200459E43 /* ToastWarningView.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,9 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAEAC7129655B9900459E43 /* ActivityIndicatorProtocol.swift in Sources */,
+				FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */,
 				FAAEAC782965607A00459E43 /* BlockingActivityIndicator.swift in Sources */,
 				FAAEAC7629655FD400459E43 /* LoadingProtocol.swift in Sources */,
 				FAAEAC7429655DCE00459E43 /* ActivityIndicatorView.swift in Sources */,
+				FAAEAC7B296567AC00459E43 /* ToastPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

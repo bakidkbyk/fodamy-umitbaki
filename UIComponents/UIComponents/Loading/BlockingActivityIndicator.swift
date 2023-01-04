@@ -5,6 +5,7 @@
 //  Created by Baki Dikbıyık on 4.01.2023.
 //
 
+import UIKit
 
 final class BlockingActivityIndicator: UIView {
     
@@ -12,8 +13,8 @@ final class BlockingActivityIndicator: UIView {
     
     override init(frame: CGRect) {
         self.activityIndicator = UIActivityIndicatorView(style: .gray)
-        activityIndicator.tintColor = .blue
-        activityIndicator.color = .blue
+        activityIndicator.tintColor = .black
+        activityIndicator.color = .black
         activityIndicator.startAnimating()
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         super.init(frame: frame)

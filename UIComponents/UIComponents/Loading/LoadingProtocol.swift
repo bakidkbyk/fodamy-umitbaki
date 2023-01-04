@@ -4,6 +4,7 @@
 //
 //  Created by Baki Dikbıyık on 4.01.2023.
 //
+import UIKit
 
 public protocol LoadingProtocol {
     func presentLoading()
@@ -11,7 +12,7 @@ public protocol LoadingProtocol {
 }
 
 public extension LoadingProtocol where Self: UIViewController {
-   
+    
     func presentLoading() {
         let window = UIApplication.shared.windows.first
         window?.startBlockingActivityIndicator()
@@ -21,4 +22,5 @@ public extension LoadingProtocol where Self: UIViewController {
         let window = UIApplication.shared.windows.first
         window?.stopBlockingActivityIndicator()
     }
+    
 }
