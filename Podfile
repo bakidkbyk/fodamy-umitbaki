@@ -44,6 +44,7 @@ target 'UIComponents' do
   pod 'MobilliumUserDefaults', '~> 2.0'
   pod 'MobilliumDateFormatter', '~> 1.2'
   pod 'Kingfisher', '~> 6.3'
+  pod 'SwiftEntryKit', '2.0.0'
   
   # UI
   pod 'TinyConstraints', '~> 4.0'
