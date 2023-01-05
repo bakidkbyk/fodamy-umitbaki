@@ -18,7 +18,7 @@ DEPENDENCIES:
   - MobilliumBuilders (~> 1.4)
   - MobilliumDateFormatter (~> 1.2)
   - MobilliumUserDefaults (~> 2.0)
-  - SwiftEntryKit (= 2.0.0)
+  - SwiftEntryKit (~> 2.0.0)
   - SwiftLint
   - TinyConstraints (~> 4.0)
 
@@ -47,6 +47,6 @@ SPEC CHECKSUMS:
   SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: 351f414f3233adeacc3eaef261bdc94a520423d5
+PODFILE CHECKSUM: 731f8dfecb9044d2f9e15fc32d664e172eaae2d3
 
 COCOAPODS: 1.11.3
