@@ -41,5 +41,4 @@ class BaseViewModel<R: Router>: BaseViewModelProtocol {
         debugPrint("deinit \(self)")
     }
     #endif
-    
 }
