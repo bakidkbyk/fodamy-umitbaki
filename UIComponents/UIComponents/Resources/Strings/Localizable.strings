@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  UIComponents
+
+  Created by Baki Dikbıyık on 6.01.2023.
+  
+*/
+
+"hello" = "adam";
+"baki" = "dikbıyık";
+"naber" = "iyi sen";
