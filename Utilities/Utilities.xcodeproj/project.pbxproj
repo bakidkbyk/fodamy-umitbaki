@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B2BC0CEA5FFC3C88DC84CDC2 /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B86C0840FC2ED4995DF11C /* Pods_Utilities.framework */; };
 		FAA8194C2964061700B4C83A /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA8194B2964061700B4C83A /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAAEAC6E296552C700459E43 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC6D296552C700459E43 /* Closures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		CF3DB63C0F976FA27FCEDBCB /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		FAA819482964061700B4C83A /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA8194B2964061700B4C83A /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		FAAEAC6D296552C700459E43 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +72,18 @@
 		FAA8194A2964061700B4C83A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FAAEAC6C296552A200459E43 /* Constants */,
 				FAA8194B2964061700B4C83A /* Utilities.h */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FAAEAC6C296552A200459E43 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEAC6D296552C700459E43 /* Closures.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +130,7 @@
 				TargetAttributes = {
 					FAA819472964061700B4C83A = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -180,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAEAC6E296552C700459E43 /* Closures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF3DB63C0F976FA27FCEDBCB /* Pods-Utilities.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -331,6 +345,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -340,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BF9C608AE7A251114DB8FE2 /* Pods-Utilities.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
