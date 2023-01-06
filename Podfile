@@ -19,6 +19,8 @@ target 'fodamy-baki' do
   pod 'Kingfisher', '~> 6.3'
   pod 'Alamofire', '~> 5.3'
   pod 'SwiftEntryKit', '~> 2.0.0'
+  
+
 
   
   # UI
@@ -47,9 +49,11 @@ target 'UIComponents' do
   pod 'MobilliumDateFormatter', '~> 1.2'
   pod 'Kingfisher', '~> 6.3'
   pod 'SwiftEntryKit', '~> 2.0.0'
+  pod 'SwiftGen', '~> 6.0'
   # UI
   pod 'TinyConstraints', '~> 4.0'
   pod 'BetterSegmentedControl', '~> 2.0'
+  
   
 end
 

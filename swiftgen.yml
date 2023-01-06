@@ -1,0 +1,9 @@
+
+strings:
+  inputs: UIComponents/Resources/Strings
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift5
+      output: UIComponents/Resources/Strings/StringConstants.swift
+      params:
+          publicAccess: public

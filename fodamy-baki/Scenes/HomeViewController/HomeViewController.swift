@@ -12,5 +12,3 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         view.backgroundColor = .white
     }
 }
-
-
