@@ -7,6 +7,7 @@ PODS:
   - MobilliumDateFormatter (1.3.0)
   - MobilliumUserDefaults (2.0.0)
   - SwiftEntryKit (2.0.0)
+  - SwiftGen (6.6.2)
   - SwiftLint (0.47.1)
   - TinyConstraints (4.0.2)
 
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - MobilliumDateFormatter (~> 1.2)
   - MobilliumUserDefaults (~> 2.0)
   - SwiftEntryKit (~> 2.0.0)
+  - SwiftGen (~> 6.0)
   - SwiftLint
   - TinyConstraints (~> 4.0)
 
@@ -32,6 +34,7 @@ SPEC REPOS:
     - MobilliumDateFormatter
     - MobilliumUserDefaults
     - SwiftEntryKit
+    - SwiftGen
     - SwiftLint
     - TinyConstraints
 
@@ -44,9 +47,10 @@ SPEC CHECKSUMS:
   MobilliumDateFormatter: 747bca02d30d51937ca48c58241ed3b2d230166e
   MobilliumUserDefaults: 002aa4bb663127d2dcc0814c17430c918a1e1445
   SwiftEntryKit: 61b5fa36f34a97dd8013e48a7345bc4c4720be9a
+  SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: 731f8dfecb9044d2f9e15fc32d664e172eaae2d3
+PODFILE CHECKSUM: f2a2ca74a79c2d62360ce849fad57e14e58dd23c
 
 COCOAPODS: 1.11.3

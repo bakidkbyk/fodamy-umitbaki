@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		72BE580EEB3740C987901157 /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089FD029D129E79236CFD832 /* Pods_UIComponents.framework */; };
 		FA2DB7A929631242004D38E2 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = FA2DB7A829631242004D38E2 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA6A3ABA2968342400A1931A /* General.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6A3AB92968342400A1931A /* General.strings */; };
 		FAABD05E2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */; };
 		FAABD0602965E2E200126FA9 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */; };
 		FAABD0642965E32E00126FA9 /* BlockingActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD0632965E32E00126FA9 /* BlockingActivityIndicator.swift */; };
@@ -24,6 +25,7 @@
 		AD99C84D4F8E33FE6A8B47F3 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2DB7A529631242004D38E2 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2DB7A829631242004D38E2 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
+		FA6A3AB92968342400A1931A /* General.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = General.strings; sourceTree = "<group>"; };
 		FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewPresentProtocol.swift; sourceTree = "<group>"; };
 		FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
 		FAABD0632965E32E00126FA9 /* BlockingActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingActivityIndicator.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		FA2DB7A729631242004D38E2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FA6A3AB6296833DF00A1931A /* Resources */,
 				FAABD05C2965E26500126FA9 /* Loading */,
 				FAAEAC8E2965BC8300459E43 /* Protocols */,
 				FAAEAC792965679800459E43 /* Toast */,
@@ -91,6 +94,30 @@
 				FA2DB7A829631242004D38E2 /* UIComponents.h */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		FA6A3AB6296833DF00A1931A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA6A3AB8296833FD00A1931A /* Strings */,
+				FA6A3AB7296833F700A1931A /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA6A3AB7296833F700A1931A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FA6A3AB8296833FD00A1931A /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				FA6A3AB92968342400A1931A /* General.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		FAABD05C2965E26500126FA9 /* Loading */ = {
@@ -147,6 +174,7 @@
 			buildConfigurationList = FA2DB7AC29631242004D38E2 /* Build configuration list for PBXNativeTarget "UIComponents" */;
 			buildPhases = (
 				D7CDB57C9A2533C38FA786C9 /* [CP] Check Pods Manifest.lock */,
+				FA6A3AB32968042300A1931A /* Swiftgen */,
 				FA2DB7A029631242004D38E2 /* Headers */,
 				FA2DB7A129631242004D38E2 /* Sources */,
 				FA2DB7A229631242004D38E2 /* Frameworks */,
@@ -199,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6A3ABA2968342400A1931A /* General.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +255,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		FA6A3AB32968042300A1931A /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" …\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
