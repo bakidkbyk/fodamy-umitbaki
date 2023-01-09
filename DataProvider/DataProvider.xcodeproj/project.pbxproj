@@ -95,6 +95,37 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FA1363A9296C5B0B003701DA /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FA1363AA296C5B23003701DA /* User */,
+				FA1363AB296C5B29003701DA /* Recipe */,
+				FA1363AC296C5B2D003701DA /* Comment */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		FA1363AA296C5B23003701DA /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		FA1363AB296C5B29003701DA /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		FA1363AC296C5B2D003701DA /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		FAA819522964063B00B4C83A = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				FA13638E296C5199003701DA /* Model */,
+				FA1363A9296C5B0B003701DA /* Request */,
 				FAA8195F2964063B00B4C83A /* DataProvider.h */,
 			);
 			path = DataProvider;
