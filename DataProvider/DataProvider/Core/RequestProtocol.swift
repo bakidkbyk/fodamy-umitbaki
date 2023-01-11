@@ -6,7 +6,7 @@
 //
 
 public protocol RequestProtocol {
-    var parth: String { get }
+    var path: String { get }
     var method: RequestMethod { get }
     var parameters: RequestParameters { get }
     var headers: RequestHeaders { get }
