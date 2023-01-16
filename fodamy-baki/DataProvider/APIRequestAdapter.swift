@@ -7,6 +7,7 @@
 
 import Alamofire
 
+// MARK: - APIRequestAdapter
 struct APIRequestAdapter {
     
     let method: HTTPMethod
