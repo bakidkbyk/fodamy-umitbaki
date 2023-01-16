@@ -25,6 +25,7 @@
 		FA791CC2296863A2001B6985 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA791CC1296863A2001B6985 /* Localizable.strings */; };
 		FA791CC4296863C9001B6985 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA791CC3296863C9001B6985 /* StringConstants.swift */; };
 		FA791CC829686746001B6985 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA791CC729686746001B6985 /* Localize.swift */; };
+		FA87472E29753ED900039E92 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472D29753ED900039E92 /* ButtonFactory.swift */; };
 		FAABD05E2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */; };
 		FAABD0602965E2E200126FA9 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */; };
 		FAABD0642965E32E00126FA9 /* BlockingActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD0632965E32E00126FA9 /* BlockingActivityIndicator.swift */; };
@@ -56,6 +57,7 @@
 		FA791CC1296863A2001B6985 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FA791CC3296863C9001B6985 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		FA791CC729686746001B6985 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		FA87472D29753ED900039E92 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewPresentProtocol.swift; sourceTree = "<group>"; };
 		FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
 		FAABD0632965E32E00126FA9 /* BlockingActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingActivityIndicator.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		FA2DB7A729631242004D38E2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FA87472C29753EBD00039E92 /* ButtonFactory */,
 				FA6A3AB6296833DF00A1931A /* Resources */,
 				FAABD05C2965E26500126FA9 /* Loading */,
 				FAAEAC8E2965BC8300459E43 /* Protocols */,
@@ -171,6 +174,14 @@
 				FA791CC729686746001B6985 /* Localize.swift */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		FA87472C29753EBD00039E92 /* ButtonFactory */ = {
+			isa = PBXGroup;
+			children = (
+				FA87472D29753ED900039E92 /* ButtonFactory.swift */,
+			);
+			path = ButtonFactory;
 			sourceTree = "<group>";
 		};
 		FAABD05C2965E26500126FA9 /* Loading */ = {
@@ -343,6 +354,7 @@
 			files = (
 				FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */,
 				FA791C90296850AF001B6985 /* UIImage+Images.swift in Sources */,
+				FA87472E29753ED900039E92 /* ButtonFactory.swift in Sources */,
 				FA791CA5296850B9001B6985 /* Fonts.swift in Sources */,
 				FAAEAC7429655DCE00459E43 /* ActivityIndicatorView.swift in Sources */,
 				FA791C8D296850AF001B6985 /* Assets.swift in Sources */,
