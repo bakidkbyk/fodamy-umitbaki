@@ -22,6 +22,7 @@ final class APILogger: EventMonitor {
         print("---> Request Finished <---")
         print(request.description)
     }
+    
     func request<Value>(_ request: DataRequest, didParseResponse response: DataResponse<Value, AFError>) {
         print("---> Request JSONResponse <---")
         if let data = response.data, let json = String(data: data, encoding: .utf8) {
