@@ -26,7 +26,7 @@ public class ButtonFactory {
         var fontSize: UIFont.FontSize {
             switch self {
             case .small:  return .xSmall
-            case .medium: return .medium
+            case .medium: return . medium
             case .large:  return .xLarge
             }
         }
