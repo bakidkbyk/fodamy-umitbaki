@@ -6,6 +6,85 @@
   
 */
 
-"hello" = "adam";
-"baki" = "dikbıyık";
-"naber" = "iyi sen";
+// MARK: - Action
+"Action.block" = "Block";
+"Action.loginWarning" = "Giriş yapmanız gereklidir.";
+"Comment.placeholder" = "Bir şeyler yazın..";
+
+// MARK: - ErrorWarnings
+"empty" = "%@ alanı boş olamaz.";
+"refreshFromTop" = "Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.";
+"emptyFields" = "Lütfen boş alanları doldurunuz.";
+"checkInformations" = "Lütfen bilgilerinizi kontrol ediniz.";
+
+// MARK: - Keys
+"Key.username" = "Username";
+"Key.email" = "E-posta";
+"Key.comment" = "Yorum";
+
+// MARK: - General
+"login" = "Giriş Yap";
+"register" = "Üye Ol";
+"comment" = "Yorum";
+"like" = "Beğeni";
+"follow" = "Takip Et";
+"following" = "Takip Ediliyor";
+"recipeIngredients" = "Malzemeler";
+"recipeSteps" = "Yapılışı";
+"addComment" = "Yorum Ekle";
+"comments" = "Yorumlar";
+"giveUp" = "Vazgeç";
+"login" = "Giriş Yap";
+"recipe" = "Tarif";
+"follower" = "Takipçi";
+
+// MARK: - SignInPassword
+"SignIn.navigationTitle" = "Sign In";
+
+// MARK: - Favorites
+"Favorites.seeAllButtonTitle" = "TÜMÜNÜ GÖR";
+
+// MARK: - Home
+"Home.editorChoiceRecipes" = "EDİTÖR SEÇİMİ";
+"Home.lastAddedRecipes" = "SON EKLENENLER";
+"Home.recipeCommnetAndLikeCount" = "%@ Yorum %@ Beğeni";
+"Home.userRecipeAndFollowerCount" = "%@ Tarif %@ Takipçi";
+
+// MARK: - WalkThrough
+"WalkThrough.Next" = "İlerle";
+"WalkThrough.Start" = "Başla!";
+"WalkThrough.firstTitle" = "Welcome to Fodamy Network!";
+"WalkThrough.secondTitle" = "Finding recipes were not that easy.";
+"WalkThrough.thirdTitle" = "Add new recipe.";
+"WalkThrough.fourthTitle" = "Share recipes with others.";
+"WalkThrough.descriptionText" = "Fodamy is the best place to find your favorite recipes in all around the world.";
+
+
+// MARK: - Login
+"LoginViewController.title" = "Giriş Yap";
+"LoginViewController.bottomText" = "Hesabın mı yok?";
+"LoginViewController.forgotPassword" = "Şifrenizi mi unuttunuz?";
+
+// MARK: - Register
+"RegisterViewController.title" = "Üye Ol";
+"RegisterViewController.bottomText" = "Hesabın mı var?";
+
+// MARK: - CommentEdit
+"CommentEditController.title" = "YORUM DÜZENLE";
+"CommentEditController.save" = "Kaydet";
+
+// MARK: - CommentList
+"CommentListController.title" = "YORUMLAR";
+
+// MARK: - PasswordReset
+"PasswordResetController.title" = "Şifre Sıfırlama";
+"PasswordResetController.reset" = "Sıfırla";
+
+// MARK: RecipeDetail
+"RecipeDetail.noComment" = "Henüz yorum yapılmamıştır.";
+
+// MARK: - PlaceHolder
+"username" = "Kullanıcı Adı";
+"email" = "E-mail Adresi";
+"password" = "Şifre";
+
