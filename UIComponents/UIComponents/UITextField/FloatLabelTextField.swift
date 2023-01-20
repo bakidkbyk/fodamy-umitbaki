@@ -6,20 +6,22 @@
 //
 
 import UIKit
+import MobilliumBuilders
 
 public class FloatLabelTextField: UITextField {
     
-    private let titleLabel = UILabel()
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 18).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 18).isActive = true
-        imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .appCinder
-        return imageView
-    }()
-   
+    private let titleLabel = UILabelBuilder()
+        .textColor(.appZircon)
+        .font(.font(.nunitoSemiBold, size: .large))
+        .build()
+    
+    private let imageView = UIImageViewBuilder()
+        .tintColor(.appCinder)
+        .contentMode(.scaleAspectFit)
+        .build()
+    
+    private let insets = UIEdgeInsets(top: 29, left: 15, bottom: 12, right: 15)
+    
     public var title: String? {
         willSet {
             placeholder = nil
@@ -43,20 +45,12 @@ public class FloatLabelTextField: UITextField {
         }
     }
     
-    private var insets: UIEdgeInsets {
-        var insets = UIEdgeInsets(top: 29, left: 15, bottom: 12, right: 15)
-        if let leftView = leftView {
-            insets.left += leftView.frame.size.width + 10
-        }
-        return insets
+    public override func textRect(forBounds bounds: CGRect) -> CGRect {
+        bounds.inset(by: insets)
     }
     
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: insets)
-    }
-    
-    public override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: insets)
+        bounds.inset(by: insets)
     }
     
     public override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
@@ -76,67 +70,13 @@ public class FloatLabelTextField: UITextField {
         configureContents()
     }
     
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        placeholder = nil
-        attributedPlaceholder = nil
-        updateTitlePosition()
-        if isFirstResponder || !text!.isEmpty {
-            setTitleToTop(animate: true)
-        } else {
-            setTitleToCenter(animate: true)
-        }
-        layer.borderColor = isFirstResponder ? UIColor.appRed.cgColor : UIColor.appZircon.cgColor
-    }
 }
 
 // MARK: - ConfigureContents - SetTitle
 extension FloatLabelTextField {
     
     private func configureContents() {
-        addSubview(titleLabel)
-        translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 60).isActive = true
-        borderStyle = .none
-        layer.borderWidth = 2
-        layer.cornerRadius = 4
-        layer.borderColor = UIColor.appZircon.cgColor
-        font = .systemFont(ofSize: 14, weight: .semibold)
-        textColor = .appRaven
+        
     }
     
-    private func updateTitlePosition() {
-        titleLabel.frame.origin.x = insets.left
-        titleLabel.frame.size.width = frame.size.width - insets.left - insets.right
-    }
-    
-    private func setTitleToTop(animate: Bool) {
-        guard animate else { return }
-        UIView.animate(withDuration: 0.25, delay: 0, options: [.beginFromCurrentState, .curveEaseOut], animations: { [weak self] in
-            self?.configureTitleForTop()
-        }, completion: nil)
-    }
-    
-    private func setTitleToCenter(animate: Bool) {
-        guard animate else { return }
-        UIView.animate(withDuration: 0.25, delay: 0, options: [.beginFromCurrentState, .curveEaseIn], animations: { [weak self] in
-            self?.configureTitleForCenter()
-        }, completion: nil)
-    }
-    
-    private func configureTitleForTop() {
-        let contentHeight = frame.size.height
-        let titleHeight = titleLabel.frame.size.height
-        titleLabel.font = .systemFont(ofSize: 12, weight: .bold)
-        titleLabel.textColor = .appRed
-        titleLabel.frame.origin.y = (contentHeight / 2) - titleHeight
-    }
-    
-    private func configureTitleForCenter() {
-        let contentHeight = frame.size.height
-        let titleHeight = titleLabel.frame.size.height
-        titleLabel.font = .systemFont(ofSize: 14, weight: .semibold)
-        titleLabel.textColor = .appHeather
-        titleLabel.frame.origin.y = (contentHeight / 2) - (titleHeight / 2)
-    }
 }
