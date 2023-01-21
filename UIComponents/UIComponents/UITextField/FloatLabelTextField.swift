@@ -11,7 +11,7 @@ import MobilliumBuilders
 public class FloatLabelTextField: UITextField {
     
     private let titleLabel = UILabelBuilder()
-        .textColor(.appZircon)
+        .textColor(.appRaven)
         .font(.font(.nunitoSemiBold, size: .large))
         .build()
     
@@ -79,4 +79,25 @@ extension FloatLabelTextField {
         
     }
     
+    private func setTitlePosition() {
+        titleLabel.frame.origin.x = insets.left
+        titleLabel.frame.size.width = frame.size.width - insets.left - insets.right
+    }
+    
+    private func configureTitleForTop() {
+        let contentHeight = frame.size.height
+        let titleHeight = titleLabel.frame.size.height
+        titleLabel.font = .font(.nunitoBold, size: .small)
+        titleLabel.textColor = .appRed
+        titleLabel.frame.origin.y = (contentHeight / 2) - (titleHeight / 2 )
+        
+    }
+    
+    private func configureTitleForCenter() {
+        let contentHeight = frame.size.height
+        let titleHeight = titleLabel.frame.size.height
+        titleLabel.font = .font(.nunitoSemiBold, size: .large)
+        titleLabel.textColor = .appHeather
+        titleLabel.frame.origin.y = (contentHeight / 2) - (titleHeight / 2 )
+    }
 }
