@@ -21,7 +21,13 @@ public class FloatLabelTextField: UITextField {
         .contentMode(.scaleAspectFit)
         .build()
     
-    private let insets = UIEdgeInsets(top: 29, left: 15, bottom: 12, right: 15)
+    private var insets: UIEdgeInsets {
+       var insets = UIEdgeInsets(top: 29, left: 15, bottom: 12, right: 15)
+        if let leftView = leftView {
+            insets.left += leftView.frame.width + 10
+        }
+        return insets
+    }
     
     public var title: String? {
         willSet {
@@ -70,6 +76,20 @@ public class FloatLabelTextField: UITextField {
         super.init(coder: aDecoder)
         configureContents()
     }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        placeholder = nil
+        attributedPlaceholder = nil
+        setTitlePosition()
+        if isFirstResponder || !text!.isEmpty {
+            setTitleToTop(animate: true)
+        } else {
+            setTitleToCenter(animate: true)
+        }
+        layer.borderColor = isFirstResponder ? UIColor.appRed.cgColor : UIColor.appZircon.cgColor
+    }
+    
 }
 
 // MARK: - ConfigureContents - SetTitle
