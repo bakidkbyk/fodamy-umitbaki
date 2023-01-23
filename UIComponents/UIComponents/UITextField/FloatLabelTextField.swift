@@ -84,10 +84,12 @@ public class FloatLabelTextField: UITextField {
         setTitlePosition()
         if isFirstResponder || !text!.isEmpty {
             setTitleToTop(animate: true)
+            layer.borderColor = UIColor.appRed.cgColor
         } else {
             setTitleToCenter(animate: true)
+            layer.borderColor = UIColor.appZircon.cgColor
         }
-        layer.borderColor = isFirstResponder ? UIColor.appRed.cgColor : UIColor.appZircon.cgColor
+        
     }
     
 }
