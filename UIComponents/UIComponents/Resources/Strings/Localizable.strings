@@ -7,6 +7,12 @@
 */
 // MARK: - PlaceHolder
 "username" = "Kullanıcı Adı";
-"email" = "E-mail Adresi";
+"email"    = "E-mail Adresi";
 "password" = "Şifre";
+
+// MARK: - Register View Controller
+"title" = "Üye Ol"
+"signUpButtonText" = "Üye Ol"
+"bottomLabelText"  = "Hesabın mı var?"
+"bottomButtonText" = "Giriş Yap"
 
