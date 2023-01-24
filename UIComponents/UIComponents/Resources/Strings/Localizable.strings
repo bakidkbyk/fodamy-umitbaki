@@ -5,7 +5,8 @@
   Created by Baki Dikbıyık on 6.01.2023.
   
 */
+// MARK: - PlaceHolder
+"username" = "Kullanıcı Adı";
+"email" = "E-mail Adresi";
+"password" = "Şifre";
 
-"hello" = "adam";
-"baki" = "dikbıyık";
-"naber" = "iyi sen";
