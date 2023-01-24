@@ -33,6 +33,15 @@
 		FAA819C42964609A00B4C83A /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C02964609A00B4C83A /* HomeViewRouter.swift */; };
 		FAA819C52964609A00B4C83A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C12964609A00B4C83A /* HomeViewController.swift */; };
 		FAA819C62964609A00B4C83A /* HomeViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C22964609A00B4C83A /* HomeViewRoute.swift */; };
+		FAB60DA2297FADCD00F1DB9A /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60D9F297FADCD00F1DB9A /* RegisterRouter.swift */; };
+		FAB60DA3297FADCD00F1DB9A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DA0297FADCD00F1DB9A /* RegisterViewController.swift */; };
+		FAB60DA4297FADCD00F1DB9A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DA1297FADCD00F1DB9A /* RegisterViewModel.swift */; };
+		FAB60DA8297FB72800F1DB9A /* RegisterRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DA7297FB72800F1DB9A /* RegisterRoute.swift */; };
+		FAB60DB6297FD9FD00F1DB9A /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB5297FD9FD00F1DB9A /* Validation.swift */; };
+		FAB60DBD29804E1300F1DB9A /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DBA29804E1300F1DB9A /* LoginRouter.swift */; };
+		FAB60DBE29804E1300F1DB9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DBB29804E1300F1DB9A /* LoginViewController.swift */; };
+		FAB60DBF29804E1300F1DB9A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DBC29804E1300F1DB9A /* LoginViewModel.swift */; };
+		FAB60DC129804E2400F1DB9A /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DC029804E2400F1DB9A /* LoginRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +76,15 @@
 		FAA819C02964609A00B4C83A /* HomeViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
 		FAA819C12964609A00B4C83A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAA819C22964609A00B4C83A /* HomeViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewRoute.swift; sourceTree = "<group>"; };
+		FAB60D9F297FADCD00F1DB9A /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		FAB60DA0297FADCD00F1DB9A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FAB60DA1297FADCD00F1DB9A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		FAB60DA7297FB72800F1DB9A /* RegisterRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRoute.swift; sourceTree = "<group>"; };
+		FAB60DB5297FD9FD00F1DB9A /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		FAB60DBA29804E1300F1DB9A /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		FAB60DBB29804E1300F1DB9A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FAB60DBC29804E1300F1DB9A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FAB60DC029804E2400F1DB9A /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +144,7 @@
 		FA0A2F1C2962BB56004E82C6 /* fodamy-baki */ = {
 			isa = PBXGroup;
 			children = (
+				FAB60DB4297FD9F200F1DB9A /* Validation */,
 				FA61FFAB296FE52800D08E28 /* DataProvider */,
 				FAA81993296425BE00B4C83A /* Routing */,
 				FA2DB7992962E80C004D38E2 /* AppDelegate */,
@@ -161,6 +180,7 @@
 		FAA8198D2964217F00B4C83A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FAB60D93297FAC9900F1DB9A /* Auth */,
 				FAA819B32964403200B4C83A /* Base */,
 				FAA819BE2964609A00B4C83A /* HomeViewController */,
 			);
@@ -224,6 +244,45 @@
 				FAA819C22964609A00B4C83A /* HomeViewRoute.swift */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		FAB60D93297FAC9900F1DB9A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FAB60DB929804DF600F1DB9A /* Login */,
+				FAB60D94297FACA200F1DB9A /* Register */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FAB60D94297FACA200F1DB9A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FAB60DA0297FADCD00F1DB9A /* RegisterViewController.swift */,
+				FAB60DA1297FADCD00F1DB9A /* RegisterViewModel.swift */,
+				FAB60D9F297FADCD00F1DB9A /* RegisterRouter.swift */,
+				FAB60DA7297FB72800F1DB9A /* RegisterRoute.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FAB60DB4297FD9F200F1DB9A /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				FAB60DB5297FD9FD00F1DB9A /* Validation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		FAB60DB929804DF600F1DB9A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FAB60DBA29804E1300F1DB9A /* LoginRouter.swift */,
+				FAB60DBB29804E1300F1DB9A /* LoginViewController.swift */,
+				FAB60DBC29804E1300F1DB9A /* LoginViewModel.swift */,
+				FAB60DC029804E2400F1DB9A /* LoginRoute.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,24 +421,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA87472729751E6800039E92 /* APILogger.swift in Sources */,
+				FAB60DA2297FADCD00F1DB9A /* RegisterRouter.swift in Sources */,
 				FAA819C42964609A00B4C83A /* HomeViewRouter.swift in Sources */,
+				FAB60DBD29804E1300F1DB9A /* LoginRouter.swift in Sources */,
 				FAA819A8296425BE00B4C83A /* Transition.swift in Sources */,
 				FAA819A6296425BE00B4C83A /* ModalTransition.swift in Sources */,
 				FAA819C52964609A00B4C83A /* HomeViewController.swift in Sources */,
 				FAA819A9296425BE00B4C83A /* PushTransition.swift in Sources */,
+				FAB60DBF29804E1300F1DB9A /* LoginViewModel.swift in Sources */,
 				FAA819A4296425BE00B4C83A /* Animator.swift in Sources */,
 				FA87472929751E8700039E92 /* DataProvider.swift in Sources */,
+				FAB60DA3297FADCD00F1DB9A /* RegisterViewController.swift in Sources */,
 				FA87472329751C6400039E92 /* APIRequestAdapter.swift in Sources */,
 				FAA819A7296425BE00B4C83A /* PlaceOnWindowTransition.swift in Sources */,
 				FAA819B52964404C00B4C83A /* BaseViewController.swift in Sources */,
 				FA61FFAD296FE53F00D08E28 /* APIDataProvider.swift in Sources */,
 				FAA819A5296425BE00B4C83A /* Router.swift in Sources */,
+				FAB60DA4297FADCD00F1DB9A /* RegisterViewModel.swift in Sources */,
 				FAA819C62964609A00B4C83A /* HomeViewRoute.swift in Sources */,
+				FAB60DA8297FB72800F1DB9A /* RegisterRoute.swift in Sources */,
 				FAA819A3296425BE00B4C83A /* AppRouter.swift in Sources */,
 				FAA819B72964406000B4C83A /* BaseViewModel.swift in Sources */,
 				FA0A2F1E2962BB56004E82C6 /* AppDelegate.swift in Sources */,
 				FAA819C32964609A00B4C83A /* HomeViewModel.swift in Sources */,
+				FAB60DB6297FD9FD00F1DB9A /* Validation.swift in Sources */,
+				FAB60DBE29804E1300F1DB9A /* LoginViewController.swift in Sources */,
 				FA87472529751E3D00039E92 /* APIRequestInterceptor.swift in Sources */,
+				FAB60DC129804E2400F1DB9A /* LoginRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

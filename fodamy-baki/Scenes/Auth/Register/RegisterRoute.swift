@@ -5,4 +5,24 @@
 //  Created by Baki Dikbıyık on 24.01.2023.
 //
 
-import Foundation
+protocol RegisterRoute {
+    func pushRegister()
+}
+
+extension RegisterRoute where Self: RouterProtocol {
+    
+    func pushRegister() {
+        
+        let router = RegisterRouter()
+        let viewModel = RegisterViewModel(router: router)
+        let viewController = RegisterViewController(viewModel: viewModel)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        let transition = PlaceOnWindowTransition()
+        
+        router.viewController = viewController
+        router.openTransition = transition
+        
+        open(navigationController, transition: transition)
+        
+    }
+}

@@ -10,9 +10,14 @@
 "email"    = "E-mail Adresi";
 "password" = "Şifre";
 
+// MARK: - Error
+"checkInformations" = "lütfen bilgilerinizi kontrol ediniz.";
+"emptyFields"       = "lütfen boş alanları doldurunuz";
 // MARK: - Register View Controller
-"title" = "Üye Ol"
-"signUpButtonText" = "Üye Ol"
-"bottomLabelText"  = "Hesabın mı var?"
-"bottomButtonText" = "Giriş Yap"
+"title" = "Üye Ol";
+"signUpButtonText" = "Üye Ol";
+"bottomLabelText"  = "Hesabın mı var?";
+"bottomButtonText" = "Giriş Yap";
+
+
 

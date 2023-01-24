@@ -10,10 +10,22 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
+  /// Giriş Yap
+  public static let bottomButtonText = L10n.tr("Localizable", "bottomButtonText")
+  /// Hesabın mı var?
+  public static let bottomLabelText = L10n.tr("Localizable", "bottomLabelText")
+  /// lütfen bilgilerinizi kontrol ediniz.
+  public static let checkInformations = L10n.tr("Localizable", "checkInformations")
   /// E-mail Adresi
   public static let email = L10n.tr("Localizable", "email")
+  /// lütfen boş alanları doldurunuz
+  public static let emptyFields = L10n.tr("Localizable", "emptyFields")
   /// Şifre
   public static let password = L10n.tr("Localizable", "password")
+  /// Üye Ol
+  public static let signUpButtonText = L10n.tr("Localizable", "signUpButtonText")
+  /// Üye Ol
+  public static let title = L10n.tr("Localizable", "title")
   /// Kullanıcı Adı
   public static let username = L10n.tr("Localizable", "username")
 }

@@ -5,4 +5,6 @@
 //  Created by Baki Dikbıyık on 24.01.2023.
 //
 
-import Foundation
+public struct Image: Decodable {
+    public let url: String?
+}
