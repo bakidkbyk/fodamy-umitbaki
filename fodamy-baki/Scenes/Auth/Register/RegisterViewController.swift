@@ -5,9 +5,6 @@
 //  Created by Baki Dikbıyık on 24.01.2023.
 //
 
-import UIKit
-import MobilliumBuilders
-
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
    // MARK: - Variables
@@ -28,11 +25,15 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         .textColor(.appCinder)
         .build()
     
+    private let bodyStackView = UIStackViewBuilder()
+        .axis(.vertical)
+        .spacing(15)
+        .build()
+    
     private let usernameTextField = FloatLabelTextField()
     private let emailTextField    = FloatLabelTextField()
     private let passwordTextField = FloatLabelTextField()
-    
-    private let signUpButton = ButtonFactory.createPrimaryButton(style: .large)
+    private let signUpButton      = ButtonFactory.createPrimaryButton(style: .large)
     
     private let bottomStackView = UIStackViewBuilder()
         .axis(.horizontal)
@@ -53,6 +54,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
+        setLocalize()
         configureContents()
     }
 }
@@ -63,6 +65,7 @@ extension RegisterViewController {
     private func addSubViews() {
         addScrollView()
         addContentStackView()
+        addTextFieldStackView()
         addBottomStackView()
     }
     
@@ -80,22 +83,22 @@ extension RegisterViewController {
     
     private func addContentStackView() {
         contentStackView.addArrangedSubview(titleLabel)
-        titleLabel.centerX(to: contentStackView)
         
-        contentStackView.addArrangedSubview(usernameTextField)
+        contentStackView.addArrangedSubview(bodyStackView)
+    }
+    
+    private func addTextFieldStackView() {
+        
+        bodyStackView.addArrangedSubview(usernameTextField)
         usernameTextField.height(60)
-        contentStackView.setCustomSpacing(15, after: usernameTextField)
         
-        contentStackView.addArrangedSubview(emailTextField)
+        bodyStackView.addArrangedSubview(emailTextField)
         emailTextField.height(60)
-        contentStackView.setCustomSpacing(15, after: emailTextField)
         
-        contentStackView.addArrangedSubview(passwordTextField)
+        bodyStackView.addArrangedSubview(passwordTextField)
         passwordTextField.height(60)
-        contentStackView.setCustomSpacing(15, after: passwordTextField)
         
-        contentStackView.addArrangedSubview(signUpButton)
-        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        bodyStackView.addArrangedSubview(signUpButton)
         signUpButton.height(60)
     }
     
@@ -108,10 +111,6 @@ extension RegisterViewController {
         bottomStackView.centerXToSuperview()
         bottomStackView.bottomToSuperview(usingSafeArea: true)
         bottomStackView.topToBottom(of: scrollView).constant = 20
-        bottomStackView.leadingToSuperview(relation: .equalOrGreater).constant = 20
-        bottomStackView.trailingToSuperview(relation: .equalOrLess).constant = -20
-        
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
 }
 
@@ -119,8 +118,6 @@ extension RegisterViewController {
 extension RegisterViewController {
     
     private func configureContents() {
-        setLocalize()
-        
         usernameTextField.leftImage = .icUser
         emailTextField.leftImage = .icMail
         emailTextField.autocapitalizationType = .none
@@ -129,17 +126,19 @@ extension RegisterViewController {
         passwordTextField.leftImage = .icPassword
         passwordTextField.isSecureTextEntry = true
         
-        view.backgroundColor = .white
+        view.backgroundColor = .appWhite
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     private func setLocalize() {
-        titleLabel.text = L10n.title
-        usernameTextField.title = L10n.username
-        emailTextField.title = L10n.email
-        passwordTextField.title = L10n.password
-        signUpButton.setTitle(L10n.signUpButtonText, for: .normal)
-        loginButton.setTitle(L10n.bottomButtonText, for: .normal)
-        bottomLabel.text = L10n.bottomLabelText
+        titleLabel.text = L10n.Register.title
+        usernameTextField.title = L10n.Register.usernamePlaceHolder
+        emailTextField.title = L10n.Register.emailPlaceHolder
+        passwordTextField.title = L10n.Register.passwordPlaceHolder
+        signUpButton.setTitle(L10n.Register.signUpButtonText, for: .normal)
+        loginButton.setTitle(L10n.Register.bottomButtonText, for: .normal)
+        bottomLabel.text = L10n.Register.bottomLabelText
     }
 }
 
@@ -159,11 +158,11 @@ extension RegisterViewController {
             showWarningToast(message: L10n.Register.emptyFields)
             return
         }
+        
         let validation = Validation()
         guard validation.isValidEmail(email) else { return }
         guard validation.isValidPassword(password) else { return }
         
         viewModel.sendRegisterRequest(username: username, email: email, password: password)
-        
     }
 }

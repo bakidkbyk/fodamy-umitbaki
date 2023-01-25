@@ -6,12 +6,12 @@
 //
 
 protocol RegisterRoute {
-    func pushRegister()
+    func placeOnWindowRegister()
 }
 
 extension RegisterRoute where Self: RouterProtocol {
     
-    func pushRegister() {
+    func placeOnWindowRegister() {
         
         let router = RegisterRouter()
         let viewModel = RegisterViewModel(router: router)

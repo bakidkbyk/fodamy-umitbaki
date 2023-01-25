@@ -24,7 +24,7 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
 extension RegisterViewModel {
     
     func showLoginScreen() {
-        router.presentLogin()
+        print("bottom buttona tıklandı.")
     }
 }
 
@@ -37,7 +37,7 @@ extension RegisterViewModel {
             self.hideLoading?()
             switch result {
             case .success:
-                self.router.presentLogin()
+                print("Register Success")
             case .failure(let error):
                 self.showWarningToast?("\(error.localizedDescription) \(L10n.Register.checkInformations)")
             }
