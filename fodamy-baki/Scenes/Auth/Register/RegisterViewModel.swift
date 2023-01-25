@@ -8,17 +8,13 @@
 import Foundation
 
 protocol RegisterViewDataSource {}
-
 protocol RegisterViewEventSource {}
-
 protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
-    
     func showLoginScreen()
     func sendRegisterRequest(username: String, email: String, password: String)
 }
 
-final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtocol {
-}
+final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtocol {}
 
 // MARK: - Actions
 extension RegisterViewModel {
@@ -30,6 +26,7 @@ extension RegisterViewModel {
 
 // MARK: - Network
 extension RegisterViewModel {
+    
     func sendRegisterRequest(username: String, email: String, password: String) {
         showLoading?()
         dataProvider.request(for: RegisterRequest(username: username, email: email, password: password)) { [ weak self ] (result) in
@@ -39,7 +36,7 @@ extension RegisterViewModel {
             case .success:
                 print("Register Success")
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription) \(L10n.Register.checkInformations)")
+                self.showWarningToast?(error.localizedDescription)
             }
         }
     }
