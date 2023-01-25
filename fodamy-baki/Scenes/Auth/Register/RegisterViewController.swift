@@ -10,6 +10,7 @@ import MobilliumBuilders
 
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
+   // MARK: - Variables
     private let scrollView = UIScrollViewBuilder()
         .build()
     
@@ -54,7 +55,6 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         addSubViews()
         configureContents()
     }
-    
 }
 
 // MARK: - UILayout
@@ -106,9 +106,8 @@ extension RegisterViewController {
         bottomStackView.addArrangedSubview(loginButton)
         
         bottomStackView.centerXToSuperview()
-        bottomStackView.topToBottom(of: scrollView).constant = 20
-        
         bottomStackView.bottomToSuperview(usingSafeArea: true)
+        bottomStackView.topToBottom(of: scrollView).constant = 20
         bottomStackView.leadingToSuperview(relation: .equalOrGreater).constant = 20
         bottomStackView.trailingToSuperview(relation: .equalOrLess).constant = -20
         
@@ -143,6 +142,7 @@ extension RegisterViewController {
         bottomLabel.text = L10n.bottomLabelText
     }
 }
+
 // MARK: - Actions
 extension RegisterViewController {
     

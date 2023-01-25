@@ -37,8 +37,7 @@ extension RegisterViewModel {
             self.hideLoading?()
             switch result {
             case .success:
-                self.router.close()
-                
+                self.router.presentLogin()
             case .failure(let error):
                 self.showWarningToast?("\(error.localizedDescription) \(L10n.checkInformations)")
             }
