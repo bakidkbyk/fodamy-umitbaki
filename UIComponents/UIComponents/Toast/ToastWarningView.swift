@@ -11,7 +11,7 @@ public class ToastWarningView: UIView {
     
     private let label = UILabelBuilder()
         .font(.systemFont(ofSize: 16))
-        .textColor(.black)
+        .textColor(.appWhite)
         .textAlignment(.center)
         .numberOfLines(0)
         .build()

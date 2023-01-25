@@ -6,5 +6,6 @@
 //
 
 public struct Image: Decodable {
+    
     public let url: String?
 }

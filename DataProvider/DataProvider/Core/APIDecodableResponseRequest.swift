@@ -19,7 +19,7 @@ public extension APIDecodableResponseRequest {
     }
 }
 
-// MARK: - url
+// MARK: - Url
 public extension APIDecodableResponseRequest {
     var url: String {
         return "https://fodamy.mobillium.com/api/" + path

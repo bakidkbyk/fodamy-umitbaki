@@ -16,7 +16,7 @@
 "bottomLabelText"            = "Hesabın mı var?";
 "bottomButtonText"           = "Giriş Yap";
 "Register.emptyFields"       = "lütfen boş alanları doldurunuz";
-"Register.checkInformations" = "lütfen bilgilerinizi kontrol ediniz."
+"Register.checkInformations" = "lütfen bilgilerinizi kontrol ediniz.";
 
 
 

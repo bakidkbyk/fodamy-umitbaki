@@ -156,7 +156,7 @@ extension RegisterViewController {
         guard let username = usernameTextField.text,
               let email    = emailTextField.text,
               let password = passwordTextField.text else {
-            showWarningToast(message: L10n.emptyFields)
+            showWarningToast(message: L10n.Register.emptyFields)
             return
         }
         let validation = Validation()
@@ -164,5 +164,6 @@ extension RegisterViewController {
         guard validation.isValidPassword(password) else { return }
         
         viewModel.sendRegisterRequest(username: username, email: email, password: password)
+        
     }
 }

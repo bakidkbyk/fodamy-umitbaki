@@ -6,6 +6,7 @@
 //
 
 public struct Auth: Decodable {
+    
     public let token: String
     public let user: User
 }

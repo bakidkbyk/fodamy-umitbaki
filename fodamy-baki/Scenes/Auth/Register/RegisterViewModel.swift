@@ -39,7 +39,7 @@ extension RegisterViewModel {
             case .success:
                 self.router.presentLogin()
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription) \(L10n.checkInformations)")
+                self.showWarningToast?("\(error.localizedDescription) \(L10n.Register.checkInformations)")
             }
         }
     }
