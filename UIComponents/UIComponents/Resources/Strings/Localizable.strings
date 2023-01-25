@@ -13,6 +13,7 @@
 // MARK: - Error
 "checkInformations" = "lütfen bilgilerinizi kontrol ediniz.";
 "emptyFields"       = "lütfen boş alanları doldurunuz";
+
 // MARK: - Register View Controller
 "title" = "Üye Ol";
 "signUpButtonText" = "Üye Ol";
