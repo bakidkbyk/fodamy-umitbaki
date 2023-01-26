@@ -89,9 +89,7 @@ public class FloatLabelTextField: UITextField {
             setTitleToCenter(animate: true)
             layer.borderColor = UIColor.appZircon.cgColor
         }
-        
     }
-    
 }
 
 // MARK: - ConfigureContents - SetTitle
@@ -117,7 +115,6 @@ extension FloatLabelTextField {
         titleLabel.font = .font(.nunitoBold, size: .small)
         titleLabel.textColor = .appRed
         titleLabel.frame.origin.y = (contentHeight / 2) - titleHeight
-        
     }
     
     private func configureTitleForCenter() {

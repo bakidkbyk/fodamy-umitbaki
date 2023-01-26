@@ -30,11 +30,12 @@ class BaseViewModel<R: Router>: BaseViewModelProtocol {
     var showWarningToast: StringClosure?
     
     let router: R
+    let dataProvider: DataProviderProtocol
    
-    init(router: R) {
+    init(router: R, dataProvider: DataProviderProtocol = apiDataProvider) {
         self.router = router
-       
-    }
+        self.dataProvider = dataProvider
+       }
     
     #if DEBUG
     deinit {

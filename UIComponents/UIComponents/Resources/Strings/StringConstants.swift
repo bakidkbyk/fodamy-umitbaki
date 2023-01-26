@@ -10,12 +10,27 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
-  /// E-mail Adresi
-  public static let email = L10n.tr("Localizable", "email")
-  /// Şifre
-  public static let password = L10n.tr("Localizable", "password")
-  /// Kullanıcı Adı
-  public static let username = L10n.tr("Localizable", "username")
+
+  public enum Register {
+    /// Giriş Yap
+    public static let bottomButtonText = L10n.tr("Localizable", "Register.bottomButtonText")
+    /// Hesabın mı var?
+    public static let bottomLabelText = L10n.tr("Localizable", "Register.bottomLabelText")
+    /// lütfen bilgilerinizi kontrol ediniz.
+    public static let checkInformations = L10n.tr("Localizable", "Register.checkInformations")
+    /// E-mail Adresi
+    public static let emailPlaceHolder = L10n.tr("Localizable", "Register.emailPlaceHolder")
+    /// lütfen boş alanları doldurunuz
+    public static let emptyFields = L10n.tr("Localizable", "Register.emptyFields")
+    /// Şifre
+    public static let passwordPlaceHolder = L10n.tr("Localizable", "Register.passwordPlaceHolder")
+    /// Üye Ol
+    public static let signUpButtonText = L10n.tr("Localizable", "Register.signUpButtonText")
+    /// Üye Ol
+    public static let title = L10n.tr("Localizable", "Register.title")
+    /// Kullanıcı Adı
+    public static let usernamePlaceHolder = L10n.tr("Localizable", "Register.usernamePlaceHolder")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

@@ -5,8 +5,17 @@
   Created by Baki Dikbıyık on 6.01.2023.
   
 */
-// MARK: - PlaceHolder
-"username" = "Kullanıcı Adı";
-"email" = "E-mail Adresi";
-"password" = "Şifre";
+
+// MARK: - Register View Controller
+"Register.title"               = "Üye Ol";
+"Register.signUpButtonText"    = "Üye Ol";
+"Register.bottomLabelText"     = "Hesabın mı var?";
+"Register.bottomButtonText"    = "Giriş Yap";
+"Register.usernamePlaceHolder" = "Kullanıcı Adı";
+"Register.emailPlaceHolder"    = "E-mail Adresi";
+"Register.passwordPlaceHolder" = "Şifre";
+"Register.emptyFields"         = "lütfen boş alanları doldurunuz";
+"Register.checkInformations"   = "lütfen bilgilerinizi kontrol ediniz.";
+
+
 

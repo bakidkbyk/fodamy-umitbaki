@@ -35,7 +35,7 @@ public class ButtonFactory {
     public static func createPrimaryButton(style: Style) -> UIButton {
         let button = UIButtonBuilder()
             .titleFont(.font(.nunitoBold, size: style.fontSize))
-            .titleColor(.appRed)
+            .titleColor(.appWhite)
             .backgroundColor(.appRed)
             .cornerRadius(4)
             .build()
@@ -51,7 +51,7 @@ public class ButtonFactory {
         let button = UIButtonBuilder()
             .titleFont(.font(.nunitoBold, size: style.fontSize))
             .titleColor(.appRed)
-            .backgroundColor(.appRed)
+            .backgroundColor(.appWhite)
             .cornerRadius(4)
             .borderWidth(2)
             .borderColor(UIColor.appRed.cgColor)

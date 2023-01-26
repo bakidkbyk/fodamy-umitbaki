@@ -16,6 +16,10 @@
 		FA910931296E8263005F8651 /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA910930296E8263005F8651 /* RequestEncoding.swift */; };
 		FA910933296E8286005F8651 /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA910932296E8286005F8651 /* DataProviderProtocol.swift */; };
 		FAA819602964063B00B4C83A /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA8195F2964063B00B4C83A /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAB60DAC297FD21400F1DB9A /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DAB297FD21400F1DB9A /* RegisterRequest.swift */; };
+		FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DAE297FD48200F1DB9A /* Auth.swift */; };
+		FAB60DB1297FD4AA00F1DB9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB0297FD4AA00F1DB9A /* User.swift */; };
+		FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB2297FD4C200F1DB9A /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		FA910932296E8286005F8651 /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		FAA8195C2964063B00B4C83A /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA8195F2964063B00B4C83A /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
+		FAB60DAB297FD21400F1DB9A /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		FAB60DAE297FD48200F1DB9A /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		FAB60DB0297FD4AA00F1DB9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FAB60DB2297FD4C200F1DB9A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +106,38 @@
 		FAA8195E2964063B00B4C83A /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				FAB60DAD297FD46F00F1DB9A /* Model */,
+				FAB60DA9297FD1F600F1DB9A /* Request */,
 				FA3B3295296D493500FEF004 /* Core */,
 				FAA8195F2964063B00B4C83A /* DataProvider.h */,
 			);
 			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		FAB60DA9297FD1F600F1DB9A /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FAB60DAA297FD20100F1DB9A /* Auth */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		FAB60DAA297FD20100F1DB9A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FAB60DAB297FD21400F1DB9A /* RegisterRequest.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FAB60DAD297FD46F00F1DB9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAB60DAE297FD48200F1DB9A /* Auth.swift */,
+				FAB60DB0297FD4AA00F1DB9A /* User.swift */,
+				FAB60DB2297FD4C200F1DB9A /* Image.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +252,11 @@
 				FA910933296E8286005F8651 /* DataProviderProtocol.swift in Sources */,
 				FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */,
 				FA91092F296E8237005F8651 /* RequestMethod.swift in Sources */,
+				FAB60DAC297FD21400F1DB9A /* RegisterRequest.swift in Sources */,
 				FA91092D296E803A005F8651 /* APIDecodableResponseRequest.swift in Sources */,
+				FAB60DB1297FD4AA00F1DB9A /* User.swift in Sources */,
+				FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */,
+				FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
