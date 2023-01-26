@@ -40,7 +40,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         .spacing(4)
         .build()
     
-    private let bottomLabel = UILabelBuilder()
+    private let registerLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .xLarge))
         .textColor(.appRaven)
         .build()
@@ -105,10 +105,12 @@ extension RegisterViewController {
     private func addBottomStackView() {
         view.addSubview(bottomStackView)
         
-        bottomStackView.addArrangedSubview(bottomLabel)
+        bottomStackView.addArrangedSubview(registerLabel)
         bottomStackView.addArrangedSubview(loginButton)
         
         bottomStackView.centerXToSuperview()
+        bottomStackView.leadingToSuperview(relation: .equalOrGreater).constant = 20
+        bottomStackView.trailingToSuperview(relation: .equalOrLess).constant = -20
         bottomStackView.bottomToSuperview(usingSafeArea: true)
         bottomStackView.topToBottom(of: scrollView).constant = 20
     }
@@ -138,7 +140,7 @@ extension RegisterViewController {
         passwordTextField.title = L10n.Register.passwordPlaceHolder
         signUpButton.setTitle(L10n.Register.signUpButtonText, for: .normal)
         loginButton.setTitle(L10n.Register.bottomButtonText, for: .normal)
-        bottomLabel.text = L10n.Register.bottomLabelText
+        registerLabel.text = L10n.Register.bottomLabelText
     }
 }
 
