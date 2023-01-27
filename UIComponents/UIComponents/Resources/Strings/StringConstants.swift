@@ -11,6 +11,25 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum Login {
+    /// Üye Ol
+    public static let bottomButtonText = L10n.tr("Localizable", "Login.bottomButtonText")
+    /// Hesabın mı yok?
+    public static let bottomLabelText = L10n.tr("Localizable", "Login.bottomLabelText")
+    /// lütfen bilgilerinizi kontrol ediniz.
+    public static let checkInformations = L10n.tr("Localizable", "Login.checkInformations")
+    /// E-mail Adresi
+    public static let emailPlaceHolder = L10n.tr("Localizable", "Login.emailPlaceHolder")
+    /// lütfen boş alanları doldurunuz
+    public static let emptyFields = L10n.tr("Localizable", "Login.emptyFields")
+    /// Giriş Yap
+    public static let loginButtonText = L10n.tr("Localizable", "Login.loginButtonText")
+    /// Şifre
+    public static let passwordPlaceHolder = L10n.tr("Localizable", "Login.passwordPlaceHolder")
+    /// Giriş Yap
+    public static let title = L10n.tr("Localizable", "Login.title")
+  }
+
   public enum Register {
     /// Giriş Yap
     public static let bottomButtonText = L10n.tr("Localizable", "Register.bottomButtonText")
