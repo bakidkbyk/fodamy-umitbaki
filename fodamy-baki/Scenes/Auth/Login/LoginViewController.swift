@@ -34,8 +34,13 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     private let emailTextField    = FloatLabelTextField()
     private let passwordTextField = FloatLabelTextField()
-    private let loginButton       = ButtonFactory.createPrimaryButton(style: .large)
+    private let actionLoginButton = ButtonFactory.createPrimaryButton(style: .large)
+    
+    private let forgotPasswordButtonContainerView = UIViewBuilder()
+        .build()
     private let forgotPasswordButton = UIButtonBuilder()
+        .titleFont(.font(.nunitoSemiBold, size: .large))
+        .titleColor(.appRaven)
         .build()
     
     private let bottomStackView = UIStackViewBuilder()
@@ -60,6 +65,16 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         setLocalize()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
 }
 
 // MARK: - UILayout
@@ -82,12 +97,14 @@ extension LoginViewController {
         
         contentView.addSubview(contentStackView)
         contentStackView.edgesToSuperview(insets: .left(15) + .right(15))
+        
+        
     }
     
     private func addContentStackView() {
         contentStackView.addArrangedSubview(titleLabel)
-        
         contentStackView.addArrangedSubview(bodyStackView)
+        contentStackView.addArrangedSubview(forgotPasswordButtonContainerView)
     }
     
     private func addBodyStackView() {
@@ -97,26 +114,28 @@ extension LoginViewController {
         bodyStackView.addArrangedSubview(passwordTextField)
         passwordTextField.height(60)
         
-        bodyStackView.addArrangedSubview(loginButton)
-        loginButton.height(60)
+        bodyStackView.addArrangedSubview(actionLoginButton)
+        actionLoginButton.height(60)
         
-        bodyStackView.addArrangedSubview(forgotPasswordButton)
+        bodyStackView.addArrangedSubview(forgotPasswordButtonContainerView)
+        
+        forgotPasswordButtonContainerView.addSubview(forgotPasswordButton)
         forgotPasswordButton.edgesToSuperview(excluding: .leading)
+        
     }
     
     private func addBottomStackView() {
         view.addSubview(bottomStackView)
         
-        bottomStackView.addArrangedSubview(emailTextField)
-        bottomStackView.addArrangedSubview(passwordTextField)
+        bottomStackView.addArrangedSubview(loginLabel)
+        bottomStackView.addArrangedSubview(registerButton)
         
         bottomStackView.centerXToSuperview()
-        bottomStackView.topToBottom(of: scrollView).constant = 20
-        bottomStackView.edgesToSuperview(usingSafeArea: true)
         bottomStackView.leadingToSuperview(relation: .equalOrGreater).constant = 20
-        bottomStackView.trailingToSuperview(relation:.equalOrLess).constant = -20
+        bottomStackView.trailingToSuperview(relation: .equalOrLess).constant = -20
+        bottomStackView.bottomToSuperview(usingSafeArea: true)
+        bottomStackView.topToBottom(of: scrollView).constant = 20
     }
-    
 }
 
 // MARK: - Configure Contents and Localize
@@ -131,13 +150,40 @@ extension LoginViewController {
         passwordTextField.leftImage = .icPassword
         passwordTextField.isSecureTextEntry = true
         
+        actionLoginButton.addTarget(self, action: #selector(actionLoginButtonTapped), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        
+        self.navigationItem.setHidesBackButton(false, animated: true)
     }
     
     private func setLocalize() {
         titleLabel.text = L10n.Login.title
-        emailTextField.text = L10n.Login.emailPlaceHolder
-        passwordTextField.text = L10n.Login.passwordPlaceHolder
+        emailTextField.title = L10n.Login.emailPlaceHolder
+        passwordTextField.title = L10n.Login.passwordPlaceHolder
+        forgotPasswordButton.setTitle(L10n.Login.forgotPasswordButtonText, for: .normal)
+        actionLoginButton.setTitle(L10n.Login.loginButtonText, for: .normal)
+        loginLabel.text = L10n.Login.bottomLabelText
+        registerButton.setTitle(L10n.Login.bottomButtonText, for: .normal)
         
+    }
+}
+
+// MARK: - Actions
+extension LoginViewController {
+    
+    @objc
+    func actionLoginButtonTapped() {
         
+    }
+    
+    @objc
+    func forgotPasswordButtonTapped() {
+        
+    }
+    
+    @objc
+    func registerButtonTapped() {
+        viewModel.showRegisterScreen()
     }
 }

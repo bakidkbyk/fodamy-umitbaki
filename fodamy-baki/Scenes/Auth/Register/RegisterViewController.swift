@@ -121,10 +121,14 @@ extension RegisterViewController {
     
     private func configureContents() {
         usernameTextField.leftImage = .icUser
+        usernameTextField.autocorrectionType = .no
+        usernameTextField.autocapitalizationType = .none
+        
         emailTextField.leftImage = .icMail
         emailTextField.autocapitalizationType = .none
         emailTextField.autocorrectionType = .no
         emailTextField.keyboardType = .emailAddress
+        
         passwordTextField.leftImage = .icPassword
         passwordTextField.isSecureTextEntry = true
         

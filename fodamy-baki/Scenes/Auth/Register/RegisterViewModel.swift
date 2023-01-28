@@ -34,7 +34,7 @@ extension RegisterViewModel {
             self.hideLoading?()
             switch result {
             case .success:
-                print("Register Success")
+                self.showLoginScreen()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
