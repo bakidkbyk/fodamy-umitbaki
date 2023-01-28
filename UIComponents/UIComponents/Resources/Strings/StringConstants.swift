@@ -22,6 +22,8 @@ public enum L10n {
     public static let emailPlaceHolder = L10n.tr("Localizable", "Login.emailPlaceHolder")
     /// lütfen boş alanları doldurunuz
     public static let emptyFields = L10n.tr("Localizable", "Login.emptyFields")
+    /// Şifrenizi mi unuttunuz?
+    public static let forgotPasswordButtonText = L10n.tr("Localizable", "Login.forgotPasswordButtonText")
     /// Giriş Yap
     public static let loginButtonText = L10n.tr("Localizable", "Login.loginButtonText")
     /// Şifre
