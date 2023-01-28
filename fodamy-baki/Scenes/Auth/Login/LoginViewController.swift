@@ -97,8 +97,6 @@ extension LoginViewController {
         
         contentView.addSubview(contentStackView)
         contentStackView.edgesToSuperview(insets: .left(15) + .right(15))
-        
-        
     }
     
     private func addContentStackView() {
@@ -174,6 +172,17 @@ extension LoginViewController {
     
     @objc
     func actionLoginButtonTapped() {
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text else {
+            self.showWarningToast(message: L10n.Login.emptyFields)
+            return
+        }
+        
+        let validation = Validation()
+        guard validation.isValidEmail(email) else { return }
+        guard validation.isValidPassword(password) else { return }
+        
+        viewModel.sendLoginRequest(email: email, password: password)
         
     }
     

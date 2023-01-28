@@ -33,7 +33,8 @@ extension RegisterViewModel {
             guard let self = self else { return }
             self.hideLoading?()
             switch result {
-            case .success:
+            case .success(let response):
+                print(response.token)
                 self.showLoginScreen()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
