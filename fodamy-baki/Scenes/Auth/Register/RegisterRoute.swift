@@ -6,23 +6,23 @@
 //
 
 protocol RegisterRoute {
-    func placeOnWindowRegister()
+    func pushRegister()
 }
 
 extension RegisterRoute where Self: RouterProtocol {
     
-    func placeOnWindowRegister() {
+    func pushRegister() {
         
         let router = RegisterRouter()
         let viewModel = RegisterViewModel(router: router)
         let viewController = RegisterViewController(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
-        let transition = PlaceOnWindowTransition()
+       
+        let transition = PushTransition()
         
         router.viewController = viewController
         router.openTransition = transition
         
-        open(navigationController, transition: transition)
+        open(viewController, transition: transition)
         
     }
 }

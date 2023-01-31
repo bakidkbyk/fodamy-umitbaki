@@ -57,6 +57,16 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         setLocalize()
         configureContents()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.setHidesBackButton(false, animated: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
 }
 
 // MARK: - UILayout
@@ -120,6 +130,8 @@ extension RegisterViewController {
 extension RegisterViewController {
     
     private func configureContents() {
+        view.backgroundColor = .appWhite
+        
         usernameTextField.leftImage = .icUser
         usernameTextField.autocorrectionType = .no
         usernameTextField.autocapitalizationType = .none
@@ -132,9 +144,9 @@ extension RegisterViewController {
         passwordTextField.leftImage = .icPassword
         passwordTextField.isSecureTextEntry = true
         
-        view.backgroundColor = .appWhite
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
     }
     
     private func setLocalize() {
