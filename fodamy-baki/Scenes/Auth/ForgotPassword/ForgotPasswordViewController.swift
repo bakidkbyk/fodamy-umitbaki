@@ -35,6 +35,7 @@ final class ForgotPasswordViewController: BaseViewController<ForgotPasswordViewM
         addSubViews()
         setLocalize()
         configureContents()
+        makeBackButton()
     }
 }
 
@@ -78,6 +79,8 @@ extension ForgotPasswordViewController {
         emailTextField.keyboardType = .emailAddress
         
         refreshPasswordButton.addTarget(self, action: #selector(refreshPasswordButtonTapped), for: .touchUpInside)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
     }
     
     private func setLocalize() {
@@ -85,11 +88,29 @@ extension ForgotPasswordViewController {
         emailTextField.title = L10n.ForgotPassword.emailPlaceHolder
         refreshPasswordButton.setTitle(L10n.ForgotPassword.refreshPasswordButtonText, for: .normal)
     }
+}
 
+// MARK: - Custom Button
+extension ForgotPasswordViewController {
+    
+    func makeBackButton() -> UIButton {
+        let backButtonImage = UIImage.icBack.withRenderingMode(.alwaysTemplate)
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(backButtonImage, for: .normal)
+        backButton.tintColor = .appCinder
+        backButton.setTitleColor(.blue, for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        return backButton
+    }
 }
 
 // MARK: - Actions
 extension ForgotPasswordViewController {
+    
+    @objc
+    func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @objc
     func refreshPasswordButtonTapped() {

@@ -60,12 +60,12 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.setHidesBackButton(false, animated: false)
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.setHidesBackButton(false, animated: false)
     }
 }
 
