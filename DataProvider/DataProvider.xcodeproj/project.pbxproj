@@ -20,6 +20,7 @@
 		FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DAE297FD48200F1DB9A /* Auth.swift */; };
 		FAB60DB1297FD4AA00F1DB9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB0297FD4AA00F1DB9A /* User.swift */; };
 		FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB2297FD4C200F1DB9A /* Image.swift */; };
+		FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72EB2989117E001B98D4 /* LoginRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		FAB60DAE297FD48200F1DB9A /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		FAB60DB0297FD4AA00F1DB9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FAB60DB2297FD4C200F1DB9A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FACE72EB2989117E001B98D4 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB60DAB297FD21400F1DB9A /* RegisterRequest.swift */,
+				FACE72EB2989117E001B98D4 /* LoginRequest.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */,
 				FA3B3297296D590600FEF004 /* Typealias.swift in Sources */,
 				FA910931296E8263005F8651 /* RequestEncoding.swift in Sources */,
+				FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */,
 				FA910933296E8286005F8651 /* DataProviderProtocol.swift in Sources */,
 				FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */,
 				FA91092F296E8237005F8651 /* RequestMethod.swift in Sources */,

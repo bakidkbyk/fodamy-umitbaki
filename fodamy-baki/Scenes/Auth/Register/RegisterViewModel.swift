@@ -20,7 +20,7 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
 extension RegisterViewModel {
     
     func showLoginScreen() {
-        // TODO: login ekranı açılacak.
+        router.pushLogin()
     }
 }
 
@@ -33,8 +33,9 @@ extension RegisterViewModel {
             guard let self = self else { return }
             self.hideLoading?()
             switch result {
-            case .success:
-                print("Register Success")
+            case .success(let response):
+                print(response.token)
+                self.showLoginScreen()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }

@@ -1,11 +1,9 @@
 //
 //  ModalTransition.swift
-//  Routing
+//  fodamy-baki
 //
-//  Created by Nikita Ermolenko on 28/10/2017.
+//  Created by Baki Dikbıyık on 27.01.2023.
 //
-
-import UIKit
 
 class ModalTransition: NSObject {
 
@@ -31,7 +29,6 @@ class ModalTransition: NSObject {
 }
 
 // MARK: - Transition
-
 extension ModalTransition: Transition {
 
     func open(_ viewController: UIViewController) {
@@ -48,7 +45,6 @@ extension ModalTransition: Transition {
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
-
 extension ModalTransition: UIViewControllerTransitioningDelegate {
 
     func animationController(forPresented presented: UIViewController,

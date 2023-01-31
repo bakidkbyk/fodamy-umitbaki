@@ -17,5 +17,16 @@
 "Register.emptyFields"         = "lütfen boş alanları doldurunuz";
 "Register.checkInformations"   = "lütfen bilgilerinizi kontrol ediniz.";
 
+// MARK: - Login View Controller
+"Login.title"                    = "Giriş Yap";
+"Login.loginButtonText"          = "Giriş Yap";
+"Login.forgotPasswordButtonText" = "Şifrenizi mi unuttunuz?";
+"Login.bottomLabelText"          = "Hesabın mı yok?";
+"Login.bottomButtonText"         = "Üye Ol";
+"Login.usernamePlaceHolder"      = "Kullanıcı adı";
+"Login.passwordPlaceHolder"      = "Şifre";
+"Login.emptyFields"              = "lütfen boş alanları doldurunuz";
+"Login.checkInformations"        = "lütfen bilgilerinizi kontrol ediniz.";
+ 
 
 

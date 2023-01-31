@@ -1,11 +1,9 @@
 //
 //  PushTransition.swift
-//  Routing
+//  fodamy-baki
 //
-//  Created by Nikita Ermolenko on 28/10/2017.
+//  Created by Baki Dikbıyık on 27.01.2023.
 //
-
-import UIKit
 
 class PushTransition: NSObject {
     
@@ -22,7 +20,6 @@ class PushTransition: NSObject {
 }
 
 // MARK: - Transition
-
 extension PushTransition: Transition {
     
     func open(_ viewController: UIViewController) {
@@ -36,7 +33,6 @@ extension PushTransition: Transition {
 }
 
 // MARK: - UINavigationControllerDelegate
-
 extension PushTransition: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController,

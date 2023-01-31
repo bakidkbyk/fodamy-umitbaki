@@ -1,13 +1,13 @@
 //
-//  RegisterViewController.swift
+//  LoginViewController.swift
 //  fodamy-baki
 //
-//  Created by Baki Dikbıyık on 24.01.2023.
+//  Created by Baki Dikbıyık on 27.01.2023.
 //
 
-final class RegisterViewController: BaseViewController<RegisterViewModel> {
+
+final class LoginViewController: BaseViewController<LoginViewModel> {
     
-   // MARK: - Variables
     private let scrollView = UIScrollViewBuilder()
         .build()
     
@@ -31,41 +31,56 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         .build()
     
     private let usernameTextField = FloatLabelTextField()
-    private let emailTextField    = FloatLabelTextField()
     private let passwordTextField = FloatLabelTextField()
-    private let signUpButton      = ButtonFactory.createPrimaryButton(style: .large)
+    private let actionLoginButton = ButtonFactory.createPrimaryButton(style: .large)
+    
+    private let forgotPasswordButtonContainerView = UIViewBuilder()
+        .build()
+    private let forgotPasswordButton = UIButtonBuilder()
+        .titleFont(.font(.nunitoSemiBold, size: .large))
+        .titleColor(.appRaven)
+        .build()
     
     private let bottomStackView = UIStackViewBuilder()
         .axis(.horizontal)
         .spacing(4)
         .build()
     
-    private let registerLabel = UILabelBuilder()
+    private let loginLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .xLarge))
         .textColor(.appRaven)
         .build()
     
-    private let loginButton = UIButtonBuilder()
-        .titleColor(.appRed)
+    private let registerButton = UIButtonBuilder()
         .titleFont(.font(.nunitoBold, size: .xLarge))
+        .titleColor(.appRed)
         .build()
     
-    // MARK: - LiceCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
-        setLocalize()
         configureContents()
+        setLocalize()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.setHidesBackButton(false, animated: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationItem.setHidesBackButton(true, animated: false)
     }
 }
 
 // MARK: - UILayout
-extension RegisterViewController {
-    
+extension LoginViewController {
+
     private func addSubViews() {
         addScrollView()
         addContentStackView()
-        addTextFieldStackView()
+        addBodyStackView()
         addBottomStackView()
     }
     
@@ -83,30 +98,32 @@ extension RegisterViewController {
     
     private func addContentStackView() {
         contentStackView.addArrangedSubview(titleLabel)
-        
         contentStackView.addArrangedSubview(bodyStackView)
+        contentStackView.addArrangedSubview(forgotPasswordButtonContainerView)
     }
     
-    private func addTextFieldStackView() {
-        
+    private func addBodyStackView() {
         bodyStackView.addArrangedSubview(usernameTextField)
         usernameTextField.height(60)
-        
-        bodyStackView.addArrangedSubview(emailTextField)
-        emailTextField.height(60)
         
         bodyStackView.addArrangedSubview(passwordTextField)
         passwordTextField.height(60)
         
-        bodyStackView.addArrangedSubview(signUpButton)
-        signUpButton.height(60)
+        bodyStackView.addArrangedSubview(actionLoginButton)
+        actionLoginButton.height(60)
+        
+        bodyStackView.addArrangedSubview(forgotPasswordButtonContainerView)
+        
+        forgotPasswordButtonContainerView.addSubview(forgotPasswordButton)
+        forgotPasswordButton.edgesToSuperview(excluding: .leading)
+        
     }
     
     private func addBottomStackView() {
         view.addSubview(bottomStackView)
         
-        bottomStackView.addArrangedSubview(registerLabel)
-        bottomStackView.addArrangedSubview(loginButton)
+        bottomStackView.addArrangedSubview(loginLabel)
+        bottomStackView.addArrangedSubview(registerButton)
         
         bottomStackView.centerXToSuperview()
         bottomStackView.leadingToSuperview(relation: .equalOrGreater).constant = 20
@@ -116,59 +133,60 @@ extension RegisterViewController {
     }
 }
 
-// MARK: - Configure And Localize
-extension RegisterViewController {
+// MARK: - Configure Contents and Localize
+extension LoginViewController {
     
     private func configureContents() {
-        usernameTextField.leftImage = .icUser
-        usernameTextField.autocorrectionType = .no
-        usernameTextField.autocapitalizationType = .none
+        view.backgroundColor = .appWhite
         
-        emailTextField.leftImage = .icMail
-        emailTextField.autocapitalizationType = .none
-        emailTextField.autocorrectionType = .no
-        emailTextField.keyboardType = .emailAddress
+        usernameTextField.leftImage = .icUser
+        usernameTextField.autocapitalizationType = .none
+        usernameTextField.autocorrectionType = .no
         
         passwordTextField.leftImage = .icPassword
         passwordTextField.isSecureTextEntry = true
         
-        view.backgroundColor = .appWhite
-        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        actionLoginButton.addTarget(self, action: #selector(actionLoginButtonTapped), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        
     }
     
     private func setLocalize() {
-        titleLabel.text = L10n.Register.title
-        usernameTextField.title = L10n.Register.usernamePlaceHolder
-        emailTextField.title = L10n.Register.emailPlaceHolder
-        passwordTextField.title = L10n.Register.passwordPlaceHolder
-        signUpButton.setTitle(L10n.Register.signUpButtonText, for: .normal)
-        loginButton.setTitle(L10n.Register.bottomButtonText, for: .normal)
-        registerLabel.text = L10n.Register.bottomLabelText
+        titleLabel.text = L10n.Login.title
+        usernameTextField.title = L10n.Login.usernamePlaceHolder
+        passwordTextField.title = L10n.Login.passwordPlaceHolder
+        forgotPasswordButton.setTitle(L10n.Login.forgotPasswordButtonText, for: .normal)
+        actionLoginButton.setTitle(L10n.Login.loginButtonText, for: .normal)
+        loginLabel.text = L10n.Login.bottomLabelText
+        registerButton.setTitle(L10n.Login.bottomButtonText, for: .normal)
     }
 }
 
 // MARK: - Actions
-extension RegisterViewController {
+extension LoginViewController {
     
     @objc
-    func loginButtonTapped() {
-        viewModel.showLoginScreen()
-    }
-    
-    @objc
-    func signUpButtonTapped() {
+    func actionLoginButtonTapped() {
         guard let username = usernameTextField.text,
-              let email    = emailTextField.text,
               let password = passwordTextField.text else {
-            showWarningToast(message: L10n.Register.emptyFields)
+            self.showWarningToast(message: L10n.Login.emptyFields)
             return
         }
         
         let validation = Validation()
-        guard validation.isValidEmail(email) else { return }
         guard validation.isValidPassword(password) else { return }
         
-        viewModel.sendRegisterRequest(username: username, email: email, password: password)
+        viewModel.sendLoginRequest(username: username, password: password)
+    }
+    
+    @objc
+    func forgotPasswordButtonTapped() {
+        // TODO: (düzeltilecek)
+    }
+    
+    @objc
+    func registerButtonTapped() {
+        viewModel.showRegisterScreen()
     }
 }

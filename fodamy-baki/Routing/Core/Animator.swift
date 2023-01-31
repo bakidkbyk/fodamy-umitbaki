@@ -1,11 +1,9 @@
 //
 //  Animator.swift
-//  Routing
+//  fodamy-baki
 //
-//  Created by Nikita Ermolenko on 28/10/2017.
+//  Created by Baki Dikbıyık on 27.01.2023.
 //
-
-import UIKit
 
 protocol Animator: UIViewControllerAnimatedTransitioning {
     var isPresenting: Bool { get set }

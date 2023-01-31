@@ -1,12 +1,9 @@
 //
 //  PlaceOnWindowTransition.swift
-//  Routing
+//  fodamy-baki
 //
-//  Created by Mehmet Salih Aslan on 4.11.2020.
-//  Copyright © 2020 Mobillium. All rights reserved.
+//  Created by Baki Dikbıyık on 27.01.2023.
 //
-
-import UIKit
 
 class PlaceOnWindowTransition: Transition {
     

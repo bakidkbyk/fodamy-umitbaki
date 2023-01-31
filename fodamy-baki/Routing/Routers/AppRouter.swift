@@ -1,25 +1,20 @@
 //
 //  AppRouter.swift
-//  SampleProject
+//  fodamy-baki
 //
-//  Created by Mehmet Salih Aslan on 4.11.2020.
-//  Copyright © 2020 Mobillium. All rights reserved.
+//  Created by Baki Dikbıyık on 27.01.2023.
 //
 
 import MobilliumUserDefaults
  
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = MainTabBarRoute & WalkThroughRoute & SKPhotoBrowserRoute
+    typealias Routes = RegisterRoute
     
     static let shared = AppRouter()
     
     func startApp() {
-        if DefaultsKey.isWalkThroughCompleted.value == true {
-            placeOnWindowMainTabBar()
-        } else {
-            placeOnWindowWalkThrough()
-        }
+       placeOnWindowRegister()
     }
 
     private func topViewController() -> UIViewController? {

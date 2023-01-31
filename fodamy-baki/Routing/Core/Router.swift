@@ -1,11 +1,9 @@
 //
 //  Router.swift
-//  Routing
+//  fodamy-baki
 //
-//  Created by Nikita Ermolenko on 29/09/2017.
+//  Created by Baki Dikbıyık on 27.01.2023.
 //
-
-import UIKit
 
 protocol RouterProtocol: AnyObject {
     func open(_ viewController: UIViewController, transition: Transition)
