@@ -30,6 +30,7 @@ extension LoginViewModel {
 
 // MARK: - Url
 extension LoginViewModel {
+    
     func sendLoginRequest(username: String, password: String) {
         showLoading?()
         dataProvider.request(for: LoginRequest(username: username, password: password)) { [ weak self ] (result) in

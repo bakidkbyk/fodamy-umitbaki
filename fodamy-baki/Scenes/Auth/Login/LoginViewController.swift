@@ -5,8 +5,6 @@
 //  Created by Baki Dikbıyık on 27.01.2023.
 //
 
-import UIKit
-import MobilliumBuilders
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
     
@@ -67,7 +65,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.setHidesBackButton(false, animated: false)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -137,6 +135,7 @@ extension LoginViewController {
 
 // MARK: - Configure Contents and Localize
 extension LoginViewController {
+    
     private func configureContents() {
         view.backgroundColor = .appWhite
         
@@ -151,7 +150,6 @@ extension LoginViewController {
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         
-        self.navigationItem.setHidesBackButton(false, animated: true)
     }
     
     private func setLocalize() {
@@ -184,7 +182,7 @@ extension LoginViewController {
     
     @objc
     func forgotPasswordButtonTapped() {
-    
+        // TODO: (düzeltilecek)
     }
     
     @objc
