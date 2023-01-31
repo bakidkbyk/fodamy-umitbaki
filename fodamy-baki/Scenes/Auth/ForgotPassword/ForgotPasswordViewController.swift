@@ -5,9 +5,6 @@
 //  Created by Baki Dikbıyık on 31.01.2023.
 //
 
-import MobilliumBuilders
-import UIComponents
-
 final class ForgotPasswordViewController: BaseViewController<ForgotPasswordViewModel> {
     
     private let scrollView = UIScrollViewBuilder()
@@ -29,18 +26,21 @@ final class ForgotPasswordViewController: BaseViewController<ForgotPasswordViewM
     
     private let emailTextField = FloatLabelTextField()
     private let refreshPasswordButton = ButtonFactory.createPrimaryButton(style: .large)
+    private let backButton = UIButtonBuilder()
+        .backgroundImage(.icBack)
+        .build()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
         setLocalize()
         configureContents()
-        makeBackButton()
     }
 }
 
 // MARK: - UILayout
 extension ForgotPasswordViewController {
+    
     private func addSubViews() {
         addScrollView()
         addContentStackView()
@@ -70,6 +70,7 @@ extension ForgotPasswordViewController {
 
 // MARK: - Configure Contents and Localize
 extension ForgotPasswordViewController {
+    
     private func configureContents() {
         view.backgroundColor = .appWhite
         
@@ -78,9 +79,11 @@ extension ForgotPasswordViewController {
         emailTextField.autocapitalizationType = .none
         emailTextField.keyboardType = .emailAddress
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         refreshPasswordButton.addTarget(self, action: #selector(refreshPasswordButtonTapped), for: .touchUpInside)
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
     }
     
     private func setLocalize() {
@@ -90,26 +93,12 @@ extension ForgotPasswordViewController {
     }
 }
 
-// MARK: - Custom Button
-extension ForgotPasswordViewController {
-    
-    func makeBackButton() -> UIButton {
-        let backButtonImage = UIImage.icBack.withRenderingMode(.alwaysTemplate)
-        let backButton = UIButton(type: .custom)
-        backButton.setImage(backButtonImage, for: .normal)
-        backButton.tintColor = .appCinder
-        backButton.setTitleColor(.blue, for: .normal)
-        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        return backButton
-    }
-}
-
 // MARK: - Actions
 extension ForgotPasswordViewController {
     
     @objc
     func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
+        viewModel.showLoginScreen()
     }
     
     @objc

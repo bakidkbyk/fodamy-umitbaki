@@ -5,17 +5,24 @@
 //  Created by Baki Dikbıyık on 31.01.2023.
 //
 
-import Foundation
-
 protocol ForgotPasswordViewDataSource {}
 
 protocol ForgotPasswordViewEventSource {}
 
 protocol ForgotPasswordViewProtocol: ForgotPasswordViewDataSource, ForgotPasswordViewEventSource {
     func sendRefresfPasswordRequest(email: String)
+    func showLoginScreen()
 }
 
 final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordRouter>, ForgotPasswordViewProtocol {}
+
+// MARK: - Action
+extension ForgotPasswordViewModel {
+    
+    func showLoginScreen() {
+        router.close()
+    }
+}
 
 // MARK: - Network
 extension ForgotPasswordViewModel {
