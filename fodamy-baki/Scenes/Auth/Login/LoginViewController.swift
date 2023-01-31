@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 27.01.2023.
 //
 
-
 final class LoginViewController: BaseViewController<LoginViewModel> {
     
     private let scrollView = UIScrollViewBuilder()
@@ -56,21 +55,12 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .titleColor(.appRed)
         .build()
     
+    // MARK: - LiceCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
         configureContents()
         setLocalize()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationItem.setHidesBackButton(false, animated: false)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        navigationItem.setHidesBackButton(true, animated: false)
     }
 }
 
@@ -135,7 +125,7 @@ extension LoginViewController {
 
 // MARK: - Configure Contents and Localize
 extension LoginViewController {
-    
+
     private func configureContents() {
         view.backgroundColor = .appWhite
         
@@ -182,7 +172,7 @@ extension LoginViewController {
     
     @objc
     func forgotPasswordButtonTapped() {
-        // TODO: (düzeltilecek)
+        viewModel.showForgotPasswordScreen()
     }
     
     @objc

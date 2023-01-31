@@ -6,20 +6,21 @@
 //
 
 protocol LoginRoute {
-    func pushLogin()
+    func placeOnWindowLogin()
 }
 
 extension LoginRoute where Self: RouterProtocol {
     
-    func pushLogin() {
+    func placeOnWindowLogin() {
         let router = LoginRouter()
         let viewModel = LoginViewModel(router: router)
         let viewController = LoginViewController(viewModel: viewModel)
+        let navigationController = UINavigationController(rootViewController: viewController)
         
-        let transition = PushTransition()
+        let transition = PlaceOnWindowTransition()
         router.viewController = viewController
         router.openTransition = transition
         
-        open(viewController, transition: transition)
+        open(navigationController, transition: transition)
     }
 }

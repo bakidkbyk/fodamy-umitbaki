@@ -11,6 +11,19 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum ForgotPassword {
+    /// E-mail Adresi
+    public static let emailPlaceHolder = L10n.tr("Localizable", "ForgotPassword.emailPlaceHolder")
+    /// Lütfen geçerli bir email adresi giriniz.
+    public static let emptyEmailAdress = L10n.tr("Localizable", "ForgotPassword.emptyEmailAdress")
+    /// Şifre Yenileme isteğiniz başarılı!
+    public static let isSuccess = L10n.tr("Localizable", "ForgotPassword.isSuccess")
+    /// Sıfırla
+    public static let refreshPasswordButtonText = L10n.tr("Localizable", "ForgotPassword.refreshPasswordButtonText")
+    /// Şifre Sıfırlama
+    public static let title = L10n.tr("Localizable", "ForgotPassword.title")
+  }
+
   public enum Login {
     /// Üye Ol
     public static let bottomButtonText = L10n.tr("Localizable", "Login.bottomButtonText")
@@ -37,11 +50,11 @@ public enum L10n {
     public static let bottomButtonText = L10n.tr("Localizable", "Register.bottomButtonText")
     /// Hesabın mı var?
     public static let bottomLabelText = L10n.tr("Localizable", "Register.bottomLabelText")
-    /// lütfen bilgilerinizi kontrol ediniz.
+    /// Lütfen bilgilerinizi kontrol ediniz.
     public static let checkInformations = L10n.tr("Localizable", "Register.checkInformations")
     /// E-mail Adresi
     public static let emailPlaceHolder = L10n.tr("Localizable", "Register.emailPlaceHolder")
-    /// lütfen boş alanları doldurunuz
+    /// Lütfen boş alanları doldurunuz
     public static let emptyFields = L10n.tr("Localizable", "Register.emptyFields")
     /// Şifre
     public static let passwordPlaceHolder = L10n.tr("Localizable", "Register.passwordPlaceHolder")

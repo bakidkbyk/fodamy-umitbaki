@@ -20,7 +20,7 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
 extension RegisterViewModel {
     
     func showLoginScreen() {
-        router.pushLogin()
+        router.close()
     }
 }
 

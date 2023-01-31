@@ -13,6 +13,7 @@ protocol LoginViewEventSource {}
 
 protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
     func showRegisterScreen()
+    func showForgotPasswordScreen()
     func sendLoginRequest(username: String, password: String)
 }
 
@@ -24,7 +25,11 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
 extension LoginViewModel {
     
      func showRegisterScreen() {
-        router.placeOnWindowRegister()
+        router.pushRegister()
+    }
+    
+    func showForgotPasswordScreen() {
+        router.pushForgotPassword()
     }
 }
 

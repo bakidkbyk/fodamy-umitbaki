@@ -9,12 +9,12 @@ import MobilliumUserDefaults
  
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = RegisterRoute
+    typealias Routes = LoginRoute
     
     static let shared = AppRouter()
     
     func startApp() {
-       placeOnWindowRegister()
+       placeOnWindowLogin()
     }
 
     private func topViewController() -> UIViewController? {

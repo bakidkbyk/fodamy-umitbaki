@@ -6,17 +6,6 @@
   
 */
 
-// MARK: - Register View Controller
-"Register.title"               = "Üye Ol";
-"Register.signUpButtonText"    = "Üye Ol";
-"Register.bottomLabelText"     = "Hesabın mı var?";
-"Register.bottomButtonText"    = "Giriş Yap";
-"Register.usernamePlaceHolder" = "Kullanıcı Adı";
-"Register.emailPlaceHolder"    = "E-mail Adresi";
-"Register.passwordPlaceHolder" = "Şifre";
-"Register.emptyFields"         = "lütfen boş alanları doldurunuz";
-"Register.checkInformations"   = "lütfen bilgilerinizi kontrol ediniz.";
-
 // MARK: - Login View Controller
 "Login.title"                    = "Giriş Yap";
 "Login.loginButtonText"          = "Giriş Yap";
@@ -27,6 +16,21 @@
 "Login.passwordPlaceHolder"      = "Şifre";
 "Login.emptyFields"              = "lütfen boş alanları doldurunuz";
 "Login.checkInformations"        = "lütfen bilgilerinizi kontrol ediniz.";
- 
 
+// MARK: - Register View Controller
+"Register.title"               = "Üye Ol";
+"Register.signUpButtonText"    = "Üye Ol";
+"Register.bottomLabelText"     = "Hesabın mı var?";
+"Register.bottomButtonText"    = "Giriş Yap";
+"Register.usernamePlaceHolder" = "Kullanıcı Adı";
+"Register.emailPlaceHolder"    = "E-mail Adresi";
+"Register.passwordPlaceHolder" = "Şifre";
+"Register.emptyFields"         = "Lütfen boş alanları doldurunuz";
+"Register.checkInformations"   = "Lütfen bilgilerinizi kontrol ediniz.";
 
+// MARK: - Forgot Password View Controller
+"ForgotPassword.title"                     = "Şifre Sıfırlama";
+"ForgotPassword.emailPlaceHolder"          = "E-mail Adresi";
+"ForgotPassword.refreshPasswordButtonText" = "Sıfırla";
+"ForgotPassword.emptyEmailAdress"          = "Lütfen geçerli bir email adresi giriniz.";
+"ForgotPassword.isSuccess"                 = "Şifre Yenileme isteğiniz başarılı!";
