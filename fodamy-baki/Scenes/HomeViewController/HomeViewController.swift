@@ -11,5 +11,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 }

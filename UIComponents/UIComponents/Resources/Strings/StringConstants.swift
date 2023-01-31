@@ -18,8 +18,6 @@ public enum L10n {
     public static let bottomLabelText = L10n.tr("Localizable", "Login.bottomLabelText")
     /// lütfen bilgilerinizi kontrol ediniz.
     public static let checkInformations = L10n.tr("Localizable", "Login.checkInformations")
-    /// E-mail Adresi
-    public static let emailPlaceHolder = L10n.tr("Localizable", "Login.emailPlaceHolder")
     /// lütfen boş alanları doldurunuz
     public static let emptyFields = L10n.tr("Localizable", "Login.emptyFields")
     /// Şifrenizi mi unuttunuz?
@@ -30,6 +28,8 @@ public enum L10n {
     public static let passwordPlaceHolder = L10n.tr("Localizable", "Login.passwordPlaceHolder")
     /// Giriş Yap
     public static let title = L10n.tr("Localizable", "Login.title")
+    /// Kullanıcı adı
+    public static let usernamePlaceHolder = L10n.tr("Localizable", "Login.usernamePlaceHolder")
   }
 
   public enum Register {
