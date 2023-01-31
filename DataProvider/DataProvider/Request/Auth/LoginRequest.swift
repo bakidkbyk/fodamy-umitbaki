@@ -2,19 +2,20 @@
 //  LoginRequest.swift
 //  DataProvider
 //
-//  Created by Baki Dikbıyık on 28.01.2023.
+//  Created by Baki Dikbıyık on 31.01.2023.
 //
 
 public struct LoginRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = Auth
     
-    public let path: String = "auth/Login"
-    public let method: RequestMethod = .post
+    public var path: String = "auth/login"
+    public var method: RequestMethod = .post
     public var parameters: RequestParameters = [:]
+    public var headers: RequestHeaders = [:]
     
-    public init(email: String, password: String) {
-        parameters["email"] = email
+    public init(username: String, password: String) {
+        parameters["username"] = username
         parameters["password"] = password
     }
 }
