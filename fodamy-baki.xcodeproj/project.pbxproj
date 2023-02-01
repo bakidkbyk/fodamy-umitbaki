@@ -50,7 +50,6 @@
 		FACE72FD29895EC1001B98D4 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72FA29895EC1001B98D4 /* WalkthroughViewController.swift */; };
 		FACE72FE29895EC1001B98D4 /* WalkthroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72FB29895EC1001B98D4 /* WalkthroughViewModel.swift */; };
 		FACE7300298963C8001B98D4 /* WalkthroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72FF298963C8001B98D4 /* WalkthroughRoute.swift */; };
-		FACE73062989659A001B98D4 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE730429896582001B98D4 /* CustomCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,7 +101,6 @@
 		FACE72FA29895EC1001B98D4 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		FACE72FB29895EC1001B98D4 /* WalkthroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewModel.swift; sourceTree = "<group>"; };
 		FACE72FF298963C8001B98D4 /* WalkthroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughRoute.swift; sourceTree = "<group>"; };
-		FACE730429896582001B98D4 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,21 +316,12 @@
 		FACE72F829895EA2001B98D4 /* Walkthrough */ = {
 			isa = PBXGroup;
 			children = (
-				FACE730529896582001B98D4 /* CollectionView */,
 				FACE72FA29895EC1001B98D4 /* WalkthroughViewController.swift */,
-				FACE730429896582001B98D4 /* CustomCollectionViewCell.swift */,
 				FACE72F929895EC1001B98D4 /* WalkthroughRouter.swift */,
 				FACE72FB29895EC1001B98D4 /* WalkthroughViewModel.swift */,
 				FACE72FF298963C8001B98D4 /* WalkthroughRoute.swift */,
 			);
 			path = Walkthrough;
-			sourceTree = "<group>";
-		};
-		FACE730529896582001B98D4 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,7 +474,6 @@
 				FAC3A838298420B90095A7C3 /* Animator.swift in Sources */,
 				FAC3A83D2984210D0095A7C3 /* AppRouter.swift in Sources */,
 				FA87472329751C6400039E92 /* APIRequestAdapter.swift in Sources */,
-				FACE73062989659A001B98D4 /* CustomCollectionViewCell.swift in Sources */,
 				FACE72FD29895EC1001B98D4 /* WalkthroughViewController.swift in Sources */,
 				FACE72FC29895EC1001B98D4 /* WalkthroughRouter.swift in Sources */,
 				FAA819B52964404C00B4C83A /* BaseViewController.swift in Sources */,

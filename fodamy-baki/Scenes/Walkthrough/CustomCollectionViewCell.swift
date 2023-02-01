@@ -7,6 +7,9 @@
 
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell {
+public class CustomCollectionViewCell: UICollectionViewCell {
     
+     let identifier = "cell"
+    
+
 }
