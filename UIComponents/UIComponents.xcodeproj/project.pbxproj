@@ -27,6 +27,9 @@
 		FA791CC2296863A2001B6985 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA791CC1296863A2001B6985 /* Localizable.strings */; };
 		FA791CC829686746001B6985 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA791CC729686746001B6985 /* Localize.swift */; };
 		FA87472E29753ED900039E92 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472D29753ED900039E92 /* ButtonFactory.swift */; };
+		FA954483298CDB2700F55E23 /* WalkthroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA954482298CDB2700F55E23 /* WalkthroughCell.swift */; };
+		FA954485298D047700F55E23 /* WalkthroughCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA954484298D047700F55E23 /* WalkthroughCellModel.swift */; };
+		FA954488298D069600F55E23 /* ReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA954487298D069600F55E23 /* ReusableView+Extensions.swift */; };
 		FAABD05E2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */; };
 		FAABD0602965E2E200126FA9 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */; };
 		FAABD0642965E32E00126FA9 /* BlockingActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD0632965E32E00126FA9 /* BlockingActivityIndicator.swift */; };
@@ -34,7 +37,6 @@
 		FAAEAC7B296567AC00459E43 /* ToastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7A296567AC00459E43 /* ToastPresenter.swift */; };
 		FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7C296569E200459E43 /* ToastWarningView.swift */; };
 		FAAEAC902965BC8300459E43 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC8F2965BC8300459E43 /* ReusableView.swift */; };
-		FAD14C7D298A4078002F5ADF /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14C7C298A4078002F5ADF /* CustomCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,9 @@
 		FA791CC1296863A2001B6985 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FA791CC729686746001B6985 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		FA87472D29753ED900039E92 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
+		FA954482298CDB2700F55E23 /* WalkthroughCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCell.swift; sourceTree = "<group>"; };
+		FA954484298D047700F55E23 /* WalkthroughCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCellModel.swift; sourceTree = "<group>"; };
+		FA954487298D069600F55E23 /* ReusableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Extensions.swift"; sourceTree = "<group>"; };
 		FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewPresentProtocol.swift; sourceTree = "<group>"; };
 		FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
 		FAABD0632965E32E00126FA9 /* BlockingActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingActivityIndicator.swift; sourceTree = "<group>"; };
@@ -68,7 +73,6 @@
 		FAAEAC7A296567AC00459E43 /* ToastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresenter.swift; sourceTree = "<group>"; };
 		FAAEAC7C296569E200459E43 /* ToastWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastWarningView.swift; sourceTree = "<group>"; };
 		FAAEAC8F2965BC8300459E43 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		FAD14C7C298A4078002F5ADF /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCollectionViewCell.swift; path = ../CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +127,8 @@
 		FA2DB7A729631242004D38E2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				FACE7301298964C9001B98D4 /* CollectionView */,
+				FA954486298D068D00F55E23 /* Extensions */,
+				FA954481298CDB0200F55E23 /* WalkthroughCell */,
 				FA4C1C0329794354006C5C8D /* UITextField */,
 				FA87472C29753EBD00039E92 /* ButtonFactory */,
 				FA6A3AB6296833DF00A1931A /* Resources */,
@@ -198,6 +203,23 @@
 			path = ButtonFactory;
 			sourceTree = "<group>";
 		};
+		FA954481298CDB0200F55E23 /* WalkthroughCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA954482298CDB2700F55E23 /* WalkthroughCell.swift */,
+				FA954484298D047700F55E23 /* WalkthroughCellModel.swift */,
+			);
+			path = WalkthroughCell;
+			sourceTree = "<group>";
+		};
+		FA954486298D068D00F55E23 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA954487298D069600F55E23 /* ReusableView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FAABD05C2965E26500126FA9 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,15 +253,6 @@
 				FAAEAC8F2965BC8300459E43 /* ReusableView.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		FACE7301298964C9001B98D4 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				FAD14C7C298A4078002F5ADF /* CustomCollectionViewCell.swift */,
-			);
-			name = CollectionView;
-			path = "../../fodamy-baki/Scenes/Walkthrough/CollectionView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,9 +389,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA4C1C092979539C006C5C8D /* StringConstants.swift in Sources */,
-				FAD14C7D298A4078002F5ADF /* CustomCollectionViewCell.swift in Sources */,
 				FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */,
+				FA954483298CDB2700F55E23 /* WalkthroughCell.swift in Sources */,
 				FA4C1C0529794382006C5C8D /* FloatLabelTextField.swift in Sources */,
+				FA954485298D047700F55E23 /* WalkthroughCellModel.swift in Sources */,
+				FA954488298D069600F55E23 /* ReusableView+Extensions.swift in Sources */,
 				FA791C90296850AF001B6985 /* UIImage+Images.swift in Sources */,
 				FA87472E29753ED900039E92 /* ButtonFactory.swift in Sources */,
 				FA791CA5296850B9001B6985 /* Fonts.swift in Sources */,
