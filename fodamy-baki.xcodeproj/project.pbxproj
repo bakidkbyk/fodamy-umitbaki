@@ -317,8 +317,8 @@
 			isa = PBXGroup;
 			children = (
 				FACE72FA29895EC1001B98D4 /* WalkthroughViewController.swift */,
-				FACE72F929895EC1001B98D4 /* WalkthroughRouter.swift */,
 				FACE72FB29895EC1001B98D4 /* WalkthroughViewModel.swift */,
+				FACE72F929895EC1001B98D4 /* WalkthroughRouter.swift */,
 				FACE72FF298963C8001B98D4 /* WalkthroughRoute.swift */,
 			);
 			path = Walkthrough;

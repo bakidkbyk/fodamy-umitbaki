@@ -12,6 +12,11 @@ final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> 
         .backgroundColor(.appWhite)
         .build()
     
+    private let dissmissButton = UIButtonBuilder()
+        .image(UIImage.icClose.withRenderingMode(.alwaysTemplate))
+        .tintColor(.appCinder)
+        .build()
+    
     private let nextActionButton = ButtonFactory.createPrimaryButton(style: .large)
 
     override func viewDidLoad() {
@@ -33,16 +38,20 @@ extension WalkthroughViewController {
     private func addCollectionView() {
         view.addSubview(collectionView)
         
-        collectionView.edgesToSuperview(excluding: .bottom, insets: .init(top: 100, left: 50, bottom: 0, right: 50), usingSafeArea: true)
+        collectionView.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
         
-        collectionView.heightAnchor.constraint(equalToConstant: view.frame.height / 2).isActive = true
+        collectionView.backgroundColor = .red
         
     }
     
     private func addActionButton() {
         view.addSubview(nextActionButton)
         
-        nextActionButton.edgesToSuperview(excluding: .top, insets: .init(top: 0, left: 15, bottom: 5, right: 15), usingSafeArea: true)
+        nextActionButton.topToBottom(of: collectionView).constant = 100
+        nextActionButton.leadingToSuperview().constant = 15
+        nextActionButton.trailingToSuperview().constant = -15
+        nextActionButton.bottomToSuperview(usingSafeArea: true)
+    
     }
 }
 
@@ -55,7 +64,7 @@ extension WalkthroughViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.frame = view.bounds
-        
+        collectionView.register(WalkthroughCell.self, forCellWithReuseIdentifier: WalkthroughCell.defaultReuseIdentifier)
         nextActionButton.height(60)
     }
     
@@ -70,16 +79,40 @@ extension WalkthroughViewController: UICollectionViewDelegate {
     
 }
 
+// swiftlint:disable line_length
 // MARK: - CollectionView Data Source
 extension WalkthroughViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return viewModel.numberOfItemsAt(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CustomCollectionViewCell)!
-        return cell 
+        let cell: WalkthroughCell = (collectionView.dequeueReusableCell(withReuseIdentifier: WalkthroughCell.defaultReuseIdentifier, for: indexPath) as? WalkthroughCell)!
+        let cellItem = viewModel.cellItemAt(indexPath: indexPath)
+        cell.set(viewModel: cellItem)
+        return cell
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+extension WalkthroughViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.frame.size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return .zero
+    }
+    
+}
+// swiftlint:enable line_length
