@@ -75,6 +75,8 @@ public enum L10n {
     public static let fourthImageSubtitle = L10n.tr("Localizable", "Walkthrough.fourthImageSubtitle")
     /// Share recipes with others.
     public static let fourthImageTitle = L10n.tr("Localizable", "Walkthrough.fourthImageTitle")
+    /// Başla
+    public static let nextActionButtonStartText = L10n.tr("Localizable", "Walkthrough.nextActionButtonStartText")
     /// İlerle
     public static let nextActionButtonText = L10n.tr("Localizable", "Walkthrough.nextActionButtonText")
     /// Fodamy is the best place to find your favorite\n recipes in all around the word.
