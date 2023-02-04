@@ -14,7 +14,9 @@ protocol WalkthroughViewDataSource {
 
 protocol WalkthroughViewEventSource {}
 
-protocol WalkthroughViewProtocol: WalkthroughViewDataSource, WalkthroughViewEventSource {}
+protocol WalkthroughViewProtocol: WalkthroughViewDataSource, WalkthroughViewEventSource {
+    func didFinishWalkthrough()
+}
 
 final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughViewProtocol {
     
@@ -34,3 +36,11 @@ final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughV
     
 }
 // swiftlint:enable line_length
+
+// MARK: - Actions
+extension WalkthroughViewModel {
+    
+    func didFinishWalkthrough() {
+        router.placeOnWindowLogin()
+    }
+}

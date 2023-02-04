@@ -5,20 +5,26 @@
 //  Created by Baki Dikbıyık on 31.01.2023.
 //
 
+import UIComponents
+
 final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> {
 
-    private let collectionView = UICollectionViewBuilder()
-        .scrollDirection(.horizontal)
-        .backgroundColor(.appWhite)
-        .build()
-    
     private let dissmissButton = UIButtonBuilder()
         .image(UIImage.icClose.withRenderingMode(.alwaysTemplate))
         .tintColor(.appCinder)
         .build()
     
+    private let collectionView = UICollectionViewBuilder()
+        .scrollDirection(.horizontal)
+        .backgroundColor(.appWhite)
+        .build()
+    
+    private let pageControl = UIPageControlBuilder<PageControl>()
+        .numberOfPages(4)
+        .build()
+    
     private let nextActionButton = ButtonFactory.createPrimaryButton(style: .large)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
@@ -33,25 +39,38 @@ extension WalkthroughViewController {
     private func addSubViews() {
         addCollectionView()
         addActionButton()
+        addDissmissButton()
+        addPageControl()
     }
     
     private func addCollectionView() {
         view.addSubview(collectionView)
         
         collectionView.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
+    }
+    
+    private func addDissmissButton() {
+        view.addSubview(dissmissButton)
         
-        collectionView.backgroundColor = .red
+        dissmissButton.topToSuperview(usingSafeArea: true).constant = 25
+        dissmissButton.trailingToSuperview().constant = -20
+        dissmissButton.size(.init(width: 18, height: 18))
         
+    }
+    
+    private func addPageControl() {
+        view.addSubview(pageControl)
+        pageControl.topToBottom(of: collectionView)
+        pageControl.centerXToSuperview()
     }
     
     private func addActionButton() {
         view.addSubview(nextActionButton)
         
-        nextActionButton.topToBottom(of: collectionView).constant = 100
+        nextActionButton.topToBottom(of: pageControl).constant = 20
         nextActionButton.leadingToSuperview().constant = 15
         nextActionButton.trailingToSuperview().constant = -15
         nextActionButton.bottomToSuperview(usingSafeArea: true)
-    
     }
 }
 
@@ -59,13 +78,18 @@ extension WalkthroughViewController {
 extension WalkthroughViewController {
     
     private func configureContents() {
-        view.backgroundColor = .gray
+        view.backgroundColor = .appWhite
         
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.frame = view.bounds
         collectionView.register(WalkthroughCell.self, forCellWithReuseIdentifier: WalkthroughCell.defaultReuseIdentifier)
+        
         nextActionButton.height(60)
+        
+        nextActionButton.addTarget(self, action: #selector(nextActionButtonTapped), for: .touchUpInside)
+        dissmissButton.addTarget(self, action: #selector(dissmissButtonTapped), for: .touchUpInside)
+        pageControl.addTarget(self, action: #selector(pageControlChanged), for: .touchUpInside)
     }
     
     private func setLocalize() {
@@ -116,3 +140,22 @@ extension WalkthroughViewController: UICollectionViewDelegateFlowLayout {
     
 }
 // swiftlint:enable line_length
+
+// MARK: - Actions
+extension WalkthroughViewController {
+    
+    @objc
+    func dissmissButtonTapped() {
+        viewModel.didFinishWalkthrough()
+    }
+    
+    @objc
+    func nextActionButtonTapped() {
+
+    }
+    
+    @objc
+    func pageControlChanged(_ sender: UIPageControl) {
+
+    }
+}
