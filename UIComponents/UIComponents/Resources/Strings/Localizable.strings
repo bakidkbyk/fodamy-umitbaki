@@ -19,8 +19,8 @@ recipes in all around the word.";
 "Walkthrough.fourthImageTitle"     = "Share recipes with others.";
 "Walkthrough.fourthImageSubtitle"  = "Fodamy is the best place to find your favorite
  recipes in all around the word.";
-"Walkthrough.nextActionButtonText"      = "İlerle";
-"Walkthrough.nextActionButtonStartText" = "Başla";
+"Walkthrough.nextActionButtonNext"  = "İlerle";
+"Walkthrough.nextActionButtonStart" = "Başla";
 
 
 // MARK: - Login View Controller
