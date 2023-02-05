@@ -9,6 +9,7 @@ public class PageControl: UIPageControl {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        configureContents()
     }
     
     // swiftlint:disable fatal_error unavailable_function

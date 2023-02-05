@@ -8,7 +8,7 @@
 import Foundation
 
 protocol WalkthroughViewDataSource {
-    func numberOfItemsAt(section: Int) -> Int
+    func numberOfItemsAt() -> Int
     func cellItemAt(indexPath: IndexPath) -> WalkthroughCellProtocol
 }
 
@@ -20,7 +20,7 @@ protocol WalkthroughViewProtocol: WalkthroughViewDataSource, WalkthroughViewEven
 
 final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughViewProtocol {
     
-    func numberOfItemsAt(section: Int) -> Int {
+    func numberOfItemsAt() -> Int {
         cellItems.count
     }
     

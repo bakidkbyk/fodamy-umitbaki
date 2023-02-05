@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 31.01.2023.
 //
 
-import UIComponents
 
 final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> {
 
@@ -38,9 +37,9 @@ extension WalkthroughViewController {
 
     private func addSubViews() {
         addCollectionView()
-        addActionButton()
         addDissmissButton()
         addPageControl()
+        addActionButton()
     }
     
     private func addCollectionView() {
@@ -82,18 +81,20 @@ extension WalkthroughViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.frame = view.bounds
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
         collectionView.register(WalkthroughCell.self, forCellWithReuseIdentifier: WalkthroughCell.defaultReuseIdentifier)
         
         nextActionButton.height(60)
         
-        nextActionButton.addTarget(self, action: #selector(nextActionButtonTapped), for: .touchUpInside)
         dissmissButton.addTarget(self, action: #selector(dissmissButtonTapped), for: .touchUpInside)
         pageControl.addTarget(self, action: #selector(pageControlChanged), for: .touchUpInside)
+        nextActionButton.addTarget(self, action: #selector(nextActionButtonTapped), for: .touchUpInside)
     }
     
     private func setLocalize() {
-        nextActionButton.setTitle(L10n.Walkthrough.nextActionButtonText, for: .normal)
+        nextActionButton.setTitle(L10n.Walkthrough.nextActionButtonNext, for: .normal)
     }
     
 }
@@ -108,7 +109,7 @@ extension WalkthroughViewController: UICollectionViewDelegate {
 extension WalkthroughViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItemsAt(section: section)
+        return viewModel.numberOfItemsAt()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -141,6 +142,19 @@ extension WalkthroughViewController: UICollectionViewDelegateFlowLayout {
 }
 // swiftlint:enable line_length
 
+// MARK: - UIScroll View Delegate
+extension WalkthroughViewController {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if pageControl.currentPage == viewModel.numberOfItemsAt() - 1 {
+            nextActionButton.setTitle(L10n.Walkthrough.nextActionButtonStart, for: .normal)
+        } else {
+            nextActionButton.setTitle(L10n.Walkthrough.nextActionButtonNext, for: .normal)
+        }
+    }
+    
+}
+
 // MARK: - Actions
 extension WalkthroughViewController {
     
@@ -151,11 +165,19 @@ extension WalkthroughViewController {
     
     @objc
     func nextActionButtonTapped() {
-
+        if pageControl.currentPage == viewModel.numberOfItemsAt() - 1 {
+            viewModel.didFinishWalkthrough()
+        }
+        
+        pageControl.currentPage += 1
+        
+        // Only scrolls the view
+        let indexPath = IndexPath(item: pageControl.currentPage, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
     @objc
     func pageControlChanged(_ sender: UIPageControl) {
-
+        collectionView.setContentOffset(CGPoint(x: view.frame.width * CGFloat(sender.currentPage), y: 0), animated: true)
     }
 }
