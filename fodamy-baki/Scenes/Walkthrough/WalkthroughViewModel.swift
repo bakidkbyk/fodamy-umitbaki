@@ -41,6 +41,6 @@ final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughV
 extension WalkthroughViewModel {
     
     func didFinishWalkthrough() {
-        router.placeOnWindowLogin()
+        // TODO: (router gelecek)
     }
 }

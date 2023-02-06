@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 31.01.2023.
 //
 
-
 final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> {
 
     private let dissmissButton = UIButtonBuilder()
@@ -96,13 +95,10 @@ extension WalkthroughViewController {
     private func setLocalize() {
         nextActionButton.setTitle(L10n.Walkthrough.nextActionButtonNext, for: .normal)
     }
-    
 }
 
 // MARK: - UICollectionView Delegate
-extension WalkthroughViewController: UICollectionViewDelegate {
-    
-}
+extension WalkthroughViewController: UICollectionViewDelegate {}
 
 // swiftlint:disable line_length
 // MARK: - CollectionView Data Source
@@ -138,7 +134,6 @@ extension WalkthroughViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return .zero
     }
-    
 }
 // swiftlint:enable line_length
 
@@ -153,6 +148,11 @@ extension WalkthroughViewController {
         }
     }
     
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let xPoint = targetContentOffset.pointee.x
+        let pageIndex = Int(xPoint / view.frame.width)
+        pageControl.currentPage = pageIndex
+    }
 }
 
 // MARK: - Actions
@@ -160,13 +160,13 @@ extension WalkthroughViewController {
     
     @objc
     func dissmissButtonTapped() {
-        viewModel.didFinishWalkthrough()
+        // TODO: (router gelecek)
     }
     
     @objc
     func nextActionButtonTapped() {
         if pageControl.currentPage == viewModel.numberOfItemsAt() - 1 {
-            viewModel.didFinishWalkthrough()
+            // TODO: (router gelecek)
         }
         
         pageControl.currentPage += 1
