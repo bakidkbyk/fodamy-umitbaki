@@ -5,8 +5,6 @@
 //  Created by Baki Dikbıyık on 3.02.2023.
 //
 
-import MobilliumBuilders
-
 public class WalkthroughCell: UICollectionViewCell, ReusableView {
     
     private let imageView = UIImageViewBuilder()
@@ -58,7 +56,7 @@ extension WalkthroughCell {
     
     private func addImageView() {
         contentView.addSubview(imageView)
-        imageView.edgesToSuperview(excluding: [.top, .bottom], insets: UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50))
+        imageView.edgesToSuperview(excluding: .bottom, insets: UIEdgeInsets(top: 200, left: 50, bottom: 0, right: 50))
         imageView.centerYToSuperview()
         imageView.aspectRatio(1)
     }
@@ -76,7 +74,6 @@ extension WalkthroughCell {
         
         labelStackView.addArrangedSubview(titleLabel)
         labelStackView.addArrangedSubview(descriptionLabel)
-        
     }
 }
 

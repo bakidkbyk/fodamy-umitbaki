@@ -15,6 +15,10 @@ final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> 
     private let collectionView = UICollectionViewBuilder()
         .scrollDirection(.horizontal)
         .backgroundColor(.appWhite)
+        .showsVerticalScrollIndicator(false)
+        .showsHorizontalScrollIndicator(false)
+        .isPagingEnabled(true)
+        .registerCell(WalkthroughCell.self, reuseIdentifier: WalkthroughCell.defaultReuseIdentifier)
         .build()
     
     private let pageControl = UIPageControlBuilder<PageControl>()
@@ -43,17 +47,14 @@ extension WalkthroughViewController {
     
     private func addCollectionView() {
         view.addSubview(collectionView)
-        
         collectionView.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
     }
     
     private func addDissmissButton() {
         view.addSubview(dissmissButton)
-        
         dissmissButton.topToSuperview(usingSafeArea: true).constant = 25
         dissmissButton.trailingToSuperview().constant = -20
         dissmissButton.size(.init(width: 18, height: 18))
-        
     }
     
     private func addPageControl() {
@@ -64,7 +65,6 @@ extension WalkthroughViewController {
     
     private func addActionButton() {
         view.addSubview(nextActionButton)
-        
         nextActionButton.topToBottom(of: pageControl).constant = 20
         nextActionButton.leadingToSuperview().constant = 15
         nextActionButton.trailingToSuperview().constant = -15
@@ -77,16 +77,9 @@ extension WalkthroughViewController {
     
     private func configureContents() {
         view.backgroundColor = .appWhite
-        
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isPagingEnabled = true
-        collectionView.register(WalkthroughCell.self, forCellWithReuseIdentifier: WalkthroughCell.defaultReuseIdentifier)
-        
         nextActionButton.height(60)
-        
         dissmissButton.addTarget(self, action: #selector(dissmissButtonTapped), for: .touchUpInside)
         pageControl.addTarget(self, action: #selector(pageControlChanged), for: .touchUpInside)
         nextActionButton.addTarget(self, action: #selector(nextActionButtonTapped), for: .touchUpInside)
