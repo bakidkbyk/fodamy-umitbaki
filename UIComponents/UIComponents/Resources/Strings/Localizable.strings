@@ -6,6 +6,23 @@
   
 */
 
+// MARK: - Walkthrough View Controller
+"Walkthrough.firstImageTitle"      = "Welcom to Fodamy Network!";
+"Walkthrough.firstImageSubtitle"   = "Fodamy is the best place to find your favorite
+recipes in all around the word.";
+"Walkthrough.secondImageTitle"     = "Finding recipes were not that easy.";
+"Walkthrough.secondImageSubtitle"  = "Fodamy is the best place to find your favorite
+ recipes in all around the word.";
+"Walkthrough.thirdImageTitle"      = "Add new recipe.";
+"Walkthrough.thirdImagesubtitle"   = "Fodamy is the best place to find your favorite
+ recipes in all around the word.";
+"Walkthrough.fourthImageTitle"     = "Share recipes with others.";
+"Walkthrough.fourthImageSubtitle"  = "Fodamy is the best place to find your favorite
+ recipes in all around the word.";
+"Walkthrough.nextActionButtonNext"  = "İlerle";
+"Walkthrough.nextActionButtonStart" = "Başla";
+
+
 // MARK: - Login View Controller
 "Login.title"                    = "Giriş Yap";
 "Login.loginButtonText"          = "Giriş Yap";

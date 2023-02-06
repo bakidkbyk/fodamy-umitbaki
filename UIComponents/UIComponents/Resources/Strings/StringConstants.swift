@@ -65,6 +65,29 @@ public enum L10n {
     /// Kullanıcı Adı
     public static let usernamePlaceHolder = L10n.tr("Localizable", "Register.usernamePlaceHolder")
   }
+
+  public enum Walkthrough {
+    /// Fodamy is the best place to find your favorite\nrecipes in all around the word.
+    public static let firstImageSubtitle = L10n.tr("Localizable", "Walkthrough.firstImageSubtitle")
+    /// Welcom to Fodamy Network!
+    public static let firstImageTitle = L10n.tr("Localizable", "Walkthrough.firstImageTitle")
+    /// Fodamy is the best place to find your favorite\n recipes in all around the word.
+    public static let fourthImageSubtitle = L10n.tr("Localizable", "Walkthrough.fourthImageSubtitle")
+    /// Share recipes with others.
+    public static let fourthImageTitle = L10n.tr("Localizable", "Walkthrough.fourthImageTitle")
+    /// İlerle
+    public static let nextActionButtonNext = L10n.tr("Localizable", "Walkthrough.nextActionButtonNext")
+    /// Başla
+    public static let nextActionButtonStart = L10n.tr("Localizable", "Walkthrough.nextActionButtonStart")
+    /// Fodamy is the best place to find your favorite\n recipes in all around the word.
+    public static let secondImageSubtitle = L10n.tr("Localizable", "Walkthrough.secondImageSubtitle")
+    /// Finding recipes were not that easy.
+    public static let secondImageTitle = L10n.tr("Localizable", "Walkthrough.secondImageTitle")
+    /// Fodamy is the best place to find your favorite\n recipes in all around the word.
+    public static let thirdImagesubtitle = L10n.tr("Localizable", "Walkthrough.thirdImagesubtitle")
+    /// Add new recipe.
+    public static let thirdImageTitle = L10n.tr("Localizable", "Walkthrough.thirdImageTitle")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
