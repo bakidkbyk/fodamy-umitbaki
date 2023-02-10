@@ -10,11 +10,9 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .appWhite
         addSubviews()
         configure()
         setLocalize()
-        
     }
 }
 
@@ -29,7 +27,7 @@ extension HomeViewController {
 extension HomeViewController {
     
     private func configure() {
-        
+        view.backgroundColor = .appWhite
     }
     
     private func setLocalize() {
