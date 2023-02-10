@@ -13,13 +13,25 @@ public extension SegmentioOptions {
         let indicatorOptions = SegmentioIndicatorOptions(type: .bottom, ratio: 0.40, height: 3, color: .appRed)
         let horizontalSeperatorOptions = SegmentioHorizontalSeparatorOptions(type: .bottom, height: 0, color: .appWhite)
         let verticalSeparatorOptions = SegmentioVerticalSeparatorOptions(ratio: 1, color: .appZircon)
-        // swiftlint:disable line_length
-        let segmentStates = SegmentioStates(defaultState: SegmentioState(backgroundColor: .appWhite,
-                                                                         titleFont: .font(.nunitoBold, size: .medium), titleTextColor: .appCinder, titleAlpha: 1), selectedState: SegmentioState(backgroundColor: .appWhite, titleFont: .font(.nunitoBold, size: .medium), titleTextColor: .appRed, titleAlpha: 1), highlightedState: SegmentioState(backgroundColor: .appWhite, titleFont: .font(.nunitoBold, size: .medium), titleTextColor: .appCinder, titleAlpha: 1))
-
-        let  segmentioOptions = SegmentioOptions(backgroundColor: .appWhite, segmentPosition: .fixed(maxVisibleItems: 2), scrollEnabled: true, indicatorOptions: indicatorOptions, horizontalSeparatorOptions: horizontalSeperatorOptions, verticalSeparatorOptions: verticalSeparatorOptions, labelTextAlignment: .center, segmentStates: segmentStates)
+        
+        let segmentStates = SegmentioStates(defaultState: SegmentioState(backgroundColor:
+                .appWhite,
+                                                                    titleFont: .font(.nunitoBold,    size: .medium),
+                                                                    titleTextColor: .appCinder,      titleAlpha: 1),
+                                                                    selectedState: SegmentioState(backgroundColor: .appWhite, titleFont: .font(.nunitoBold, size: .medium),
+                                                                    titleTextColor: .appRed,
+                                                                    titleAlpha: 1),
+                                                                    highlightedState:               SegmentioState(backgroundColor: .appWhite,
+                                                                    titleFont: .font(.nunitoBold,    size: .medium),                  titleTextColor: .appCinder,      titleAlpha: 1))
+        
+        let  segmentioOptions = SegmentioOptions(backgroundColor:
+                .appWhite,
+                                                 segmentPosition: .fixed(maxVisibleItems: 2), scrollEnabled: true,
+                                                 indicatorOptions: indicatorOptions, horizontalSeparatorOptions: horizontalSeperatorOptions, verticalSeparatorOptions: verticalSeparatorOptions,
+                                                 labelTextAlignment: .center,
+                                                 segmentStates: segmentStates)
         
         return segmentioOptions
     }
 }
-// swiftlint:enable line_length
+

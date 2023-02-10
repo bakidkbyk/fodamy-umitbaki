@@ -11,8 +11,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
 
     private let segmentControlView: Segmentio = {
         let segmentControl = Segmentio()
-        segmentControl.setup(content: [SegmentioItem(title: L10n.Home.editorChoices, image: nil),
-                                       SegmentioItem(title: L10n.Home.lassAdded, image: nil)], style: .onlyLabel, options: .segmentioOptionsChanged())
+        segmentControl.setup(content: [SegmentioItem(title: L10n.Home.editorChoices,
+                                                     image: nil),
+                                       SegmentioItem(title: L10n.Home.lassAdded,
+                                                     image: nil)],
+                                                     style: .onlyLabel,
+                                                     options: .segmentioOptionsChanged())
         return segmentControl
     }()
     
@@ -43,7 +47,6 @@ extension HomeViewController {
     
     private func configure() {
         view.backgroundColor = .appWhite
-        
         segmentControlView.height(46)
     }
     
