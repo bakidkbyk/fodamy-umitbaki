@@ -19,20 +19,25 @@ public extension SegmentioOptions {
                                                                          titleTextColor: .appCinder, titleAlpha: 1),
                                             selectedState: SegmentioState(backgroundColor: .appWhite,
                                                                           titleFont: .font(.nunitoBold, size: .medium),
-                                                                          titleTextColor: .appRed, titleAlpha: 1),
+                                                                          titleTextColor: .appRed,
+                                                                          titleAlpha: 1),
                                             highlightedState: SegmentioState(backgroundColor: .appWhite,
-                                                                              titleFont: .font(.nunitoBold, size: .medium),
-                                                                              titleTextColor: .appCinder, titleAlpha: 1))
+                                                                             titleFont: .font(.nunitoBold, size: .medium),
+                                                                             titleTextColor: .appRed,
+                                                                             titleAlpha: 1))
         
         let  segmentioOptions = SegmentioOptions(backgroundColor: .appWhite,
                                                  segmentPosition: .fixed(maxVisibleItems: 2),
                                                  scrollEnabled: true,
-                                                 indicatorOptions: indicatorOptions,
-                                                 horizontalSeparatorOptions: horizontalSeperatorOptions,
-                                                 verticalSeparatorOptions: verticalSeparatorOptions,
+                                                 indicatorOptions:
+                                                    indicatorOptions,
+                                                 horizontalSeparatorOptions:
+                                                    horizontalSeperatorOptions,
+                                                 verticalSeparatorOptions:
+                                                    verticalSeparatorOptions,
                                                  labelTextAlignment: .center,
                                                  segmentStates:
-                                                 segmentStates)
+                                                    segmentStates)
         
         return segmentioOptions
     }
