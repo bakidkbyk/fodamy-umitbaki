@@ -39,6 +39,6 @@ final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughV
 extension WalkthroughViewModel {
     
     func didFinishWalkthrough() {
-        // TODO: (router gelecek)
+        router.placeOnWindowTabBar()
     }
 }

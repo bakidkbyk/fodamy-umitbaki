@@ -20,6 +20,7 @@ target 'fodamy-baki' do
   pod 'Alamofire', '~> 5.3'
   pod 'SwiftEntryKit', '~> 2.0.0'
   pod 'KeychainSwift', '~> 19.0'
+  pod 'Segmentio', '~> 4.1'
   
   # UI
   pod 'TinyConstraints', '~> 4.0'
@@ -49,6 +50,7 @@ target 'UIComponents' do
   pod 'Kingfisher', '~> 6.3'
   pod 'SwiftEntryKit', '~> 2.0.0'
   pod 'SwiftGen', '~> 6.0'
+  pod 'Segmentio', '~> 4.1'
   
   # UI
   pod 'TinyConstraints', '~> 4.0'

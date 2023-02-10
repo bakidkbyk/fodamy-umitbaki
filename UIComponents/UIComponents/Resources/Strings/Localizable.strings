@@ -22,6 +22,9 @@ recipes in all around the word.";
 "Walkthrough.nextActionButtonNext"  = "İlerle";
 "Walkthrough.nextActionButtonStart" = "Başla";
 
+// MARK: - Home View Controller
+"Home.editorChoices" = "EDİTÖR SEÇİMİ";
+"Home.lassAdded"     = "SON EKLENENLER";
 
 // MARK: - Login View Controller
 "Login.title"                    = "Giriş Yap";
