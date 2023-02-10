@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 6.02.2023.
 //
 
-
 class HomeTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {

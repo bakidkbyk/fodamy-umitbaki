@@ -38,6 +38,7 @@
 		FAAEAC7B296567AC00459E43 /* ToastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7A296567AC00459E43 /* ToastPresenter.swift */; };
 		FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7C296569E200459E43 /* ToastWarningView.swift */; };
 		FAAEAC902965BC8300459E43 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC8F2965BC8300459E43 /* ReusableView.swift */; };
+		FAB8489C29965CCC007D5CA7 /* Segmentio+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		FAAEAC7A296567AC00459E43 /* ToastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresenter.swift; sourceTree = "<group>"; };
 		FAAEAC7C296569E200459E43 /* ToastWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastWarningView.swift; sourceTree = "<group>"; };
 		FAAEAC8F2965BC8300459E43 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segmentio+Extensions .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				FA954487298D069600F55E23 /* ReusableView+Extensions.swift */,
+				FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				FA4C1C0529794382006C5C8D /* FloatLabelTextField.swift in Sources */,
 				FA954485298D047700F55E23 /* WalkthroughCellModel.swift in Sources */,
 				FA954488298D069600F55E23 /* ReusableView+Extensions.swift in Sources */,
+				FAB8489C29965CCC007D5CA7 /* Segmentio+Extensions .swift in Sources */,
 				FA791C90296850AF001B6985 /* UIImage+Images.swift in Sources */,
 				FA87472E29753ED900039E92 /* ButtonFactory.swift in Sources */,
 				FA791CA5296850B9001B6985 /* Fonts.swift in Sources */,
