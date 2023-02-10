@@ -11,6 +11,7 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .appCinder
     }
     
 }

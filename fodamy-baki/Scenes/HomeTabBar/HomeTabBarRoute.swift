@@ -6,20 +6,15 @@
 //
 
 protocol HomeTabBarRoute {
-    func pushHomeTabBar()
+    func placeOnWindowTabBar()
 }
 
 extension HomeTabBarRoute where Self: RouterProtocol {
     
-    func pushHomeTabBar() {
-        let router = HomeTabBarRouter()
-        let viewModel = HomeTabBarViewModel(router: router)
-        let viewController = HomeTabBarViewController(viewModel: viewModel)
+    func placeOnWindowTabBar() {
+        let homeTabBarController = HomeTabBarViewController()
+        let transition = PlaceOnWindowTransition()
         
-        let transition = PushTransition()
-        router.viewController = viewController
-        router.openTransition = transition
-        
-        open(viewController, transition: transition)
+        open(homeTabBarController, transition: transition)
     }
 }

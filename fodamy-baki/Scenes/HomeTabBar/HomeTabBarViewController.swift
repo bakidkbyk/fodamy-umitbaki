@@ -11,19 +11,31 @@ class HomeTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.tintColor = .appRed
 
-        // Do any additional setup after loading the view.
+        let homeViewController = createHomeViewController()
+        let favoritesViewController = createFavoritesController()
+
+        self.setViewControllers([homeViewController, favoritesViewController], animated: false)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func createHomeViewController() -> UINavigationController {
+        let homeRouter = HomeViewRouter()
+        let homeViewModel = HomeViewModel(router: homeRouter)
+        let homeViewController = HomeViewController(viewModel: homeViewModel)
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        navigationController.tabBarItem.image = .icHome
+        homeRouter.viewController = homeViewController
+        return navigationController
     }
-    */
-
+    
+    private func createFavoritesController() -> UINavigationController {
+        let favoritesRouter = FavoritesRouter()
+        let favoritesViewModel = FavoritesViewModel(router: favoritesRouter)
+        let favoritesViewController = FavoritesViewController(viewModel: favoritesViewModel)
+        let navigationController = UINavigationController(rootViewController: favoritesViewController)
+        navigationController.tabBarItem.image = .icHeart
+        favoritesRouter.viewController = favoritesViewController
+        return navigationController
+    }
 }

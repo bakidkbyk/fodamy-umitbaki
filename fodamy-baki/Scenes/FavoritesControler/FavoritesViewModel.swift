@@ -5,8 +5,6 @@
 //  Created by Baki Dikbıyık on 7.02.2023.
 //
 
-import Foundation
-
 protocol FavoritesViewDataSource {}
 
 protocol FavoritesViewEventSource {}

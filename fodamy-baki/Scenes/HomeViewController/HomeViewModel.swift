@@ -5,12 +5,10 @@
 //  Created by Baki Dikbıyık on 3.01.2023.
 //
 
-protocol HomeViewDataSource { }
+protocol HomeViewDataSource {}
 
-protocol HomeViewEventsource { }
+protocol HomeViewEventsource {}
 
-protocol HomeViewModelProtocol: HomeViewDataSource, HomeViewEventsource { }
+protocol HomeViewModelProtocol: HomeViewDataSource, HomeViewEventsource {}
 
-class HomeViewModel: BaseViewModel<HomeViewRouter>, HomeViewModelProtocol {
-    
-}
+class HomeViewModel: BaseViewModel<HomeViewRouter>, HomeViewModelProtocol {}
