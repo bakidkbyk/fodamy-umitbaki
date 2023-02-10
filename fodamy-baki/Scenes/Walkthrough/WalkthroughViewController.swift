@@ -128,7 +128,6 @@ extension WalkthroughViewController: UICollectionViewDelegateFlowLayout {
         return .zero
     }
 }
-// swiftlint:enable line_length
 
 // MARK: - UIScroll View Delegate
 extension WalkthroughViewController {
