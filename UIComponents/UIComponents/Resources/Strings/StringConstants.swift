@@ -24,6 +24,13 @@ public enum L10n {
     public static let title = L10n.tr("Localizable", "ForgotPassword.title")
   }
 
+  public enum Home {
+    /// EDİTÖR SEÇİMİ
+    public static let editorChoices = L10n.tr("Localizable", "Home.editorChoices")
+    /// SON EKLENENLER
+    public static let lassAdded = L10n.tr("Localizable", "Home.lassAdded")
+  }
+
   public enum Login {
     /// Üye Ol
     public static let bottomButtonText = L10n.tr("Localizable", "Login.bottomButtonText")
