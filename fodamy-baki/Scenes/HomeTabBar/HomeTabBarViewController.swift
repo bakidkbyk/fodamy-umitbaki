@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 6.02.2023.
 //
 
-import UIKit
 
 class HomeTabBarViewController: UITabBarController {
 
