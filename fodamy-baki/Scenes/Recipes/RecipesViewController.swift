@@ -11,7 +11,6 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .appYellow
     }
     
 }
