@@ -26,12 +26,11 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         return self.configureControllers()
     }()
     
-    private var selectedSegmentIndex = 0
-    
 // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
+        segmentioControlDidChange()
         configure()
         setLocalize()
     }
@@ -71,7 +70,7 @@ extension HomeViewController {
         pageViewController.dataSource = self
         segmentControl.height(46)
         
-        pageViewController.setViewControllers([subViewControllers[selectedSegmentIndex]], direction: .forward, animated: true)
+        pageViewController.setViewControllers([subViewControllers[viewModel.selectedSegmentIndex]], direction: .forward, animated: true)
     }
     
     private func setLocalize() {
@@ -105,11 +104,11 @@ extension HomeViewController {
         segmentControl.valueDidChange = { [ weak self ]  _, segmentIndex in
             guard let self = self else { return }
             var direction: UIPageViewController.NavigationDirection
-            if segmentIndex > self.viewModel.selectedSegmentIndex {
+             if segmentIndex > self.viewModel.selectedSegmentIndex {
                 direction = .forward
-            } else if segmentIndex < self.viewModel.selectedSegmentIndex {
-                direction = .reverse
-            }
+             } else if segmentIndex < self.viewModel.selectedSegmentIndex {
+                 direction = .reverse
+             }
             self.pageViewController.setViewControllers([self.subViewControllers[segmentIndex]], direction: .forward, animated: true)
             self.viewModel.selectedSegmentIndex = segmentIndex
         }
@@ -117,7 +116,21 @@ extension HomeViewController {
  }
 
 // MARK: - Page View Controller Delegate
-extension HomeViewController: UIPageViewControllerDelegate {}
+extension HomeViewController: UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            didFinishAnimating finished: Bool,
+                            previousViewControllers: [UIViewController],
+                            transitionCompleted completed: Bool) {
+        
+        if completed {
+            if let currentViewController = pageViewController.viewControllers?.first,
+               let index = subViewControllers.firstIndex(of: currentViewController) {
+                segmentControl.selectedSegmentioIndex = index
+            }
+        }
+    }
+}
 
 // MARK: - Page View Controller Data Source
 extension HomeViewController: UIPageViewControllerDataSource {
@@ -139,4 +152,3 @@ extension HomeViewController: UIPageViewControllerDataSource {
         return subViewControllers.count
     }
 }
-
