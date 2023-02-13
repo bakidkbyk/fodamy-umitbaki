@@ -37,8 +37,6 @@
 		FAB84898299656D2007D5CA7 /* HomeTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB84896299656D2007D5CA7 /* HomeTabBarRoute.swift */; };
 		FAB84899299656D2007D5CA7 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB84897299656D2007D5CA7 /* HomeTabBarViewController.swift */; };
 		FAB974E129979EF200A10EFD /* RecipesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB974DE29979EF200A10EFD /* RecipesRouter.swift */; };
-		FAB974E229979EF200A10EFD /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB974DF29979EF200A10EFD /* RecipesViewController.swift */; };
-		FAB974E329979EF200A10EFD /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB974E029979EF200A10EFD /* RecipesViewModel.swift */; };
 		FAC3A838298420B90095A7C3 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3A837298420B90095A7C3 /* Animator.swift */; };
 		FAC3A83A298420CE0095A7C3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3A839298420CE0095A7C3 /* Router.swift */; };
 		FAC3A83D2984210D0095A7C3 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3A83C2984210D0095A7C3 /* AppRouter.swift */; };
@@ -96,8 +94,6 @@
 		FAB84896299656D2007D5CA7 /* HomeTabBarRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarRoute.swift; sourceTree = "<group>"; };
 		FAB84897299656D2007D5CA7 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		FAB974DE29979EF200A10EFD /* RecipesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRouter.swift; sourceTree = "<group>"; };
-		FAB974DF29979EF200A10EFD /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
-		FAB974E029979EF200A10EFD /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		FAC3A837298420B90095A7C3 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		FAC3A839298420CE0095A7C3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FAC3A83C2984210D0095A7C3 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -295,8 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				FAB974DE29979EF200A10EFD /* RecipesRouter.swift */,
-				FAB974DF29979EF200A10EFD /* RecipesViewController.swift */,
-				FAB974E029979EF200A10EFD /* RecipesViewModel.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -521,7 +515,6 @@
 				FACE72F129892447001B98D4 /* ForgotPasswordRouter.swift in Sources */,
 				FAB84898299656D2007D5CA7 /* HomeTabBarRoute.swift in Sources */,
 				FAC3A838298420B90095A7C3 /* Animator.swift in Sources */,
-				FAB974E229979EF200A10EFD /* RecipesViewController.swift in Sources */,
 				FAA71F3F2992197500E150A3 /* FavoritesViewController.swift in Sources */,
 				FAA71F4429921BD300E150A3 /* FavoritesViewModel.swift in Sources */,
 				FAC3A83D2984210D0095A7C3 /* AppRouter.swift in Sources */,
@@ -543,7 +536,6 @@
 				FAA819C32964609A00B4C83A /* HomeViewModel.swift in Sources */,
 				FACE72F329892447001B98D4 /* ForgotPasswordViewModel.swift in Sources */,
 				FAC3A8422984218C0095A7C3 /* PlaceOnWindowTransition.swift in Sources */,
-				FAB974E329979EF200A10EFD /* RecipesViewModel.swift in Sources */,
 				FAB84899299656D2007D5CA7 /* HomeTabBarViewController.swift in Sources */,
 				FAB60DB6297FD9FD00F1DB9A /* Validation.swift in Sources */,
 				FACE72F229892447001B98D4 /* ForgotPasswordViewController.swift in Sources */,
