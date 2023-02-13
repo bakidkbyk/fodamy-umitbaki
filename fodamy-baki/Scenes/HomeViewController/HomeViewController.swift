@@ -32,6 +32,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         addSubviews()
         segmentioControlDidChange()
         configure()
+        addNavigationFodamyLogo()
+        setMainNavigation()
     }
 }
 
@@ -56,6 +58,15 @@ extension HomeViewController {
         pageViewController.view.edgesToSuperview(excluding: .top, usingSafeArea: true)
         pageViewController.view.topToBottom(of: segmentControl)
     }
+    
+    private func addNavigationFodamyLogo() {
+        let image = UIImage.imgLogoFodamy
+        let imageView = UIImageView()
+        imageView.size(CGSize(width: 110, height: 30))
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = image
+        navigationItem.titleView = imageView
+    }
 }
 
 // MARK: - Configure Contents
@@ -68,6 +79,19 @@ extension HomeViewController {
         segmentControl.height(46)
         
         pageViewController.setViewControllers([subViewControllers[viewModel.selectedSegmentIndex]], direction: .forward, animated: true)
+    }
+    
+    private func setMainNavigation() {
+        if #available(iOS 13.00, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.appRed
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.appWhite]
+            
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+            navigationItem.compactAppearance = appearance
+        }
     }
 }
 
