@@ -32,6 +32,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         addSubviews()
         segmentioControlDidChange()
         configure()
+        addNavigationFodamyLogo()
     }
 }
 
@@ -69,6 +70,17 @@ extension HomeViewController {
         
         pageViewController.setViewControllers([subViewControllers[viewModel.selectedSegmentIndex]], direction: .forward, animated: true)
     }
+    
+    private func addNavigationFodamyLogo() {
+        let image = UIImage.imgLogoFodamy
+        let imageView = UIImageView()
+        imageView.size(CGSize(width: 110, height: 30))
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = image
+        navigationItem.titleView = imageView
+    }
+    
+
 }
 
 // MARK: - Configure Controllers
