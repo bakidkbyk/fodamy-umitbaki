@@ -14,14 +14,17 @@ class HomeTabBarViewController: UITabBarController {
         let homeViewController = createHomeViewController()
         let favoritesViewController = createFavoritesController()
 
-        self.setViewControllers([homeViewController, favoritesViewController], animated: false)
+        viewControllers = [
+            homeViewController,
+            favoritesViewController
+        ]
     }
     
     private func createHomeViewController() -> UINavigationController {
         let homeRouter = HomeViewRouter()
         let homeViewModel = HomeViewModel(router: homeRouter)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
-        let navigationController = UINavigationController(rootViewController: homeViewController)
+        let navigationController = MainNavigationController(rootViewController: homeViewController)
         navigationController.tabBarItem.image = .icHome
         homeRouter.viewController = homeViewController
         return navigationController
@@ -31,7 +34,7 @@ class HomeTabBarViewController: UITabBarController {
         let favoritesRouter = FavoritesRouter()
         let favoritesViewModel = FavoritesViewModel(router: favoritesRouter)
         let favoritesViewController = FavoritesViewController(viewModel: favoritesViewModel)
-        let navigationController = UINavigationController(rootViewController: favoritesViewController)
+        let navigationController = MainNavigationController(rootViewController: favoritesViewController)
         navigationController.tabBarItem.image = .icHeart
         favoritesRouter.viewController = favoritesViewController
         return navigationController

@@ -33,7 +33,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         segmentioControlDidChange()
         configure()
         addNavigationFodamyLogo()
-        setMainNavigation()
     }
 }
 
@@ -81,18 +80,7 @@ extension HomeViewController {
         navigationItem.titleView = imageView
     }
     
-    private func setMainNavigation() {
-        if #available(iOS 13.00, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UIColor.appRed
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.appWhite]
-            
-            navigationItem.standardAppearance = appearance
-            navigationItem.scrollEdgeAppearance = appearance
-            navigationItem.compactAppearance = appearance
-        }
-    }
+
 }
 
 // MARK: - Configure Controllers
