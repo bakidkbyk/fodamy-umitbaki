@@ -6,6 +6,7 @@
 //
 
 import Segmentio
+import KeychainSwift
 
 class HomeViewController: BaseViewController<HomeViewModel> {
 
@@ -26,6 +27,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         return self.configureControllers()
     }()
     
+    private let keychain = KeychainSwift()
+    
 // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         segmentioControlDidChange()
         configure()
         addNavigationFodamyLogo()
+        subscribeViewModelEvents()
     }
 }
 
@@ -79,8 +83,6 @@ extension HomeViewController {
         imageView.image = image
         navigationItem.titleView = imageView
     }
-    
-
 }
 
 // MARK: - Configure Controllers
@@ -153,5 +155,35 @@ extension HomeViewController: UIPageViewControllerDataSource {
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return subViewControllers.count
+    }
+}
+
+// MARK: - Logout
+extension HomeViewController {
+    
+    private func setLogoutBarButton() {
+        let button = UIBarButtonItem(image: .icLogout, style: .done, target: self, action: #selector(logoutBarButtonTapped))
+        navigationItem.rightBarButtonItem = button
+    }
+    
+    @objc
+    func logoutBarButtonTapped() {
+        viewModel.userLogout()
+    }
+    
+    private func checkUserLogin() {
+        guard keychain.get(Keychain.token) != nil else {
+            navigationItem.rightBarButtonItem = .none
+            return
+        }
+        setLogoutBarButton()
+    }
+    // Delete keychain
+    private func subscribeViewModelEvents() {
+        viewModel.didSuccessLogut = { [ weak self ] in
+            guard let self = self else { return }
+            self.keychain.delete(Keychain.token)
+            self.navigationItem.rightBarButtonItem = .none
+        }
     }
 }

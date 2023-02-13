@@ -22,6 +22,7 @@
 		FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB2297FD4C200F1DB9A /* Image.swift */; };
 		FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72EB2989117E001B98D4 /* LoginRequest.swift */; };
 		FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */; };
+		FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		FAB60DB2297FD4C200F1DB9A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FACE72EB2989117E001B98D4 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
+		FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				FAB60DAB297FD21400F1DB9A /* RegisterRequest.swift */,
 				FACE72EB2989117E001B98D4 /* LoginRequest.swift */,
 				FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */,
+				FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				FA91092D296E803A005F8651 /* APIDecodableResponseRequest.swift in Sources */,
 				FAB60DB1297FD4AA00F1DB9A /* User.swift in Sources */,
 				FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */,
+				FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */,
 				FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */,
 				FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */,
 			);
