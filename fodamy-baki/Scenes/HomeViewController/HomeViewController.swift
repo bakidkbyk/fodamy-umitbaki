@@ -32,7 +32,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         addSubviews()
         segmentioControlDidChange()
         configure()
-        setLocalize()
     }
 }
 
@@ -56,12 +55,10 @@ extension HomeViewController {
         
         pageViewController.view.edgesToSuperview(excluding: .top, usingSafeArea: true)
         pageViewController.view.topToBottom(of: segmentControl)
-        pageViewController.view.backgroundColor = .appRed
-        
     }
 }
 
-// MARK: - Configure Contents and Localize
+// MARK: - Configure Contents
 extension HomeViewController {
     
     private func configure() {
@@ -72,11 +69,6 @@ extension HomeViewController {
         
         pageViewController.setViewControllers([subViewControllers[viewModel.selectedSegmentIndex]], direction: .forward, animated: true)
     }
-    
-    private func setLocalize() {
-        
-    }
-
 }
 
 // MARK: - Configure Controllers
@@ -143,7 +135,6 @@ extension HomeViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let index = self.subViewControllers.firstIndex(of: viewController), index < (subViewControllers.count - 1) else { return nil }
-        
         let after = index + 1
         return subViewControllers[after]
     }
