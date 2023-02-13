@@ -58,15 +58,6 @@ extension HomeViewController {
         pageViewController.view.edgesToSuperview(excluding: .top, usingSafeArea: true)
         pageViewController.view.topToBottom(of: segmentControl)
     }
-    
-    private func addNavigationFodamyLogo() {
-        let image = UIImage.imgLogoFodamy
-        let imageView = UIImageView()
-        imageView.size(CGSize(width: 110, height: 30))
-        imageView.contentMode = .scaleAspectFill
-        imageView.image = image
-        navigationItem.titleView = imageView
-    }
 }
 
 // MARK: - Configure Contents
@@ -79,6 +70,15 @@ extension HomeViewController {
         segmentControl.height(46)
         
         pageViewController.setViewControllers([subViewControllers[viewModel.selectedSegmentIndex]], direction: .forward, animated: true)
+    }
+    
+    private func addNavigationFodamyLogo() {
+        let image = UIImage.imgLogoFodamy
+        let imageView = UIImageView()
+        imageView.size(CGSize(width: 110, height: 30))
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = image
+        navigationItem.titleView = imageView
     }
     
     private func setMainNavigation() {
