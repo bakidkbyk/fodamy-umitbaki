@@ -39,8 +39,6 @@
 		FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC7C296569E200459E43 /* ToastWarningView.swift */; };
 		FAAEAC902965BC8300459E43 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC8F2965BC8300459E43 /* ReusableView.swift */; };
 		FAB8489C29965CCC007D5CA7 /* Segmentio+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */; };
-		FADE8ACE299AA551008A1A83 /* RecipeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8ACD299AA551008A1A83 /* RecipeCellModel.swift */; };
-		FADE8AD0299AA561008A1A83 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8ACF299AA561008A1A83 /* RecipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,8 +77,6 @@
 		FAAEAC7C296569E200459E43 /* ToastWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastWarningView.swift; sourceTree = "<group>"; };
 		FAAEAC8F2965BC8300459E43 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segmentio+Extensions .swift"; sourceTree = "<group>"; };
-		FADE8ACD299AA551008A1A83 /* RecipeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellModel.swift; sourceTree = "<group>"; };
-		FADE8ACF299AA561008A1A83 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +131,6 @@
 		FA2DB7A729631242004D38E2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				FADE8ACC299AA53B008A1A83 /* RecipeCell */,
 				FA954489298D7C1300F55E23 /* UIPageControl */,
 				FA954486298D068D00F55E23 /* Extensions */,
 				FA954481298CDB0200F55E23 /* WalkthroughCell */,
@@ -274,15 +269,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		FADE8ACC299AA53B008A1A83 /* RecipeCell */ = {
-			isa = PBXGroup;
-			children = (
-				FADE8ACF299AA561008A1A83 /* RecipeCell.swift */,
-				FADE8ACD299AA551008A1A83 /* RecipeCellModel.swift */,
-			);
-			path = RecipeCell;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -419,7 +405,6 @@
 				FA4C1C092979539C006C5C8D /* StringConstants.swift in Sources */,
 				FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */,
 				FA954483298CDB2700F55E23 /* WalkthroughCell.swift in Sources */,
-				FADE8AD0299AA561008A1A83 /* RecipeCell.swift in Sources */,
 				FA4C1C0529794382006C5C8D /* FloatLabelTextField.swift in Sources */,
 				FA954485298D047700F55E23 /* WalkthroughCellModel.swift in Sources */,
 				FA954488298D069600F55E23 /* ReusableView+Extensions.swift in Sources */,
@@ -433,7 +418,6 @@
 				FAAEAC902965BC8300459E43 /* ReusableView.swift in Sources */,
 				FAABD0642965E32E00126FA9 /* BlockingActivityIndicator.swift in Sources */,
 				FA791C8E296850AF001B6985 /* UIImage+Icons.swift in Sources */,
-				FADE8ACE299AA551008A1A83 /* RecipeCellModel.swift in Sources */,
 				FAABD05E2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift in Sources */,
 				FAABD0602965E2E200126FA9 /* LoadingProtocol.swift in Sources */,
 				FA95448B298D7C2000F55E23 /* PageControl.swift in Sources */,
