@@ -52,6 +52,13 @@ public enum L10n {
     public static let usernamePlaceHolder = L10n.tr("Localizable", "Login.usernamePlaceHolder")
   }
 
+  public enum Recipes {
+    /// Takip Et
+    public static let follow = L10n.tr("Localizable", "Recipes.follow")
+    /// Takip Ediliyor
+    public static let following = L10n.tr("Localizable", "Recipes.following")
+  }
+
   public enum Register {
     /// Giriş Yap
     public static let bottomButtonText = L10n.tr("Localizable", "Register.bottomButtonText")

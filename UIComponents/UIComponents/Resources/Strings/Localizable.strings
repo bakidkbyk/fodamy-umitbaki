@@ -27,8 +27,8 @@ recipes in all around the word.";
 "Home.lassAdded"     = "SON EKLENENLER";
 
 // MARK: - Recipes View Controller
-"Recipes.follow" = "Takip Et"
-"Recipes.following" = "Takip Ediliyor"
+"Recipes.follow" = "Takip Et";
+"Recipes.following" = "Takip Ediliyor";
 
 // MARK: - Login View Controller
 "Login.title"                    = "Giriş Yap";

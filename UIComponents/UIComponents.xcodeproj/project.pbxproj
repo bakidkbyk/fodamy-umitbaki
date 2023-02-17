@@ -42,6 +42,7 @@
 		FAAEAC902965BC8300459E43 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC8F2965BC8300459E43 /* ReusableView.swift */; };
 		FAB5A641299E2E94001A018D /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5A640299E2E94001A018D /* UserView.swift */; };
 		FAB8489C29965CCC007D5CA7 /* Segmentio+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */; };
+		FABA47A9299F79FF00706BA9 /* UIImageView+Etensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA47A8299F79FF00706BA9 /* UIImageView+Etensions .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		FAAEAC8F2965BC8300459E43 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		FAB5A640299E2E94001A018D /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segmentio+Extensions .swift"; sourceTree = "<group>"; };
+		FABA47A8299F79FF00706BA9 /* UIImageView+Etensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Etensions .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 			children = (
 				FA954487298D069600F55E23 /* ReusableView+Extensions.swift */,
 				FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */,
+				FABA47A8299F79FF00706BA9 /* UIImageView+Etensions .swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABA47A9299F79FF00706BA9 /* UIImageView+Etensions .swift in Sources */,
 				FAB5A641299E2E94001A018D /* UserView.swift in Sources */,
 				FA4C1C092979539C006C5C8D /* StringConstants.swift in Sources */,
 				FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */,

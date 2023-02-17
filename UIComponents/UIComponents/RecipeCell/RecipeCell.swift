@@ -5,38 +5,19 @@
 //  Created by Baki Dikbıyık on 13.02.2023.
 //
 
-import MobilliumBuilders
-
 public class RecipeCell: UICollectionViewCell, ReusableView {
     
-    private let userView = UIViewBuilder()
+    private let userView = UserView()
+    
+    private let lineView = UIViewBuilder()
+        .backgroundColor(.appZircon)
         .build()
     
-    private let userImageAndInfoStackView = UIStackViewBuilder()
-        .spacing(10)
-        .axis(.horizontal)
+    private let recipeTitleContainerView = UIViewBuilder()
+        .backgroundColor(.appWhite)
         .build()
     
-    private let userImageView = UIImageViewBuilder()
-        .contentMode(.scaleAspectFill)
-        .build()
-    
-    private let userInfoStackView = UIStackViewBuilder()
-        .axis(.vertical)
-        .spacing(4)
-        .build()
-    
-    private let usernameLabel = UILabelBuilder()
-        .font(.font(.nunitoBold, size: .xSmall))
-        .textColor(.appZircon)
-        .build()
-    
-    private let recipeCountAndFollowersLabel = UILabelBuilder()
-        .font(.font(.nunitoBold, size: .medium))
-        .textColor(.appHeather)
-        .build()
-    
-    private let recipeDescriptionStackView = UIStackViewBuilder()
+    private let recipeTitleStackView = UIStackViewBuilder()
         .spacing(4)
         .axis(.vertical)
         .build()
@@ -51,8 +32,13 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .textColor(.appHeather)
         .build()
 
-    private let foodImageView = UIImageViewBuilder()
-        .contentMode(.scaleAspectFit)
+    private let recipeImageView = UIImageViewBuilder()
+        .contentMode(.scaleAspectFill)
+        .cornerRadius(5)
+        .clipsToBounds(true)
+        .build()
+    
+    private let commentAndLikeContainerView = UIViewBuilder()
         .build()
     
     private let commentAndLikeStackView = UIStackViewBuilder()
@@ -86,25 +72,51 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
 extension RecipeCell {
     
     private func addSubViews() {
+        backgroundColor = .appWhite
+        addUserView()
+        addLineView()
+        addRecipeTitleContainerView()
+        addRecipeImageView()
+        addCommentAndLikeContainerView()
         
     }
     
     private func addUserView() {
         contentView.addSubview(userView)
-        
-        userView.edgesToSuperview(excluding: .bottom, insets: TinyEdgeInsets(top: 30, left: 0, bottom: 0, right: 0), usingSafeArea: true)
-        
-        userView.addSubview(userImageAndInfoStackView)
-        
-      
-        
-        
-        userImageAndInfoStackView.addArrangedSubview(userImageView)
-        userImageAndInfoStackView.addArrangedSubview(userInfoStackView)
-        
-        userInfoStackView.addArrangedSubview(usernameLabel)
-        userInfoStackView.addArrangedSubview(recipeCountAndFollowersLabel)
+        userView.edgesToSuperview(excluding: .bottom)
+        userView.height(70)
     }
     
-   
+    private func addLineView() {
+        contentView.addSubview(lineView)
+        lineView.topToBottom(of: userView)
+        lineView.edgesToSuperview(excluding: [.top, .bottom])
+        lineView.height(1)
+    }
+    
+    private func addRecipeTitleContainerView() {
+        contentView.addSubview(recipeTitleContainerView)
+        recipeTitleContainerView.topToBottom(of: lineView).constant = 11
+        recipeTitleContainerView.edgesToSuperview(excluding: [.trailing, .bottom])
+        recipeTitleContainerView.leadingToSuperview().constant = 15
+        recipeTitleContainerView.height(61)
+        
+        recipeTitleContainerView.addSubview(recipeTitleStackView)
+        recipeTitleStackView.edgesToSuperview(excluding: [.top, .bottom])
+        recipeTitleStackView.centerYToSuperview()
+    }
+    
+    private func addRecipeImageView() {
+        contentView.addSubview(recipeImageView)
+        recipeImageView.edgesToSuperview(excluding: .bottom, insets: .init(top: 10, left: 15, bottom: 0, right: 15))
+        recipeImageView.height(345)
+    }
+    
+    private func addCommentAndLikeContainerView() {
+        contentView.addSubview(commentAndLikeContainerView)
+        commentAndLikeContainerView.edgesToSuperview(excluding: [.trailing, .bottom], insets: .init(top: 13, left: 15, bottom: 0, right: 0))
+        
+        commentAndLikeContainerView.addSubview(commentAndLikeStackView)
+        commentAndLikeStackView.edgesToSuperview()
+    }
 }

@@ -33,6 +33,18 @@ public class UserView: UIView {
     
     private lazy var followButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
     
+    public var userImgUrl: String? {
+        willSet {
+            userImageView.setImage(newValue)
+        }
+    }
+    
+    public var recipeCountAndFollowersLabelText: String? {
+        willSet {
+            recipeCountAndFollowersLabel.text = newValue
+        }
+    }
+    
     public var  isShowsFollowButton = false {
         didSet {
             followButton.isHidden = !isShowsFollowButton
@@ -73,7 +85,5 @@ extension UserView {
         followButtonStackView.centerYToSuperview()
         followButtonStackView.width(120)
         followButtonStackView.addArrangedSubview(followButton)
-        
     }
 }
-
