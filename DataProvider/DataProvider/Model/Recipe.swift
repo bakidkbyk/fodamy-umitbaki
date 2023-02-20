@@ -11,6 +11,7 @@ public struct Recipe: Decodable {
     public let title: String
     public let likeCount: Int
     public let commentCount: Int
+    public let category: Categories
     public let user: User
     public let image: [Image]
     
@@ -19,6 +20,7 @@ public struct Recipe: Decodable {
         case title
         case likeCount = "like_count"
         case commentCount = "comment_count"
+        case category 
         case user
         case image
     }
