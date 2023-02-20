@@ -12,6 +12,9 @@
 		FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */; };
 		FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */; };
 		FA8D3BF629A34A61008056B5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BF529A34A61008056B5 /* Recipe.swift */; };
+		FA8D3BF929A34C85008056B5 /* GetRecipesRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BF829A34C85008056B5 /* GetRecipesRequestRequest.swift */; };
+		FA8D3BFB29A35029008056B5 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BFA29A35029008056B5 /* BaseResponse.swift */; };
+		FA8D3BFD29A35072008056B5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BFC29A35072008056B5 /* Pagination.swift */; };
 		FA91092D296E803A005F8651 /* APIDecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91092C296E803A005F8651 /* APIDecodableResponseRequest.swift */; };
 		FA91092F296E8237005F8651 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91092E296E8237005F8651 /* RequestMethod.swift */; };
 		FA910931296E8263005F8651 /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA910930296E8263005F8651 /* RequestEncoding.swift */; };
@@ -34,6 +37,9 @@
 		FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
 		FA8D3BF529A34A61008056B5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		FA8D3BF829A34C85008056B5 /* GetRecipesRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesRequestRequest.swift; sourceTree = "<group>"; };
+		FA8D3BFA29A35029008056B5 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		FA8D3BFC29A35072008056B5 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		FA91092C296E803A005F8651 /* APIDecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDecodableResponseRequest.swift; sourceTree = "<group>"; };
 		FA91092E296E8237005F8651 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		FA910930296E8263005F8651 /* RequestEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
@@ -93,6 +99,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		FA8D3BF729A34C5C008056B5 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D3BF829A34C85008056B5 /* GetRecipesRequestRequest.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
 		FAA819522964063B00B4C83A = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +139,7 @@
 		FAB60DA9297FD1F600F1DB9A /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				FA8D3BF729A34C5C008056B5 /* Recipe */,
 				FAB60DAA297FD20100F1DB9A /* Auth */,
 			);
 			path = Request;
@@ -148,6 +163,8 @@
 				FAB60DB0297FD4AA00F1DB9A /* User.swift */,
 				FAB60DB2297FD4C200F1DB9A /* Image.swift */,
 				FA8D3BF529A34A61008056B5 /* Recipe.swift */,
+				FA8D3BFA29A35029008056B5 /* BaseResponse.swift */,
+				FA8D3BFC29A35072008056B5 /* Pagination.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,13 +281,16 @@
 				FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */,
 				FA910933296E8286005F8651 /* DataProviderProtocol.swift in Sources */,
 				FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */,
+				FA8D3BF929A34C85008056B5 /* GetRecipesRequestRequest.swift in Sources */,
 				FA91092F296E8237005F8651 /* RequestMethod.swift in Sources */,
+				FA8D3BFB29A35029008056B5 /* BaseResponse.swift in Sources */,
 				FAB60DAC297FD21400F1DB9A /* RegisterRequest.swift in Sources */,
 				FA91092D296E803A005F8651 /* APIDecodableResponseRequest.swift in Sources */,
 				FA8D3BF629A34A61008056B5 /* Recipe.swift in Sources */,
 				FAB60DB1297FD4AA00F1DB9A /* User.swift in Sources */,
 				FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */,
 				FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */,
+				FA8D3BFD29A35072008056B5 /* Pagination.swift in Sources */,
 				FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */,
 				FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */,
 			);
