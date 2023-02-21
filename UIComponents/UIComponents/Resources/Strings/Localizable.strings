@@ -29,6 +29,7 @@ recipes in all around the word.";
 // MARK: - Recipes View Controller
 "Recipes.follow" = "Takip Et";
 "Recipes.following" = "Takip Ediliyor";
+"Recipes.dataIsNotMatch" = "Data Eşleşmedi!";
 
 // MARK: - Login View Controller
 "Login.title"                    = "Giriş Yap";

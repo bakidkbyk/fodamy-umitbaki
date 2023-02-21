@@ -6,13 +6,15 @@
 //
 
 public protocol RecipeCellDataSource {
-    var usernameImageUrl: String { get }
-    var username: String { get }
-    var recipeAndFollowers: String { get }
-    var recipeTitle: String { get }
-    var recipeDesctription: String { get }
-    var foodImageUrl: String { get }
-    var commentAndLikes: String { get }
+    var recipeId: Int { get }
+    var userId: Int { get }
+    var usernameImageUrl: String? { get }
+    var username: String? { get }
+    var recipeAndFollowers: String? { get }
+    var recipeTitle: String? { get }
+    var categoryName: String? { get }
+    var foodImageUrl: String? { get }
+    var commentAndLikes: String? { get }
 }
 public protocol RecipeCellEventSource { }
 
@@ -20,20 +22,32 @@ public protocol RecipeCellProtocol : RecipeCellDataSource, RecipeCellEventSource
 
 public class RecipeCellModel: RecipeCellProtocol {
     
-    public var usernameImageUrl: String
-    public var username: String
-    public var recipeAndFollowers: String
-    public var recipeTitle: String
-    public var recipeDesctription: String
-    public var foodImageUrl: String
-    public var commentAndLikes: String
+    public var recipeId: Int
+    public var userId: Int
+    public var usernameImageUrl: String?
+    public var username: String?
+    public var recipeAndFollowers: String?
+    public var recipeTitle: String?
+    public var categoryName: String?
+    public var foodImageUrl: String?
+    public var commentAndLikes: String?
  
-    public init(usernameImageUrl: String, username: String, recipeAndFollowers: String, recipeTitle: String, recipeDescription: String, foodImageUrl: String, commentAndLikes: String) {
+    public init(recipeId: Int,
+                userId: Int,
+                usernameImageUrl: String,
+                username: String,
+                recipeAndFollowers: String,
+                recipeTitle: String,
+                categoryName: String,
+                foodImageUrl: String,
+                commentAndLikes: String) {
+        self.recipeId = recipeId
+        self.userId = userId
         self.usernameImageUrl = usernameImageUrl
         self.username = username
         self.recipeAndFollowers = recipeAndFollowers
         self.recipeTitle = recipeTitle
-        self.recipeDesctription = recipeDescription
+        self.categoryName = categoryName
         self.foodImageUrl = foodImageUrl
         self.commentAndLikes = commentAndLikes
     }

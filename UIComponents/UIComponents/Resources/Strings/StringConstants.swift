@@ -53,6 +53,8 @@ public enum L10n {
   }
 
   public enum Recipes {
+    /// Data Eşleşmedi!
+    public static let dataIsNotMatch = L10n.tr("Localizable", "Recipes.dataIsNotMatch")
     /// Takip Et
     public static let follow = L10n.tr("Localizable", "Recipes.follow")
     /// Takip Ediliyor

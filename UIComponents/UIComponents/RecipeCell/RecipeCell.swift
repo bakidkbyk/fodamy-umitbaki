@@ -27,7 +27,7 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .textColor(.appZircon)
         .build()
     
-    private let recipeDescriptionLabel = UILabelBuilder()
+    private let categoryNameLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .xLarge))
         .textColor(.appHeather)
         .build()
@@ -46,15 +46,12 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .spacing(2)
         .build()
     
-    private let commentLabel = UILabelBuilder()
+    private let commentAndLikesLabel = UILabelBuilder()
         .font(.font(.nunitoSemiBold, size: .medium))
         .textColor(.appHeather)
         .build()
 
-    private let likesLabel = UILabelBuilder()
-        .font(.font(.nunitoSemiBold, size: .medium))
-        .textColor(.appHeather)
-        .build()
+    var viewModel: RecipeCellProtocol?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -65,7 +62,6 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         super.init(coder: coder)
         addSubViews()
     }
-    
 }
 
 // MARK: - UILayout
@@ -78,7 +74,6 @@ extension RecipeCell {
         addRecipeTitleContainerView()
         addRecipeImageView()
         addCommentAndLikeContainerView()
-        
     }
     
     private func addUserView() {
@@ -104,6 +99,9 @@ extension RecipeCell {
         recipeTitleContainerView.addSubview(recipeTitleStackView)
         recipeTitleStackView.edgesToSuperview(excluding: [.top, .bottom])
         recipeTitleStackView.centerYToSuperview()
+        
+        recipeTitleStackView.addArrangedSubview(recipeTitleLabel)
+        recipeTitleStackView.addArrangedSubview(categoryNameLabel)
     }
     
     private func addRecipeImageView() {
@@ -118,5 +116,21 @@ extension RecipeCell {
         
         commentAndLikeContainerView.addSubview(commentAndLikeStackView)
         commentAndLikeStackView.edgesToSuperview()
+        commentAndLikeStackView.addArrangedSubview(commentAndLikesLabel)
+    }
+}
+
+// MARK: - Set View Model
+extension RecipeCell {
+    
+    private func set(viewModel: RecipeCellProtocol) {
+        self.viewModel = viewModel
+        userView.username = viewModel.username
+        userView.userImgUrl = viewModel.usernameImageUrl
+        userView.recipeCountAndFollowersLabelText = viewModel.recipeAndFollowers
+        recipeTitleLabel.text = viewModel.recipeTitle
+        categoryNameLabel.text = viewModel.categoryName
+        recipeImageView.setImage(viewModel.foodImageUrl)
+        commentAndLikesLabel.text = viewModel.commentAndLikes
     }
 }

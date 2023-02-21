@@ -39,6 +39,12 @@ public class UserView: UIView {
         }
     }
     
+    public var username: String? {
+        willSet {
+            usernameLabel.text = newValue
+        }
+    }
+    
     public var recipeCountAndFollowersLabelText: String? {
         willSet {
             recipeCountAndFollowersLabel.text = newValue
