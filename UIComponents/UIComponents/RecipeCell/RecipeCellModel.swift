@@ -15,6 +15,7 @@ public protocol RecipeCellDataSource {
     var categoryName: String? { get }
     var foodImageUrl: String? { get }
     var commentAndLikes: String? { get }
+    var isEditorChoice: Bool { get }
 }
 public protocol RecipeCellEventSource { }
 
@@ -31,6 +32,7 @@ public class RecipeCellModel: RecipeCellProtocol {
     public var categoryName: String?
     public var foodImageUrl: String?
     public var commentAndLikes: String?
+    public var isEditorChoice: Bool
  
     public init(recipeId: Int,
                 userId: Int,
@@ -40,7 +42,8 @@ public class RecipeCellModel: RecipeCellProtocol {
                 recipeTitle: String,
                 categoryName: String,
                 foodImageUrl: String,
-                commentAndLikes: String) {
+                commentAndLikes: String,
+                isEditorChoice: Bool) {
         self.recipeId = recipeId
         self.userId = userId
         self.usernameImageUrl = usernameImageUrl
@@ -50,5 +53,6 @@ public class RecipeCellModel: RecipeCellProtocol {
         self.categoryName = categoryName
         self.foodImageUrl = foodImageUrl
         self.commentAndLikes = commentAndLikes
+        self.isEditorChoice = isEditorChoice
     }
 }

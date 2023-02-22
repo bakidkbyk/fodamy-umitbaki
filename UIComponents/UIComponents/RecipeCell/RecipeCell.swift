@@ -121,9 +121,9 @@ extension RecipeCell {
 }
 
 // MARK: - Set View Model
-extension RecipeCell {
+public extension RecipeCell {
     
-    private func set(viewModel: RecipeCellProtocol) {
+    func set(viewModel: RecipeCellProtocol) {
         self.viewModel = viewModel
         userView.username = viewModel.username
         userView.userImgUrl = viewModel.usernameImageUrl
