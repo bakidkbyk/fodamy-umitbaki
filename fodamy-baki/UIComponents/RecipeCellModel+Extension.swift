@@ -10,12 +10,12 @@ extension RecipeCellModel {
     convenience init(recipe: Recipe) {
         self.init(recipeId: recipe.id,
                   userId: recipe.user.id,
-                  usernameImageUrl: recipe.user.image.url!,
-                  username: recipe.user.username,
+                  usernameImageUrl: recipe.user.image?.url ?? "",
+                  username: recipe.user.username!,
                   recipeAndFollowers: "\(recipe.user.recipeCount) Tarif \(recipe.user.followingCount) Takipçi",
                   recipeTitle: recipe.title!,
-                  categoryName: recipe.category.name,
-                  foodImageUrl: (recipe.image.first?.url)!,
+                  categoryName: recipe.category.name ?? "",
+                  foodImageUrl: recipe.image?.first?.url ?? "" ,
                   commentAndLikes: "\(recipe.commentCount) Yorum \(recipe.likeCount) Beğeni",
                   isEditorChoice: recipe.isEditorChoice)
             }

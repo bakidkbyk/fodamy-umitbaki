@@ -32,7 +32,10 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     
     private func subscribeActivityIndicator() {
         viewModel.showActivityIndicatorView = { [weak self] in
-            self?.showActivityIndicator()
+            self?.showActivityIndicator(indicatorType: .center)
+        }
+        viewModel.showActivityIndicatorBottomView = { [weak self] in
+            self?.showActivityIndicator(indicatorType: .bottom)
         }
         viewModel.hideActivityIndicatorView = { [weak self] in
             self?.hideActivityIndicator()
