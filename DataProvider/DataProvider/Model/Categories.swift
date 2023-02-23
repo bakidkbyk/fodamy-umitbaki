@@ -8,9 +8,9 @@
 public struct Categories: Decodable {
     
     public let id: Int
-    public let name: String
-    public let mainCategoryId: Int
-    public let image: Image
+    public let name: String?
+    public let mainCategoryId: Int?
+    public let image: Image?
     
     enum CodingKeys: String, CodingKey {
         case id

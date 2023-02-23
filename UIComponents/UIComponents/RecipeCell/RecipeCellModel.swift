@@ -32,7 +32,7 @@ public class RecipeCellModel: RecipeCellProtocol {
     public var categoryName: String?
     public var foodImageUrl: String?
     public var commentAndLikes: String?
-    public var isEditorChoice: Bool
+    public var isEditorChoice = false
  
     public init(recipeId: Int,
                 userId: Int,

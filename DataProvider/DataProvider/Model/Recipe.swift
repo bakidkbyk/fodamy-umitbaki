@@ -14,12 +14,12 @@ public struct Recipe: Decodable {
     public let isEditorChoice: Bool
     public let category: Categories
     public let user: User
-    public let image: [Image]
+    public let image: [Image]?
     
     enum CodingKeys: String, CodingKey {
         case id
         case title
-        case likeCount = "likes_count"
+        case likeCount = "like_count"
         case commentCount = "comment_count"
         case isEditorChoice = "is_editor_choice"
         case category 

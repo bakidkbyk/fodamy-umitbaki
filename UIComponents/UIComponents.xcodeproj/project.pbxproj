@@ -183,6 +183,13 @@
 			path = RecipeCell;
 			sourceTree = "<group>";
 		};
+		FA76D96329A74C6900911988 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
 		FA791C85296850AF001B6985 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +264,7 @@
 		FAABD05C2965E26500126FA9 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
+				FA76D96329A74C6900911988 /* Footer */,
 				FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */,
 				FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */,
 				FAABD0632965E32E00126FA9 /* BlockingActivityIndicator.swift */,
