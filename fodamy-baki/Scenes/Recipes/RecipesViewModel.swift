@@ -17,14 +17,15 @@ protocol RecipesViewEventSource {
 }
 
 protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
-    func editorChoicesRequestFetch()
+    func editorChoicesRequestFetch(isRefreshing: Bool)
     func lastAddedRequestFetch()
 }
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
-    
+
     var page = 1
-    private var isPagingEnabled = false
+    var isPagingEnabled = false
+    var title: String?
     var didSuccessFetchRecipes: VoidClosure?
     
     func numberOfItemsAt() -> Int {
@@ -36,18 +37,28 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
         return cellItems[indexPath.row]
     }
     
+    func setDefaults() {
+        cellItems.removeAll()
+        page = 1 
+    }
+    
     private var cellItems: [RecipeCellProtocol] = []
 }
 
 // MARK: - Network
 extension RecipesViewModel {
     
-    func editorChoicesRequestFetch() {
-        showLoading?()
+    func editorChoicesRequestFetch(isRefreshing: Bool) {
+        
+        if isRefreshing == false {
+            showLoading?()
+        }
         let request = EditorChoicesRequest(page: page)
         dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
-            self.hideLoading?()
+            if isRefreshing == false {
+                self.hideLoading?()
+            }
             switch result {
             case .success(let response):
                 let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
@@ -55,10 +66,10 @@ extension RecipesViewModel {
                 self.page += 1
                 self.isPagingEnabled = response.pagination.lastPage > response.pagination.currentPage
                 self.didSuccessFetchRecipes?()
-                
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
+            
         }
     }
     

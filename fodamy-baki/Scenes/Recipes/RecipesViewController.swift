@@ -21,6 +21,7 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         super.viewDidLoad()
         configureContents()
         addSubViews()
+        subscribeViewModel()
     }
 }
 
@@ -29,13 +30,11 @@ extension RecipesViewController {
     
     private func addSubViews() {
         addCollectionView()
-        
-    }
+        }
     
     private func addCollectionView() {
         view.addSubview(collectionView)
-        collectionView.edgesToSuperview(usingSafeArea: true)
-        collectionView.backgroundColor = .appCinder
+        collectionView.edgesToSuperview()
     }
 }
 
@@ -43,7 +42,7 @@ extension RecipesViewController {
 extension RecipesViewController {
     
     private func configureContents() {
-        view.backgroundColor = .appSecondaryBackground
+        navigationItem.title = viewModel.title
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.refreshControl = refreshControl
@@ -58,7 +57,8 @@ extension RecipesViewController {
     @objc
     func handleRefreshControl() {
         if refreshControl.isRefreshing {
-            viewModel.editorChoicesRequestFetch()
+            viewModel.setDefaults()
+            viewModel.editorChoicesRequestFetch(isRefreshing: true)
         }
     }
 }
@@ -125,8 +125,4 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
         return 20
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return .zero
-    }
 }

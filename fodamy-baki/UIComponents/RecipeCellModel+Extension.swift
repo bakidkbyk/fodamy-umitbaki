@@ -15,7 +15,7 @@ extension RecipeCellModel {
                   recipeAndFollowers: "\(recipe.user.recipeCount) Tarif \(recipe.user.followingCount) Takipçi",
                   recipeTitle: recipe.title!,
                   categoryName: recipe.category.name ?? "",
-                  foodImageUrl: recipe.image?.first?.url ?? "" ,
+                  recipeImageUrl: recipe.image?.first?.url ?? "" ,
                   commentAndLikes: "\(recipe.commentCount) Yorum \(recipe.likeCount) Beğeni",
                   isEditorChoice: recipe.isEditorChoice)
             }

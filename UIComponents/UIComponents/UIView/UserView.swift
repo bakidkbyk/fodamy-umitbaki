@@ -9,22 +9,23 @@ public class UserView: UIView {
     
     private let userImageView = UIImageViewBuilder()
         .contentMode(.scaleToFill)
-        .cornerRadius(25)
+        .cornerRadius(20)
         .clipsToBounds(true)
         .build()
     
     private let userInfoStackView = UIStackViewBuilder()
         .axis(.vertical)
+        .distribution(.fillEqually)
         .build()
     
     private let usernameLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .medium))
-        .textColor(.appZircon)
+        .textColor(.appCinder)
         .build()
     
     private let recipeCountAndFollowersLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .medium))
-        .textColor(.appHeather)
+        .textColor(.appRaven)
         .build()
     
     private let followButtonStackView = UIStackViewBuilder()

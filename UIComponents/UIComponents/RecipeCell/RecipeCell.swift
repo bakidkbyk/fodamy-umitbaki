@@ -14,41 +14,35 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .build()
     
     private let recipeTitleContainerView = UIViewBuilder()
-        .backgroundColor(.appWhite)
         .build()
     
     private let recipeTitleStackView = UIStackViewBuilder()
-        .spacing(4)
         .axis(.vertical)
+        .distribution(.fillEqually)
         .build()
     
     private let recipeTitleLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .xLarge))
-        .textColor(.appZircon)
+        .textColor(.appCinder)
         .build()
     
     private let categoryNameLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .xLarge))
-        .textColor(.appHeather)
+        .textColor(.appRaven)
         .build()
 
     private let recipeImageView = UIImageViewBuilder()
         .contentMode(.scaleAspectFill)
-        .cornerRadius(5)
+        .cornerRadius(4)
         .clipsToBounds(true)
         .build()
     
     private let commentAndLikeContainerView = UIViewBuilder()
         .build()
     
-    private let commentAndLikeStackView = UIStackViewBuilder()
-        .axis(.horizontal)
-        .spacing(2)
-        .build()
-    
     private let commentAndLikesLabel = UILabelBuilder()
         .font(.font(.nunitoSemiBold, size: .medium))
-        .textColor(.appHeather)
+        .textColor(.appRaven)
         .build()
 
     var viewModel: RecipeCellProtocol?
@@ -74,6 +68,7 @@ extension RecipeCell {
         addRecipeTitleContainerView()
         addRecipeImageView()
         addCommentAndLikeContainerView()
+        userView.isShowsFollowButton = false
     }
     
     private func addUserView() {
@@ -91,32 +86,37 @@ extension RecipeCell {
     
     private func addRecipeTitleContainerView() {
         contentView.addSubview(recipeTitleContainerView)
-        recipeTitleContainerView.topToBottom(of: lineView).constant = 11
-        recipeTitleContainerView.edgesToSuperview(excluding: [.trailing, .bottom])
+        recipeTitleContainerView.topToBottom(of: lineView)
         recipeTitleContainerView.leadingToSuperview().constant = 15
+        recipeTitleContainerView.trailingToSuperview().constant = -15
         recipeTitleContainerView.height(61)
         
         recipeTitleContainerView.addSubview(recipeTitleStackView)
         recipeTitleStackView.edgesToSuperview(excluding: [.top, .bottom])
         recipeTitleStackView.centerYToSuperview()
-        
         recipeTitleStackView.addArrangedSubview(recipeTitleLabel)
         recipeTitleStackView.addArrangedSubview(categoryNameLabel)
     }
     
     private func addRecipeImageView() {
         contentView.addSubview(recipeImageView)
-        recipeImageView.edgesToSuperview(excluding: .bottom, insets: .init(top: 10, left: 15, bottom: 0, right: 15))
-        recipeImageView.height(345)
+        recipeImageView.topToBottom(of: recipeTitleContainerView)
+        recipeImageView.leadingToSuperview().constant = 15
+        recipeImageView.trailingToSuperview().constant = -15
+        recipeImageView.aspectRatio(1)
+        
     }
     
     private func addCommentAndLikeContainerView() {
         contentView.addSubview(commentAndLikeContainerView)
-        commentAndLikeContainerView.edgesToSuperview(excluding: [.trailing, .bottom], insets: .init(top: 13, left: 15, bottom: 0, right: 0))
+        commentAndLikeContainerView.topToBottom(of: recipeImageView)
+        commentAndLikeContainerView.leadingToSuperview().constant = 15
+        commentAndLikeContainerView.trailingToSuperview().constant = -15
+        commentAndLikeContainerView.height(45)
         
-        commentAndLikeContainerView.addSubview(commentAndLikeStackView)
-        commentAndLikeStackView.edgesToSuperview()
-        commentAndLikeStackView.addArrangedSubview(commentAndLikesLabel)
+        commentAndLikeContainerView.addSubview(commentAndLikesLabel)
+        commentAndLikesLabel.edgesToSuperview(excluding: [.top, .bottom])
+        commentAndLikesLabel.centerYToSuperview()
     }
 }
 
@@ -130,7 +130,7 @@ public extension RecipeCell {
         userView.recipeCountAndFollowersLabelText = viewModel.recipeAndFollowers
         recipeTitleLabel.text = viewModel.recipeTitle
         categoryNameLabel.text = viewModel.categoryName
-        recipeImageView.setImage(viewModel.foodImageUrl)
+        recipeImageView.setImage(viewModel.recipeImageUrl)
         commentAndLikesLabel.text = viewModel.commentAndLikes
     }
 }
