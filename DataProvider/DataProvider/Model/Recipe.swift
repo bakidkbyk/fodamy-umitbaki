@@ -14,7 +14,7 @@ public struct Recipe: Decodable {
     public let isEditorChoice: Bool
     public let category: Categories
     public let user: User
-    public let image: [Image]?
+    public let images: [Image]?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -24,6 +24,6 @@ public struct Recipe: Decodable {
         case isEditorChoice = "is_editor_choice"
         case category 
         case user
-        case image
+        case images
     }
 }
