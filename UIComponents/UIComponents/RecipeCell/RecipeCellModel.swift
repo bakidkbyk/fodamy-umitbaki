@@ -36,13 +36,13 @@ public class RecipeCellModel: RecipeCellProtocol {
  
     public init(recipeId: Int,
                 userId: Int,
-                usernameImageUrl: String,
-                username: String,
-                recipeAndFollowers: String,
-                recipeTitle: String,
-                categoryName: String,
-                recipeImageUrl: String,
-                commentAndLikes: String,
+                usernameImageUrl: String?,
+                username: String?,
+                recipeAndFollowers: String?,
+                recipeTitle: String?,
+                categoryName: String?,
+                recipeImageUrl: String?,
+                commentAndLikes: String?,
                 isEditorChoice: Bool) {
         self.recipeId = recipeId
         self.userId = userId

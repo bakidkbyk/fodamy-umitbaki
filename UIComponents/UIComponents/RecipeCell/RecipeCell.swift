@@ -37,6 +37,18 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .clipsToBounds(true)
         .build()
     
+    private let editoryPickImageView = UIImageViewBuilder()
+        .image(UIImage.imgEditorsPick.resize(to: .init(width: 20, height: 24), for: .scaleAspectFit))
+        .cornerRadius(20)
+        .shadowColor(UIColor.appCinder.cgColor)
+        .backgroundColor(.appWhite)
+        .shadowOpacity(40)
+        .shadowRadius(4)
+        .shadowOffset(.zero)
+        .contentMode(.center)
+        .build()
+    
+    
     private let commentAndLikeContainerView = UIViewBuilder()
         .build()
     
@@ -67,6 +79,7 @@ extension RecipeCell {
         addLineView()
         addRecipeTitleContainerView()
         addRecipeImageView()
+        addEditoryPickImageView()
         addCommentAndLikeContainerView()
         userView.isShowsFollowButton = false
     }
@@ -107,6 +120,13 @@ extension RecipeCell {
         
     }
     
+    private func addEditoryPickImageView() {
+        contentView.addSubview(editoryPickImageView)
+        editoryPickImageView.top(to: recipeImageView).constant = 15
+        editoryPickImageView.trailing(to: recipeImageView).constant = -15
+        editoryPickImageView.size(.init(width: 40, height: 40))
+    }
+    
     private func addCommentAndLikeContainerView() {
         contentView.addSubview(commentAndLikeContainerView)
         commentAndLikeContainerView.topToBottom(of: recipeImageView)
@@ -132,5 +152,6 @@ public extension RecipeCell {
         categoryNameLabel.text = viewModel.categoryName
         recipeImageView.setImage(viewModel.recipeImageUrl)
         commentAndLikesLabel.text = viewModel.commentAndLikes
+        editoryPickImageView.isHidden = !viewModel.isEditorChoice
     }
 }
