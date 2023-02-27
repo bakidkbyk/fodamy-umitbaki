@@ -17,11 +17,13 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         .build()
     
     private let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
         addSubViews()
         subscribeViewModel()
+        viewModel.editorChoicesRequestFetch(isRefreshing: false)
     }
 }
 
@@ -77,10 +79,9 @@ extension RecipesViewController {
     }
 }
 
+
 // MARK: - UICollection View Delegate
-extension RecipesViewController: UICollectionViewDelegate {
-    
-}
+extension RecipesViewController: UICollectionViewDelegate {}
 
 // MARK: - UICollection View Data Source
 extension RecipesViewController: UICollectionViewDataSource {
