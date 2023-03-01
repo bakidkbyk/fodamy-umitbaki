@@ -49,7 +49,6 @@ extension RecipesViewController {
         collectionView.dataSource = self
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
-        
     }
 }
 
@@ -109,7 +108,6 @@ extension RecipesViewController: UICollectionViewDataSource {
         cell.set(viewModel: cellItem)
         return cell
     }
-    
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -136,5 +134,4 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
-    
 }

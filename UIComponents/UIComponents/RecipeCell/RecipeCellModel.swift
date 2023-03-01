@@ -19,7 +19,7 @@ public protocol RecipeCellDataSource {
 }
 public protocol RecipeCellEventSource { }
 
-public protocol RecipeCellProtocol : RecipeCellDataSource, RecipeCellEventSource { }
+public protocol RecipeCellProtocol : RecipeCellDataSource, RecipeCellEventSource {}
 
 public class RecipeCellModel: RecipeCellProtocol {
     

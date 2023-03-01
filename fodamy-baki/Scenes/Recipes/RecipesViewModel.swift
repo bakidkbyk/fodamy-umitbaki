@@ -86,7 +86,7 @@ extension RecipesViewModel {
             }
             switch result {
             case .success(let response):
-                let cellItems = response.data.map({ RecipeCellModel(recipe: $0)} )
+                let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
                 self.cellItems.append(contentsOf: cellItems)
                 self.page += 1
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage

@@ -48,7 +48,6 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .contentMode(.center)
         .build()
     
-    
     private let commentAndLikeContainerView = UIViewBuilder()
         .build()
     
