@@ -23,8 +23,6 @@ protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
 
-    
-    
     enum RecipesListing {
         case editorChoices
         case lastAdded
@@ -43,7 +41,6 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
         super.init(router: router)
     }
 
-    
     func numberOfItemsAt() -> Int {
         let cell = cellItems.count
         return cell
