@@ -5,6 +5,8 @@
 //  Created by Baki Dikbıyık on 13.02.2023.
 //
 
+import DataProvider
+
 protocol RecipesViewDataSource {
     func numberOfItemsAt() -> Int
     func cellItemAt(_ indexPath: IndexPath) -> RecipeCellProtocol
@@ -15,21 +17,32 @@ protocol RecipesViewEventSource {
 }
 
 protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
-    func editorChoicesRequestFetch(isRefreshing: Bool)
-    func lastAddedRequestFetch()
-    func categoryIdRequestFetch()
-    func fetchMorePagesInEditorChoices()
+    func fetchRecipeListing(isRefreshing: Bool)
+    func fetchMorePages()
 }
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
+
     
+    
+    enum RecipesListing {
+        case editorChoices
+        case lastAdded
+        case categoryRecipes(categoryId: Int)
+    }
+    
+    var recipesListing: RecipesListing
     var page = 1
     var categoryId: Int?
     var isPagingEnabled = false
     var title: String?
     var didSuccessFetchRecipes: VoidClosure?
     
-    
+    init(recipesListing: RecipesListing, router: RecipesRouter) {
+        self.recipesListing = recipesListing
+        super.init(router: router)
+    }
+
     
     func numberOfItemsAt() -> Int {
         let cell = cellItems.count
@@ -51,22 +64,32 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
 // MARK: - Network
 extension RecipesViewModel {
     
-    func editorChoicesRequestFetch(isRefreshing: Bool) {
+    func fetchRecipeListing(isRefreshing: Bool) {
+        var request: GetRecipesRequestRequest
+        switch recipesListing {
+        case .editorChoices:
+            request = GetRecipesRequestRequest(page: page, listType: .editorChoiceRecipes)
+        case .lastAdded:
+            request = GetRecipesRequestRequest(page: page, listType: .lastAddedRecipes)
+        case .categoryRecipes(let categoryId):
+            request = GetRecipesRequestRequest(page: page, listType: .categoryRecipes(categoryId: categoryId))
+    
+        }
+
         if isRefreshing == false {
             showLoading?()
         }
-        let request = EditorChoicesRequest(page: page)
-        dataProvider.request(for: request) { [weak self] result in
+        dataProvider.request(for: request ) { [weak self] result in
             guard let self = self else { return }
             if isRefreshing == false {
                 self.hideLoading?()
             }
             switch result {
             case .success(let response):
-                let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
+                let cellItems = response.data.map({ RecipeCellModel(recipe: $0)} )
                 self.cellItems.append(contentsOf: cellItems)
                 self.page += 1
-                self.isPagingEnabled = response.pagination.lastPage > response.pagination.currentPage
+                self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
                 self.didSuccessFetchRecipes?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
@@ -74,45 +97,8 @@ extension RecipesViewModel {
         }
     }
     
-    func lastAddedRequestFetch() {
-        showLoading?()
-        let request = LastAddedRequest(page: page)
-        dataProvider.request(for: request) { [weak self] result in
-            guard let self = self else { return }
-            self.hideLoading?()
-            switch result {
-            case .success(let response):
-                let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
-                self.cellItems.append(contentsOf: cellItems)
-                self.page += 1
-                self.isPagingEnabled = response.pagination.lastPage > response.pagination.currentPage
-                self.didSuccessFetchRecipes?()
-            case .failure(let error):
-                self.showWarningToast?(error.localizedDescription)
-            }
-        }
+    func fetchMorePages() {
+        fetchRecipeListing(isRefreshing: false)
     }
-    
-    func categoryIdRequestFetch() {
-        showLoading?()
-        let request = CategoryRecipesRequestRequest(page: page, categoryId: categoryId ?? 0)
-        dataProvider.request(for: request) { [weak self] result in
-            guard let self = self else { return }
-            self.hideLoading?()
-            switch result {
-            case .success(let response):
-                let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
-                self.cellItems.append(contentsOf: cellItems)
-                self.page += 1
-                self.isPagingEnabled = response.pagination.lastPage > response.pagination.currentPage
-                self.didSuccessFetchRecipes?()
-            case .failure(let error):
-                self.showWarningToast?(error.localizedDescription)
-            }
-        }
-    }
-    
-    func fetchMorePagesInEditorChoices() {
-        editorChoicesRequestFetch(isRefreshing: false)
-    }
+ 
 }

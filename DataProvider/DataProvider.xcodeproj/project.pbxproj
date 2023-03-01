@@ -11,8 +11,8 @@
 		FA3B3297296D590600FEF004 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B3296296D590600FEF004 /* Typealias.swift */; };
 		FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */; };
 		FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */; };
+		FA438A8F29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA438A8E29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift */; };
 		FA8D3BF629A34A61008056B5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BF529A34A61008056B5 /* Recipe.swift */; };
-		FA8D3BF929A34C85008056B5 /* EditorChoicesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BF829A34C85008056B5 /* EditorChoicesRequest.swift */; };
 		FA8D3BFB29A35029008056B5 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BFA29A35029008056B5 /* BaseResponse.swift */; };
 		FA8D3BFD29A35072008056B5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BFC29A35072008056B5 /* Pagination.swift */; };
 		FA8D3C0429A380A9008056B5 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3C0329A380A9008056B5 /* Categories.swift */; };
@@ -27,8 +27,6 @@
 		FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB2297FD4C200F1DB9A /* Image.swift */; };
 		FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72EB2989117E001B98D4 /* LoginRequest.swift */; };
 		FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */; };
-		FACF1F4B29AB439C00F2028F /* CategoryRecipesRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF1F4A29AB439C00F2028F /* CategoryRecipesRequestRequest.swift */; };
-		FAD087C529A4A1F400E93533 /* LastAddedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD087C429A4A1F400E93533 /* LastAddedRequest.swift */; };
 		FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +37,8 @@
 		FA3B3296296D590600FEF004 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
+		FA438A8E29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesRequestRequest.swift; sourceTree = "<group>"; };
 		FA8D3BF529A34A61008056B5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		FA8D3BF829A34C85008056B5 /* EditorChoicesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorChoicesRequest.swift; sourceTree = "<group>"; };
 		FA8D3BFA29A35029008056B5 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		FA8D3BFC29A35072008056B5 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		FA8D3C0329A380A9008056B5 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
@@ -56,8 +54,6 @@
 		FAB60DB2297FD4C200F1DB9A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FACE72EB2989117E001B98D4 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
-		FACF1F4A29AB439C00F2028F /* CategoryRecipesRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRecipesRequestRequest.swift; sourceTree = "<group>"; };
-		FAD087C429A4A1F400E93533 /* LastAddedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastAddedRequest.swift; sourceTree = "<group>"; };
 		FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,9 +104,7 @@
 		FA8D3BF729A34C5C008056B5 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				FA8D3BF829A34C85008056B5 /* EditorChoicesRequest.swift */,
-				FAD087C429A4A1F400E93533 /* LastAddedRequest.swift */,
-				FACF1F4A29AB439C00F2028F /* CategoryRecipesRequestRequest.swift */,
+				FA438A8E29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -290,18 +284,16 @@
 				FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */,
 				FA910933296E8286005F8651 /* DataProviderProtocol.swift in Sources */,
 				FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */,
-				FA8D3BF929A34C85008056B5 /* EditorChoicesRequest.swift in Sources */,
 				FA91092F296E8237005F8651 /* RequestMethod.swift in Sources */,
-				FAD087C529A4A1F400E93533 /* LastAddedRequest.swift in Sources */,
 				FA8D3BFB29A35029008056B5 /* BaseResponse.swift in Sources */,
 				FAB60DAC297FD21400F1DB9A /* RegisterRequest.swift in Sources */,
+				FA438A8F29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift in Sources */,
 				FA91092D296E803A005F8651 /* APIDecodableResponseRequest.swift in Sources */,
 				FA8D3BF629A34A61008056B5 /* Recipe.swift in Sources */,
 				FAB60DB1297FD4AA00F1DB9A /* User.swift in Sources */,
 				FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */,
 				FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */,
 				FA8D3BFD29A35072008056B5 /* Pagination.swift in Sources */,
-				FACF1F4B29AB439C00F2028F /* CategoryRecipesRequestRequest.swift in Sources */,
 				FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */,
 				FA8D3C0429A380A9008056B5 /* Categories.swift in Sources */,
 				FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */,

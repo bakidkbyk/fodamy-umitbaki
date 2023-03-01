@@ -23,7 +23,7 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         configureContents()
         addSubViews()
         subscribeViewModel()
-        viewModel.editorChoicesRequestFetch(isRefreshing: false)
+        viewModel.fetchRecipeListing(isRefreshing: false)
     }
 }
 
@@ -58,10 +58,11 @@ extension RecipesViewController {
     
     @objc
     func handleRefreshControl() {
-        if refreshControl.isRefreshing {
+        if !refreshControl.isRefreshing {
             viewModel.setDefaults()
-            viewModel.editorChoicesRequestFetch(isRefreshing: true)
+            viewModel.fetchRecipeListing(isRefreshing: true)
         }
+        refreshControl.endRefreshing()
     }
 }
 
@@ -71,14 +72,24 @@ extension RecipesViewController {
     private func subscribeViewModel() {
         viewModel.didSuccessFetchRecipes = { [weak self] in
             guard let self = self else { return }
-            if self.refreshControl.isRefreshing {
-                self.refreshControl.endRefreshing()
-            }
             self.collectionView.reloadData()
         }
     }
 }
 
+// MARK: - UIScrollView
+extension RecipesViewController {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if contentOffsetY > contentHeight - height && viewModel.isPagingEnabled {
+            viewModel.fetchRecipeListing(isRefreshing: false)
+        }
+}
+}
 
 // MARK: - UICollection View Delegate
 extension RecipesViewController: UICollectionViewDelegate {}
