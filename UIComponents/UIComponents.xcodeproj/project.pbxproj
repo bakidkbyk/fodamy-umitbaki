@@ -44,6 +44,7 @@
 		FAB5A641299E2E94001A018D /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5A640299E2E94001A018D /* UserView.swift */; };
 		FAB8489C29965CCC007D5CA7 /* Segmentio+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */; };
 		FABA47A9299F79FF00706BA9 /* UIImageView+Etensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA47A8299F79FF00706BA9 /* UIImageView+Etensions .swift */; };
+		FAF3DCD029B081FE00DDE6D8 /* ActivityIndicatorLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCCF29B081FE00DDE6D8 /* ActivityIndicatorLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		FAB5A640299E2E94001A018D /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segmentio+Extensions .swift"; sourceTree = "<group>"; };
 		FABA47A8299F79FF00706BA9 /* UIImageView+Etensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Etensions .swift"; sourceTree = "<group>"; };
+		FAF3DCCF29B081FE00DDE6D8 /* ActivityIndicatorLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,13 +187,6 @@
 			path = RecipeCell;
 			sourceTree = "<group>";
 		};
-		FA76D96329A74C6900911988 /* Footer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Footer;
-			sourceTree = "<group>";
-		};
 		FA791C85296850AF001B6985 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,10 +262,10 @@
 		FAABD05C2965E26500126FA9 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				FA76D96329A74C6900911988 /* Footer */,
 				FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */,
 				FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */,
 				FAABD0632965E32E00126FA9 /* BlockingActivityIndicator.swift */,
+				FAF3DCCF29B081FE00DDE6D8 /* ActivityIndicatorLocation.swift */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -458,6 +453,7 @@
 				FA791C8D296850AF001B6985 /* Assets.swift in Sources */,
 				FA791C92296850AF001B6985 /* UIColor+Colors.swift in Sources */,
 				FAAEAC902965BC8300459E43 /* ReusableView.swift in Sources */,
+				FAF3DCD029B081FE00DDE6D8 /* ActivityIndicatorLocation.swift in Sources */,
 				FAABD0642965E32E00126FA9 /* BlockingActivityIndicator.swift in Sources */,
 				FA791C8E296850AF001B6985 /* UIImage+Icons.swift in Sources */,
 				FA6FF2EE299B651200D2172D /* RecipeCellModel.swift in Sources */,

@@ -23,9 +23,10 @@ public extension ActivityIndicatorProtocol where Self: UIViewController {
         
         switch indicatorType {
         case .center:
-            indicator.centerInSuperview()
+            indicator.centerInSuperview(usingSafeArea: true)
         case .bottom:
-            indicator.bottomToSuperview().constant = 4
+            indicator.bottomToSuperview(usingSafeArea: true).constant = 4
+            indicator.centerXToSuperview()
         }
         
     }
@@ -33,9 +34,4 @@ public extension ActivityIndicatorProtocol where Self: UIViewController {
     func hideActivityIndicator() {
         view.subviews.filter({ $0 is ActivityIndicatorView }).forEach({ $0.removeFromSuperview() })
     }
-}
-
-public enum ShowingActivityIndicatorLocation {
-    case center
-    case bottom
 }

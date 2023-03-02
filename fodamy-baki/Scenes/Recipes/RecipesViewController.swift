@@ -20,8 +20,8 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureContents()
         addSubViews()
+        configureContents()
         subscribeViewModel()
         viewModel.fetchRecipeListing(isRefreshing: false)
     }
@@ -32,7 +32,7 @@ extension RecipesViewController {
     
     private func addSubViews() {
         addCollectionView()
-        }
+    }
     
     private func addCollectionView() {
         view.addSubview(collectionView)
@@ -71,7 +71,11 @@ extension RecipesViewController {
     private func subscribeViewModel() {
         viewModel.didSuccessFetchRecipes = { [weak self] in
             guard let self = self else { return }
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
             self.collectionView.reloadData()
+            
         }
     }
 }
@@ -85,9 +89,9 @@ extension RecipesViewController {
         let height = scrollView.frame.size.height
         
         if contentOffsetY > contentHeight - height && viewModel.isPagingEnabled {
-            viewModel.fetchRecipeListing(isRefreshing: false)
+            viewModel.fetchMorePages(isPaging: true)
         }
-}
+    }
 }
 
 // MARK: - UICollection View Delegate

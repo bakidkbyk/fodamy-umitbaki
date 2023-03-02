@@ -2,10 +2,10 @@
 //  GetRecipesRequestRequest.swift
 //  DataProvider
 //
-//  Created by Baki Dikbıyık on 28.02.2023.
+//  Created by Baki Dikbıyık on 2.03.2023.
 //
 
-public struct GetRecipesRequestRequest: APIDecodableResponseRequest {
+public struct GetRecipesRequestRequest: FodamyRequest {
     
     public typealias ResponseType = BaseResponse<[Recipe]>
     

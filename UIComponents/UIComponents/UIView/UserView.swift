@@ -61,6 +61,7 @@ public class UserView: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()
+        configureContent()
     }
     
     // swiftlint:disable fatal_error unavailable_function
@@ -74,7 +75,6 @@ public class UserView: UIView {
 extension UserView {
     
     private func addSubviews() {
-        backgroundColor = .appWhite
         addSubview(userImageView)
         userImageView.edgesToSuperview(excluding: .trailing, insets: .init(top: 15, left: 15, bottom: 15, right: 15))
         userImageView.size(.init(width: 40, height: 40))
@@ -82,7 +82,6 @@ extension UserView {
         addSubview(userInfoStackView)
         userInfoStackView.leadingToTrailing(of: userImageView).constant = 10
         userInfoStackView.centerYToSuperview()
-        
         userInfoStackView.addArrangedSubview(usernameLabel)
         userInfoStackView.addArrangedSubview(recipeCountAndFollowersLabel)
         
@@ -93,4 +92,13 @@ extension UserView {
         followButtonStackView.width(120)
         followButtonStackView.addArrangedSubview(followButton)
     }
+}
+
+// MARK: - Configure Contents
+extension UserView {
+    
+    private func configureContent() {
+        backgroundColor = .appWhite
+    }
+    
 }

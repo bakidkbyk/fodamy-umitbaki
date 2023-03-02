@@ -11,7 +11,6 @@
 		FA3B3297296D590600FEF004 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B3296296D590600FEF004 /* Typealias.swift */; };
 		FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */; };
 		FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */; };
-		FA438A8F29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA438A8E29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift */; };
 		FA8D3BF629A34A61008056B5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BF529A34A61008056B5 /* Recipe.swift */; };
 		FA8D3BFB29A35029008056B5 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BFA29A35029008056B5 /* BaseResponse.swift */; };
 		FA8D3BFD29A35072008056B5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BFC29A35072008056B5 /* Pagination.swift */; };
@@ -28,6 +27,8 @@
 		FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72EB2989117E001B98D4 /* LoginRequest.swift */; };
 		FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */; };
 		FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */; };
+		FAF3DCD829B0AC0700DDE6D8 /* FodamyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCD729B0AC0700DDE6D8 /* FodamyRequest.swift */; };
+		FAF3DCDA29B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,6 @@
 		FA3B3296296D590600FEF004 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
-		FA438A8E29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesRequestRequest.swift; sourceTree = "<group>"; };
 		FA8D3BF529A34A61008056B5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		FA8D3BFA29A35029008056B5 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		FA8D3BFC29A35072008056B5 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -55,6 +55,8 @@
 		FACE72EB2989117E001B98D4 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
 		FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
+		FAF3DCD729B0AC0700DDE6D8 /* FodamyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FodamyRequest.swift; sourceTree = "<group>"; };
+		FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesRequestRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				FA91092E296E8237005F8651 /* RequestMethod.swift */,
 				FA910930296E8263005F8651 /* RequestEncoding.swift */,
 				FA910932296E8286005F8651 /* DataProviderProtocol.swift */,
+				FAF3DCD729B0AC0700DDE6D8 /* FodamyRequest.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -104,7 +107,7 @@
 		FA8D3BF729A34C5C008056B5 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				FA438A8E29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift */,
+				FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			files = (
 				FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */,
 				FA3B3297296D590600FEF004 /* Typealias.swift in Sources */,
+				FAF3DCD829B0AC0700DDE6D8 /* FodamyRequest.swift in Sources */,
 				FA910931296E8263005F8651 /* RequestEncoding.swift in Sources */,
 				FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */,
 				FA910933296E8286005F8651 /* DataProviderProtocol.swift in Sources */,
@@ -287,12 +291,12 @@
 				FA91092F296E8237005F8651 /* RequestMethod.swift in Sources */,
 				FA8D3BFB29A35029008056B5 /* BaseResponse.swift in Sources */,
 				FAB60DAC297FD21400F1DB9A /* RegisterRequest.swift in Sources */,
-				FA438A8F29AE2BBE00A7B70F /* GetRecipesRequestRequest.swift in Sources */,
 				FA91092D296E803A005F8651 /* APIDecodableResponseRequest.swift in Sources */,
 				FA8D3BF629A34A61008056B5 /* Recipe.swift in Sources */,
 				FAB60DB1297FD4AA00F1DB9A /* User.swift in Sources */,
 				FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */,
 				FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */,
+				FAF3DCDA29B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift in Sources */,
 				FA8D3BFD29A35072008056B5 /* Pagination.swift in Sources */,
 				FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */,
 				FA8D3C0429A380A9008056B5 /* Categories.swift in Sources */,

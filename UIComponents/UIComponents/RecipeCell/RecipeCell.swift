@@ -61,11 +61,24 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
+        configureContents()
     }
     
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
         addSubViews()
+        configureContents()
+    }
+    
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        userView.userImgUrl = nil
+        userView.username = nil
+        userView.userImgUrl = nil
+        recipeTitleLabel.text = nil
+        categoryNameLabel.text = nil
+        recipeImageView.image = nil
+        commentAndLikesLabel.text = nil
     }
 }
 
@@ -73,14 +86,12 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
 extension RecipeCell {
     
     private func addSubViews() {
-        backgroundColor = .appWhite
         addUserView()
         addLineView()
         addRecipeTitleContainerView()
         addRecipeImageView()
         addEditoryPickImageView()
         addCommentAndLikeContainerView()
-        userView.isShowsFollowButton = false
     }
     
     private func addUserView() {
@@ -112,7 +123,7 @@ extension RecipeCell {
     
     private func addRecipeImageView() {
         contentView.addSubview(recipeImageView)
-        recipeImageView.topToBottom(of: recipeTitleContainerView)
+        recipeImageView.topToBottom(of: recipeTitleStackView)
         recipeImageView.leadingToSuperview().constant = 15
         recipeImageView.trailingToSuperview().constant = -15
         recipeImageView.aspectRatio(1)
@@ -136,6 +147,15 @@ extension RecipeCell {
         commentAndLikeContainerView.addSubview(commentAndLikesLabel)
         commentAndLikesLabel.edgesToSuperview(excluding: [.top, .bottom])
         commentAndLikesLabel.centerYToSuperview()
+    }
+}
+
+// MARK: - Configure Contents
+extension RecipeCell {
+    
+    private func configureContents() {
+        backgroundColor = .appWhite
+        userView.isShowsFollowButton = false
     }
 }
 

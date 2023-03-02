@@ -18,18 +18,18 @@ protocol RecipesViewEventSource {
 
 protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
     func fetchRecipeListing(isRefreshing: Bool)
-    func fetchMorePages()
+    func fetchMorePages(isPaging: Bool)
 }
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
-
+    
     enum RecipesListing {
         case editorChoices
         case lastAdded
         case categoryRecipes(categoryId: Int)
     }
     
-    var recipesListing: RecipesListing
+    let recipesListing: RecipesListing
     var page = 1
     var categoryId: Int?
     var isPagingEnabled = false
@@ -40,7 +40,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
         self.recipesListing = recipesListing
         super.init(router: router)
     }
-
+    
     func numberOfItemsAt() -> Int {
         let cell = cellItems.count
         return cell
@@ -94,8 +94,11 @@ extension RecipesViewModel {
         }
     }
     
-    func fetchMorePages() {
-        fetchRecipeListing(isRefreshing: false)
+    func fetchMorePages(isPaging: Bool) {
+        if isPaging == true {
+            self.showActivityIndicatorBottomView?()
+            fetchRecipeListing(isRefreshing: false)
+            self.hideActivityIndicatorView?()
+        }
     }
- 
 }

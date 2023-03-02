@@ -18,5 +18,5 @@ extension RecipeCellModel {
                   recipeImageUrl: recipe.images?.first?.url ?? "" ,
                   commentAndLikes: "\(recipe.commentCount) Yorum \(recipe.likeCount) Beğeni",
                   isEditorChoice: recipe.isEditorChoice)
-            }
+    }
 }
