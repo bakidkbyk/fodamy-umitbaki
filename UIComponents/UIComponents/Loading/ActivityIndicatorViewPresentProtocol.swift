@@ -8,17 +8,27 @@
 import Foundation
 
 public protocol ActivityIndicatorProtocol {
-    func showActivityIndicator()
+    func showActivityIndicator(indicatorType: ShowingActivityIndicatorLocation)
     func hideActivityIndicator()
+
 }
 
 public extension ActivityIndicatorProtocol where Self: UIViewController {
-    func showActivityIndicator() {
+    
+    func showActivityIndicator(indicatorType: ShowingActivityIndicatorLocation) {
         let indicator = ActivityIndicatorView(frame: .infinite)
         indicator.startAnimating()
         view.addSubview(indicator)
-        indicator.centerInSuperview()
         view.bringSubviewToFront(indicator)
+        
+        switch indicatorType {
+        case .center:
+            indicator.centerInSuperview(usingSafeArea: true)
+        case .bottom:
+            indicator.bottomToSuperview(usingSafeArea: true).constant = 4
+            indicator.centerXToSuperview()
+        }
+        
     }
     
     func hideActivityIndicator() {

@@ -18,6 +18,7 @@
 		FA87472529751E3D00039E92 /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472429751E3D00039E92 /* APIRequestInterceptor.swift */; };
 		FA87472729751E6800039E92 /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472629751E6800039E92 /* APILogger.swift */; };
 		FA87472929751E8700039E92 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472829751E8700039E92 /* DataProvider.swift */; };
+		FA8D3C0229A37B3D008056B5 /* RecipeCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3C0129A37B3D008056B5 /* RecipeCellModel+Extension.swift */; };
 		FAA71F3E2992197500E150A3 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA71F3B2992197500E150A3 /* FavoritesRouter.swift */; };
 		FAA71F3F2992197500E150A3 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA71F3C2992197500E150A3 /* FavoritesViewController.swift */; };
 		FAA71F4429921BD300E150A3 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA71F4329921BD300E150A3 /* FavoritesViewModel.swift */; };
@@ -78,6 +79,7 @@
 		FA87472429751E3D00039E92 /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
 		FA87472629751E6800039E92 /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
 		FA87472829751E8700039E92 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		FA8D3C0129A37B3D008056B5 /* RecipeCellModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeCellModel+Extension.swift"; sourceTree = "<group>"; };
 		FAA71F3B2992197500E150A3 /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
 		FAA71F3C2992197500E150A3 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		FAA71F4329921BD300E150A3 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -159,8 +161,8 @@
 		FA0A2F112962BB56004E82C6 = {
 			isa = PBXGroup;
 			children = (
-				FA2DB7972962DF94004D38E2 /* .swiftlint.yml */,
 				FA0A2F1C2962BB56004E82C6 /* fodamy-baki */,
+				FA2DB7972962DF94004D38E2 /* .swiftlint.yml */,
 				FA0A2F1B2962BB56004E82C6 /* Products */,
 				36D08BC178FC2B56C627E3B1 /* Pods */,
 				DBCAAFB09280ECDB62158E9B /* Frameworks */,
@@ -178,6 +180,7 @@
 		FA0A2F1C2962BB56004E82C6 /* fodamy-baki */ = {
 			isa = PBXGroup;
 			children = (
+				FA8D3C0029A37B22008056B5 /* UIComponents */,
 				FAC3A835298420960095A7C3 /* Routing */,
 				FAB60DB4297FD9F200F1DB9A /* Validation */,
 				FA61FFAB296FE52800D08E28 /* DataProvider */,
@@ -219,6 +222,14 @@
 				FA87472829751E8700039E92 /* DataProvider.swift */,
 			);
 			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		FA8D3C0029A37B22008056B5 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D3C0129A37B3D008056B5 /* RecipeCellModel+Extension.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		FAA8198D2964217F00B4C83A /* Scenes */ = {
@@ -297,8 +308,8 @@
 		FAB974DD29979EE300A10EFD /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				FADE8AC2299A1BE6008A1A83 /* RecipesRouter.swift */,
 				FADE8AC3299A1BE6008A1A83 /* RecipesViewController.swift */,
+				FADE8AC2299A1BE6008A1A83 /* RecipesRouter.swift */,
 				FADE8AC4299A1BE6008A1A83 /* RecipesViewModel.swift */,
 			);
 			path = Recipes;
@@ -543,6 +554,7 @@
 				FAB60DA8297FB72800F1DB9A /* RegisterRoute.swift in Sources */,
 				FAA819B72964406000B4C83A /* BaseViewModel.swift in Sources */,
 				FAC3A844298421AF0095A7C3 /* PushTransition.swift in Sources */,
+				FA8D3C0229A37B3D008056B5 /* RecipeCellModel+Extension.swift in Sources */,
 				FA0A2F1E2962BB56004E82C6 /* AppDelegate.swift in Sources */,
 				FAA819C32964609A00B4C83A /* HomeViewModel.swift in Sources */,
 				FACE72F329892447001B98D4 /* ForgotPasswordViewModel.swift in Sources */,

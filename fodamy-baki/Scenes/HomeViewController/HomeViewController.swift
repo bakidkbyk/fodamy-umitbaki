@@ -37,6 +37,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         configure()
         addNavigationFodamyLogo()
         subscribeViewModelEvents()
+        
     }
 }
 
@@ -73,6 +74,7 @@ extension HomeViewController {
         segmentControl.height(46)
         
         pageViewController.setViewControllers([subViewControllers[viewModel.selectedSegmentIndex]], direction: .forward, animated: true)
+        segmentControl.selectedSegmentioIndex = 0
     }
     
     private func addNavigationFodamyLogo() {
@@ -90,12 +92,12 @@ extension HomeViewController {
     
     private func configureControllers() -> [UIViewController] {
         let editorChoiceRouter = RecipesRouter()
-        let editorChoiceViewModel = RecipesViewModel(router: editorChoiceRouter)
+        let editorChoiceViewModel = RecipesViewModel(recipesListing: .editorChoices, router: editorChoiceRouter)
         let editorChoiceViewController = RecipesViewController(viewModel: editorChoiceViewModel)
         editorChoiceRouter.viewController = editorChoiceViewController
         
         let lastAddedRouter = RecipesRouter()
-        let lastAddedViewModel = RecipesViewModel(router: lastAddedRouter)
+        let lastAddedViewModel = RecipesViewModel(recipesListing: .lastAdded, router: lastAddedRouter)
         let lastAddedViewController = RecipesViewController(viewModel: lastAddedViewModel)
         lastAddedRouter.viewController = lastAddedViewController
         
@@ -109,13 +111,11 @@ extension HomeViewController {
     private func segmentioControlDidChange() {
         segmentControl.valueDidChange = { [ weak self ]  _, segmentIndex in
             guard let self = self else { return }
-            var direction: UIPageViewController.NavigationDirection
-             if segmentIndex > self.viewModel.selectedSegmentIndex {
-                direction = .forward
-             } else if segmentIndex < self.viewModel.selectedSegmentIndex {
+            var direction: UIPageViewController.NavigationDirection = .forward
+             if segmentIndex < self.viewModel.selectedSegmentIndex {
                  direction = .reverse
              }
-            self.pageViewController.setViewControllers([self.subViewControllers[segmentIndex]], direction: .forward, animated: true)
+            self.pageViewController.setViewControllers([self.subViewControllers[segmentIndex]], direction: direction, animated: true)
             self.viewModel.selectedSegmentIndex = segmentIndex
         }
     }

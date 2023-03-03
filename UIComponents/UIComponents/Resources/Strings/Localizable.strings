@@ -26,6 +26,11 @@ recipes in all around the word.";
 "Home.editorChoices" = "EDİTÖR SEÇİMİ";
 "Home.lassAdded"     = "SON EKLENENLER";
 
+// MARK: - Recipes View Controller
+"Recipes.follow" = "Takip Et";
+"Recipes.following" = "Takip Ediliyor";
+"Recipes.dataIsNotMatch" = "Data Eşleşmedi!";
+
 // MARK: - Login View Controller
 "Login.title"                    = "Giriş Yap";
 "Login.loginButtonText"          = "Giriş Yap";
