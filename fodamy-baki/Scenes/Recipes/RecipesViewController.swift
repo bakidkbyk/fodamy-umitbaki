@@ -59,11 +59,10 @@ extension RecipesViewController {
     
     @objc
     func handleRefreshControl() {
-        if !refreshControl.isRefreshing {
+        if refreshControl.isRefreshing {
             viewModel.setDefaults()
-            viewModel.fetchRecipeListing(isRefreshing: true, isPaging: true)
+            viewModel.fetchRecipeListing(isRefreshing: true, isPaging: false)
         }
-        refreshControl.endRefreshing()
     }
 }
 
@@ -73,11 +72,12 @@ extension RecipesViewController {
     private func subscribeViewModel() {
         viewModel.didSuccessFetchRecipes = { [weak self] in
             guard let self = self else { return }
-            if self.refreshControl.isRefreshing {
-                self.refreshControl.endRefreshing()
-            }
             self.collectionView.reloadData()
-            
+        }
+        
+        viewModel.endRefreshing = { [weak self] in
+            guard let self = self else { return }
+            self.refreshControl.endRefreshing()
         }
     }
 }

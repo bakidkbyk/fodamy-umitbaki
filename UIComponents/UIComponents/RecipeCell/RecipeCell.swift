@@ -48,7 +48,8 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .contentMode(.center)
         .build()
     
-    private let commentAndLikeContainerView = UIViewBuilder()
+    private let commentAndLikeStakView = UIStackViewBuilder()
+        .axis(.vertical)
         .build()
     
     private let commentAndLikesLabel = UILabelBuilder()
@@ -91,7 +92,7 @@ extension RecipeCell {
         addRecipeTitleContainerView()
         addRecipeImageView()
         addEditoryPickImageView()
-        addCommentAndLikeContainerView()
+        addCommentAndLikeStakView()
     }
     
     private func addUserView() {
@@ -137,14 +138,14 @@ extension RecipeCell {
         editoryPickImageView.size(.init(width: 40, height: 40))
     }
     
-    private func addCommentAndLikeContainerView() {
-        contentView.addSubview(commentAndLikeContainerView)
-        commentAndLikeContainerView.topToBottom(of: recipeImageView)
-        commentAndLikeContainerView.leadingToSuperview().constant = 15
-        commentAndLikeContainerView.trailingToSuperview().constant = -15
-        commentAndLikeContainerView.height(45)
+    private func addCommentAndLikeStakView() {
+        contentView.addSubview(commentAndLikeStakView)
+        commentAndLikeStakView.topToBottom(of: recipeImageView)
+        commentAndLikeStakView.leadingToSuperview().constant = 15
+        commentAndLikeStakView.trailingToSuperview().constant = -15
+        commentAndLikeStakView.height(45)
         
-        commentAndLikeContainerView.addSubview(commentAndLikesLabel)
+        commentAndLikeStakView.addArrangedSubview(commentAndLikesLabel)
         commentAndLikesLabel.edgesToSuperview(excluding: [.top, .bottom])
         commentAndLikesLabel.centerYToSuperview()
     }

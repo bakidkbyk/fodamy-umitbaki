@@ -36,6 +36,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     var categoryId: Int?
     var title: String?
     var didSuccessFetchRecipes: VoidClosure?
+    var endRefreshing: VoidClosure?
     
     init(recipesListing: RecipesListing, router: RecipesRouter) {
         self.recipesListing = recipesListing
@@ -83,10 +84,13 @@ extension RecipesViewModel {
         self.isRequestEnabled = false
         dataProvider.request(for: request ) { [weak self] result in
             guard let self = self else { return }
-            if isRefreshing == false {
+            if !isRefreshing {
                 self.hideLoading?()
                 self.hideActivityIndicatorView?()
+            } else {
+                self.endRefreshing?()
             }
+        
             self.isRequestEnabled = true
             switch result {
             case .success(let response):
