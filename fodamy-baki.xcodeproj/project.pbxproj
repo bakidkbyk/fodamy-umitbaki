@@ -161,8 +161,8 @@
 		FA0A2F112962BB56004E82C6 = {
 			isa = PBXGroup;
 			children = (
-				FA2DB7972962DF94004D38E2 /* .swiftlint.yml */,
 				FA0A2F1C2962BB56004E82C6 /* fodamy-baki */,
+				FA2DB7972962DF94004D38E2 /* .swiftlint.yml */,
 				FA0A2F1B2962BB56004E82C6 /* Products */,
 				36D08BC178FC2B56C627E3B1 /* Pods */,
 				DBCAAFB09280ECDB62158E9B /* Frameworks */,

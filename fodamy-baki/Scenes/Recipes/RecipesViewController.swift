@@ -5,6 +5,8 @@
 //  Created by Baki Dikbıyık on 13.02.2023.
 //
 
+import CoreImage
+
 final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
     private let collectionView = UICollectionViewBuilder()
@@ -23,7 +25,7 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         addSubViews()
         configureContents()
         subscribeViewModel()
-        viewModel.fetchRecipeListing(isRefreshing: false)
+        viewModel.fetchRecipeListing(isRefreshing: false, isPaging: false)
     }
 }
 
@@ -59,7 +61,7 @@ extension RecipesViewController {
     func handleRefreshControl() {
         if !refreshControl.isRefreshing {
             viewModel.setDefaults()
-            viewModel.fetchRecipeListing(isRefreshing: true)
+            viewModel.fetchRecipeListing(isRefreshing: true, isPaging: true)
         }
         refreshControl.endRefreshing()
     }
@@ -88,8 +90,9 @@ extension RecipesViewController {
         let contentHeight = scrollView.contentSize.height
         let height = scrollView.frame.size.height
         
-        if contentOffsetY > contentHeight - height && viewModel.isPagingEnabled {
-            viewModel.fetchMorePages(isPaging: true)
+        if contentOffsetY > contentHeight - height && viewModel.isPagingEnabled
+            && viewModel.isRequestEnabled {
+            viewModel.fetchMorePages()
         }
     }
 }

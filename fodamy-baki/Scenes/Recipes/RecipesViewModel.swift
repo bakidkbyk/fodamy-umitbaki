@@ -17,8 +17,8 @@ protocol RecipesViewEventSource {
 }
 
 protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
-    func fetchRecipeListing(isRefreshing: Bool)
-    func fetchMorePages(isPaging: Bool)
+    func fetchRecipeListing(isRefreshing: Bool, isPaging: Bool)
+    func fetchMorePages()
 }
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
@@ -30,9 +30,10 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     }
     
     let recipesListing: RecipesListing
+    var isRequestEnabled = false
+    var isPagingEnabled = false
     var page = 1
     var categoryId: Int?
-    var isPagingEnabled = false
     var title: String?
     var didSuccessFetchRecipes: VoidClosure?
     
@@ -61,7 +62,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
 // MARK: - Network
 extension RecipesViewModel {
     
-    func fetchRecipeListing(isRefreshing: Bool) {
+    func fetchRecipeListing(isRefreshing: Bool, isPaging: Bool) {
         var request: GetRecipesRequestRequest
         switch recipesListing {
         case .editorChoices:
@@ -70,17 +71,23 @@ extension RecipesViewModel {
             request = GetRecipesRequestRequest(page: page, listType: .lastAddedRecipes)
         case .categoryRecipes(let categoryId):
             request = GetRecipesRequestRequest(page: page, listType: .categoryRecipes(categoryId: categoryId))
-    
         }
-
+        
         if isRefreshing == false {
-            showLoading?()
+            if page == 1 && isPaging == false {
+                showLoading?()
+            } else {
+                showActivityIndicatorBottomView?()
+            }
         }
+        self.isRequestEnabled = false
         dataProvider.request(for: request ) { [weak self] result in
             guard let self = self else { return }
             if isRefreshing == false {
                 self.hideLoading?()
+                self.hideActivityIndicatorView?()
             }
+            self.isRequestEnabled = true
             switch result {
             case .success(let response):
                 let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
@@ -92,13 +99,10 @@ extension RecipesViewModel {
                 self.showWarningToast?(error.localizedDescription)
             }
         }
+        
     }
     
-    func fetchMorePages(isPaging: Bool) {
-        if isPaging == true {
-            self.showActivityIndicatorBottomView?()
-            fetchRecipeListing(isRefreshing: false)
-            self.hideActivityIndicatorView?()
-        }
+    func fetchMorePages() {
+        fetchRecipeListing(isRefreshing: false, isPaging: true)
     }
 }
