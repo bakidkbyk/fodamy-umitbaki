@@ -51,6 +51,7 @@ target 'UIComponents' do
   pod 'SwiftEntryKit', '~> 2.0.0'
   pod 'SwiftGen', '~> 6.0'
   pod 'Segmentio', '~> 4.1'
+  pod 'PaddingLabel', '1.2'
   
   # UI
   pod 'TinyConstraints', '~> 4.0'
