@@ -5,42 +5,26 @@
 //  Created by Baki Dikbıyık on 3.03.2023.
 //
 
-public protocol FavoritesCellDataSource {
+public protocol FavoritesCellDataSource: AnyObject {
     
-    var recipeImage: Int { get }
-    var recipeTitle: String? { get }
-    var userImage: String? { get }
-    var username: String? { get }
+    var categoryId: Int { get }
     var categoryImage: String? { get }
-    var recipeDescription: String? { get }
-    var commentAndLikes: String? { get }
+    var categoryName: String? { get }
 }
 
-public protocol FavoritesCellEventSource { }
+public protocol FavoritesCellEventSource: AnyObject { }
 
 public protocol FavoritesCellProtocol: FavoritesCellDataSource, FavoritesCellEventSource { }
 
 public class FavoritesCellModel: FavoritesCellProtocol {
     
-    public var recipeImage: Int
-    public var recipeTitle: String?
-    public var userImage: String?
-    public var username: String?
+    public var categoryId: Int
     public var categoryImage: String?
-    public var recipeDescription: String?
-    public var commentAndLikes: String?
+    public var categoryName: String?
     
-    public init(recipeImage: Int,
-                recipeTitle: String?,
-                username: String?,
-                categoryImage: String?,
-                recipeDescription: String?,
-                commentAndLikes: String?) {
-        self.recipeImage = recipeImage
-        self.recipeTitle = recipeTitle
-        self.username = username
+    public init(categoryId: Int, categoryImage: String?, categoryName: String?) {
+        self.categoryId = categoryId
         self.categoryImage = categoryImage
-        self.recipeDescription = recipeDescription
-        self.commentAndLikes = commentAndLikes
+        self.categoryName = categoryName
     }
 }
