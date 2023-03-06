@@ -9,6 +9,14 @@ import PaddingLabel
 
 public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
     
+    private let collectionView = UICollectionViewBuilder()
+        .isPagingEnabled(true)
+        .scrollDirection(.horizontal)
+        .backgroundColor(.appWhite)
+        .showsHorizontalScrollIndicator(false)
+        .registerCell(FavoritesCollectionCell.self, reuseIdentifier: FavoritesCollectionCell.defaultReuseIdentifier)
+        .build()
+    
     private let recipeImageView = UIImageViewBuilder()
         .contentMode(.scaleAspectFit)
         .build()
@@ -21,7 +29,7 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
         .borderWidth(3)
         .borderColor(UIColor.appRed.cgColor)
         .build()
-
+    
     private let usernameLabel: PaddingLabel = {
         let label = PaddingLabel()
         label.topInset = 5.0
@@ -54,6 +62,19 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
         .textColor(.appZircon)
         .build()
     
+    var cellItems: [RecipeCellProtocol] = []
+    
+    func numberOfItemsAt() -> Int {
+        let cell = cellItems.count
+        return cell
+    }
+    
+    func cellItemAt(_ indexPath: IndexPath) -> RecipeCellProtocol {
+        return cellItems[indexPath.row]
+    }
+    
+    var viewModel: RecipeCellProtocol?
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
@@ -71,10 +92,16 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
 extension FavoritesCollectionCell {
     
     private func addSubViews() {
+        addCollectionViews()
         addRecipeImageView()
         addUserImageView()
         addUsernameLabel()
         addLabelContainerView()
+    }
+    
+    private func addCollectionViews() {
+        addSubview(collectionView)
+        collectionView.edgesToSuperview(usingSafeArea: true)
     }
     
     private func addRecipeImageView() {
@@ -115,11 +142,62 @@ extension FavoritesCollectionCell {
 extension FavoritesCollectionCell {
     
     private func configureContents() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+}
+
+// MARK: CollectionView Delegate
+extension FavoritesCollectionCell: UICollectionViewDelegate { }
+
+// MARK: - CollectionView Data Source
+extension FavoritesCollectionCell: UICollectionViewDataSource {
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        numberOfItemsAt()
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: FavoritesCollectionCell = (collectionView.dequeueReusableCell(withReuseIdentifier: FavoritesCollectionCell.defaultReuseIdentifier,
+                                                                                for: indexPath) as? FavoritesCollectionCell)!
         
+        let cellItem = cellItemAt(indexPath)
+        cell.set(viewModel: cellItem)
+        return cell
     }
 }
 
 // MARK: - Set View Model
+public extension FavoritesCollectionCell {
+    
+    func set(viewModel: RecipeCellProtocol) {
+        self.viewModel = viewModel
+        self.userImageView.setImageScaled(viewModel.username)
+        self.recipeImageView.setImageScaled(viewModel.recipeImageUrl)
+        self.usernameLabel.text = viewModel.username
+        self.recipeTitleLabel.text = viewModel.recipeTitle
+        self.likesAndCommentLabel.text = viewModel.commentAndLikes
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
 extension FavoritesCollectionCell {
     
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 195)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
 }
