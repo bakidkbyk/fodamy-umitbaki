@@ -24,6 +24,8 @@
 		FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DAE297FD48200F1DB9A /* Auth.swift */; };
 		FAB60DB1297FD4AA00F1DB9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB0297FD4AA00F1DB9A /* User.swift */; };
 		FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB2297FD4C200F1DB9A /* Image.swift */; };
+		FABFE91F29B70F4600F78DFD /* GetCategoryRecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFE91E29B70F4600F78DFD /* GetCategoryRecipesRequest.swift */; };
+		FABFE92129B70F7B00F78DFD /* CategoryRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFE92029B70F7B00F78DFD /* CategoryRecipes.swift */; };
 		FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72EB2989117E001B98D4 /* LoginRequest.swift */; };
 		FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */; };
 		FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */; };
@@ -52,6 +54,8 @@
 		FAB60DAE297FD48200F1DB9A /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		FAB60DB0297FD4AA00F1DB9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FAB60DB2297FD4C200F1DB9A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		FABFE91E29B70F4600F78DFD /* GetCategoryRecipesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryRecipesRequest.swift; sourceTree = "<group>"; };
+		FABFE92029B70F7B00F78DFD /* CategoryRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRecipes.swift; sourceTree = "<group>"; };
 		FACE72EB2989117E001B98D4 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
 		FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift */,
+				FABFE91E29B70F4600F78DFD /* GetCategoryRecipesRequest.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 				FA8D3BFA29A35029008056B5 /* BaseResponse.swift */,
 				FA8D3BFC29A35072008056B5 /* Pagination.swift */,
 				FA8D3C0329A380A9008056B5 /* Categories.swift */,
+				FABFE92029B70F7B00F78DFD /* CategoryRecipes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,7 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */,
+				FABFE92129B70F7B00F78DFD /* CategoryRecipes.swift in Sources */,
 				FA3B3297296D590600FEF004 /* Typealias.swift in Sources */,
+				FABFE91F29B70F4600F78DFD /* GetCategoryRecipesRequest.swift in Sources */,
 				FAF3DCD829B0AC0700DDE6D8 /* FodamyRequest.swift in Sources */,
 				FA910931296E8263005F8651 /* RequestEncoding.swift in Sources */,
 				FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */,
