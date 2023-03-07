@@ -167,19 +167,6 @@ extension FavoritesCollectionCell: UICollectionViewDataSource {
     }
 }
 
-// MARK: - Set View Model
-public extension FavoritesCollectionCell {
-    
-    func set(viewModel: RecipeCellProtocol) {
-        self.viewModel = viewModel
-        self.userImageView.setImageScaled(viewModel.username)
-        self.recipeImageView.setImageScaled(viewModel.recipeImageUrl)
-        self.usernameLabel.text = viewModel.username
-        self.recipeTitleLabel.text = viewModel.recipeTitle
-        self.likesAndCommentLabel.text = viewModel.commentAndLikes
-    }
-}
-
 // MARK: - UICollectionViewDelegateFlowLayout
 extension FavoritesCollectionCell {
     
@@ -201,3 +188,16 @@ extension FavoritesCollectionCell {
         return 15
     }
 }
+// MARK: - Set View Model
+public extension FavoritesCollectionCell {
+    
+    func set(viewModel: RecipeCellProtocol) {
+        self.viewModel = viewModel
+        self.userImageView.setImageScaled(viewModel.username)
+        self.recipeImageView.setImageScaled(viewModel.recipeImageUrl)
+        self.usernameLabel.text = viewModel.username
+        self.recipeTitleLabel.text = viewModel.recipeTitle
+        self.likesAndCommentLabel.text = viewModel.commentAndLikes
+    }
+}
+

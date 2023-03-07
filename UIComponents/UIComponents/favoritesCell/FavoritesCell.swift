@@ -32,6 +32,7 @@ public class FavoritesCell: UICollectionViewCell, ReusableView {
         .build()
     
     private let favoritesCollectionCell = FavoritesCollectionCell()
+    var viewModel: FavoritesCellProtocol?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -98,6 +99,17 @@ extension FavoritesCell {
     
     @objc
     func seeAllButtonTapped() {
-        
+        guard let categoryId = viewModel?.categoryId else { return }
+        viewModel?.seeAllButtonClosure?(categoryId)
+    }
+}
+
+// MARK: - Set View Model
+public extension FavoritesCell {
+    
+    func set(viewModel: FavoritesCellProtocol) {
+        self.viewModel = viewModel
+        categoryImageView.setImage(viewModel.categoryImage)
+        categoryTitleLabel.text = viewModel.categoryName
     }
 }

@@ -5,6 +5,8 @@
 //  Created by Baki Dikbıyık on 3.03.2023.
 //
 
+import Utilities
+
 public protocol FavoritesCellDataSource: AnyObject {
     
     var categoryId: Int { get }
@@ -12,11 +14,15 @@ public protocol FavoritesCellDataSource: AnyObject {
     var categoryName: String? { get }
 }
 
-public protocol FavoritesCellEventSource: AnyObject { }
+public protocol FavoritesCellEventSource: AnyObject {
+    var seeAllButtonClosure: IntClosure? { get set }
+}
 
 public protocol FavoritesCellProtocol: FavoritesCellDataSource, FavoritesCellEventSource { }
 
 public class FavoritesCellModel: FavoritesCellProtocol {
+    
+    public var seeAllButtonClosure: IntClosure?
     
     public var categoryId: Int
     public var categoryImage: String?
