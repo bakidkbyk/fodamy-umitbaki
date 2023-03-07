@@ -6,7 +6,7 @@
 //
 
 protocol RecipesRoute {
-    func pushRecipes()
+    func pushRecipes(categoryId: Int)
 }
 
 extension RecipesRoute where Self: RouterProtocol {
