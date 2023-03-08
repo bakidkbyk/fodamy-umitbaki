@@ -5,7 +5,7 @@
 //  Created by Baki Dikbıyık on 5.03.2023.
 //
 
-import PaddingLabel
+
 
 public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
     
@@ -29,13 +29,13 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
         .borderWidth(3)
         .borderColor(UIColor.appRed.cgColor)
         .build()
-    
+
     private let usernameLabel: PaddingLabel = {
         let label = PaddingLabel()
-        label.topInset = 5.0
-        label.bottomInset = 5.0
-        label.leftInset = 7.0
-        label.rightInset = 7.0
+        label.topPadding = 3
+        label.bottomPadding = 2
+        label.leftPadding = 15
+        label.rightPadding = 6
         label.layer.cornerRadius = 10
         label.clipsToBounds = false
         label.layer.masksToBounds = true
@@ -85,6 +85,15 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
         super.init(coder: coder)
         addSubViews()
         configureContents()
+    }
+    
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        recipeImageView.image = nil
+        userImageView.image = nil
+        usernameLabel.text = nil
+        recipeTitleLabel.text = nil
+        likesAndCommentLabel.text = nil
     }
 }
 

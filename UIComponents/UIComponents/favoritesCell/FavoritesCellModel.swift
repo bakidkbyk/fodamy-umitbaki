@@ -5,8 +5,6 @@
 //  Created by Baki Dikbıyık on 3.03.2023.
 //
 
-import Utilities
-
 public protocol FavoritesCellDataSource: AnyObject {
     
     var categoryId: Int { get }

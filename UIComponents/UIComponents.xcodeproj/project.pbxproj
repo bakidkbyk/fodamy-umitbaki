@@ -47,6 +47,7 @@
 		FAB5A641299E2E94001A018D /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5A640299E2E94001A018D /* UserView.swift */; };
 		FAB8489C29965CCC007D5CA7 /* Segmentio+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */; };
 		FABA47A9299F79FF00706BA9 /* UIImageView+Etensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA47A8299F79FF00706BA9 /* UIImageView+Etensions .swift */; };
+		FAC26D0D29B87079005A84B4 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC26D0C29B87079005A84B4 /* PaddingLabel.swift */; };
 		FAF3DCD029B081FE00DDE6D8 /* ActivityIndicatorLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCCF29B081FE00DDE6D8 /* ActivityIndicatorLocation.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		FAB5A640299E2E94001A018D /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segmentio+Extensions .swift"; sourceTree = "<group>"; };
 		FABA47A8299F79FF00706BA9 /* UIImageView+Etensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Etensions .swift"; sourceTree = "<group>"; };
+		FAC26D0C29B87079005A84B4 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		FAF3DCCF29B081FE00DDE6D8 /* ActivityIndicatorLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +264,7 @@
 				FAB8489B29965CCC007D5CA7 /* Segmentio+Extensions .swift */,
 				FABA47A8299F79FF00706BA9 /* UIImageView+Etensions .swift */,
 				FAA6DFD529ACA41F00918961 /* UIImage+Extensions.swift */,
+				FAC26D0C29B87079005A84B4 /* PaddingLabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				FAB5A641299E2E94001A018D /* UserView.swift in Sources */,
 				FA4C1C092979539C006C5C8D /* StringConstants.swift in Sources */,
 				FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */,
+				FAC26D0D29B87079005A84B4 /* PaddingLabel.swift in Sources */,
 				FA954483298CDB2700F55E23 /* WalkthroughCell.swift in Sources */,
 				FA6FF2EF299B651200D2172D /* RecipeCell.swift in Sources */,
 				FAB3A43029B2029B008B916D /* FavoritesCell.swift in Sources */,

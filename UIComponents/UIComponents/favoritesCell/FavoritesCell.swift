@@ -45,6 +45,12 @@ public class FavoritesCell: UICollectionViewCell, ReusableView {
         addSubViews()
         configureContents()
     }
+    
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        categoryImageView.image = nil
+        categoryTitleLabel.text = nil
+    }
 }
 
 // MARK: - UILayout
