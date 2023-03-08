@@ -9,7 +9,7 @@ public struct CategoryRecipes: Decodable {
     
     public let id: Int
     public let name: String?
-    public let recipes: [Recipe]
+    public let recipes: [Recipe]?
     
     enum CodingKeys: String, CodingKey {
         case id
