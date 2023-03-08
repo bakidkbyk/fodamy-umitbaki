@@ -314,8 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				FADE8AC3299A1BE6008A1A83 /* RecipesViewController.swift */,
-				FADE8AC2299A1BE6008A1A83 /* RecipesRouter.swift */,
 				FADE8AC4299A1BE6008A1A83 /* RecipesViewModel.swift */,
+				FADE8AC2299A1BE6008A1A83 /* RecipesRouter.swift */,
 				FABFE91C29B7097100F78DFD /* RecipesRoute.swift */,
 			);
 			path = Recipes;

@@ -5,9 +5,6 @@
 //  Created by Baki Dikbıyık on 7.02.2023.
 //
 
-import SwiftUI
-import Utilities
-
 protocol FavoritesViewDataSource {
     
     func numberOfItemsAt() -> Int
@@ -49,6 +46,11 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
     
     func cellItemAt(_ indexPath: IndexPath) -> FavoritesCellProtocol {
         return cellItems[indexPath.row]
+    }
+    
+    func setDefaults() {
+        cellItems.removeAll()
+        page = 1
     }
 }
 
@@ -92,8 +94,11 @@ extension FavoritesViewModel {
             self.isRequestEnabled = true
             switch result {
             case .success(let response):
+                let cellItems = response.data.map({ FavoritesCellModel(categoryRecipes: $0) })
+                self.cellItems.append(contentsOf: cellItems)
                 self.page += 1
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
+                self.didSuccessFetchRecipes?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
