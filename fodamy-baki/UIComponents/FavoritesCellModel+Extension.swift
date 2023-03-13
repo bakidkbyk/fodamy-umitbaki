@@ -8,8 +8,10 @@
 extension FavoritesCellModel {
     
     convenience init(categoryRecipes: CategoryRecipes) {
+        let cellItems = categoryRecipes.recipes?.map({ FavoritesCollectionCellModel(recipe: $0) }) ?? []
         self.init(categoryId: categoryRecipes.id,
                   categoryImage: nil,
-                  categoryName: categoryRecipes.name)
+                  categoryName: categoryRecipes.name,
+                  cellItems: cellItems)
     }
 }
