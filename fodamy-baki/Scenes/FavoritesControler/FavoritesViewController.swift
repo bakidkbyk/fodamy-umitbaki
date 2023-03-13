@@ -5,6 +5,8 @@
 //  Created by Baki Dikbıyık on 7.02.2023.
 //
 
+import KeychainSwift
+
 final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
     
     private let collectionView = UICollectionViewBuilder()
@@ -16,6 +18,7 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
         .build()
     
     private let refreshControl = UIRefreshControl()
+    private let keychain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,6 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
         subscribeViewModel()
         viewModel.fetchCategoryRecipes(isRefreshing: false, isPaging: false)
     }
-    
 }
 
 // MARK: UILayout
@@ -37,7 +39,7 @@ extension FavoritesViewController {
     
     private func addCollectionView() {
         view.addSubview(collectionView)
-        collectionView.edgesToSuperview()
+        collectionView.edgesToSuperview(usingSafeArea: true)
     }
 }
 
@@ -48,7 +50,6 @@ extension FavoritesViewController {
         view.backgroundColor = .appWhite
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .touchUpInside)
     }
     
@@ -87,6 +88,13 @@ extension FavoritesViewController {
             guard let self = self else { return }
             self.refreshControl.endRefreshing()
         }
+        
+        // Delete Keychain
+        viewModel.didSuccessLogout = { [ weak self ] in
+            guard let self = self else { return }
+            self.keychain.clear()
+            self.navigationItem.rightBarButtonItem = .none
+        }
     }
 }
 
@@ -100,6 +108,36 @@ extension FavoritesViewController {
         
         if contentOffset > contentHeihgt - height && viewModel.isRequestEnabled && viewModel.isPagingEnabled {
             viewModel.fetchMorePages()
+        }
+    }
+}
+
+// MARK: - Logout
+extension FavoritesViewController {
+    
+    private func setLogoutBarButton() {
+        let button = UIBarButtonItem(image: .icLogout, style: .done, target: self, action: #selector(logoutBarButtonTapped))
+        navigationItem.rightBarButtonItem = button
+    }
+    
+    @objc
+    func logoutBarButtonTapped() {
+        viewModel.userLogout()
+    }
+    
+    private func checkUserLogin() {
+        guard keychain.get(Keychain.token) != nil else {
+            navigationItem.rightBarButtonItem = .none
+            return
+        }
+        setLogoutBarButton()
+    }
+    // Delete keychain
+    private func subscribeViewModelEvents() {
+        viewModel.didSuccessLogout = { [ weak self ] in
+            guard let self = self else { return }
+            self.keychain.delete(Keychain.token)
+            self.navigationItem.rightBarButtonItem = .none
         }
     }
 }
@@ -128,7 +166,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension FavoritesViewController {
+extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -150,3 +188,5 @@ extension FavoritesViewController {
         return 15
     }
 }
+
+

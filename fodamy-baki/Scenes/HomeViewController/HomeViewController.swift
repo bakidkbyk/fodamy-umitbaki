@@ -37,7 +37,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         configure()
         addNavigationFodamyLogo()
         subscribeViewModelEvents()
-        
     }
 }
 
