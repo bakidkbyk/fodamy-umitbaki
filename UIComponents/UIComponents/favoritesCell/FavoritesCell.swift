@@ -67,35 +67,37 @@ extension FavoritesCell {
         categoryView.edgesToSuperview(excluding: .bottom)
         
         categoryView.addSubview(categoryImageView)
-        categoryImageView.edgesToSuperview(excluding: .trailing, insets: TinyEdgeInsets(top: 10, left: 15, bottom: 10, right: 0))
+        categoryImageView.edgesToSuperview(excluding: .trailing, insets:
+        TinyEdgeInsets(top: 10, left: 15, bottom: 10, right: 0))
         
         categoryView.addSubview(categoryTitleLabel)
         categoryTitleLabel.centerYToSuperview()
         categoryTitleLabel.leadingToTrailing(of: categoryImageView).constant = 5
         
         categoryView.addSubview(seeAllButton)
-        seeAllButton.edgesToSuperview(excluding: .leading, insets: TinyEdgeInsets(top: 14, left: 0, bottom: 14, right: 15))
+        seeAllButton.trailingToSuperview().constant = -15 
+        seeAllButton.centerYToSuperview()
     }
     
     private func addLineView() {
         contentView.addSubview(lineView)
-        lineView.edgesToSuperview(excluding: .bottom)
+        lineView.topToBottom(of: categoryView)
     }
     
     private func addFavoritesCollectionCell() {
         contentView.addSubview(favoritesCollectionCell)
         favoritesCollectionCell.topToBottom(of: lineView)
-        favoritesCollectionCell.edgesToSuperview(excluding: .bottom)
+        favoritesCollectionCell.edgesToSuperview(excluding: .top)
     }
-    
 }
 // MARK: - Configure Contents
 extension FavoritesCell {
     
     private func configureContents() {
         backgroundColor = .appWhite
+        categoryView.height(44)
         categoryImageView.size(CGSize(width: 24, height: 24))
-        lineView.height(1)
+        lineView.size(CGSize(width: 1, height: 1))
         seeAllButton.addTarget(self, action: #selector(seeAllButtonTapped), for: .touchUpInside)
     }
 }
@@ -115,7 +117,9 @@ public extension FavoritesCell {
     
     func set(viewModel: FavoritesCellProtocol) {
         self.viewModel = viewModel
-        categoryImageView.setImage(viewModel.categoryImage)
-        categoryTitleLabel.text = viewModel.categoryName
+        self.categoryImageView.setImage(viewModel.categoryImage)
+        self.categoryTitleLabel.text = viewModel.categoryName
+        self.favoritesCollectionCell.cellItems = viewModel.cellItems 
+        
     }
 }

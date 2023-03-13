@@ -5,8 +5,6 @@
 //  Created by Baki Dikbıyık on 5.03.2023.
 //
 
-
-
 public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
     
     private let collectionView = UICollectionViewBuilder()
@@ -17,8 +15,9 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
         .registerCell(FavoritesCollectionCell.self, reuseIdentifier: FavoritesCollectionCell.defaultReuseIdentifier)
         .build()
     
-    private let recipeImageView = UIImageViewBuilder()
-        .contentMode(.scaleAspectFit)
+    private var recipeImageView = UIImageViewBuilder()
+        .contentMode(.scaleAspectFill)
+        .clipsToBounds(true)
         .build()
     
     private let userImageView = UIImageViewBuilder()
@@ -32,12 +31,12 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
 
     private let usernameLabel: PaddingLabel = {
         let label = PaddingLabel()
-        label.topPadding = 3
-        label.bottomPadding = 2
-        label.leftPadding = 15
-        label.rightPadding = 6
+        label.topPadding = 20
+        label.bottomPadding = 20
+        label.leftPadding = 12
+        label.rightPadding = 8
         label.layer.cornerRadius = 10
-        label.clipsToBounds = false
+        label.clipsToBounds = true
         label.layer.masksToBounds = true
         label.font = .font(.nunitoBold, size: .xSmall)
         label.backgroundColor = .appRed
@@ -57,23 +56,23 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
         .textColor(.appCinder)
         .build()
     
-    private let likesAndCommentLabel = UILabelBuilder()
+    private var likesAndCommentLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .xSmall))
         .textColor(.appZircon)
         .build()
     
-    var cellItems: [RecipeCellProtocol] = []
+    var cellItems: [FavoritesCollectionCellProtocol] = []
     
     func numberOfItemsAt() -> Int {
         let cell = cellItems.count
         return cell
     }
     
-    func cellItemAt(_ indexPath: IndexPath) -> RecipeCellProtocol {
+    func cellItemAt(_ indexPath: IndexPath) -> FavoritesCollectionCellProtocol {
         return cellItems[indexPath.row]
     }
     
-    var viewModel: RecipeCellProtocol?
+    var viewModel: FavoritesCollectionCellProtocol?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -123,14 +122,14 @@ extension FavoritesCollectionCell {
         contentView.addSubview(userImageView)
         userImageView.top(to: recipeImageView).constant = 5
         userImageView.leading(to: recipeImageView).constant = 5
-        userImageView.size(.init(width: 30, height: 30))
+        
     }
     
     private func addUsernameLabel() {
         contentView.addSubview(usernameLabel)
         usernameLabel.leadingToTrailing(of: userImageView).constant = -10
         usernameLabel.centerY(to: userImageView)
-        usernameLabel.height(20)
+
     }
     
     private func addLabelContainerView() {
@@ -153,6 +152,9 @@ extension FavoritesCollectionCell {
     private func configureContents() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        contentView.bringSubviewToFront(userImageView)
+        userImageView.size(.init(width: 30, height: 30))
+        // usernameLabel.height(20)
     }
 }
 
@@ -177,36 +179,33 @@ extension FavoritesCollectionCell: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension FavoritesCollectionCell {
+extension FavoritesCollectionCell: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150, height: 195)
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
     }
 }
 // MARK: - Set View Model
 public extension FavoritesCollectionCell {
     
-    func set(viewModel: RecipeCellProtocol) {
+    func set(viewModel: FavoritesCollectionCellProtocol) {
         self.viewModel = viewModel
-        self.userImageView.setImageScaled(viewModel.username)
-        self.recipeImageView.setImageScaled(viewModel.recipeImageUrl)
+        self.recipeImageView.setImage(viewModel.recipeImage)
+        self.userImageView.setImage(viewModel.userImage)
         self.usernameLabel.text = viewModel.username
         self.recipeTitleLabel.text = viewModel.recipeTitle
         self.likesAndCommentLabel.text = viewModel.commentAndLikes
+        
     }
 }
-

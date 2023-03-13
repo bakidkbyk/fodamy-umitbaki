@@ -12,6 +12,7 @@
 		FA2DB7A929631242004D38E2 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = FA2DB7A829631242004D38E2 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA4C1C0529794382006C5C8D /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C1C0429794382006C5C8D /* FloatLabelTextField.swift */; };
 		FA4C1C092979539C006C5C8D /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C1C082979539C006C5C8D /* StringConstants.swift */; };
+		FA6FB0CA29BDC56800714304 /* FavoritesCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FB0C929BDC56800714304 /* FavoritesCollectionCellModel.swift */; };
 		FA6FF2EE299B651200D2172D /* RecipeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FF2EC299B651200D2172D /* RecipeCellModel.swift */; };
 		FA6FF2EF299B651200D2172D /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FF2ED299B651200D2172D /* RecipeCell.swift */; };
 		FA791C8D296850AF001B6985 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA791C86296850AF001B6985 /* Assets.swift */; };
@@ -60,6 +61,7 @@
 		FA2DB7A829631242004D38E2 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		FA4C1C0429794382006C5C8D /* FloatLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
 		FA4C1C082979539C006C5C8D /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		FA6FB0C929BDC56800714304 /* FavoritesCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionCellModel.swift; sourceTree = "<group>"; };
 		FA6FF2EC299B651200D2172D /* RecipeCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCellModel.swift; sourceTree = "<group>"; };
 		FA6FF2ED299B651200D2172D /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		FA791C86296850AF001B6985 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0F47CA29B4A64B00F40A17 /* FavoritesCollectionCell.swift */,
+				FA6FB0C929BDC56800714304 /* FavoritesCollectionCellModel.swift */,
 			);
 			path = FavoritesCollectionCell;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				FA954483298CDB2700F55E23 /* WalkthroughCell.swift in Sources */,
 				FA6FF2EF299B651200D2172D /* RecipeCell.swift in Sources */,
 				FAB3A43029B2029B008B916D /* FavoritesCell.swift in Sources */,
+				FA6FB0CA29BDC56800714304 /* FavoritesCollectionCellModel.swift in Sources */,
 				FA4C1C0529794382006C5C8D /* FloatLabelTextField.swift in Sources */,
 				FA954485298D047700F55E23 /* WalkthroughCellModel.swift in Sources */,
 				FA954488298D069600F55E23 /* ReusableView+Extensions.swift in Sources */,
