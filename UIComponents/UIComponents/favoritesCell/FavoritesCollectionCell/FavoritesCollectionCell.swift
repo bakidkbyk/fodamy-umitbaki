@@ -143,6 +143,5 @@ public extension FavoritesCollectionCell {
         self.usernameLabel.text = viewModel.username
         self.recipeTitleLabel.text = viewModel.recipeTitle
         self.likesAndCommentLabel.text = viewModel.commentAndLikes
-        
     }
 }

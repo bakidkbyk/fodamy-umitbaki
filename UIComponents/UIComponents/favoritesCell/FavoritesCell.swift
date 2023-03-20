@@ -123,5 +123,3 @@ public extension FavoritesCell {
         self.favoritesSmallCellView.cellItems = viewModel.cellItems
     }
 }
-
-
