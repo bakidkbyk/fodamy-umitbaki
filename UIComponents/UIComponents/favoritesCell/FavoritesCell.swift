@@ -31,7 +31,8 @@ public class FavoritesCell: UICollectionViewCell, ReusableView {
         .backgroundColor(.appZircon)
         .build()
     
-    private let favoritesCollectionCell = FavoritesCollectionCell()
+    private let favoritesSmallCellView = FavoritesSmallCellView()
+    
     var viewModel: FavoritesCellProtocol?
     
     override public init(frame: CGRect) {
@@ -85,9 +86,9 @@ extension FavoritesCell {
     }
     
     private func addFavoritesCollectionCell() {
-        contentView.addSubview(favoritesCollectionCell)
-        favoritesCollectionCell.topToBottom(of: lineView)
-        favoritesCollectionCell.edgesToSuperview(excluding: .top)
+        contentView.addSubview(favoritesSmallCellView)
+        favoritesSmallCellView.topToBottom(of: lineView)
+        favoritesSmallCellView.edgesToSuperview(excluding: .top)
     }
 }
 // MARK: - Configure Contents
@@ -119,7 +120,8 @@ public extension FavoritesCell {
         self.viewModel = viewModel
         self.categoryImageView.setImage(viewModel.categoryImage)
         self.categoryTitleLabel.text = viewModel.categoryName
-        self.favoritesCollectionCell.cellItems = viewModel.cellItems 
-        
+        self.favoritesSmallCellView.cellItems = viewModel.cellItems
     }
 }
+
+

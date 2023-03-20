@@ -35,6 +35,7 @@
 		FA954485298D047700F55E23 /* WalkthroughCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA954484298D047700F55E23 /* WalkthroughCellModel.swift */; };
 		FA954488298D069600F55E23 /* ReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA954487298D069600F55E23 /* ReusableView+Extensions.swift */; };
 		FA95448B298D7C2000F55E23 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95448A298D7C2000F55E23 /* PageControl.swift */; };
+		FAA6A3EB29C445E6009A188D /* FavoritesSmallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A3EA29C445E6009A188D /* FavoritesSmallCellView.swift */; };
 		FAA6DFD629ACA42000918961 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6DFD529ACA41F00918961 /* UIImage+Extensions.swift */; };
 		FAABD05E2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */; };
 		FAABD0602965E2E200126FA9 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */; };
@@ -84,6 +85,7 @@
 		FA954484298D047700F55E23 /* WalkthroughCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCellModel.swift; sourceTree = "<group>"; };
 		FA954487298D069600F55E23 /* ReusableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Extensions.swift"; sourceTree = "<group>"; };
 		FA95448A298D7C2000F55E23 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		FAA6A3EA29C445E6009A188D /* FavoritesSmallCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSmallCellView.swift; sourceTree = "<group>"; };
 		FAA6DFD529ACA41F00918961 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewPresentProtocol.swift; sourceTree = "<group>"; };
 		FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB5A640299E2E94001A018D /* UserView.swift */,
+				FAA6A3EA29C445E6009A188D /* FavoritesSmallCellView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				FA6FF2EF299B651200D2172D /* RecipeCell.swift in Sources */,
 				FAB3A43029B2029B008B916D /* FavoritesCell.swift in Sources */,
 				FA6FB0CA29BDC56800714304 /* FavoritesCollectionCellModel.swift in Sources */,
+				FAA6A3EB29C445E6009A188D /* FavoritesSmallCellView.swift in Sources */,
 				FA4C1C0529794382006C5C8D /* FloatLabelTextField.swift in Sources */,
 				FA954485298D047700F55E23 /* WalkthroughCellModel.swift in Sources */,
 				FA954488298D069600F55E23 /* ReusableView+Extensions.swift in Sources */,

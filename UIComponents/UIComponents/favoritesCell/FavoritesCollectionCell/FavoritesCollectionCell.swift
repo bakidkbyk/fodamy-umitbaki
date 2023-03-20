@@ -7,16 +7,9 @@
 
 public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
     
-    private let collectionView = UICollectionViewBuilder()
-        .isPagingEnabled(true)
-        .scrollDirection(.horizontal)
-        .backgroundColor(.appWhite)
-        .showsHorizontalScrollIndicator(false)
-        .registerCell(FavoritesCollectionCell.self, reuseIdentifier: FavoritesCollectionCell.defaultReuseIdentifier)
-        .build()
-    
     private var recipeImageView = UIImageViewBuilder()
         .contentMode(.scaleAspectFill)
+        .cornerRadius(10)
         .clipsToBounds(true)
         .build()
     
@@ -60,18 +53,7 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
         .font(.font(.nunitoBold, size: .xSmall))
         .textColor(.appZircon)
         .build()
-    
-    var cellItems: [FavoritesCollectionCellProtocol] = []
-    
-    func numberOfItemsAt() -> Int {
-        let cell = cellItems.count
-        return cell
-    }
-    
-    func cellItemAt(_ indexPath: IndexPath) -> FavoritesCollectionCellProtocol {
-        return cellItems[indexPath.row]
-    }
-    
+
     var viewModel: FavoritesCollectionCellProtocol?
     
     override public init(frame: CGRect) {
@@ -100,18 +82,12 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
 extension FavoritesCollectionCell {
     
     private func addSubViews() {
-        addCollectionViews()
         addRecipeImageView()
         addUserImageView()
         addUsernameLabel()
         addLabelContainerView()
     }
-    
-    private func addCollectionViews() {
-        addSubview(collectionView)
-        collectionView.edgesToSuperview(usingSafeArea: true)
-    }
-    
+
     private func addRecipeImageView() {
         contentView.addSubview(recipeImageView)
         recipeImageView.aspectRatio(1)
@@ -150,52 +126,13 @@ extension FavoritesCollectionCell {
 extension FavoritesCollectionCell {
     
     private func configureContents() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        contentView.backgroundColor = .appWhite
         contentView.bringSubviewToFront(userImageView)
         userImageView.size(.init(width: 30, height: 30))
-        // usernameLabel.height(20)
+        usernameLabel.height(20)
     }
 }
 
-// MARK: CollectionView Delegate
-extension FavoritesCollectionCell: UICollectionViewDelegate { }
-
-// MARK: - CollectionView Data Source
-extension FavoritesCollectionCell: UICollectionViewDataSource {
-    
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        numberOfItemsAt()
-    }
-    
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: FavoritesCollectionCell = (collectionView.dequeueReusableCell(withReuseIdentifier: FavoritesCollectionCell.defaultReuseIdentifier,
-                                                                                for: indexPath) as? FavoritesCollectionCell)!
-        
-        let cellItem = cellItemAt(indexPath)
-        cell.set(viewModel: cellItem)
-        return cell
-    }
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-extension FavoritesCollectionCell: UICollectionViewDelegateFlowLayout {
-    
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                               sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 195)
-    }
-    
-    public func collectionView(_ collectionView: UICollectionView,
-                               layout collectionViewLayout: UICollectionViewLayout,
-                               insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-    }
-    
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
-    }
-}
 // MARK: - Set View Model
 public extension FavoritesCollectionCell {
     
