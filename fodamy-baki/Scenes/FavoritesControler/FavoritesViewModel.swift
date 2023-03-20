@@ -24,7 +24,6 @@ protocol FavoritesViewProtocol: FavoritesViewDataSource, FavoritesViewEventSourc
     func fetchCategoryRecipes(isRefreshing: Bool, isPaging: Bool)
     func fetchMorePages()
     func userLogout()
-    
 }
 
 final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewProtocol {
@@ -64,7 +63,6 @@ extension FavoritesViewModel {
     func fetchMorePages() {
         fetchCategoryRecipes(isRefreshing: false, isPaging: true)
     }
-
 }
 
 // MARK: - Network
