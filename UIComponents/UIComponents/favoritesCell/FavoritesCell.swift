@@ -58,6 +58,7 @@ public class FavoritesCell: UICollectionViewCell, ReusableView {
 extension FavoritesCell {
     
     private func addSubViews() {
+        backgroundColor = .white
         addCategoryView()
         addLineView()
         addFavoritesCollectionCell()
@@ -95,12 +96,21 @@ extension FavoritesCell {
 extension FavoritesCell {
     
     private func configureContents() {
-        backgroundColor = .appWhite
+        backgroundColor = .appZircon
         categoryView.height(44)
         categoryImageView.size(CGSize(width: 24, height: 24))
         lineView.size(CGSize(width: 1, height: 1))
         seeAllButton.addTarget(self, action: #selector(seeAllButtonTapped), for: .touchUpInside)
+        contentView.layer.cornerRadius = 4
+        layer.cornerRadius = 4
+        layer.masksToBounds = false
+        contentView.clipsToBounds = true
+        layer.shadowColor = UIColor.appCinder.cgColor
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 4.0
+        layer.shadowOpacity = 0.2
     }
+    
 }
 
 // MARK: - Actions

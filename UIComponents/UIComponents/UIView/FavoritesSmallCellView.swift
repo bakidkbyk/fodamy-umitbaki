@@ -53,6 +53,7 @@ extension FavoritesSmallCellView {
 extension FavoritesSmallCellView {
     
     private func configureContents() {
+        collectionView.backgroundColor = .appWhite
         collectionView.dataSource = self
         collectionView.delegate = self
     }

@@ -51,7 +51,7 @@ public class FavoritesCollectionCell: UICollectionViewCell, ReusableView {
     
     private var likesAndCommentLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .xSmall))
-        .textColor(.appZircon)
+        .textColor(.appRaven)
         .build()
 
     var viewModel: FavoritesCollectionCellProtocol?
@@ -126,10 +126,18 @@ extension FavoritesCollectionCell {
 extension FavoritesCollectionCell {
     
     private func configureContents() {
-        contentView.backgroundColor = .appWhite
+        contentView.backgroundColor = .white
         contentView.bringSubviewToFront(userImageView)
         userImageView.size(.init(width: 30, height: 30))
         usernameLabel.height(20)
+        contentView.layer.cornerRadius = 4
+        layer.cornerRadius = 4
+        layer.masksToBounds = false
+        contentView.clipsToBounds = true
+        layer.shadowColor = UIColor.appCinder.cgColor
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 4.0
+        layer.shadowOpacity = 0.2
     }
 }
 
