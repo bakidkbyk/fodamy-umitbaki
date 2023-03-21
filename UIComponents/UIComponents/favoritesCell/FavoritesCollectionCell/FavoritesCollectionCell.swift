@@ -126,7 +126,7 @@ extension FavoritesCollectionCell {
 extension FavoritesCollectionCell {
     
     private func configureContents() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .appWhite
         contentView.bringSubviewToFront(userImageView)
         userImageView.size(.init(width: 30, height: 30))
         usernameLabel.height(20)

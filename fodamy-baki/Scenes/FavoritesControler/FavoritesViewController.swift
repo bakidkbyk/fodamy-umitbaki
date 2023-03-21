@@ -13,7 +13,7 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
         .scrollDirection(.vertical)
         .showsHorizontalScrollIndicator(false)
         .showsVerticalScrollIndicator(false)
-        .backgroundColor(.appSecondaryBackground)
+        .backgroundColor(.appZircon)
         .registerCell(FavoritesCell.self, reuseIdentifier: FavoritesCell.defaultReuseIdentifier)
         .build()
     
@@ -47,7 +47,7 @@ extension FavoritesViewController {
 extension FavoritesViewController {
     
     private func configureContents() {
-        view.backgroundColor = .appWhite
+        view.backgroundColor = .appZircon
         collectionView.delegate = self
         collectionView.dataSource = self
         refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .touchUpInside)
