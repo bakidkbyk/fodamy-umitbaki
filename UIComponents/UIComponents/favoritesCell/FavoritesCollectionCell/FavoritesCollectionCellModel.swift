@@ -6,12 +6,12 @@
 //
 
 public protocol FavoritesCollectionCellDataSource {
-    
     var userImage: String? { get }
     var username: String? { get }
     var recipeImage: String? { get }
     var recipeTitle: String? { get }
     var commentAndLikes: String? { get }
+
 }
 
 public protocol FavoritesCollectionCellEventSource { }
@@ -19,7 +19,7 @@ public protocol FavoritesCollectionCellEventSource { }
 public protocol FavoritesCollectionCellProtocol: FavoritesCollectionCellDataSource, FavoritesCollectionCellEventSource { }
 
 public class FavoritesCollectionCellModel: FavoritesCollectionCellProtocol {
-    
+
     public var userImage: String?
     public var username: String?
     public var recipeImage: String?

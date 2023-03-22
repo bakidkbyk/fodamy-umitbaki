@@ -6,11 +6,13 @@
 //
 
 public protocol FavoritesCellDataSource: AnyObject {
-    
     var categoryId: Int { get }
     var categoryImage: String? { get }
     var categoryName: String? { get }
     var cellItems: [FavoritesCollectionCellProtocol] { get }
+    
+    func numberOfItemsAt() -> Int
+    func cellItemAt(_ indexPath: IndexPath) -> FavoritesCollectionCellProtocol
 }
 
 public protocol FavoritesCellEventSource: AnyObject {
@@ -21,8 +23,16 @@ public protocol FavoritesCellProtocol: FavoritesCellDataSource, FavoritesCellEve
 
 public class FavoritesCellModel: FavoritesCellProtocol {
     
-    public var seeAllButtonClosure: IntClosure?
+    public func cellItemAt(_ indexPath: IndexPath) -> FavoritesCollectionCellProtocol {
+        return cellItems[indexPath.row]
+    }
     
+    public func numberOfItemsAt() -> Int {
+        let cell = cellItems.count
+        return cell
+    }
+    
+    public var seeAllButtonClosure: IntClosure?
     public var categoryId: Int
     public var categoryImage: String?
     public var categoryName: String?

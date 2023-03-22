@@ -4,6 +4,7 @@
 //
 //  Created by Baki Dikbıyık on 7.02.2023.
 //
+import KeychainSwift
 
 protocol FavoritesViewDataSource {
     
@@ -31,6 +32,8 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
     var endRefreshing: VoidClosure?
     var didSuccessFetchRecipes: VoidClosure?
     var didSuccessLogout: VoidClosure?
+    let refreshControl = UIRefreshControl()
+    let keychain = KeychainSwift()
     
     var isRequestEnabled = false
     var isPagingEnabled = false

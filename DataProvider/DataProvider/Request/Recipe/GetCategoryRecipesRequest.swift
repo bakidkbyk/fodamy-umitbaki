@@ -9,7 +9,7 @@ public struct GetCategoryRecipesRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = BaseResponse<[CategoryRecipes]>
     
-    public var path: String = "category-recipes"
+    public let path: String = "category-recipes"
     public var method: RequestMethod = .get
     public var parameters: RequestParameters = [:]
     public var headers: RequestHeaders = [:]

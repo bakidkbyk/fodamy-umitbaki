@@ -14,11 +14,9 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
         .showsHorizontalScrollIndicator(false)
         .showsVerticalScrollIndicator(false)
         .backgroundColor(.appZircon)
-        .registerCell(FavoritesCell.self, reuseIdentifier: FavoritesCell.defaultReuseIdentifier)
         .build()
     
-    private let refreshControl = UIRefreshControl()
-    private let keychain = KeychainSwift()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +48,8 @@ extension FavoritesViewController {
         view.backgroundColor = .appZircon
         collectionView.delegate = self
         collectionView.dataSource = self
-        refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .touchUpInside)
+        collectionView.register(FavoritesCell.self)
+        viewModel.refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .touchUpInside)
     }
     
     private func addNavigationFodamyLogo() {
@@ -67,7 +66,7 @@ extension FavoritesViewController {
 extension FavoritesViewController {
     @objc
     func handleRefreshControl() {
-        if refreshControl.isRefreshing {
+        if viewModel.refreshControl.isRefreshing {
             viewModel.setDefaults()
             viewModel.fetchCategoryRecipes(isRefreshing: true, isPaging: false)
         }
@@ -86,13 +85,13 @@ extension FavoritesViewController {
         
         viewModel.endRefreshing = { [ weak self ] in
             guard let self = self else { return }
-            self.refreshControl.endRefreshing()
+            self.viewModel.refreshControl.endRefreshing()
         }
         
         // Delete Keychain
         viewModel.didSuccessLogout = { [ weak self ] in
             guard let self = self else { return }
-            self.keychain.clear()
+            self.viewModel.keychain.delete(Keychain.token)
             self.navigationItem.rightBarButtonItem = .none
         }
     }
@@ -126,20 +125,13 @@ extension FavoritesViewController {
     }
     
     private func checkUserLogin() {
-        guard keychain.get(Keychain.token) != nil else {
+        guard viewModel.keychain.get(Keychain.token) != nil else {
             navigationItem.rightBarButtonItem = .none
             return
         }
         setLogoutBarButton()
     }
-    // Delete keychain
-    private func subscribeViewModelEvents() {
-        viewModel.didSuccessLogout = { [ weak self ] in
-            guard let self = self else { return }
-            self.keychain.delete(Keychain.token)
-            self.navigationItem.rightBarButtonItem = .none
-        }
-    }
+
 }
 
 // MARK: - Collection View Delegate
@@ -153,8 +145,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: FavoritesCell = (collectionView.dequeueReusableCell(withReuseIdentifier: FavoritesCell.defaultReuseIdentifier,
-                                                                      for: indexPath) as? FavoritesCell)!
+        let cell: FavoritesCell = collectionView.dequeueReusableCell(for: indexPath)
         
         let cellItem = viewModel.cellItemAt(indexPath)
         cellItem.seeAllButtonClosure = { [ weak self ] id in

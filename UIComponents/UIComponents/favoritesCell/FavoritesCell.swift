@@ -31,7 +31,12 @@ public class FavoritesCell: UICollectionViewCell, ReusableView {
         .backgroundColor(.appZircon)
         .build()
     
-    private let favoritesSmallCellView = FavoritesSmallCellView()
+    private let collectionView = UICollectionViewBuilder()
+        .isPagingEnabled(true)
+        .scrollDirection(.horizontal)
+        .backgroundColor(.appWhite)
+        .showsHorizontalScrollIndicator(false)
+        .build()
     
     var viewModel: FavoritesCellProtocol?
     
@@ -60,7 +65,7 @@ extension FavoritesCell {
     private func addSubViews() {
         addCategoryView()
         addLineView()
-        addFavoritesCollectionCell()
+        addCollectionView()
     }
     
     private func addCategoryView() {
@@ -69,7 +74,7 @@ extension FavoritesCell {
         
         categoryView.addSubview(categoryImageView)
         categoryImageView.edgesToSuperview(excluding: .trailing, insets:
-        TinyEdgeInsets(top: 10, left: 15, bottom: 10, right: 0))
+                .init(top: 10, left: 15, bottom: 10, right: 0))
         
         categoryView.addSubview(categoryTitleLabel)
         categoryTitleLabel.centerYToSuperview()
@@ -85,16 +90,20 @@ extension FavoritesCell {
         lineView.topToBottom(of: categoryView)
     }
     
-    private func addFavoritesCollectionCell() {
-        contentView.addSubview(favoritesSmallCellView)
-        favoritesSmallCellView.topToBottom(of: lineView)
-        favoritesSmallCellView.edgesToSuperview(excluding: .top)
+    private func addCollectionView() {
+        contentView.addSubview(collectionView)
+        collectionView.topToBottom(of: lineView)
+        collectionView.edgesToSuperview(excluding: .top)
     }
+    
 }
 // MARK: - Configure Contents
 extension FavoritesCell {
     
     private func configureContents() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(FavoritesCollectionCell.self)
         backgroundColor = .appZircon
         categoryView.height(44)
         categoryImageView.size(CGSize(width: 24, height: 24))
@@ -120,6 +129,45 @@ public extension FavoritesCell {
         self.viewModel = viewModel
         self.categoryImageView.setImage(viewModel.categoryImage)
         self.categoryTitleLabel.text = viewModel.categoryName
-        self.favoritesSmallCellView.cellItems = viewModel.cellItems
     }
 }
+
+// MARK: CollectionView Delegate
+extension FavoritesCell: UICollectionViewDelegate { }
+
+// MARK: - CollectionView Data Source
+extension FavoritesCell: UICollectionViewDataSource {
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel?.numberOfItemsAt() ?? 0
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: FavoritesCollectionCell = collectionView.dequeueReusableCell(for: indexPath)
+        if let cellItem = viewModel?.cellItems[indexPath.row] {
+            cell.set(viewModel: cellItem)
+        }
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension FavoritesCell: UICollectionViewDelegateFlowLayout {
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 195)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                               minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
+}
+
