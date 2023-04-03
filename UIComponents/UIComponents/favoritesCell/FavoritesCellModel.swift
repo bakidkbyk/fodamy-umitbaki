@@ -5,6 +5,7 @@
 //  Created by Baki Dikbıyık on 3.03.2023.
 //
 
+
 public protocol FavoritesCellDataSource: AnyObject {
     var categoryId: Int { get }
     var categoryImage: String? { get }
@@ -16,12 +17,15 @@ public protocol FavoritesCellDataSource: AnyObject {
 }
 
 public protocol FavoritesCellEventSource: AnyObject {
-    var seeAllButtonClosure: IntClosure? { get set }
+    var seeAllButtonClosure: FavoritesClosure? { get set }
+    var reloadData: VoidClosure? { get set }
 }
 
 public protocol FavoritesCellProtocol: FavoritesCellDataSource, FavoritesCellEventSource { }
 
 public class FavoritesCellModel: FavoritesCellProtocol {
+    
+    public var reloadData: VoidClosure?
     
     public func cellItemAt(_ indexPath: IndexPath) -> FavoritesCollectionCellProtocol {
         return cellItems[indexPath.row]
@@ -32,7 +36,7 @@ public class FavoritesCellModel: FavoritesCellProtocol {
         return cell
     }
     
-    public var seeAllButtonClosure: IntClosure?
+    public var seeAllButtonClosure: FavoritesClosure?
     public var categoryId: Int
     public var categoryImage: String?
     public var categoryName: String?

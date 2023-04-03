@@ -21,7 +21,7 @@ protocol FavoritesViewEventSource {
 
 protocol FavoritesViewProtocol: FavoritesViewDataSource, FavoritesViewEventSource {
     
-    func seeAllButtonTapped(categoryId: Int)
+    func seeAllButtonTapped(categoryId: Int, title: String)
     func fetchCategoryRecipes(isRefreshing: Bool, isPaging: Bool)
     func fetchMorePages()
     func userLogout()
@@ -32,15 +32,13 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
     var endRefreshing: VoidClosure?
     var didSuccessFetchRecipes: VoidClosure?
     var didSuccessLogout: VoidClosure?
-    let refreshControl = UIRefreshControl()
+   
     let keychain = KeychainSwift()
     
     var isRequestEnabled = false
     var isPagingEnabled = false
     var page = 1
 
-    private var cellItems: [FavoritesCellModel] = []
-    
     func numberOfItemsAt() -> Int {
         let cell = cellItems.count
         return cell
@@ -52,15 +50,19 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
     
     func setDefaults() {
         cellItems.removeAll()
+        
         page = 1
     }
+
+    private var cellItems: [FavoritesCellModel] = []
+    
 }
 
 // MARK: - Actions
 extension FavoritesViewModel {
     
-    func seeAllButtonTapped(categoryId: Int) {
-        router.pushRecipes(categoryId: categoryId)
+    func seeAllButtonTapped(categoryId: Int, title: String) {
+        router.pushRecipes(categoryId: categoryId, title: title)
     }
     
     func fetchMorePages() {
@@ -85,7 +87,6 @@ extension FavoritesViewModel {
         self.isRequestEnabled = false
         dataProvider.request(for: request) { [ weak self ] result in
             guard let self = self else { return }
-            
             if !isRefreshing {
                 self.hideLoading?()
                 self.hideActivityIndicatorView?()
@@ -115,6 +116,7 @@ extension FavoritesViewModel {
             switch result {
             case .success:
                 self.didSuccessLogout?()
+                self.keychain.delete(Keychain.token)
             case.failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }

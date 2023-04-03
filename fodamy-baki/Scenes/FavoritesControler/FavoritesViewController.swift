@@ -16,7 +16,7 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
         .backgroundColor(.appZircon)
         .build()
     
-
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,8 @@ extension FavoritesViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(FavoritesCell.self)
-        viewModel.refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .touchUpInside)
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
     }
     
     private func addNavigationFodamyLogo() {
@@ -66,7 +67,7 @@ extension FavoritesViewController {
 extension FavoritesViewController {
     @objc
     func handleRefreshControl() {
-        if viewModel.refreshControl.isRefreshing {
+        if refreshControl.isRefreshing {
             viewModel.setDefaults()
             viewModel.fetchCategoryRecipes(isRefreshing: true, isPaging: false)
         }
@@ -85,13 +86,13 @@ extension FavoritesViewController {
         
         viewModel.endRefreshing = { [ weak self ] in
             guard let self = self else { return }
-            self.viewModel.refreshControl.endRefreshing()
+            self.collectionView.reloadData()
+            self.refreshControl.endRefreshing()
         }
         
         // Delete Keychain
         viewModel.didSuccessLogout = { [ weak self ] in
             guard let self = self else { return }
-            self.viewModel.keychain.delete(Keychain.token)
             self.navigationItem.rightBarButtonItem = .none
         }
     }
@@ -131,7 +132,6 @@ extension FavoritesViewController {
         }
         setLogoutBarButton()
     }
-
 }
 
 // MARK: - Collection View Delegate
@@ -148,10 +148,11 @@ extension FavoritesViewController: UICollectionViewDataSource {
         let cell: FavoritesCell = collectionView.dequeueReusableCell(for: indexPath)
         
         let cellItem = viewModel.cellItemAt(indexPath)
-        cellItem.seeAllButtonClosure = { [ weak self ] id in
-            self?.viewModel.seeAllButtonTapped(categoryId: id)
-        }
+        
         cell.set(viewModel: cellItem)
+        cellItem.seeAllButtonClosure = { [ weak self ] id, title in
+            self?.viewModel.seeAllButtonTapped(categoryId: id, title: title)
+        }
         return cell
     }
 }

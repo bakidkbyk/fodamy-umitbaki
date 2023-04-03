@@ -9,3 +9,4 @@ import Foundation
 public typealias VoidClosure   = (() -> Void)
 public typealias StringClosure = ((String) -> Void)
 public typealias IntClosure = ((Int) -> Void)
+public typealias FavoritesClosure = ((Int, String) -> Void)

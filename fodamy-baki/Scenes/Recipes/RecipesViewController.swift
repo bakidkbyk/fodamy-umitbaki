@@ -5,8 +5,6 @@
 //  Created by Baki Dikbıyık on 13.02.2023.
 //
 
-import CoreImage
-
 final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
     private let collectionView = UICollectionViewBuilder()
@@ -14,7 +12,6 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         .backgroundColor(.appSecondaryBackground)
         .showsVerticalScrollIndicator(false)
         .showsHorizontalScrollIndicator(false)
-        .isPagingEnabled(true)
         .build()
     
     private let refreshControl = UIRefreshControl()

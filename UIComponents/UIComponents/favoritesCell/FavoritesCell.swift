@@ -5,9 +5,10 @@
 //  Created by Baki Dikbıyık on 3.03.2023.
 //
 
+
 public class FavoritesCell: UICollectionViewCell, ReusableView {
     
-    private let categoryView = UIImageViewBuilder()
+    private let categoryView = UIViewBuilder()
         .backgroundColor(.appWhite)
         .build()
     
@@ -38,18 +39,20 @@ public class FavoritesCell: UICollectionViewCell, ReusableView {
         .showsHorizontalScrollIndicator(false)
         .build()
     
-    var viewModel: FavoritesCellProtocol?
+    weak var viewModel: FavoritesCellProtocol?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
         configureContents()
+        subscribeEventsModel()
     }
     
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
         addSubViews()
         configureContents()
+        subscribeEventsModel()
     }
     
     public override func prepareForReuse() {
@@ -66,6 +69,7 @@ extension FavoritesCell {
         addCategoryView()
         addLineView()
         addCollectionView()
+        bringSubviewToFront(seeAllButton)
     }
     
     private func addCategoryView() {
@@ -81,13 +85,18 @@ extension FavoritesCell {
         categoryTitleLabel.leadingToTrailing(of: categoryImageView).constant = 5
         
         categoryView.addSubview(seeAllButton)
-        seeAllButton.trailingToSuperview().constant = -15 
+        seeAllButton.trailingToSuperview().constant = -15
+        seeAllButton.leadingToTrailing(of: categoryTitleLabel).constant = 15
         seeAllButton.centerYToSuperview()
+        // hugging compression
+        seeAllButton.setHugging(.required, for: .horizontal)
     }
     
     private func addLineView() {
         contentView.addSubview(lineView)
         lineView.topToBottom(of: categoryView)
+        lineView.leadingToSuperview()
+        lineView.trailingToSuperview()
     }
     
     private func addCollectionView() {
@@ -103,12 +112,14 @@ extension FavoritesCell {
     private func configureContents() {
         collectionView.dataSource = self
         collectionView.delegate = self
+
         collectionView.register(FavoritesCollectionCell.self)
         backgroundColor = .appZircon
         categoryView.height(44)
         categoryImageView.size(CGSize(width: 24, height: 24))
         lineView.size(CGSize(width: 1, height: 1))
         seeAllButton.addTarget(self, action: #selector(seeAllButtonTapped), for: .touchUpInside)
+        categoryTitleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(seeAllButtonTapped)))
     }
 }
 
@@ -117,8 +128,8 @@ extension FavoritesCell {
     
     @objc
     func seeAllButtonTapped() {
-        guard let categoryId = viewModel?.categoryId else { return }
-        viewModel?.seeAllButtonClosure?(categoryId)
+        guard let categoryId = viewModel?.categoryId, let categoryName = viewModel?.categoryName else { return }
+        viewModel?.seeAllButtonClosure?(categoryId, categoryName)
     }
 }
 
@@ -129,6 +140,16 @@ public extension FavoritesCell {
         self.viewModel = viewModel
         self.categoryImageView.setImage(viewModel.categoryImage)
         self.categoryTitleLabel.text = viewModel.categoryName
+    }
+}
+
+// MARK: Subscribe
+extension FavoritesCell {
+    private func subscribeEventsModel() {
+        viewModel?.reloadData = { [ weak self ] in
+            guard let self = self else { return }
+            self.collectionView.reloadData()
+        }
     }
 }
 
