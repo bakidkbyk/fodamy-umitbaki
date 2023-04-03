@@ -68,5 +68,3 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     #endif
     
 }
-
-

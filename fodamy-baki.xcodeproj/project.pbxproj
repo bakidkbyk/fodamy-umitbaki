@@ -14,6 +14,7 @@
 		FA2DB7982962DF94004D38E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FA2DB7972962DF94004D38E2 /* .swiftlint.yml */; };
 		FA2DB7B729631568004D38E2 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2DB7B629631568004D38E2 /* UIComponents.framework */; };
 		FA61FFAD296FE53F00D08E28 /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FFAC296FE53F00D08E28 /* APIDataProvider.swift */; };
+		FA6FB0CD29BDCF7500714304 /* FavoritesCollectionCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FB0CC29BDCF7500714304 /* FavoritesCollectionCell+Extensions.swift */; };
 		FA87472329751C6400039E92 /* APIRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472229751C6400039E92 /* APIRequestAdapter.swift */; };
 		FA87472529751E3D00039E92 /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472429751E3D00039E92 /* APIRequestInterceptor.swift */; };
 		FA87472729751E6800039E92 /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472629751E6800039E92 /* APILogger.swift */; };
@@ -37,6 +38,8 @@
 		FAB60DB6297FD9FD00F1DB9A /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB5297FD9FD00F1DB9A /* Validation.swift */; };
 		FAB84898299656D2007D5CA7 /* HomeTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB84896299656D2007D5CA7 /* HomeTabBarRoute.swift */; };
 		FAB84899299656D2007D5CA7 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB84897299656D2007D5CA7 /* HomeTabBarViewController.swift */; };
+		FABFE91D29B7097100F78DFD /* RecipesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFE91C29B7097100F78DFD /* RecipesRoute.swift */; };
+		FABFE92329B75E2500F78DFD /* FavoritesCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFE92229B75E2500F78DFD /* FavoritesCellModel+Extension.swift */; };
 		FAC3A838298420B90095A7C3 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3A837298420B90095A7C3 /* Animator.swift */; };
 		FAC3A83A298420CE0095A7C3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3A839298420CE0095A7C3 /* Router.swift */; };
 		FAC3A83D2984210D0095A7C3 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3A83C2984210D0095A7C3 /* AppRouter.swift */; };
@@ -75,6 +78,7 @@
 		FA2DB7AF296312A8004D38E2 /* fodamy-baki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fodamy-baki-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA2DB7B629631568004D38E2 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA61FFAC296FE53F00D08E28 /* APIDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
+		FA6FB0CC29BDCF7500714304 /* FavoritesCollectionCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesCollectionCell+Extensions.swift"; sourceTree = "<group>"; };
 		FA87472229751C6400039E92 /* APIRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestAdapter.swift; sourceTree = "<group>"; };
 		FA87472429751E3D00039E92 /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
 		FA87472629751E6800039E92 /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 		FAB60DB5297FD9FD00F1DB9A /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		FAB84896299656D2007D5CA7 /* HomeTabBarRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarRoute.swift; sourceTree = "<group>"; };
 		FAB84897299656D2007D5CA7 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		FABFE91C29B7097100F78DFD /* RecipesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRoute.swift; sourceTree = "<group>"; };
+		FABFE92229B75E2500F78DFD /* FavoritesCellModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesCellModel+Extension.swift"; sourceTree = "<group>"; };
 		FAC3A837298420B90095A7C3 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		FAC3A839298420CE0095A7C3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FAC3A83C2984210D0095A7C3 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -228,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				FA8D3C0129A37B3D008056B5 /* RecipeCellModel+Extension.swift */,
+				FABFE92229B75E2500F78DFD /* FavoritesCellModel+Extension.swift */,
+				FA6FB0CC29BDCF7500714304 /* FavoritesCollectionCell+Extensions.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -309,8 +317,9 @@
 			isa = PBXGroup;
 			children = (
 				FADE8AC3299A1BE6008A1A83 /* RecipesViewController.swift */,
-				FADE8AC2299A1BE6008A1A83 /* RecipesRouter.swift */,
 				FADE8AC4299A1BE6008A1A83 /* RecipesViewModel.swift */,
+				FADE8AC2299A1BE6008A1A83 /* RecipesRouter.swift */,
+				FABFE91C29B7097100F78DFD /* RecipesRoute.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -548,6 +557,7 @@
 				FAC3A840298421660095A7C3 /* ModalTransition.swift in Sources */,
 				FACE7300298963C8001B98D4 /* WalkthroughRoute.swift in Sources */,
 				FAA71F3E2992197500E150A3 /* FavoritesRouter.swift in Sources */,
+				FA6FB0CD29BDCF7500714304 /* FavoritesCollectionCell+Extensions.swift in Sources */,
 				FAB60DA4297FADCD00F1DB9A /* RegisterViewModel.swift in Sources */,
 				FAA819C62964609A00B4C83A /* HomeViewRoute.swift in Sources */,
 				FACE72FE29895EC1001B98D4 /* WalkthroughViewModel.swift in Sources */,
@@ -558,6 +568,7 @@
 				FA0A2F1E2962BB56004E82C6 /* AppDelegate.swift in Sources */,
 				FAA819C32964609A00B4C83A /* HomeViewModel.swift in Sources */,
 				FACE72F329892447001B98D4 /* ForgotPasswordViewModel.swift in Sources */,
+				FABFE91D29B7097100F78DFD /* RecipesRoute.swift in Sources */,
 				FAC3A8422984218C0095A7C3 /* PlaceOnWindowTransition.swift in Sources */,
 				FADE8AC7299A1BE6008A1A83 /* RecipesViewModel.swift in Sources */,
 				FAB84899299656D2007D5CA7 /* HomeTabBarViewController.swift in Sources */,
@@ -565,6 +576,7 @@
 				FACE72F229892447001B98D4 /* ForgotPasswordViewController.swift in Sources */,
 				FAC3A84C298463220095A7C3 /* LoginViewController.swift in Sources */,
 				FA87472529751E3D00039E92 /* APIRequestInterceptor.swift in Sources */,
+				FABFE92329B75E2500F78DFD /* FavoritesCellModel+Extension.swift in Sources */,
 				FADE8AC5299A1BE6008A1A83 /* RecipesRouter.swift in Sources */,
 				FAC3A84F298463320095A7C3 /* LoginRoute.swift in Sources */,
 			);

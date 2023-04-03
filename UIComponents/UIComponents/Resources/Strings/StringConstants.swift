@@ -11,6 +11,11 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum Favorites {
+    /// TÜMÜNÜ GÖR
+    public static let seeAllButtonText = L10n.tr("Localizable", "Favorites.seeAllButtonText")
+  }
+
   public enum ForgotPassword {
     /// E-mail Adresi
     public static let emailPlaceHolder = L10n.tr("Localizable", "ForgotPassword.emailPlaceHolder")

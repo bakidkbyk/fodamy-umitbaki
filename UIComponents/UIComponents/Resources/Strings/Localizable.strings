@@ -31,6 +31,9 @@ recipes in all around the word.";
 "Recipes.following" = "Takip Ediliyor";
 "Recipes.dataIsNotMatch" = "Data Eşleşmedi!";
 
+// MARK: - Favorites View Controller
+"Favorites.seeAllButtonText" = "TÜMÜNÜ GÖR";
+
 // MARK: - Login View Controller
 "Login.title"                    = "Giriş Yap";
 "Login.loginButtonText"          = "Giriş Yap";

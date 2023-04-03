@@ -18,7 +18,6 @@ final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> 
         .showsVerticalScrollIndicator(false)
         .showsHorizontalScrollIndicator(false)
         .isPagingEnabled(true)
-        .registerCell(WalkthroughCell.self, reuseIdentifier: WalkthroughCell.defaultReuseIdentifier)
         .build()
     
     private let pageControl = UIPageControlBuilder<PageControl>()
@@ -79,6 +78,7 @@ extension WalkthroughViewController {
         view.backgroundColor = .appWhite
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(WalkthroughCell.self)
         nextActionButton.height(60)
         dissmissButton.addTarget(self, action: #selector(dissmissButtonTapped), for: .touchUpInside)
         pageControl.addTarget(self, action: #selector(pageControlChanged), for: .touchUpInside)
@@ -102,7 +102,7 @@ extension WalkthroughViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: WalkthroughCell = (collectionView.dequeueReusableCell(withReuseIdentifier: WalkthroughCell.defaultReuseIdentifier, for: indexPath) as? WalkthroughCell)!
+        let cell: WalkthroughCell = collectionView.dequeueReusableCell(for: indexPath)
         let cellItem = viewModel.cellItemAt(indexPath: indexPath)
         cell.set(viewModel: cellItem)
         return cell

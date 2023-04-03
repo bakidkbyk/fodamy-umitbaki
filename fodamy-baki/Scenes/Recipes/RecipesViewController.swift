@@ -5,8 +5,6 @@
 //  Created by Baki Dikbıyık on 13.02.2023.
 //
 
-import CoreImage
-
 final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
     private let collectionView = UICollectionViewBuilder()
@@ -14,8 +12,6 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         .backgroundColor(.appSecondaryBackground)
         .showsVerticalScrollIndicator(false)
         .showsHorizontalScrollIndicator(false)
-        .isPagingEnabled(true)
-        .registerCell(RecipeCell.self, reuseIdentifier: RecipeCell.defaultReuseIdentifier)
         .build()
     
     private let refreshControl = UIRefreshControl()
@@ -47,6 +43,7 @@ extension RecipesViewController {
     
     private func configureContents() {
         navigationItem.title = viewModel.title
+        collectionView.register(RecipeCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.refreshControl = refreshControl
@@ -108,8 +105,7 @@ extension RecipesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: RecipeCell = (collectionView.dequeueReusableCell(withReuseIdentifier: RecipeCell.defaultReuseIdentifier,
-                                                                   for: indexPath) as? RecipeCell)!
+        let cell: RecipeCell = collectionView.dequeueReusableCell(for: indexPath)
         
         let cellItem = viewModel.cellItemAt(indexPath)
         cell.set(viewModel: cellItem)

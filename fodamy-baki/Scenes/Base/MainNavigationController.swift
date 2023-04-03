@@ -21,7 +21,7 @@ class MainNavigationController: UINavigationController {
             .build()
         
         navigationBar.isTranslucent = true
-        navigationBar.tintColor = .appRed
+        navigationBar.tintColor = .appWhite
         
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
