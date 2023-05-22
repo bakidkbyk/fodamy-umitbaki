@@ -62,3 +62,5 @@ recipes in all around the word.";
 "ForgotPassword.refreshPasswordButtonText" = "Sıfırla";
 "ForgotPassword.emptyEmailAdress"          = "Lütfen geçerli bir email adresi giriniz.";
 "ForgotPassword.isSuccess"                 = "Şifre Yenileme isteğiniz başarılı!";
+
+// MARK: - Recipe Details View Controller 

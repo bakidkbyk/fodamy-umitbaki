@@ -11,6 +11,10 @@
 		FA3B3297296D590600FEF004 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B3296296D590600FEF004 /* Typealias.swift */; };
 		FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */; };
 		FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */; };
+		FA3DB65F29E7EA0B00888DB2 /* GetRecipeDetailsRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DB65E29E7EA0B00888DB2 /* GetRecipeDetailsRequestRequest.swift */; };
+		FA3DB66129E7EE4200888DB2 /* RecipeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DB66029E7EE4200888DB2 /* RecipeDetails.swift */; };
+		FA3DB66329E8719100888DB2 /* TimeOfRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DB66229E8719100888DB2 /* TimeOfRecipe.swift */; };
+		FA3DB66529E8739000888DB2 /* NumberOfPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DB66429E8739000888DB2 /* NumberOfPerson.swift */; };
 		FA8D3BF629A34A61008056B5 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BF529A34A61008056B5 /* Recipe.swift */; };
 		FA8D3BFB29A35029008056B5 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BFA29A35029008056B5 /* BaseResponse.swift */; };
 		FA8D3BFD29A35072008056B5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D3BFC29A35072008056B5 /* Pagination.swift */; };
@@ -40,6 +44,10 @@
 		FA3B3296296D590600FEF004 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
+		FA3DB65E29E7EA0B00888DB2 /* GetRecipeDetailsRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeDetailsRequestRequest.swift; sourceTree = "<group>"; };
+		FA3DB66029E7EE4200888DB2 /* RecipeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetails.swift; sourceTree = "<group>"; };
+		FA3DB66229E8719100888DB2 /* TimeOfRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOfRecipe.swift; sourceTree = "<group>"; };
+		FA3DB66429E8739000888DB2 /* NumberOfPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfPerson.swift; sourceTree = "<group>"; };
 		FA8D3BF529A34A61008056B5 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		FA8D3BFA29A35029008056B5 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		FA8D3BFC29A35072008056B5 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -113,6 +121,7 @@
 			children = (
 				FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift */,
 				FABFE91E29B70F4600F78DFD /* GetCategoryRecipesRequest.swift */,
+				FA3DB65E29E7EA0B00888DB2 /* GetRecipeDetailsRequestRequest.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -177,6 +186,9 @@
 				FA8D3BFC29A35072008056B5 /* Pagination.swift */,
 				FA8D3C0329A380A9008056B5 /* Categories.swift */,
 				FABFE92029B70F7B00F78DFD /* CategoryRecipes.swift */,
+				FA3DB66029E7EE4200888DB2 /* RecipeDetails.swift */,
+				FA3DB66229E8719100888DB2 /* TimeOfRecipe.swift */,
+				FA3DB66429E8739000888DB2 /* NumberOfPerson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,10 +299,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3DB66529E8739000888DB2 /* NumberOfPerson.swift in Sources */,
+				FA3DB66329E8719100888DB2 /* TimeOfRecipe.swift in Sources */,
 				FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */,
 				FABFE92129B70F7B00F78DFD /* CategoryRecipes.swift in Sources */,
 				FA3B3297296D590600FEF004 /* Typealias.swift in Sources */,
 				FABFE91F29B70F4600F78DFD /* GetCategoryRecipesRequest.swift in Sources */,
+				FA3DB65F29E7EA0B00888DB2 /* GetRecipeDetailsRequestRequest.swift in Sources */,
 				FAF3DCD829B0AC0700DDE6D8 /* FodamyRequest.swift in Sources */,
 				FA910931296E8263005F8651 /* RequestEncoding.swift in Sources */,
 				FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */,
@@ -298,6 +313,7 @@
 				FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */,
 				FA91092F296E8237005F8651 /* RequestMethod.swift in Sources */,
 				FA8D3BFB29A35029008056B5 /* BaseResponse.swift in Sources */,
+				FA3DB66129E7EE4200888DB2 /* RecipeDetails.swift in Sources */,
 				FAB60DAC297FD21400F1DB9A /* RegisterRequest.swift in Sources */,
 				FA91092D296E803A005F8651 /* APIDecodableResponseRequest.swift in Sources */,
 				FA8D3BF629A34A61008056B5 /* Recipe.swift in Sources */,

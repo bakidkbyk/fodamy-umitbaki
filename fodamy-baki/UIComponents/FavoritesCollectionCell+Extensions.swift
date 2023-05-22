@@ -9,7 +9,7 @@ extension FavoritesCollectionCellModel {
     
     convenience init(recipe: Recipe) {
         
-        self.init(userImage: recipe.user.image?.url ?? "",
+        self.init(recipeId: recipe.id, userImage: recipe.user.image?.url ?? "",
                   username: recipe.user.username,
                   recipeImage: recipe.images?.first?.url,
                   recipeTitle: recipe.title,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol RecipeHeaderCellCellDataSource: AnyObject {
+public protocol RecipeHeaderCellDataSource: AnyObject {
     var imgUrl: String? { get }
     var isEditorChoice: Bool { get }
 }
@@ -16,11 +16,11 @@ public protocol RecipeHeaderCellCellEventSource: AnyObject {
     
 }
 
-public protocol RecipeHeaderCellCellProtocol: RecipeHeaderCellCellDataSource, RecipeHeaderCellCellEventSource {
+public protocol RecipeHeaderCellProtocol: RecipeHeaderCellDataSource, RecipeHeaderCellCellEventSource {
     
 }
 
-public final class RecipeHeaderCellCellModel: RecipeHeaderCellCellProtocol {
+public final class RecipeHeaderCellModel: RecipeHeaderCellProtocol {
     
     public var imgUrl: String?
     public var isEditorChoice: Bool

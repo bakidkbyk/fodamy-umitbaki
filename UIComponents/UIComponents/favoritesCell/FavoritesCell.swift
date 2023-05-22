@@ -40,6 +40,7 @@ public class FavoritesCell: UICollectionViewCell, ReusableView {
         .build()
     
     weak var viewModel: FavoritesCellProtocol?
+    var didSelectRecipe: IntClosure?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -140,6 +141,8 @@ public extension FavoritesCell {
         self.viewModel = viewModel
         self.categoryImageView.setImage(viewModel.categoryImage)
         self.categoryTitleLabel.text = viewModel.categoryName
+        self.didSelectRecipe = viewModel.didSelectRecipe
+        
     }
 }
 
@@ -154,7 +157,11 @@ extension FavoritesCell {
 }
 
 // MARK: CollectionView Delegate
-extension FavoritesCell: UICollectionViewDelegate { }
+extension FavoritesCell: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel?.didSelectRecipe(indexPath: indexPath)
+    }
+}
 
 // MARK: - CollectionView Data Source
 extension FavoritesCell: UICollectionViewDataSource {
@@ -191,4 +198,3 @@ extension FavoritesCell: UICollectionViewDelegateFlowLayout {
         return 15
     }
 }
-

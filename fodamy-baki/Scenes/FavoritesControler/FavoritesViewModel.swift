@@ -22,6 +22,7 @@ protocol FavoritesViewEventSource {
 protocol FavoritesViewProtocol: FavoritesViewDataSource, FavoritesViewEventSource {
     
     func seeAllButtonTapped(categoryId: Int, title: String)
+    func didSelectRecipe(recipeId: Int)
     func fetchCategoryRecipes(isRefreshing: Bool, isPaging: Bool)
     func fetchMorePages()
     func userLogout()
@@ -65,6 +66,9 @@ extension FavoritesViewModel {
         router.pushRecipes(categoryId: categoryId, title: title)
     }
     
+    func didSelectRecipe(recipeId: Int) {
+        router.pushRecipeDetails(recipeId: recipeId)
+    }
     func fetchMorePages() {
         fetchCategoryRecipes(isRefreshing: false, isPaging: true)
     }

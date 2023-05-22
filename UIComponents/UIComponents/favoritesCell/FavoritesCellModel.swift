@@ -19,18 +19,24 @@ public protocol FavoritesCellDataSource: AnyObject {
 public protocol FavoritesCellEventSource: AnyObject {
     var seeAllButtonClosure: FavoritesClosure? { get set }
     var reloadData: VoidClosure? { get set }
+    var didSelectRecipe: IntClosure? { get set }
 }
 
-public protocol FavoritesCellProtocol: FavoritesCellDataSource, FavoritesCellEventSource { }
+public protocol FavoritesCellProtocol: FavoritesCellDataSource, FavoritesCellEventSource {
+    func didSelectRecipe(indexPath: IndexPath) 
+}
 
 public class FavoritesCellModel: FavoritesCellProtocol {
-    
+
     public var reloadData: VoidClosure?
     
     public func cellItemAt(_ indexPath: IndexPath) -> FavoritesCollectionCellProtocol {
         return cellItems[indexPath.row]
     }
-    
+    public func didSelectRecipe(indexPath: IndexPath) {
+        let cellItem = cellItems[indexPath.row]
+        didSelectRecipe?(cellItem.recipeId)
+    }
     public func numberOfItemsAt() -> Int {
         let cell = cellItems.count
         return cell
@@ -41,6 +47,7 @@ public class FavoritesCellModel: FavoritesCellProtocol {
     public var categoryImage: String?
     public var categoryName: String?
     public var cellItems: [FavoritesCollectionCellProtocol]
+    public var didSelectRecipe: IntClosure?
     
     public init(categoryId: Int, categoryImage: String?, categoryName: String?, cellItems: [FavoritesCollectionCellProtocol]) {
         self.categoryId = categoryId
