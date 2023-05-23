@@ -35,7 +35,6 @@
 		FAA819C42964609A00B4C83A /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C02964609A00B4C83A /* HomeViewRouter.swift */; };
 		FAA819C52964609A00B4C83A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C12964609A00B4C83A /* HomeViewController.swift */; };
 		FAA819C62964609A00B4C83A /* HomeViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA819C22964609A00B4C83A /* HomeViewRoute.swift */; };
-		FAA8B9432A18DBA5009FC47D /* RecipeDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8B9422A18DBA5009FC47D /* RecipeDetailHeaderView.swift */; };
 		FAB60DA2297FADCD00F1DB9A /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60D9F297FADCD00F1DB9A /* RegisterRouter.swift */; };
 		FAB60DA3297FADCD00F1DB9A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DA0297FADCD00F1DB9A /* RegisterViewController.swift */; };
 		FAB60DA4297FADCD00F1DB9A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DA1297FADCD00F1DB9A /* RegisterViewModel.swift */; };
@@ -104,7 +103,6 @@
 		FAA819C02964609A00B4C83A /* HomeViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
 		FAA819C12964609A00B4C83A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAA819C22964609A00B4C83A /* HomeViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewRoute.swift; sourceTree = "<group>"; };
-		FAA8B9422A18DBA5009FC47D /* RecipeDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailHeaderView.swift; sourceTree = "<group>"; };
 		FAB60D9F297FADCD00F1DB9A /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		FAB60DA0297FADCD00F1DB9A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FAB60DA1297FADCD00F1DB9A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -301,7 +299,6 @@
 		FAA8B9412A18D98D009FC47D /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				FAA8B9422A18DBA5009FC47D /* RecipeDetailHeaderView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -575,7 +572,6 @@
 				FAC3A83A298420CE0095A7C3 /* Router.swift in Sources */,
 				FACE72F129892447001B98D4 /* ForgotPasswordRouter.swift in Sources */,
 				FAB84898299656D2007D5CA7 /* HomeTabBarRoute.swift in Sources */,
-				FAA8B9432A18DBA5009FC47D /* RecipeDetailHeaderView.swift in Sources */,
 				FAC3A838298420B90095A7C3 /* Animator.swift in Sources */,
 				FADE8AC6299A1BE6008A1A83 /* RecipesViewController.swift in Sources */,
 				FAA71F3F2992197500E150A3 /* FavoritesViewController.swift in Sources */,

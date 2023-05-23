@@ -9,6 +9,9 @@ import UIKit
 
 public class RecipeDetailsCell: UICollectionViewCell, ReusableView {
     
+    let recipeDetailsHeaderView = RecipeDetailHeaderView()
+    
+    
     weak var viewModel: RecipeDetailsCellProtocol?
     
     override init(frame: CGRect) {
@@ -25,9 +28,13 @@ public class RecipeDetailsCell: UICollectionViewCell, ReusableView {
         
     }
     
-    public func set(viewModel: RecipeDetailsCellProtocol) {
+}
+
+// MARK: - Set ViewModel
+public extension RecipeDetailsCell {
+    func set(viewModel: RecipeDetailsCellProtocol) {
         self.viewModel = viewModel
-        
+        recipeDetailsHeaderView.headerImageView.setImage(viewModel.imgUrl)
+        recipeDetailsHeaderView.editoryPickImageView.isHidden = !viewModel.isEditorChoice
     }
-    
 }

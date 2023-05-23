@@ -7,16 +7,16 @@
 
 import MobilliumBuilders
 import UIComponents
-import Security
 
 final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewModel> {
-    
-    private let recipeHeaderView = RecipeDetailHeaderView()
     
     private let scrollView = UIScrollViewBuilder()
         .showsHorizontalScrollIndicator(false)
         .showsVerticalScrollIndicator(false)
         .alwaysBounceVertical(false)
+        .build()
+    
+    private let contentView = UIButtonBuilder()
         .build()
     
     private let contentStackView = UIStackViewBuilder()
@@ -25,22 +25,25 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
         .distribution(.fillEqually)
         .build()
     
-    private let topTitleView = RecipeDetailsCategoryView()
+    private let recipeDetailsCell = RecipeDetailsCell()
     
-    private let countInfoStackView = UIStackViewBuilder()
-        .axis(.horizontal)
-        .spacing(1)
-        .distribution(.fillEqually)
-        .build()
-    
-    private let commentCountView = CoutInfoView()
-    private let likesCountView = CoutInfoView()
-    
-    private let userView = UserView()
+//    private let topTitleView = RecipeDetailsCategoryView()
+//
+//    private let countInfoStackView = UIStackViewBuilder()
+//        .axis(.horizontal)
+//        .spacing(1)
+//        .distribution(.fillEqually)
+//        .build()
+//
+//    private let commentCountView = RecipeDetailsCoutInfoView()
+//    private let likesCountView = RecipeDetailsCoutInfoView()
+//
+//    private let userView = UserView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appRaven
+        addSubviews()
     }
     
 }
@@ -65,17 +68,13 @@ extension RecipeDetailsViewController {
         contentStackView.edgesToSuperview()
         contentStackView.widthToSuperview()
         
-        contentStackView.addArrangedSubview(recipeHeaderView)
-        contentStackView.setCustomSpacing(0, after: recipeHeaderView)
-        contentStackView.addArrangedSubview(topTitleView)
-        contentStackView.setCustomSpacing(1, after: topTitleView)
-        contentStackView.addArrangedSubview(countInfoStackView)
-        contentStackView.addArrangedSubview(userView)
+        contentStackView.addArrangedSubview(recipeDetailsCell)
+        
     }
     
     private func addCountInfoStackView() {
-        countInfoStackView.addArrangedSubview(commentCountView)
-        countInfoStackView.addArrangedSubview(likesCountView)
+//        countInfoStackView.addArrangedSubview(commentCountView)
+//        countInfoStackView.addArrangedSubview(likesCountView)
     }
 }
 
@@ -87,8 +86,9 @@ extension RecipeDetailsViewController {
     }
     
     private func setLocalize() {
-        commentCountView.icon = .icComment
-        commentCountView.
+//        commentCountView.icon = .icComment
+//        commentCountView.info = L10n.RecipeDetails.comment
+    
     }
 }
 

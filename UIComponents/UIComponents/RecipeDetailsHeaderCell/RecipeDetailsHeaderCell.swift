@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class RecipeHeaderCell: UICollectionViewCell, ReusableView {
+public class RecipeDetailsHeaderCell: UICollectionViewCell, ReusableView {
     
     private let headerImageView = UIImageViewBuilder()
         .backgroundColor(.clear)
@@ -38,7 +38,7 @@ public class RecipeHeaderCell: UICollectionViewCell, ReusableView {
 }
 
 // MARK: - UILayout
-extension RecipeHeaderCell {
+extension RecipeDetailsHeaderCell {
     
     private func addSubViews() {
         contentView.addSubview(headerImageView)
@@ -52,7 +52,7 @@ extension RecipeHeaderCell {
 }
 
 // MARK: - Set ViewModel
-public extension RecipeHeaderCell {
+public extension RecipeDetailsHeaderCell {
     
     func set(viewModel: RecipeHeaderCellProtocol) {
         headerImageView.setImage(viewModel.imgUrl)

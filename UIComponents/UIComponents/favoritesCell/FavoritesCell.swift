@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 3.03.2023.
 //
 
-
 public class FavoritesCell: UICollectionViewCell, ReusableView {
     
     private let categoryView = UIViewBuilder()

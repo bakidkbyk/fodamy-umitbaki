@@ -8,7 +8,8 @@
 import Foundation
 
 public protocol RecipeDetailsCellDataSource: AnyObject {
-    
+    var imgUrl: String? { get }
+    var isEditorChoice: Bool { get }
 }
 
 public protocol RecipeDetailsCellEventSource: AnyObject {
@@ -21,4 +22,11 @@ public protocol RecipeDetailsCellProtocol: RecipeDetailsCellDataSource, RecipeDe
 
 public final class RecipeDetailsCellModel: RecipeDetailsCellProtocol {
     
+    public var imgUrl: String?
+    public var isEditorChoice: Bool
+    
+    public init(imgUrl: String?, isEditorChoice: Bool) {
+        self.imgUrl = imgUrl
+        self.isEditorChoice = isEditorChoice
+    }
 }

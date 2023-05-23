@@ -27,7 +27,6 @@ public class RecipeDetailsCategoryView: UIView {
         .textAlignment(.right)
         .build()
     
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
