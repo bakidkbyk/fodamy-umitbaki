@@ -25,20 +25,20 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
         .distribution(.fillEqually)
         .build()
     
-    private let recipeDetailsCell = RecipeDetailsCell()
+    private let recipeDetailsHeaderView = RecipeDetailHeaderView()
     
-//    private let topTitleView = RecipeDetailsCategoryView()
-//
-//    private let countInfoStackView = UIStackViewBuilder()
-//        .axis(.horizontal)
-//        .spacing(1)
-//        .distribution(.fillEqually)
-//        .build()
-//
-//    private let commentCountView = RecipeDetailsCoutInfoView()
-//    private let likesCountView = RecipeDetailsCoutInfoView()
-//
-//    private let userView = UserView()
+    private let recipeDetailsCategoryView = RecipeDetailsCategoryView()
+    
+    private let countInfoStackView = UIStackViewBuilder()
+        .axis(.horizontal)
+        .spacing(1)
+        .distribution(.fillEqually)
+        .build()
+    
+    private let commentCountInfoView = RecipeDetailsCoutInfoView()
+    private let likesCountInfoView   = RecipeDetailsCoutInfoView()
+    
+    private let userView = UserView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,9 @@ extension RecipeDetailsViewController {
         contentStackView.edgesToSuperview()
         contentStackView.widthToSuperview()
         
-        contentStackView.addArrangedSubview(recipeDetailsCell)
+        contentStackView.addArrangedSubview(recipeDetailsHeaderView)
+        recipeDetailsHeaderView.edgesToSuperview()
+        recipeDetailsHeaderView.backgroundColor = .appRed
         
     }
     
@@ -78,7 +80,7 @@ extension RecipeDetailsViewController {
     }
 }
 
-// MARK: - Configure Contents
+// MARK: - Configure and Localize
 extension RecipeDetailsViewController {
     
     private func configureContents() {
@@ -86,9 +88,19 @@ extension RecipeDetailsViewController {
     }
     
     private func setLocalize() {
-//        commentCountView.icon = .icComment
-//        commentCountView.info = L10n.RecipeDetails.comment
+        commentCountInfoView.icon = .icComment
+        commentCountInfoView.info = L10n.RecipeDetails.comment
     
+    }
+    
+    private func fillData() {
+        navigationItem.title                     = viewModel.recipeName
+        recipeDetailsHeaderView.headerImageUrl   = viewModel.recipeHeaderImageUrl
+        recipeDetailsCategoryView.recipeTitle    = viewModel.recipeName
+        recipeDetailsCategoryView.categoryName   = viewModel.categoryName
+        recipeDetailsCategoryView.timeDifference = viewModel.timeDifferenceText
+        commentCountInfoView.count               = viewModel.commentCount
+        likesCountInfoView.count                 = viewModel.likeCount
     }
 }
 

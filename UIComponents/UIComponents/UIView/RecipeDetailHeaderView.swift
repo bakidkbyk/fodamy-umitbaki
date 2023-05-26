@@ -32,6 +32,18 @@ public class RecipeDetailHeaderView: UIView {
         super.init(coder: aDecoder)
         addSubViews()
     }
+    
+    public var headerImageUrl: String? {
+        willSet {
+            headerImageView.setImage(newValue)
+        }
+    }
+    
+    public var editoryPickImageUrl: String? {
+        willSet {
+            editoryPickImageView.setImage(newValue)
+        }
+    }
 }
 
 // MARK: - UILayout

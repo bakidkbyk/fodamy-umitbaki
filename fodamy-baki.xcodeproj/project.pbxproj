@@ -229,7 +229,6 @@
 		FA5BBD3729DAB32500220EAD /* RecipeDetails */ = {
 			isa = PBXGroup;
 			children = (
-				FAA8B9412A18D98D009FC47D /* SubView */,
 				FA5BBD3B29DAB36700220EAD /* RecipeDetailsViewController.swift */,
 				FA5BBD3C29DAB36700220EAD /* RecipeDetailsViewModel.swift */,
 				FA5BBD3A29DAB36700220EAD /* RecipeDetailsRouter.swift */,
@@ -294,13 +293,6 @@
 				FAA819C22964609A00B4C83A /* HomeViewRoute.swift */,
 			);
 			path = HomeViewController;
-			sourceTree = "<group>";
-		};
-		FAA8B9412A18D98D009FC47D /* SubView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SubView;
 			sourceTree = "<group>";
 		};
 		FAB60D93297FAC9900F1DB9A /* Auth */ = {

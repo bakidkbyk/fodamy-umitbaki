@@ -19,7 +19,7 @@ public struct RecipeDetails: Decodable {
     public let numberOfPerson: NumberOfPerson
     public let category: Categories
     public let user: User
-    public let images: [Image]
+    public let images: Image
     
     enum CodingKeys: String, CodingKey {
         
