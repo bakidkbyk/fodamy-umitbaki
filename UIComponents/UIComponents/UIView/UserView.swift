@@ -32,7 +32,7 @@ public class UserView: UIView {
         .axis(.vertical)
         .build()
     
-    public lazy var followButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
+    private lazy var followButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
     
     public var userImgUrl: String? {
         willSet {
@@ -55,6 +55,12 @@ public class UserView: UIView {
     public var  isShowsFollowButton = false {
         didSet {
             followButton.isHidden = !isShowsFollowButton
+        }
+    }
+    
+    public var followButtonTitle: String? {
+        willSet {
+            followButton.setTitle(newValue, for: .normal)
         }
     }
     
@@ -99,6 +105,7 @@ extension UserView {
     
     private func configureContent() {
         backgroundColor = .appWhite
+        
     }
     
 }

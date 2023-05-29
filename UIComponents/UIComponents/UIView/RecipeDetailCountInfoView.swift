@@ -5,7 +5,7 @@
 //  Created by Baki Dikbıyık on 21.05.2023.
 //
 
-public class RecipeDetailsCoutInfoView: UIView {
+public class RecipeDetailsCountInfoView: UIView {
     
     private let iconButton = UIButtonBuilder()
         .tintColor(.appCinder)
@@ -58,7 +58,7 @@ public class RecipeDetailsCoutInfoView: UIView {
 }
     
 // MARK: - UILayout
-extension RecipeDetailsCoutInfoView {
+extension RecipeDetailsCountInfoView {
     
     private func addSubViews() {
         backgroundColor = .appWhite

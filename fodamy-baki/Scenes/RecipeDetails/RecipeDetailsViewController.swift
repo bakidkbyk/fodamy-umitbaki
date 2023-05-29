@@ -21,9 +21,9 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
         .spacing(1)
         .build()
     
-    private let recipeDetailsHeaderView = RecipeDetailImageView()
+    private let imagesHeaderView = RecipeDetailImageView()
     
-    private let recipeDetailsCategoryView = RecipeDetailsCategoryView()
+    private let categoryView = RecipeDetailsCategoryView()
     
     private let countInfoStackView = UIStackViewBuilder()
         .axis(.horizontal)
@@ -31,8 +31,8 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
         .spacing(1)
         .build()
     
-    private let commentCountInfoView = RecipeDetailsCoutInfoView()
-    private let likesCountInfoView   = RecipeDetailsCoutInfoView()
+    private let commentCountInfoView = RecipeDetailsCountInfoView()
+    private let likesCountInfoView   = RecipeDetailsCountInfoView()
     
     private let userView = UserView()
     
@@ -69,15 +69,15 @@ extension RecipeDetailsViewController {
         contentView.addSubview(contentStackView)
         contentStackView.edgesToSuperview()
         
-        contentStackView.addArrangedSubview(recipeDetailsHeaderView)
-        contentStackView.setCustomSpacing(0, after: recipeDetailsHeaderView)
-        contentStackView.addArrangedSubview(recipeDetailsCategoryView)
-        contentStackView.setCustomSpacing(1, after: recipeDetailsCategoryView)
+        contentStackView.addArrangedSubview(imagesHeaderView)
+        contentStackView.setCustomSpacing(0, after: imagesHeaderView)
+        contentStackView.addArrangedSubview(categoryView)
+        contentStackView.setCustomSpacing(1, after: categoryView)
         contentStackView.addArrangedSubview(countInfoStackView)
         contentStackView.setCustomSpacing(15, after: countInfoStackView)
         contentStackView.addArrangedSubview(userView)
         
-        recipeDetailsHeaderView.aspectRatio(1)
+        imagesHeaderView.aspectRatio(1)
     }
     
     private func addCountInfoStackView() {
@@ -98,15 +98,15 @@ extension RecipeDetailsViewController {
         commentCountInfoView.info = L10n.RecipeDetails.comment
         likesCountInfoView.icon   = .icHeart.withRenderingMode(.alwaysTemplate)
         likesCountInfoView.info   = L10n.RecipeDetails.likes
-        userView.followButton.setTitle(L10n.RecipeDetails.follow, for: .normal)
+        userView.followButtonTitle = L10n.RecipeDetails.follow
     }
     
     private func fillData() {
         navigationItem.title                      = viewModel.recipeName
-        recipeDetailsHeaderView.recipeImageData   = viewModel.recipeHeaderCellItems
-        recipeDetailsCategoryView.recipeTitle     = viewModel.recipeName
-        recipeDetailsCategoryView.categoryName    = viewModel.categoryName
-        recipeDetailsCategoryView.timeDifference  = viewModel.timeDifferenceText
+        imagesHeaderView.recipeImageData   = viewModel.cellItems
+        categoryView.recipeTitle     = viewModel.recipeName
+        categoryView.categoryName    = viewModel.categoryName
+        categoryView.timeDifference  = viewModel.timeDifferenceText
         commentCountInfoView.count                = viewModel.commentCount
         likesCountInfoView.count                  = viewModel.likeCount
         userView.username                         = viewModel.username

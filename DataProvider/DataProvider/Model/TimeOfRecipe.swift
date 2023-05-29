@@ -6,6 +6,5 @@
 //
 
 public struct TimeOfRecipe: Decodable {
-    
     public let text: String?
 }

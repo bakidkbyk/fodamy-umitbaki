@@ -147,6 +147,7 @@ public extension FavoritesCell {
 
 // MARK: Subscribe
 extension FavoritesCell {
+    
     private func subscribeEventsModel() {
         viewModel?.reloadData = { [ weak self ] in
             guard let self = self else { return }
@@ -157,6 +158,7 @@ extension FavoritesCell {
 
 // MARK: CollectionView Delegate
 extension FavoritesCell: UICollectionViewDelegate {
+    
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel?.didSelectRecipe(indexPath: indexPath)
     }

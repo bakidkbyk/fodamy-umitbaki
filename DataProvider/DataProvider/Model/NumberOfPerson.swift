@@ -6,6 +6,5 @@
 //
 
 public struct NumberOfPerson: Decodable {
-    
     public let text: String?
 }
