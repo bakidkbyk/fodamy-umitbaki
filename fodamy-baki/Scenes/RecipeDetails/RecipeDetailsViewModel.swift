@@ -41,7 +41,7 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
     var commentCount: Int?
     var likeCount: Int?
     
-    var cellItems: [RecipeHeaderCellProtocol] = []
+    var imagesCellItems: [RecipeHeaderCellProtocol] = []
     private let recipeId: Int
     var reloadDetailData: VoidClosure?
     var isFollowing = true
@@ -75,7 +75,7 @@ extension RecipeDetailsViewModel {
         username = recipeDetail.user.username
         userId = recipeDetail.user.id
         recipeDetail.images.forEach { image in
-            cellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? "", isEditorChoice: recipeDetail.isEditorChoice))
+            imagesCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? "", isEditorChoice: recipeDetail.isEditorChoice))
         }
         userImageUrl = recipeDetail.user.image?.url
         userFollowedCount = recipeDetail.user.followedCount

@@ -94,19 +94,19 @@ extension RecipeDetailsViewController {
     }
     
     private func setLocalize() {
-        commentCountInfoView.icon = .icComment
-        commentCountInfoView.info = L10n.RecipeDetails.comment
-        likesCountInfoView.icon   = .icHeart.withRenderingMode(.alwaysTemplate)
-        likesCountInfoView.info   = L10n.RecipeDetails.likes
+        commentCountInfoView.icon  = .icComment
+        commentCountInfoView.info  = L10n.RecipeDetails.comment
+        likesCountInfoView.icon    = .icHeart.withRenderingMode(.alwaysTemplate)
+        likesCountInfoView.info    = L10n.RecipeDetails.likes
         userView.followButtonTitle = L10n.RecipeDetails.follow
     }
     
     private func fillData() {
         navigationItem.title                      = viewModel.recipeName
-        imagesHeaderView.recipeImageData   = viewModel.cellItems
-        categoryView.recipeTitle     = viewModel.recipeName
-        categoryView.categoryName    = viewModel.categoryName
-        categoryView.timeDifference  = viewModel.timeDifferenceText
+        imagesHeaderView.recipeImageData          = viewModel.imagesCellItems
+        categoryView.recipeTitle                  = viewModel.recipeName
+        categoryView.categoryName                 = viewModel.categoryName
+        categoryView.timeDifference               = viewModel.timeDifferenceText
         commentCountInfoView.count                = viewModel.commentCount
         likesCountInfoView.count                  = viewModel.likeCount
         userView.username                         = viewModel.username
