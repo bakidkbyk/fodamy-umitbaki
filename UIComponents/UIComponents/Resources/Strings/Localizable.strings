@@ -68,3 +68,4 @@ recipes in all around the word.";
 "RecipeDetails.likes"    = "Beğeni";
 "RecipeDetails.recipe"   = "Tarif";
 "RecipeDetails.follower" = "Takipçi";
+"RecipeDetails.follow"   = "Takip Et";

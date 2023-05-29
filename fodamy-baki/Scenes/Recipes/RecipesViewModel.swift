@@ -24,7 +24,6 @@ protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
 
-    
     enum RecipesListing {
         case editorChoices
         case lastAdded

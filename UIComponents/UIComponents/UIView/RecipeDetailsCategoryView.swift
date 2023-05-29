@@ -60,9 +60,10 @@ public class RecipeDetailsCategoryView: UIView {
 extension RecipeDetailsCategoryView {
     
     private func addSubViews() {
+    
         backgroundColor = .appWhite
         addSubview(categoryStackView)
-        categoryStackView.edgesToSuperview(insets: .init(top: 11, left: 15, bottom: 11, right: 0))
+        categoryStackView.edgesToSuperview(excluding: .trailing, insets: .init(top: 11, left: 15, bottom: 11, right: 0))
         
         categoryStackView.addArrangedSubview(recipeTitleLabel)
         categoryStackView.addArrangedSubview(categoryNameLabel)

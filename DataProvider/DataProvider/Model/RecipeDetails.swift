@@ -10,31 +10,32 @@ public struct RecipeDetails: Decodable {
     public let id: Int
     public let title: String?
     public let ingredients: String?
-    public let directions: String?
-    public let difference: String?
-    public let likeCount: String?
-    public let commentCount: String?
-    public let isEditorChoice: Bool?
+    public let instructions: String?
+    public let isLiked: Bool
+    public let timeDifference: String?
+    public let isEditorChoice: Bool
+    public let likeCount: Int
+    public let commentCount: Int
+    public let user: User
     public let timeOfRecipe: TimeOfRecipe
     public let numberOfPerson: NumberOfPerson
-    public let category: Categories
-    public let user: User
-    public let images: Image
+    public let category: Categories 
+    public let images: [Image]
     
     enum CodingKeys: String, CodingKey {
-        
         case id
         case title
         case ingredients
-        case directions
-        case difference
-        case likeCount = "like_count"
-        case commentCount = "commment_count"
+        case instructions = "directions"
+        case isLiked = "is_liked"
+        case timeDifference = "difference"
         case isEditorChoice = "is_editor_choice"
+        case likeCount = "like_count"
+        case commentCount = "comment_count"
+        case user
         case timeOfRecipe = "time_of_recipe"
         case numberOfPerson = "number_of_person"
         case category
-        case user
         case images
     }
 }

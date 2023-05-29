@@ -32,7 +32,7 @@ public class UserView: UIView {
         .axis(.vertical)
         .build()
     
-    private lazy var followButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
+    public lazy var followButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
     
     public var userImgUrl: String? {
         willSet {
