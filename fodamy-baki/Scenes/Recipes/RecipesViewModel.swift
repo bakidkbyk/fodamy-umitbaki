@@ -19,10 +19,11 @@ protocol RecipesViewEventSource {
 protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
     func fetchRecipeListing(isRefreshing: Bool, isPaging: Bool)
     func fetchMorePages()
+    func didSelectRecipe(indexPath: IndexPath)
 }
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
-    
+
     enum RecipesListing {
         case editorChoices
         case lastAdded
@@ -108,5 +109,14 @@ extension RecipesViewModel {
     
     func fetchMorePages() {
         fetchRecipeListing(isRefreshing: false, isPaging: true)
+    }
+}
+
+// MARK: - Action
+extension RecipesViewModel {
+    
+    func didSelectRecipe(indexPath: IndexPath) {
+        let recipeId = cellItems[indexPath.row].recipeId
+        router.pushRecipeDetails(recipeId: recipeId)
     }
 }

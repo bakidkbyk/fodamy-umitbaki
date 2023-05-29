@@ -153,6 +153,9 @@ extension FavoritesViewController: UICollectionViewDataSource {
         cellItem.seeAllButtonClosure = { [ weak self ] id, title in
             self?.viewModel.seeAllButtonTapped(categoryId: id, title: title)
         }
+        cellItem.didSelectRecipe = { [ weak self ] id in
+            self?.viewModel.didSelectRecipe(recipeId: id)
+        }
         return cell
     }
 }

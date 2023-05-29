@@ -13,6 +13,10 @@
 		FA0A2F2A2962BB58004E82C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2F282962BB58004E82C6 /* LaunchScreen.storyboard */; };
 		FA2DB7982962DF94004D38E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FA2DB7972962DF94004D38E2 /* .swiftlint.yml */; };
 		FA2DB7B729631568004D38E2 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2DB7B629631568004D38E2 /* UIComponents.framework */; };
+		FA5BBD3929DAB34400220EAD /* RecipeDetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BBD3829DAB34400220EAD /* RecipeDetailsRoute.swift */; };
+		FA5BBD3D29DAB36700220EAD /* RecipeDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BBD3A29DAB36700220EAD /* RecipeDetailsRouter.swift */; };
+		FA5BBD3E29DAB36700220EAD /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BBD3B29DAB36700220EAD /* RecipeDetailsViewController.swift */; };
+		FA5BBD3F29DAB36700220EAD /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BBD3C29DAB36700220EAD /* RecipeDetailsViewModel.swift */; };
 		FA61FFAD296FE53F00D08E28 /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FFAC296FE53F00D08E28 /* APIDataProvider.swift */; };
 		FA6FB0CD29BDCF7500714304 /* FavoritesCollectionCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FB0CC29BDCF7500714304 /* FavoritesCollectionCell+Extensions.swift */; };
 		FA87472329751C6400039E92 /* APIRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472229751C6400039E92 /* APIRequestAdapter.swift */; };
@@ -77,6 +81,10 @@
 		FA2DB7972962DF94004D38E2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FA2DB7AF296312A8004D38E2 /* fodamy-baki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fodamy-baki-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA2DB7B629631568004D38E2 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA5BBD3829DAB34400220EAD /* RecipeDetailsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsRoute.swift; sourceTree = "<group>"; };
+		FA5BBD3A29DAB36700220EAD /* RecipeDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsRouter.swift; sourceTree = "<group>"; };
+		FA5BBD3B29DAB36700220EAD /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		FA5BBD3C29DAB36700220EAD /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		FA61FFAC296FE53F00D08E28 /* APIDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
 		FA6FB0CC29BDCF7500714304 /* FavoritesCollectionCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesCollectionCell+Extensions.swift"; sourceTree = "<group>"; };
 		FA87472229751C6400039E92 /* APIRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestAdapter.swift; sourceTree = "<group>"; };
@@ -218,6 +226,17 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		FA5BBD3729DAB32500220EAD /* RecipeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FA5BBD3B29DAB36700220EAD /* RecipeDetailsViewController.swift */,
+				FA5BBD3C29DAB36700220EAD /* RecipeDetailsViewModel.swift */,
+				FA5BBD3A29DAB36700220EAD /* RecipeDetailsRouter.swift */,
+				FA5BBD3829DAB34400220EAD /* RecipeDetailsRoute.swift */,
+			);
+			path = RecipeDetails;
+			sourceTree = "<group>";
+		};
 		FA61FFAB296FE52800D08E28 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +262,7 @@
 		FAA8198D2964217F00B4C83A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FA5BBD3729DAB32500220EAD /* RecipeDetails */,
 				FAB974DD29979EE300A10EFD /* Recipes */,
 				FAB84895299656D2007D5CA7 /* HomeTabBar */,
 				FA271C1B299112CF0069CFE3 /* FavoritesControler */,
@@ -551,9 +571,11 @@
 				FAC3A83D2984210D0095A7C3 /* AppRouter.swift in Sources */,
 				FA87472329751C6400039E92 /* APIRequestAdapter.swift in Sources */,
 				FACE72FD29895EC1001B98D4 /* WalkthroughViewController.swift in Sources */,
+				FA5BBD3F29DAB36700220EAD /* RecipeDetailsViewModel.swift in Sources */,
 				FACE72FC29895EC1001B98D4 /* WalkthroughRouter.swift in Sources */,
 				FAA819B52964404C00B4C83A /* BaseViewController.swift in Sources */,
 				FA61FFAD296FE53F00D08E28 /* APIDataProvider.swift in Sources */,
+				FA5BBD3929DAB34400220EAD /* RecipeDetailsRoute.swift in Sources */,
 				FAC3A840298421660095A7C3 /* ModalTransition.swift in Sources */,
 				FACE7300298963C8001B98D4 /* WalkthroughRoute.swift in Sources */,
 				FAA71F3E2992197500E150A3 /* FavoritesRouter.swift in Sources */,
@@ -571,6 +593,7 @@
 				FABFE91D29B7097100F78DFD /* RecipesRoute.swift in Sources */,
 				FAC3A8422984218C0095A7C3 /* PlaceOnWindowTransition.swift in Sources */,
 				FADE8AC7299A1BE6008A1A83 /* RecipesViewModel.swift in Sources */,
+				FA5BBD3D29DAB36700220EAD /* RecipeDetailsRouter.swift in Sources */,
 				FAB84899299656D2007D5CA7 /* HomeTabBarViewController.swift in Sources */,
 				FAB60DB6297FD9FD00F1DB9A /* Validation.swift in Sources */,
 				FACE72F229892447001B98D4 /* ForgotPasswordViewController.swift in Sources */,
@@ -579,6 +602,7 @@
 				FABFE92329B75E2500F78DFD /* FavoritesCellModel+Extension.swift in Sources */,
 				FADE8AC5299A1BE6008A1A83 /* RecipesRouter.swift in Sources */,
 				FAC3A84F298463320095A7C3 /* LoginRoute.swift in Sources */,
+				FA5BBD3E29DAB36700220EAD /* RecipeDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

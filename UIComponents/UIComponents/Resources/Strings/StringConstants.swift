@@ -57,6 +57,19 @@ public enum L10n {
     public static let usernamePlaceHolder = L10n.tr("Localizable", "Login.usernamePlaceHolder")
   }
 
+  public enum RecipeDetails {
+    /// Yorum
+    public static let comment = L10n.tr("Localizable", "RecipeDetails.comment")
+    /// Takip Et
+    public static let follow = L10n.tr("Localizable", "RecipeDetails.follow")
+    /// Takipçi
+    public static let follower = L10n.tr("Localizable", "RecipeDetails.follower")
+    /// Beğeni
+    public static let likes = L10n.tr("Localizable", "RecipeDetails.likes")
+    /// Tarif
+    public static let recipe = L10n.tr("Localizable", "RecipeDetails.recipe")
+  }
+
   public enum Recipes {
     /// Data Eşleşmedi!
     public static let dataIsNotMatch = L10n.tr("Localizable", "Recipes.dataIsNotMatch")

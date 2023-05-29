@@ -42,5 +42,4 @@ public extension UICollectionView {
         }
         return cell
     }
-    
 }

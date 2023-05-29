@@ -95,7 +95,12 @@ extension RecipesViewController {
 }
 
 // MARK: - UICollection View Delegate
-extension RecipesViewController: UICollectionViewDelegate {}
+extension RecipesViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectRecipe(indexPath: indexPath)
+    }
+}
 
 // MARK: - UICollection View Data Source
 extension RecipesViewController: UICollectionViewDataSource {

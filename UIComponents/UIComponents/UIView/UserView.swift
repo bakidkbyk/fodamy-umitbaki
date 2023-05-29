@@ -58,6 +58,12 @@ public class UserView: UIView {
         }
     }
     
+    public var followButtonTitle: String? {
+        willSet {
+            followButton.setTitle(newValue, for: .normal)
+        }
+    }
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()
@@ -99,6 +105,7 @@ extension UserView {
     
     private func configureContent() {
         backgroundColor = .appWhite
+        
     }
     
 }
