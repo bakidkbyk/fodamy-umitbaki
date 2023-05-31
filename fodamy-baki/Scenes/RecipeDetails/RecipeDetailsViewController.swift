@@ -5,6 +5,8 @@
 //  Created by Baki Dikbıyık on 3.04.2023.
 //
 
+import UIComponents
+
 final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewModel> {
     
     private let scrollView = UIScrollViewBuilder()
@@ -35,6 +37,10 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
     private let likesCountInfoView   = RecipeDetailsCountInfoView()
     
     private let userView = UserView()
+    
+    private let ingredientsView = RecipeDetailIngredientsView()
+    
+    private let recipeView = RecipeDetailIngredientsView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +82,10 @@ extension RecipeDetailsViewController {
         contentStackView.addArrangedSubview(countInfoStackView)
         contentStackView.setCustomSpacing(15, after: countInfoStackView)
         contentStackView.addArrangedSubview(userView)
+        contentStackView.setCustomSpacing(15, after: userView)
+        contentStackView.addArrangedSubview(ingredientsView)
+        contentStackView.setCustomSpacing(15, after: ingredientsView)
+        contentStackView.addArrangedSubview(recipeView)
         
         imagesHeaderView.aspectRatio(1)
     }
@@ -99,6 +109,11 @@ extension RecipeDetailsViewController {
         likesCountInfoView.icon    = .icHeart.withRenderingMode(.alwaysTemplate)
         likesCountInfoView.info    = L10n.RecipeDetails.likes
         userView.followButtonTitle = L10n.RecipeDetails.follow
+        ingredientsView.title      = L10n.RecipeDetails.ingredients
+        ingredientsView.icon       = .icRestaurant
+        recipeView.title           = L10n.RecipeDetails.recipe
+        recipeView.icon            = .icClock
+        
     }
     
     private func fillData() {
@@ -113,6 +128,10 @@ extension RecipeDetailsViewController {
         userView.recipeCountAndFollowersLabelText = viewModel.recipeAndFollowerCountText
         userView.userImgUrl                       = viewModel.userImageUrl
         userView.isShowsFollowButton              = viewModel.isFollowing
+        ingredientsView.iconSubtitle              = viewModel.numberOfPeople
+        ingredientsView.ingredients               = viewModel.ingredients
+        recipeView.iconSubtitle                   = viewModel.time
+        recipeView.ingredients                    = viewModel.recipeSteps
     }
 }
 

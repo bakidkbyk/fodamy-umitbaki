@@ -64,8 +64,10 @@ recipes in all around the word.";
 "ForgotPassword.isSuccess"                 = "Şifre Yenileme isteğiniz başarılı!";
 
 // MARK: - Recipe Details View Controller
-"RecipeDetails.comment"  = "Yorum";
-"RecipeDetails.likes"    = "Beğeni";
-"RecipeDetails.recipe"   = "Tarif";
+"RecipeDetails.comment" = "Yorum";
+"RecipeDetails.likes" = "Beğeni";
+"RecipeDetails.recipe" = "Tarif";
 "RecipeDetails.follower" = "Takipçi";
-"RecipeDetails.follow"   = "Takip Et";
+"RecipeDetails.follow" = "Takip Et";
+"RecipeDetails.ingredients" = "Malzemeler";
+"RecipeDetails.recipe" = "Yapılışı";
