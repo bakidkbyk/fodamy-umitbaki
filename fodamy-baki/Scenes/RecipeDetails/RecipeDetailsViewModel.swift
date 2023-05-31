@@ -18,6 +18,10 @@ protocol RecipeDetailsViewDataSource {
     var recipeAndFollowerCountText: String? { get }
     var commentCount: Int? { get }
     var likeCount: Int? { get }
+    var ingredients: String? { get }
+    var numberOfPeople: String? { get }
+    var recipeSteps: String? { get }
+    var timeOfRecipe: String? { get }
 }
 
 protocol RecipeDetailsViewEventSource {
@@ -40,6 +44,10 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
     var recipeAndFollowerCountText: String?
     var commentCount: Int?
     var likeCount: Int?
+    var ingredients: String?
+    var numberOfPeople: String?
+    var recipeSteps: String?
+    var timeOfRecipe: String?
     
     var imagesCellItems: [RecipeHeaderCellProtocol] = []
     private let recipeId: Int
@@ -86,6 +94,10 @@ extension RecipeDetailsViewModel {
         recipeAndFollowerCountText = "\(recipeCount ?? 0 ) \(L10n.RecipeDetails.recipe) \(userFollowedCount ?? 0) \(L10n.RecipeDetails.follower)"
         commentCount = recipeDetail.commentCount
         likeCount = recipeDetail.likeCount
+        ingredients = recipeDetail.ingredients
+        numberOfPeople = recipeDetail.numberOfPerson.text
+        recipeSteps = recipeDetail.instructions
+        timeOfRecipe = recipeDetail.timeOfRecipe.text
     }
 }
 // swiftlint:enable line_length

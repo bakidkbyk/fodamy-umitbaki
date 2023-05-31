@@ -64,9 +64,11 @@ public enum L10n {
     public static let follow = L10n.tr("Localizable", "RecipeDetails.follow")
     /// Takipçi
     public static let follower = L10n.tr("Localizable", "RecipeDetails.follower")
+    /// Malzemeler
+    public static let ingredients = L10n.tr("Localizable", "RecipeDetails.ingredients")
     /// Beğeni
     public static let likes = L10n.tr("Localizable", "RecipeDetails.likes")
-    /// Tarif
+    /// Yapılışı
     public static let recipe = L10n.tr("Localizable", "RecipeDetails.recipe")
   }
 
