@@ -130,7 +130,7 @@ extension RecipeDetailsViewController {
         userView.isShowsFollowButton              = viewModel.isFollowing
         ingredientsView.iconSubtitle              = viewModel.numberOfPeople
         ingredientsView.ingredients               = viewModel.ingredients
-        recipeView.iconSubtitle                   = viewModel.time
+        recipeView.iconSubtitle                   = viewModel.timeOfRecipe
         recipeView.ingredients                    = viewModel.recipeSteps
     }
 }

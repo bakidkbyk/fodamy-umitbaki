@@ -21,7 +21,7 @@ protocol RecipeDetailsViewDataSource {
     var ingredients: String? { get }
     var numberOfPeople: String? { get }
     var recipeSteps: String? { get }
-    var time: String? { get }
+    var timeOfRecipe: String? { get }
 }
 
 protocol RecipeDetailsViewEventSource {
@@ -47,7 +47,7 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
     var ingredients: String?
     var numberOfPeople: String?
     var recipeSteps: String?
-    var time: String?
+    var timeOfRecipe: String?
     
     var imagesCellItems: [RecipeHeaderCellProtocol] = []
     private let recipeId: Int
@@ -97,7 +97,7 @@ extension RecipeDetailsViewModel {
         ingredients = recipeDetail.ingredients
         numberOfPeople = recipeDetail.numberOfPerson.text
         recipeSteps = recipeDetail.instructions
-        time = recipeDetail.timeOfRecipe.text
+        timeOfRecipe = recipeDetail.timeOfRecipe.text
     }
 }
 // swiftlint:enable line_length
