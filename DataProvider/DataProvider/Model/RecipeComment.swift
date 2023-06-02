@@ -6,8 +6,15 @@
 //
 
 public struct RecipeComment: Decodable {
-    public let id: String?
+    public let id: Int
     public let text: String?
-    public let difference: String?
-    public let user: User?
+    public let timeDifference: String?
+    public let user: User
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case text
+        case timeDifference = "difference"
+        case user
+    }
 }
