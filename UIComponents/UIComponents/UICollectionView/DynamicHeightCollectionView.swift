@@ -7,20 +7,16 @@
 
 import UIKit
 
-public class DynamicHeightCollectionView: UIView {
+public final class DynamicHeightCollectionView: UICollectionView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureContents()
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        if !(__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize)) {
+            self.invalidateIntrinsicContentSize()
+        }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        configureContents()
+    public override var intrinsicContentSize: CGSize {
+        return contentSize
     }
-    
-    private func configureContents() {
-        
-    }
-    
 }

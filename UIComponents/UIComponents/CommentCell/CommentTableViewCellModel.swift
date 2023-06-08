@@ -1,13 +1,13 @@
 //
-//  CommentCellCellModel.swift
+//  CommentTableViewCellModel.swift
 //  UIComponents
 //
-//  Created by Baki Dikbıyık on 1.06.2023.
+//  Created by Baki Dikbıyık on 3.06.2023.
 //
 
 import Foundation
 
-public protocol CommentCellDataSource: AnyObject {
+public protocol CommentTableViewCellDataSource: AnyObject {
     var userId: Int { get }
     var usernameImageUrl: String? { get }
     var username: String? { get }
@@ -17,15 +17,15 @@ public protocol CommentCellDataSource: AnyObject {
     var timeDifferenceText: String? { get }
 }
 
-public protocol CommentCellEventSource: AnyObject {
+public protocol CommentTableViewCellEventSource: AnyObject {
     
 }
 
-public protocol CommentCellProtocol: CommentCellDataSource, CommentCellEventSource {
+public protocol CommentTableViewCellProtocol: CommentTableViewCellDataSource, CommentTableViewCellEventSource {
     
 }
 
-public final class CommentCellModel: CommentCellProtocol {
+public final class CommentTableViewCellModel: CommentTableViewCellProtocol {
     
     public var userId: Int
     public var usernameImageUrl: String?

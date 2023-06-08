@@ -5,8 +5,6 @@
 //  Created by Baki Dikbıyık on 2.06.2023.
 //
 
-import UIComponents
-
 extension CommentCellModel {
     
     convenience init(comment: RecipeComment) {

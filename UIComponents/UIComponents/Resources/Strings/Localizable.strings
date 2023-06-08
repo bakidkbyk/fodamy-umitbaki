@@ -71,3 +71,5 @@ recipes in all around the word.";
 "RecipeDetails.follow" = "Takip Et";
 "RecipeDetails.ingredients" = "Malzemeler";
 "RecipeDetails.recipe" = "Yapılışı";
+"RecipeDetails.commentTitle" = "Yorumlar";
+"RecipeDetails.addComment" = "Yorum Ekle";
