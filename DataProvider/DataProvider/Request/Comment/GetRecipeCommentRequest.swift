@@ -10,7 +10,7 @@ public struct GetRecipeCommentsRequest: APIDecodableResponseRequest {
     public typealias ResponseType = BaseResponse<[RecipeComment]>
     
     public var path: String = "recipe/{recipeId}/comment"
-    public var method: RequestMethod = .get
+    public let method: RequestMethod = .get
     public var parameters: RequestParameters = [:]
     
     public init(recipeId: Int, page: Int? = 1) {

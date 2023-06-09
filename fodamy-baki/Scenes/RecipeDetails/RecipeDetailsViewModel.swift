@@ -59,8 +59,6 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
     var reloadCommentData: VoidClosure?
     var isFollowing = true
 
-    var recipeDetailsCommentView = RecipeDetailsCommentView()
-    
     init(recipeId: Int, router: RecipeDetailsRouter) {
         self.recipeId = recipeId
         super.init(router: router)
@@ -68,7 +66,6 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
 }
 
 // MARK: - Network
-// swiftlint:disable line_length
 extension RecipeDetailsViewModel {
     
     func getRecipesDetail() {
@@ -96,7 +93,6 @@ extension RecipeDetailsViewModel {
                 let cellItems = response.data.prefix(3).map({ CommentCellModel(comment: $0) })
                 self.commentsCellItems.append(contentsOf: cellItems)
                 self.reloadCommentData?()
-                
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
@@ -124,4 +120,3 @@ extension RecipeDetailsViewModel {
         timeOfRecipe = recipeDetail.timeOfRecipe.text
     }
 }
-// swiftlint:enable line_length

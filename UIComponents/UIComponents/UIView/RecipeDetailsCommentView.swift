@@ -5,9 +5,6 @@
 //  Created by Baki Dikbıyık on 2.06.2023.
 //
 
-import UIKit
-import MobilliumBuilders
-
 public class RecipeDetailsCommentView: UIView {
     
     private let topContainerView = UIView()
@@ -53,15 +50,17 @@ extension RecipeDetailsCommentView {
     
     private func addSubViews() {
         backgroundColor = .appWhite
+        
         addSubview(topContainerView)
         topContainerView.edgesToSuperview(excluding: .bottom, insets: .init(top: 12, left: 20, bottom: 0, right: 20))
         topContainerView.height(46)
         topContainerView.addSubview(titleLabel)
         titleLabel.edgesToSuperview()
+        
         addSubview(seperator)
         seperator.topToBottom(of: topContainerView).constant = 12
         seperator.edgesToSuperview(excluding: [.top, .bottom])
-        seperator.height(1)
+        
         addSubview(collectionView)
         collectionView.topToBottom(of: seperator)
         collectionView.edgesToSuperview(excluding: .top)
@@ -110,19 +109,9 @@ extension RecipeDetailsCommentView: UICollectionViewDelegateFlowLayout {
           return CGSize(width: cellWidth, height: 10)
   }
    
-  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+  public func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return 1
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
