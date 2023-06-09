@@ -34,13 +34,14 @@ public class CommentCell: UICollectionViewCell, ReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()
-        setLocalize()
+        configureContents()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addSubviews()
-        setLocalize()
+        configureContents()
     }
     
     public override func systemLayoutSizeFitting(_ targetSize: CGSize,
@@ -56,7 +57,6 @@ extension CommentCell {
     private func addSubviews() {
         contentView.addSubview(userView)
         userView.edgesToSuperview(excluding: .bottom)
-        userView.height(65)
         
         contentView.addSubview(stackView)
         stackView.topToBottom(of: userView)
@@ -79,10 +79,12 @@ public extension CommentCell {
     }
 }
 
-// MARK: - SetLocalize
+// MARK: - Configure Contents
 extension CommentCell {
     
-    private func setLocalize() {
-        userView.followButtonTitle = L10n.RecipeDetails.follow
+    private func configureContents() {
+        userView.height(65)
+        userView.isShowsFollowButton = false
     }
+    
 }

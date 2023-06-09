@@ -44,8 +44,6 @@
 		FA954483298CDB2700F55E23 /* WalkthroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA954482298CDB2700F55E23 /* WalkthroughCell.swift */; };
 		FA954485298D047700F55E23 /* WalkthroughCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA954484298D047700F55E23 /* WalkthroughCellModel.swift */; };
 		FA95448B298D7C2000F55E23 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95448A298D7C2000F55E23 /* PageControl.swift */; };
-		FAA3D9FF2A2B28E9009389DA /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3D9FD2A2B28E9009389DA /* CommentTableViewCell.swift */; };
-		FAA3DA002A2B28E9009389DA /* CommentTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3D9FE2A2B28E9009389DA /* CommentTableViewCellModel.swift */; };
 		FAA6DFD629ACA42000918961 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6DFD529ACA41F00918961 /* UIImage+Extensions.swift */; };
 		FAABD05E2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */; };
 		FAABD0602965E2E200126FA9 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */; };
@@ -105,8 +103,6 @@
 		FA954482298CDB2700F55E23 /* WalkthroughCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCell.swift; sourceTree = "<group>"; };
 		FA954484298D047700F55E23 /* WalkthroughCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCellModel.swift; sourceTree = "<group>"; };
 		FA95448A298D7C2000F55E23 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
-		FAA3D9FD2A2B28E9009389DA /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
-		FAA3D9FE2A2B28E9009389DA /* CommentTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCellModel.swift; sourceTree = "<group>"; };
 		FAA6DFD529ACA41F00918961 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		FAABD05D2965E2BA00126FA9 /* ActivityIndicatorViewPresentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewPresentProtocol.swift; sourceTree = "<group>"; };
 		FAABD05F2965E2E200126FA9 /* LoadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
@@ -300,8 +296,6 @@
 			children = (
 				FA8A3C392A28F79300E43142 /* CommentCell.swift */,
 				FA8A3C3A2A28F79300E43142 /* CommentCellModel.swift */,
-				FAA3D9FD2A2B28E9009389DA /* CommentTableViewCell.swift */,
-				FAA3D9FE2A2B28E9009389DA /* CommentTableViewCellModel.swift */,
 			);
 			path = CommentCell;
 			sourceTree = "<group>";
@@ -538,7 +532,6 @@
 				FA11A3382A223DAE00CC660E /* RecipeHeaderCell.swift in Sources */,
 				FAB3A43029B2029B008B916D /* FavoritesCell.swift in Sources */,
 				FA6FB0CA29BDC56800714304 /* FavoritesCollectionCellModel.swift in Sources */,
-				FAA3D9FF2A2B28E9009389DA /* CommentTableViewCell.swift in Sources */,
 				FA11A3392A223DAE00CC660E /* RecipeHeaderCellModel.swift in Sources */,
 				FA4C1C0529794382006C5C8D /* FloatLabelTextField.swift in Sources */,
 				FA954485298D047700F55E23 /* WalkthroughCellModel.swift in Sources */,
@@ -567,7 +560,6 @@
 				FAABD0602965E2E200126FA9 /* LoadingProtocol.swift in Sources */,
 				FA95448B298D7C2000F55E23 /* PageControl.swift in Sources */,
 				FA791CC829686746001B6985 /* Localize.swift in Sources */,
-				FAA3DA002A2B28E9009389DA /* CommentTableViewCellModel.swift in Sources */,
 				FAA6DFD629ACA42000918961 /* UIImage+Extensions.swift in Sources */,
 				FA791CA1296850B8001B6985 /* UIFont+Extensions.swift in Sources */,
 				FAAEAC7B296567AC00459E43 /* ToastPresenter.swift in Sources */,
