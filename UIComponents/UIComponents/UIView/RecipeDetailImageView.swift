@@ -14,7 +14,6 @@ public class RecipeDetailImageView: UIView {
         .allowsMultipleSelection(true)
         .isPagingEnabled(true)
         .backgroundColor(.clear)
-        .registerCell(RecipeHeaderCell.self, reuseIdentifier: "RecipeHeaderCell")
         .build()
     
     override init(frame: CGRect) {
@@ -42,6 +41,7 @@ extension RecipeDetailImageView {
         backgroundColor = .appWhite
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(RecipeHeaderCell.self)
         
         addSubview(collectionView)
         collectionView.edgesToSuperview()

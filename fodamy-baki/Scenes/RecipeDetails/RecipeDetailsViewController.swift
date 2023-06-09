@@ -6,16 +6,11 @@
 //
 
 import UIComponents
+import UIKit
 
 final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewModel> {
     
     private let scrollView = UIScrollViewBuilder()
-        .showsHorizontalScrollIndicator(false)
-        .showsVerticalScrollIndicator(false)
-        .alwaysBounceVertical(false)
-        .build()
-    
-    private let contentView = UIButtonBuilder()
         .build()
     
     private let contentStackView = UIStackViewBuilder()
@@ -27,9 +22,13 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
     
     private let categoryView = RecipeDetailsCategoryView()
     
-    private let countInfoStackView = UIStackViewBuilder()
+    private let seperator = UIViewBuilder()
+        .backgroundColor(.appZircon)
+        .build()
+    
+    private let commentAndLikeStackView = UIStackViewBuilder()
         .axis(.horizontal)
-        .distribution(.fillEqually)
+        .distribution(.fillProportionally)
         .spacing(1)
         .build()
     
@@ -40,8 +39,15 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
     
     private let ingredientsView = RecipeDetailIngredientsView()
     
-    private let recipeView = RecipeDetailIngredientsView()
+    private let instructionsView = RecipeDetailIngredientsView()
     
+    private let commentView = RecipeDetailsCommentView()
+    
+    private let buttonContainerView = UIView()
+    
+    private let commentButton = ButtonFactory.createPrimaryButton(style: .large)
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -49,6 +55,7 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
         setLocalize()
         subscribeViewModel()
         viewModel.getRecipesDetail()
+        viewModel.getRecipesDetailsComment()
     }
 }
 
@@ -56,43 +63,47 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
 extension RecipeDetailsViewController {
     
     private func addSubviews() {
-        addScrollView()
         addContentStackView()
         addCountInfoStackView()
     }
     
-    private func addScrollView() {
-        view.addSubview(scrollView)
-        scrollView.edgesToSuperview(excluding: .top)
-        scrollView.topToSuperview(usingSafeArea: true)
-    }
-    
     private func addContentStackView() {
-        scrollView.addSubview(contentView)
-        contentView.edgesToSuperview()
-        contentView.widthToSuperview()
-        
-        contentView.addSubview(contentStackView)
+        view.addSubview(scrollView)
+        scrollView.edgesToSuperview()
+        scrollView.addSubview(contentStackView)
         contentStackView.edgesToSuperview()
-        
+        contentStackView.widthToSuperview()
         contentStackView.addArrangedSubview(imagesHeaderView)
-        contentStackView.setCustomSpacing(0, after: imagesHeaderView)
+        imagesHeaderView.aspectRatio(1)
         contentStackView.addArrangedSubview(categoryView)
         contentStackView.setCustomSpacing(1, after: categoryView)
-        contentStackView.addArrangedSubview(countInfoStackView)
-        contentStackView.setCustomSpacing(15, after: countInfoStackView)
+        contentStackView.addArrangedSubview(seperator)
+        contentStackView.addArrangedSubview(commentAndLikeStackView)
+        commentAndLikeStackView.addArrangedSubview(commentCountInfoView)
+        commentAndLikeStackView.addArrangedSubview(seperator)
+        commentAndLikeStackView.addArrangedSubview(likesCountInfoView)
+        contentStackView.setCustomSpacing(19, after: commentAndLikeStackView)
         contentStackView.addArrangedSubview(userView)
-        contentStackView.setCustomSpacing(15, after: userView)
+        userView.height(65)
+        contentStackView.setCustomSpacing(20, after: userView)
         contentStackView.addArrangedSubview(ingredientsView)
-        contentStackView.setCustomSpacing(15, after: ingredientsView)
-        contentStackView.addArrangedSubview(recipeView)
+        contentStackView.setCustomSpacing(20, after: ingredientsView)
+        contentStackView.addArrangedSubview(instructionsView)
+        contentStackView.setCustomSpacing(20, after: instructionsView)
+        contentStackView.addArrangedSubview(commentView)
+        contentStackView.setCustomSpacing(20, after: commentView)
+        contentStackView.addArrangedSubview(buttonContainerView)
+        buttonContainerView.topToBottom(of: commentView).constant = 20
+        buttonContainerView.edgesToSuperview(excluding: .top)
         
-        imagesHeaderView.aspectRatio(1)
+        buttonContainerView.addSubview(commentButton)
+        commentButton.edgesToSuperview(insets: .init(top: 0, left: 20, bottom: 0, right: 20))
+        
     }
     
     private func addCountInfoStackView() {
-        countInfoStackView.addArrangedSubview(commentCountInfoView)
-        countInfoStackView.addArrangedSubview(likesCountInfoView)
+        commentAndLikeStackView.addArrangedSubview(commentCountInfoView)
+        commentAndLikeStackView.addArrangedSubview(likesCountInfoView)
     }
 }
 
@@ -111,9 +122,9 @@ extension RecipeDetailsViewController {
         userView.followButtonTitle = L10n.RecipeDetails.follow
         ingredientsView.title      = L10n.RecipeDetails.ingredients
         ingredientsView.icon       = .icRestaurant
-        recipeView.title           = L10n.RecipeDetails.recipe
-        recipeView.icon            = .icClock
-        
+        instructionsView.title     = L10n.RecipeDetails.recipe
+        instructionsView.icon      = .icClock
+        commentButton.setTitle(L10n.RecipeDetails.addComment, for: .normal)
     }
     
     private func fillData() {
@@ -130,8 +141,8 @@ extension RecipeDetailsViewController {
         userView.isShowsFollowButton              = viewModel.isFollowing
         ingredientsView.iconSubtitle              = viewModel.numberOfPeople
         ingredientsView.ingredients               = viewModel.ingredients
-        recipeView.iconSubtitle                   = viewModel.timeOfRecipe
-        recipeView.ingredients                    = viewModel.recipeSteps
+        instructionsView.iconSubtitle             = viewModel.timeOfRecipe
+        instructionsView.ingredients              = viewModel.recipeSteps
     }
 }
 
@@ -142,6 +153,11 @@ extension RecipeDetailsViewController {
         viewModel.reloadDetailData = { [weak self] in
             guard let self = self else { return }
             self.fillData()
+        }
+        
+        viewModel.reloadCommentData = { [weak self] in
+            guard let self = self else { return }
+            self.commentView.recipeCommentData = self.viewModel.commentsCellItems
         }
     }
 }
