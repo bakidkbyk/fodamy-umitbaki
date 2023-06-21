@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 2.06.2023.
 //
 
-import Utilities
 
 public class RecipeDetailsCommentView: UIView {
     
@@ -33,7 +32,6 @@ public class RecipeDetailsCommentView: UIView {
         addSubViews()
         configureContents()
         setLocalize()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -99,31 +97,31 @@ extension RecipeDetailsCommentView: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension RecipeDetailsCommentView: UICollectionViewDataSource {
-   
-  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return recipeCommentData.count
-  }
-   
-  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell: CommentCell = collectionView.dequeueReusableCell(for: indexPath)
-    let cellItem = recipeCommentData[indexPath.row]
-    cell.set(viewModel: cellItem)
-    return cell
-  }
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return recipeCommentData.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: CommentCell = collectionView.dequeueReusableCell(for: indexPath)
+        let cellItem = recipeCommentData[indexPath.row]
+        cell.set(viewModel: cellItem)
+        return cell
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension RecipeDetailsCommentView: UICollectionViewDelegateFlowLayout {
-   
-  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let XLMargin: CGFloat = 40
-    let cellWidth = collectionView.bounds.width - XLMargin
-          return CGSize(width: cellWidth, height: 10)
-  }
-   
-  public func collectionView(_ collectionView: UICollectionView,
-                             layout collectionViewLayout: UICollectionViewLayout,
-                             minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return 1
-  }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let XLMargin: CGFloat = 40
+        let cellWidth = collectionView.bounds.width - XLMargin
+        return CGSize(width: cellWidth, height: 10)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
 }
