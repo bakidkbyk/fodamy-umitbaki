@@ -48,7 +48,6 @@ public class CommentInputView: UIView {
             textView.text = newValue
         }
     }
-
 }
 
 // MARK: - UILayout

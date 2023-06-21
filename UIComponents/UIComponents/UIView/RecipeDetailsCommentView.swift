@@ -41,7 +41,6 @@ public class RecipeDetailsCommentView: UIView {
         addSubViews()
         configureContents()
         setLocalize()
-        
     }
     
     public var recipeCommentData: [CommentCellProtocol] = [] {
@@ -112,6 +111,7 @@ extension RecipeDetailsCommentView: UICollectionViewDataSource {
     return cell
   }
 }
+
 // MARK: - UICollectionViewDelegateFlowLayout
 extension RecipeDetailsCommentView: UICollectionViewDelegateFlowLayout {
    
