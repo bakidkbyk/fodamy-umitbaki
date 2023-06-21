@@ -31,7 +31,9 @@ protocol RecipeDetailsViewEventSource {
     var reloadCommentData: VoidClosure? { get set }
 }
 
-protocol RecipeDetailsViewProtocol: RecipeDetailsViewDataSource, RecipeDetailsViewEventSource {}
+protocol RecipeDetailsViewProtocol: RecipeDetailsViewDataSource, RecipeDetailsViewEventSource {
+    func didSelectComment()
+}
 
 final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDetailsViewProtocol {
  
@@ -98,7 +100,7 @@ extension RecipeDetailsViewModel {
             }
         }
     }
-    
+
     func setData(recipeDetail: RecipeDetails) {
         username = recipeDetail.user.username
         userId = recipeDetail.user.id
@@ -119,4 +121,13 @@ extension RecipeDetailsViewModel {
         recipeSteps = recipeDetail.instructions
         timeOfRecipe = recipeDetail.timeOfRecipe.text
     }
+}
+
+// MARK: - Actions
+extension RecipeDetailsViewModel {
+    
+    func didSelectComment() {
+        router.pushCommentList(recipeId: recipeId)
+    }
+    
 }

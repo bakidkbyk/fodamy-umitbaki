@@ -6,16 +6,16 @@
 //
 
 protocol CommentListRoute {
-    func pushCommentList()
+    func pushCommentList(recipeId: Int)
 }
 
 extension CommentListRoute where Self: RouterProtocol {
     
-    func pushCommentList() {
+    func pushCommentList(recipeId: Int) {
         let router = CommentListRouter()
-        let viewModel = CommentListViewModel(router: router)
+        let viewModel = CommentListViewModel(recipeId: recipeId, router: router)
         let viewController = CommentListViewController(viewModel: viewModel)
-        
+        viewController.hidesBottomBarWhenPushed = true
         let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition
