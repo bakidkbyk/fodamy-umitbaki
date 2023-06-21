@@ -11,6 +11,13 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum CommentList {
+    /// Yorumlar
+    public static let comments = L10n.tr("Localizable", "CommentList.comments")
+    /// Bir şey yaz...
+    public static let placeHolder = L10n.tr("Localizable", "CommentList.placeHolder")
+  }
+
   public enum Favorites {
     /// TÜMÜNÜ GÖR
     public static let seeAllButtonText = L10n.tr("Localizable", "Favorites.seeAllButtonText")

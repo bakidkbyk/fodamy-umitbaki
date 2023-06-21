@@ -73,3 +73,7 @@ recipes in all around the word.";
 "RecipeDetails.recipe" = "Yapılışı";
 "RecipeDetails.commentTitle" = "Yorumlar";
 "RecipeDetails.addComment" = "Yorum Ekle";
+
+// MARK: - Comment List View Controller
+"CommentList.comments" = "Yorumlar";
+"CommentList.placeHolder" = "Bir şey yaz...";

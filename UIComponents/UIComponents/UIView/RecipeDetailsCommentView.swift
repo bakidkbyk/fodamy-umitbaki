@@ -5,6 +5,8 @@
 //  Created by Baki Dikbıyık on 2.06.2023.
 //
 
+import Utilities
+
 public class RecipeDetailsCommentView: UIView {
     
     private let topContainerView = UIView()
@@ -24,11 +26,14 @@ public class RecipeDetailsCommentView: UIView {
         .estimatedItemSize(UICollectionViewFlowLayout.automaticSize)
         .build()
     
+    public var didFetchComment: VoidClosure?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
         configureContents()
         setLocalize()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,6 +41,7 @@ public class RecipeDetailsCommentView: UIView {
         addSubViews()
         configureContents()
         setLocalize()
+        
     }
     
     public var recipeCommentData: [CommentCellProtocol] = [] {
@@ -84,6 +90,14 @@ extension RecipeDetailsCommentView {
     }
 }
 
+// MARK: - UICollectionView Delegate
+extension RecipeDetailsCommentView: UICollectionViewDelegate {
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didFetchComment?()
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 extension RecipeDetailsCommentView: UICollectionViewDataSource {
    
@@ -101,9 +115,7 @@ extension RecipeDetailsCommentView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension RecipeDetailsCommentView: UICollectionViewDelegateFlowLayout {
    
-  public func collectionView(_ collectionView: UICollectionView,
-                layout collectionViewLayout: UICollectionViewLayout,
-                sizeForItemAt indexPath: IndexPath) -> CGSize {
+  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let XLMargin: CGFloat = 40
     let cellWidth = collectionView.bounds.width - XLMargin
           return CGSize(width: cellWidth, height: 10)
