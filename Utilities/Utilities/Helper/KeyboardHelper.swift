@@ -9,7 +9,6 @@ import UIKit
 
 public protocol KeyboardHelperDelegate: AnyObject {
     func keyboardWillShow(_ keyboardHeight: CGFloat)
-    
     func keyboardWillHide()
 }
 
@@ -17,7 +16,7 @@ public class KeyboardHelper {
     
     public weak var delegate: KeyboardHelperDelegate?
     
-    init() {
+    public init() {
         setObservers()
     }
     
@@ -28,7 +27,7 @@ public class KeyboardHelper {
         let keyboardRectangle = keyboardFrame.cgRectValue
         let keyboardHeight = keyboardRectangle.height
         delegate?.keyboardWillShow(keyboardHeight)
-                
+
     }
     
     @objc

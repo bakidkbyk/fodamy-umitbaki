@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B2BC0CEA5FFC3C88DC84CDC2 /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B86C0840FC2ED4995DF11C /* Pods_Utilities.framework */; };
 		FA0E70872A1A955100AFC6BC /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E70862A1A955100AFC6BC /* Int+Extensions.swift */; };
+		FA70A5B72A406FE200D29C8F /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70A5B62A406FE200D29C8F /* KeyboardHelper.swift */; };
 		FA87472B2975286C00039E92 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472A2975286C00039E92 /* Keychain.swift */; };
 		FAA8194C2964061700B4C83A /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA8194B2964061700B4C83A /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAAEAC6E296552C700459E43 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEAC6D296552C700459E43 /* Closures.swift */; };
@@ -19,6 +20,7 @@
 		99B86C0840FC2ED4995DF11C /* Pods_Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3DB63C0F976FA27FCEDBCB /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0E70862A1A955100AFC6BC /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		FA70A5B62A406FE200D29C8F /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		FA87472A2975286C00039E92 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		FAA819482964061700B4C83A /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA8194B2964061700B4C83A /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FA70A5B52A406F9F00D29C8F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FA70A5B62A406FE200D29C8F /* KeyboardHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		FAA8193E2964061700B4C83A = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		FAA8194A2964061700B4C83A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FA70A5B52A406F9F00D29C8F /* Helper */,
 				FA0E70852A1A953500AFC6BC /* Extensions */,
 				FAAEAC6C296552A200459E43 /* Constants */,
 				FAA8194B2964061700B4C83A /* Utilities.h */,
@@ -206,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA70A5B72A406FE200D29C8F /* KeyboardHelper.swift in Sources */,
 				FA0E70872A1A955100AFC6BC /* Int+Extensions.swift in Sources */,
 				FAAEAC6E296552C700459E43 /* Closures.swift in Sources */,
 				FA87472B2975286C00039E92 /* Keychain.swift in Sources */,
