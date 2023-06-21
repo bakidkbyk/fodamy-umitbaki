@@ -28,7 +28,6 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         subscribeViewModel()
         viewModel.getRecipeCommentList(isRefreshing: false, isPaging: false)
     }
-    
 }
 
 // MARK: - UILayout
