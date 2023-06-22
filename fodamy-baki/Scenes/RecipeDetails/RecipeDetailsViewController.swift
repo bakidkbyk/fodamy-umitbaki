@@ -159,5 +159,10 @@ extension RecipeDetailsViewController {
             guard let self = self else { return }
             self.commentView.recipeCommentData = self.viewModel.commentsCellItems
         }
+        
+        commentView.didFetchComment = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.didSelectComment()
+        }
     }
 }
