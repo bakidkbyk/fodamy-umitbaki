@@ -48,7 +48,6 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
 extension CommentListViewModel {
     
     func getRecipeCommentList(isRefreshing: Bool, isPaging: Bool) {
-        
         if isRefreshing == false {
             if page == 1 && isPaging == false {
                 showLoading?()

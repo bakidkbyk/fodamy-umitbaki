@@ -5,8 +5,6 @@
 //  Created by Baki Dikbıyık on 9.06.2023.
 //
 
-import UIKit
-
 final class CommentListViewController: BaseViewController<CommentListViewModel> {
     
     private let collectionView = UICollectionViewBuilder()
@@ -16,9 +14,11 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         .build()
     
     private let commentInputView = CommentInputView()
-    private let keyboardHelper = KeyboardHelper()
     private var bottomViewBottomConstraint: NSLayoutConstraint?
     private let refreshControl = UIRefreshControl()
+    
+    private var keyboardWillShowObserver: NSObjectProtocol?
+    private var keyboardWillHideObserver: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         configureContents()
         setLocalize()
         subscribeViewModel()
+        addKeyboardObservers()
         viewModel.getRecipeCommentList(isRefreshing: false, isPaging: false)
     }
 }
@@ -59,7 +60,6 @@ extension CommentListViewController {
         collectionView.register(CommentCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
-        keyboardHelper.delegate = self
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
         bottomViewBottomConstraint?.isActive = true        
@@ -117,6 +117,7 @@ extension CommentListViewController: UICollectionViewDelegate { }
 
 // MARK: - UICollectionView DataSource
 extension CommentListViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItemsAt()
     }
@@ -146,22 +147,39 @@ extension CommentListViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: - Keyboard Helper
-extension CommentListViewController: KeyboardHelperDelegate {
-
-    func keyboardWillShow(_ keyboardHeight: CGFloat) {
-        UIView.animate(withDuration: 0.3) { [weak self] in
-            guard let self = self else { return }
-            self.bottomViewBottomConstraint?.constant = self.view.safeAreaInsets.bottom - keyboardHeight
-            self.view.layoutIfNeeded()
+// MARK: - Keyboard Observer
+extension CommentListViewController {
+    
+    private func addKeyboardObservers() {
+            keyboardWillShowObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { [weak self] notification in
+                self?.keyboardWillShow(notification)
+            }
+            
+            keyboardWillHideObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { [weak self] notification in
+                self?.keyboardWillHide(notification)
+            }
         }
-    }
-
-    func keyboardWillHide() {
-        UIView.animate(withDuration: 0.2) { [weak self] in
-            guard let self = self else { return }
-            self.bottomViewBottomConstraint?.constant = 0
-            self.view.layoutIfNeeded()
+    
+    private func keyboardWillShow(_ notification: Notification) {
+            if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+                let keyboardHeight = keyboardFrame.height
+                self.bottomViewBottomConstraint?.constant = self.view.safeAreaInsets.bottom - keyboardHeight
+                self.view.layoutIfNeeded()
+            }
         }
-    }
+    
+    private func keyboardWillHide(_ notification: Notification) {
+        self.bottomViewBottomConstraint?.constant = 0
+        self.view.layoutIfNeeded()
+     }
+    
+    private func removeKeyboardObservers() {
+          if let willShowObserver = keyboardWillShowObserver {
+              NotificationCenter.default.removeObserver(willShowObserver)
+          }
+          
+          if let willHideObserver = keyboardWillHideObserver {
+              NotificationCenter.default.removeObserver(willHideObserver)
+          }
+      }
 }
