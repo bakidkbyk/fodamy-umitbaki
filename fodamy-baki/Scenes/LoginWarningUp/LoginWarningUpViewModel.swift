@@ -11,8 +11,18 @@ protocol LoginWarningUpViewDataSource {}
 
 protocol LoginWarningUpViewEventSource {}
 
-protocol LoginWarningUpViewProtocol: LoginWarningUpViewDataSource, LoginWarningUpViewEventSource {}
+protocol LoginWarningUpViewProtocol: LoginWarningUpViewDataSource, LoginWarningUpViewEventSource {
+    func giveUpButtonAction()
+    func loginButtonAction()
+}
 
 final class LoginWarningUpViewModel: BaseViewModel<LoginWarningUpRouter>, LoginWarningUpViewProtocol {
     
+    func giveUpButtonAction() {
+        router.close()
+    }
+    
+    func loginButtonAction() {
+        router.placeOnWindowLogin()
+    }
 }

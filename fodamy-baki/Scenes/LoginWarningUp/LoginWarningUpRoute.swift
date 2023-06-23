@@ -17,6 +17,7 @@ extension LoginWarningUpRoute where Self: RouterProtocol {
         let viewController = LoginWarningUpViewController(viewModel: viewModel)
         
         let transition = ModalTransition()
+        transition.modalPresentationStyle = .overFullScreen
         router.viewController = viewController
         router.openTransition = transition
         
