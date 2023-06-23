@@ -28,14 +28,18 @@ public class RecipeDetailsCountInfoView: UIView {
         .textAlignment(.center)
         .build()
     
+    public var buttonTapped: VoidClosure?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
+        configureContents()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addSubViews()
+        configureContents()
     }
     
     public var icon: UIImage? {
@@ -78,6 +82,22 @@ extension RecipeDetailsCountInfoView {
         stackView.bottomToSuperview().constant = -15
         stackView.addArrangedSubview(countLabel)
         stackView.addArrangedSubview(infoLabel)
-        
+    }
+}
+
+// MARK: - Configure Contents
+extension RecipeDetailsCountInfoView {
+    
+    private func configureContents() {
+        iconButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
+    }
+}
+
+// MARK: - Actions
+extension RecipeDetailsCountInfoView {
+    
+    @objc
+    func iconButtonTapped() {
+        buttonTapped?()
     }
 }

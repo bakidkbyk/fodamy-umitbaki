@@ -77,3 +77,8 @@ recipes in all around the word.";
 // MARK: - Comment List View Controller
 "CommentList.comments" = "Yorumlar";
 "CommentList.placeHolder" = "Bir şey yaz...";
+
+// MARK: - Login Warning Up
+"LoginWarningUp.warningLabel" = "Giriş yapmanız gerekmektedir.";
+"LoginWarningUp.giveUpButton" = "Vazgeç";
+"LoginWarningUp.loginButton" = "Giriş Yap";
