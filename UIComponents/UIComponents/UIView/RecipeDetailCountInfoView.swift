@@ -7,7 +7,7 @@
 
 public class RecipeDetailsCountInfoView: UIView {
     
-    private let iconButton = UIButtonBuilder()
+    private let actionImageButton = UIButtonBuilder()
         .tintColor(.appCinder)
         .build()
     
@@ -44,7 +44,7 @@ public class RecipeDetailsCountInfoView: UIView {
     
     public var icon: UIImage? {
         willSet {
-            iconButton.setImage(newValue?.resize(to: .init(width: 20, height: 18), for: .scaleAspectFit), for: .normal)
+            actionImageButton.setImage(newValue?.resize(to: .init(width: 20, height: 18), for: .scaleAspectFit), for: .normal)
         }
     }
     
@@ -66,16 +66,16 @@ extension RecipeDetailsCountInfoView {
     
     private func addSubViews() {
         backgroundColor = .appWhite
-        addSubview(iconButton)
         
-        iconButton.centerXToSuperview()
-        iconButton.leadingToSuperview(relation: .equalOrGreater)
-        iconButton.trailingToSuperview(relation: .equalOrLess)
-        iconButton.topToSuperview().constant = 15
-        iconButton.size(.init(width: 20, height: 18))
+        addSubview(actionImageButton)
+        actionImageButton.centerXToSuperview()
+        actionImageButton.leadingToSuperview(relation: .equalOrGreater)
+        actionImageButton.trailingToSuperview(relation: .equalOrLess)
+        actionImageButton.topToSuperview().constant = 15
+        actionImageButton.size(.init(width: 20, height: 18))
         
         addSubview(stackView)
-        stackView.topToBottom(of: iconButton).constant = 7
+        stackView.topToBottom(of: actionImageButton).constant = 7
         stackView.centerXToSuperview()
         stackView.leadingToSuperview(relation: .equalOrGreater)
         stackView.trailingToSuperview(relation: .equalOrLess)
@@ -89,7 +89,7 @@ extension RecipeDetailsCountInfoView {
 extension RecipeDetailsCountInfoView {
     
     private func configureContents() {
-        iconButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
+        actionImageButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
     }
 }
 
