@@ -34,6 +34,7 @@ protocol RecipeDetailsViewEventSource {
 protocol RecipeDetailsViewProtocol: RecipeDetailsViewDataSource, RecipeDetailsViewEventSource {
     func didSelectComment()
     func likeButtonTapped()
+    func commentButtonTapped()
 }
 
 final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDetailsViewProtocol {
@@ -132,6 +133,10 @@ extension RecipeDetailsViewModel {
     }
     
     func likeButtonTapped() {
+        router.presentLoginWarningUp()
+    }
+    
+    func commentButtonTapped() {
         router.presentLoginWarningUp()
     }
 }
