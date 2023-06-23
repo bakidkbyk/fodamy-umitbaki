@@ -33,6 +33,7 @@ protocol RecipeDetailsViewEventSource {
 
 protocol RecipeDetailsViewProtocol: RecipeDetailsViewDataSource, RecipeDetailsViewEventSource {
     func didSelectComment()
+    func likeButtonTapped()
 }
 
 final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDetailsViewProtocol {
@@ -130,4 +131,7 @@ extension RecipeDetailsViewModel {
         router.pushCommentList(recipeId: recipeId)
     }
     
+    func likeButtonTapped() {
+        router.presentLoginWarningUp()
+    }
 }
