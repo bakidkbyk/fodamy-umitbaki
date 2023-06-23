@@ -11,6 +11,10 @@
 		FA0A2F1E2962BB56004E82C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2F1D2962BB56004E82C6 /* AppDelegate.swift */; };
 		FA0A2F272962BB58004E82C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2F262962BB58004E82C6 /* Assets.xcassets */; };
 		FA0A2F2A2962BB58004E82C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2F282962BB58004E82C6 /* LaunchScreen.storyboard */; };
+		FA1D9E342A458B1B008B0CA2 /* LoginWarningUpRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D9E332A458B1B008B0CA2 /* LoginWarningUpRoute.swift */; };
+		FA1D9E382A458B35008B0CA2 /* LoginWarningUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D9E352A458B35008B0CA2 /* LoginWarningUpRouter.swift */; };
+		FA1D9E392A458B35008B0CA2 /* LoginWarningUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D9E362A458B35008B0CA2 /* LoginWarningUpViewController.swift */; };
+		FA1D9E3A2A458B35008B0CA2 /* LoginWarningUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D9E372A458B35008B0CA2 /* LoginWarningUpViewModel.swift */; };
 		FA2DB7982962DF94004D38E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FA2DB7972962DF94004D38E2 /* .swiftlint.yml */; };
 		FA2DB7B729631568004D38E2 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2DB7B629631568004D38E2 /* UIComponents.framework */; };
 		FA5BBD3929DAB34400220EAD /* RecipeDetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BBD3829DAB34400220EAD /* RecipeDetailsRoute.swift */; };
@@ -83,6 +87,10 @@
 		FA0A2F262962BB58004E82C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA0A2F292962BB58004E82C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0A2F2B2962BB58004E82C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1D9E332A458B1B008B0CA2 /* LoginWarningUpRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningUpRoute.swift; sourceTree = "<group>"; };
+		FA1D9E352A458B35008B0CA2 /* LoginWarningUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningUpRouter.swift; sourceTree = "<group>"; };
+		FA1D9E362A458B35008B0CA2 /* LoginWarningUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningUpViewController.swift; sourceTree = "<group>"; };
+		FA1D9E372A458B35008B0CA2 /* LoginWarningUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWarningUpViewModel.swift; sourceTree = "<group>"; };
 		FA2DB7972962DF94004D38E2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FA2DB7AF296312A8004D38E2 /* fodamy-baki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fodamy-baki-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA2DB7B629631568004D38E2 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +225,17 @@
 			path = "fodamy-baki";
 			sourceTree = "<group>";
 		};
+		FA1D9E322A458AF8008B0CA2 /* LoginWarningUp */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D9E362A458B35008B0CA2 /* LoginWarningUpViewController.swift */,
+				FA1D9E372A458B35008B0CA2 /* LoginWarningUpViewModel.swift */,
+				FA1D9E352A458B35008B0CA2 /* LoginWarningUpRouter.swift */,
+				FA1D9E332A458B1B008B0CA2 /* LoginWarningUpRoute.swift */,
+			);
+			path = LoginWarningUp;
+			sourceTree = "<group>";
+		};
 		FA271C1B299112CF0069CFE3 /* FavoritesControler */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +292,7 @@
 		FAA8198D2964217F00B4C83A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FA1D9E322A458AF8008B0CA2 /* LoginWarningUp */,
 				FAF3DA792A33121E00A9E3D3 /* CommentListViewController */,
 				FA5BBD3729DAB32500220EAD /* RecipeDetails */,
 				FAB974DD29979EE300A10EFD /* Recipes */,
@@ -587,6 +607,7 @@
 				FAC3A84D298463220095A7C3 /* LoginViewModel.swift in Sources */,
 				FAC3A83A298420CE0095A7C3 /* Router.swift in Sources */,
 				FACE72F129892447001B98D4 /* ForgotPasswordRouter.swift in Sources */,
+				FA1D9E3A2A458B35008B0CA2 /* LoginWarningUpViewModel.swift in Sources */,
 				FAB84898299656D2007D5CA7 /* HomeTabBarRoute.swift in Sources */,
 				FAC3A838298420B90095A7C3 /* Animator.swift in Sources */,
 				FADE8AC6299A1BE6008A1A83 /* RecipesViewController.swift in Sources */,
@@ -595,9 +616,11 @@
 				FAC3A83D2984210D0095A7C3 /* AppRouter.swift in Sources */,
 				FA87472329751C6400039E92 /* APIRequestAdapter.swift in Sources */,
 				FACE72FD29895EC1001B98D4 /* WalkthroughViewController.swift in Sources */,
+				FA1D9E392A458B35008B0CA2 /* LoginWarningUpViewController.swift in Sources */,
 				FA5BBD3F29DAB36700220EAD /* RecipeDetailsViewModel.swift in Sources */,
 				FACE72FC29895EC1001B98D4 /* WalkthroughRouter.swift in Sources */,
 				FAA819B52964404C00B4C83A /* BaseViewController.swift in Sources */,
+				FA1D9E342A458B1B008B0CA2 /* LoginWarningUpRoute.swift in Sources */,
 				FA61FFAD296FE53F00D08E28 /* APIDataProvider.swift in Sources */,
 				FA5BBD3929DAB34400220EAD /* RecipeDetailsRoute.swift in Sources */,
 				FAC3A840298421660095A7C3 /* ModalTransition.swift in Sources */,
@@ -618,6 +641,7 @@
 				FAC3A8422984218C0095A7C3 /* PlaceOnWindowTransition.swift in Sources */,
 				FADE8AC7299A1BE6008A1A83 /* RecipesViewModel.swift in Sources */,
 				FA5BBD3D29DAB36700220EAD /* RecipeDetailsRouter.swift in Sources */,
+				FA1D9E382A458B35008B0CA2 /* LoginWarningUpRouter.swift in Sources */,
 				FAF3DA812A33257000A9E3D3 /* CommentListRoute.swift in Sources */,
 				FAB84899299656D2007D5CA7 /* HomeTabBarViewController.swift in Sources */,
 				FAB60DB6297FD9FD00F1DB9A /* Validation.swift in Sources */,

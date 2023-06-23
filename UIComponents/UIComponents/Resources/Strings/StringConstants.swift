@@ -64,6 +64,15 @@ public enum L10n {
     public static let usernamePlaceHolder = L10n.tr("Localizable", "Login.usernamePlaceHolder")
   }
 
+  public enum LoginWarningUp {
+    /// Vazgeç
+    public static let giveUpButton = L10n.tr("Localizable", "LoginWarningUp.giveUpButton")
+    /// Giriş Yap
+    public static let loginButton = L10n.tr("Localizable", "LoginWarningUp.loginButton")
+    /// Giriş yapmanız gerekmektedir.
+    public static let warningLabel = L10n.tr("Localizable", "LoginWarningUp.warningLabel")
+  }
+
   public enum RecipeDetails {
     /// Yorum Ekle
     public static let addComment = L10n.tr("Localizable", "RecipeDetails.addComment")

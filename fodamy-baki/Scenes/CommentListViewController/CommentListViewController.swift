@@ -17,9 +17,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
     private var bottomViewBottomConstraint: NSLayoutConstraint?
     private let refreshControl = UIRefreshControl()
     private let keyboardHelper = KeyboardHelper()
-    private var keyboardWillShowObserver: NSObjectProtocol?
-    private var keyboardWillHideObserver: NSObjectProtocol?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()

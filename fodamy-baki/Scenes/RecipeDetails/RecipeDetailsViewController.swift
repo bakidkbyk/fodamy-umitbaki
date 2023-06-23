@@ -164,5 +164,15 @@ extension RecipeDetailsViewController {
             guard let self = self else { return }
             self.viewModel.didSelectComment()
         }
+        
+        likesCountInfoView.buttonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.likeButtonTapped()
+        }
+        
+        commentCountInfoView.buttonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.commentButtonTapped()
+        }
     }
 }

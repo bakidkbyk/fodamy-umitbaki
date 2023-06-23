@@ -7,7 +7,7 @@
 
 public class RecipeDetailsCountInfoView: UIView {
     
-    private let iconButton = UIButtonBuilder()
+    private let actionImageButton = UIButtonBuilder()
         .tintColor(.appCinder)
         .build()
     
@@ -28,19 +28,23 @@ public class RecipeDetailsCountInfoView: UIView {
         .textAlignment(.center)
         .build()
     
+    public var buttonTapped: VoidClosure?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
+        configureContents()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addSubViews()
+        configureContents()
     }
     
     public var icon: UIImage? {
         willSet {
-            iconButton.setImage(newValue?.resize(to: .init(width: 20, height: 18), for: .scaleAspectFit), for: .normal)
+            actionImageButton.setImage(newValue?.resize(to: .init(width: 20, height: 18), for: .scaleAspectFit), for: .normal)
         }
     }
     
@@ -62,22 +66,38 @@ extension RecipeDetailsCountInfoView {
     
     private func addSubViews() {
         backgroundColor = .appWhite
-        addSubview(iconButton)
         
-        iconButton.centerXToSuperview()
-        iconButton.leadingToSuperview(relation: .equalOrGreater)
-        iconButton.trailingToSuperview(relation: .equalOrLess)
-        iconButton.topToSuperview().constant = 15
-        iconButton.size(.init(width: 20, height: 18))
+        addSubview(actionImageButton)
+        actionImageButton.centerXToSuperview()
+        actionImageButton.leadingToSuperview(relation: .equalOrGreater)
+        actionImageButton.trailingToSuperview(relation: .equalOrLess)
+        actionImageButton.topToSuperview().constant = 15
+        actionImageButton.size(.init(width: 20, height: 18))
         
         addSubview(stackView)
-        stackView.topToBottom(of: iconButton).constant = 7
+        stackView.topToBottom(of: actionImageButton).constant = 7
         stackView.centerXToSuperview()
         stackView.leadingToSuperview(relation: .equalOrGreater)
         stackView.trailingToSuperview(relation: .equalOrLess)
         stackView.bottomToSuperview().constant = -15
         stackView.addArrangedSubview(countLabel)
         stackView.addArrangedSubview(infoLabel)
-        
+    }
+}
+
+// MARK: - Configure Contents
+extension RecipeDetailsCountInfoView {
+    
+    private func configureContents() {
+        actionImageButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
+    }
+}
+
+// MARK: - Actions
+extension RecipeDetailsCountInfoView {
+    
+    @objc
+    func iconButtonTapped() {
+        buttonTapped?()
     }
 }
