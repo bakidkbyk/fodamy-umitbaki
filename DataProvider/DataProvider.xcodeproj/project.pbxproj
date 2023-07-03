@@ -27,6 +27,7 @@
 		FA910931296E8263005F8651 /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA910930296E8263005F8651 /* RequestEncoding.swift */; };
 		FA910933296E8286005F8651 /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA910932296E8286005F8651 /* DataProviderProtocol.swift */; };
 		FAA819602964063B00B4C83A /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA8195F2964063B00B4C83A /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAB3FA9E2A4F896600B5E112 /* UserFollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3FA9D2A4F896600B5E112 /* UserFollowRequest.swift */; };
 		FAB60DAC297FD21400F1DB9A /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DAB297FD21400F1DB9A /* RegisterRequest.swift */; };
 		FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DAE297FD48200F1DB9A /* Auth.swift */; };
 		FAB60DB1297FD4AA00F1DB9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB0297FD4AA00F1DB9A /* User.swift */; };
@@ -35,9 +36,11 @@
 		FABFE92129B70F7B00F78DFD /* CategoryRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFE92029B70F7B00F78DFD /* CategoryRecipes.swift */; };
 		FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72EB2989117E001B98D4 /* LoginRequest.swift */; };
 		FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */; };
+		FAD32D0C2A4964DB0018052B /* GetRecipesLikesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD32D0B2A4964DB0018052B /* GetRecipesLikesRequest.swift */; };
+		FAD32D0E2A4965E00018052B /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD32D0D2A4965E00018052B /* SuccessResponse.swift */; };
 		FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */; };
 		FAF3DCD829B0AC0700DDE6D8 /* FodamyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCD729B0AC0700DDE6D8 /* FodamyRequest.swift */; };
-		FAF3DCDA29B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift */; };
+		FAF3DCDA29B0B55C00DDE6D8 /* GetRecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,7 @@
 		FA910932296E8286005F8651 /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		FAA8195C2964063B00B4C83A /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA8195F2964063B00B4C83A /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
+		FAB3FA9D2A4F896600B5E112 /* UserFollowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowRequest.swift; sourceTree = "<group>"; };
 		FAB60DAB297FD21400F1DB9A /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		FAB60DAE297FD48200F1DB9A /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		FAB60DB0297FD4AA00F1DB9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -72,9 +76,11 @@
 		FABFE92029B70F7B00F78DFD /* CategoryRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRecipes.swift; sourceTree = "<group>"; };
 		FACE72EB2989117E001B98D4 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
+		FAD32D0B2A4964DB0018052B /* GetRecipesLikesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesLikesRequest.swift; sourceTree = "<group>"; };
+		FAD32D0D2A4965E00018052B /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
 		FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		FAF3DCD729B0AC0700DDE6D8 /* FodamyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FodamyRequest.swift; sourceTree = "<group>"; };
-		FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesRequestRequest.swift; sourceTree = "<group>"; };
+		FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,9 +140,10 @@
 		FA8D3BF729A34C5C008056B5 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift */,
+				FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequest.swift */,
 				FABFE91E29B70F4600F78DFD /* GetCategoryRecipesRequest.swift */,
 				FA3DB65E29E7EA0B00888DB2 /* GetRecipeDetailsRequest.swift */,
+				FAD32D0B2A4964DB0018052B /* GetRecipesLikesRequest.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -170,9 +177,18 @@
 			path = DataProvider;
 			sourceTree = "<group>";
 		};
+		FAB3FA9C2A4F894700B5E112 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FAB3FA9D2A4F896600B5E112 /* UserFollowRequest.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		FAB60DA9297FD1F600F1DB9A /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				FAB3FA9C2A4F894700B5E112 /* User */,
 				FA844E632A29D8FF00E408A7 /* Comment */,
 				FA8D3BF729A34C5C008056B5 /* Recipe */,
 				FAB60DAA297FD20100F1DB9A /* Auth */,
@@ -206,6 +222,7 @@
 				FA3DB66229E8719100888DB2 /* TimeOfRecipe.swift */,
 				FA3DB66429E8739000888DB2 /* NumberOfPerson.swift */,
 				FA38C5FF2A27DE7C0099C188 /* RecipeComment.swift */,
+				FAD32D0D2A4965E00018052B /* SuccessResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +344,7 @@
 				FAF3DCD829B0AC0700DDE6D8 /* FodamyRequest.swift in Sources */,
 				FA910931296E8263005F8651 /* RequestEncoding.swift in Sources */,
 				FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */,
+				FAD32D0C2A4964DB0018052B /* GetRecipesLikesRequest.swift in Sources */,
 				FA910933296E8286005F8651 /* DataProviderProtocol.swift in Sources */,
 				FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */,
 				FA91092F296E8237005F8651 /* RequestMethod.swift in Sources */,
@@ -339,11 +357,13 @@
 				FA38C6002A27DE7C0099C188 /* RecipeComment.swift in Sources */,
 				FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */,
 				FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */,
-				FAF3DCDA29B0B55C00DDE6D8 /* GetRecipesRequestRequest.swift in Sources */,
+				FAF3DCDA29B0B55C00DDE6D8 /* GetRecipesRequest.swift in Sources */,
 				FA844E672A29DA0600E408A7 /* GetRecipeCommentRequest.swift in Sources */,
 				FA8D3BFD29A35072008056B5 /* Pagination.swift in Sources */,
 				FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */,
 				FA8D3C0429A380A9008056B5 /* Categories.swift in Sources */,
+				FAB3FA9E2A4F896600B5E112 /* UserFollowRequest.swift in Sources */,
+				FAD32D0E2A4965E00018052B /* SuccessResponse.swift in Sources */,
 				FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

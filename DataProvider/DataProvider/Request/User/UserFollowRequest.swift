@@ -5,7 +5,7 @@
 //  Created by Baki Dikbıyık on 1.07.2023.
 //
 
-public struct UserFollowRequestRequest: APIDecodableResponseRequest {
+public struct UserFollowRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = SuccessResponse
     

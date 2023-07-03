@@ -5,4 +5,6 @@
 //  Created by Baki Dikbıyık on 26.06.2023.
 //
 
-import Foundation
+public struct SuccessResponse: Decodable {
+    public let message: String?
+}

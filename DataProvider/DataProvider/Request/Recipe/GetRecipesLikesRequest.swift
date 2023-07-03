@@ -5,15 +5,28 @@
 //  Created by Baki Dikbıyık on 26.06.2023.
 //
 
-public struct GetRecipesLikesRequest: RequestProtocol {
+public struct GetRecipesLikesRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = <#T##Type###>
+    public typealias ResponseType = SuccessResponse
     
-    public var path: String = <#T##Type###>
-    public var method: RequestMethod = <#T##Type###>
-    public var parameters: RequestParameters = [:]
-    public var headers: RequestHeaders = [:]
+    public var path: String = "recipe/{recipeId}/like"
+    public var method: RequestMethod = .post
+    public let likeType: LikeType
     
-    public init() {}
+    public init(recipeId: Int, likeType: LikeType) {
+        self.path = "recipe/\(recipeId)/like"
+        self.likeType = likeType
+        switch likeType {
+        case .like:
+            method = .post
+        case .unlike:
+            method = .delete
+        }
+    }
+    
+    public enum LikeType {
+        case like
+        case unlike
+    }
     
 }
