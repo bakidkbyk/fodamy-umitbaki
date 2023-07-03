@@ -6,13 +6,14 @@
 //
 
 import Utilities
+import KeychainSwift
 
 protocol RecipeDetailsViewDataSource {
     var username: String? { get }
     var userId: Int? { get }
     var recipeHeaderImageUrl: String? { get }
     var userImageUrl: String? { get }
-    var userFollowedCount: Int? { get }
+    // var userFollowedCount: Int? { get }
     var recipeName: String? { get }
     var recipeCount: Int? { get }
     var categoryName: String? { get }
@@ -34,6 +35,7 @@ protocol RecipeDetailsViewEventSource {
 protocol RecipeDetailsViewProtocol: RecipeDetailsViewDataSource, RecipeDetailsViewEventSource {
     func didSelectComment()
     func likeButtonTapped()
+    func followButtonTapped()
     func commentButtonTapped()
 }
 
@@ -43,7 +45,7 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
     var userId: Int?
     var recipeHeaderImageUrl: String?
     var userImageUrl: String?
-    var userFollowedCount: Int?
+    // var userFollowedCount: Int?
     var recipeName: String?
     var recipeCount: Int?
     var categoryName: String?
@@ -59,13 +61,65 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
     var imagesCellItems: [RecipeHeaderCellProtocol] = []
     var commentsCellItems: [CommentCellProtocol] = []
     private let recipeId: Int
+    
     var reloadDetailData: VoidClosure?
     var reloadCommentData: VoidClosure?
-    var isFollowing = true
+    var likedStasus: VoidClosure?
+    var followingStatus: VoidClosure?
+    var unfollowShow: VoidClosure?
+    var isFollowing = false
+    var isLiked = false
+    var followedId: Int?
+    private let keychain = KeychainSwift()
 
     init(recipeId: Int, router: RecipeDetailsRouter) {
         self.recipeId = recipeId
         super.init(router: router)
+    }
+    
+    var userFollowedCount: Int? {
+            didSet {
+                recipeAndFollowerCountText = "\(recipeCount ?? 0) Tarif \(userFollowedCount ?? 0) Takipçi"
+            }
+        }
+}
+
+// MARK: - Actions
+extension RecipeDetailsViewModel {
+    
+    func didSelectComment() {
+        router.pushCommentList(recipeId: recipeId)
+    }
+    
+    func likeButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.placeOnWindowLogin()
+            return
+        }
+        switch isLiked {
+        case true:
+            self.getRecipeslikeRequest(likeType: .unlike)
+        case false:
+            self.getRecipeslikeRequest(likeType: .like)
+        }
+    }
+    
+    func followButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLoginWarningUp()
+            return
+        }
+        
+        switch isFollowing {
+        case true:
+            self.unfollowShow?()
+        case false:
+            self.userFollowRequest(followType: .follow)
+        }
+    }
+    
+    func commentButtonTapped() {
+        router.presentLoginWarningUp()
     }
 }
 
@@ -91,7 +145,6 @@ extension RecipeDetailsViewModel {
         showLoading?()
         dataProvider.request(for: GetRecipeCommentsRequest(recipeId: recipeId)) { [weak self] result in
             guard let self = self else { return }
-            self.hideLoading?()
             switch result {
             case .success(let response):
                 let cellItems = response.data.prefix(3).map({ CommentCellModel(comment: $0) })
@@ -102,7 +155,35 @@ extension RecipeDetailsViewModel {
             }
         }
     }
-
+    
+    func getRecipeslikeRequest(likeType: GetRecipesLikesRequest.LikeType) {
+        let recipeId = self.recipeId
+        let request = GetRecipesLikesRequest(recipeId: recipeId, likeType: likeType)
+        dataProvider.request(for: request) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.likedStasus?()
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
+        }
+    }
+    
+    func userFollowRequest(followType: UserFollowRequest.FollowType) {
+        guard let followedId = followedId else { return }
+        let request = UserFollowRequest(followedId: followedId, followType: followType)
+        dataProvider.request(for: request) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.followingStatus?()
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
+        }
+    }
+    
     func setData(recipeDetail: RecipeDetails) {
         username = recipeDetail.user.username
         userId = recipeDetail.user.id
@@ -122,21 +203,7 @@ extension RecipeDetailsViewModel {
         numberOfPeople = recipeDetail.numberOfPerson.text
         recipeSteps = recipeDetail.instructions
         timeOfRecipe = recipeDetail.timeOfRecipe.text
-    }
-}
-
-// MARK: - Actions
-extension RecipeDetailsViewModel {
-    
-    func didSelectComment() {
-        router.pushCommentList(recipeId: recipeId)
-    }
-    
-    func likeButtonTapped() {
-        router.presentLoginWarningUp()
-    }
-    
-    func commentButtonTapped() {
-        router.presentLoginWarningUp()
+        followedId = recipeDetail.user.id
+        isFollowing = recipeDetail.user.isFollowing
     }
 }
