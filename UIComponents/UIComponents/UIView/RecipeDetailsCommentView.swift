@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 2.06.2023.
 //
 
-
 public class RecipeDetailsCommentView: UIView {
     
     private let topContainerView = UIView()
