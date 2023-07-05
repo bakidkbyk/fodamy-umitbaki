@@ -18,5 +18,4 @@ public struct RegisterRequest: APIDecodableResponseRequest {
         parameters["email"] = email
         parameters["password"] = password
     }
-    
 }

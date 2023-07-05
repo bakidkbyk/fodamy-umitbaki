@@ -15,5 +15,4 @@ public struct LogoutRequest: APIDecodableResponseRequest {
     public var headers: RequestHeaders = [:]
     
     public init() {}
-    
 }

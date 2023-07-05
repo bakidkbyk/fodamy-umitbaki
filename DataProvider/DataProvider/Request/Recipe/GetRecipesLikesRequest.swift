@@ -28,5 +28,4 @@ public struct GetRecipesLikesRequest: APIDecodableResponseRequest {
         case like
         case unlike
     }
-    
 }
