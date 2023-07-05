@@ -113,6 +113,7 @@ extension RecipeDetailsViewController {
     
     private func configureContents() {
         view.backgroundColor = .appZircon
+        commentButton.addTarget(self, action: #selector(commentButtonAction), for: .touchUpInside)
     }
  
     private func setLocalize() {
@@ -139,7 +140,6 @@ extension RecipeDetailsViewController {
         userView.username                         = viewModel.username
         userView.recipeCountAndFollowersLabelText = viewModel.recipeAndFollowerCountText
         userView.userImgUrl                       = viewModel.userImageUrl
-        // userView.isShowsFollowButton              = viewModel.isFollowing
         ingredientsView.iconSubtitle              = viewModel.numberOfPeople
         ingredientsView.ingredients               = viewModel.ingredients
         instructionsView.iconSubtitle             = viewModel.timeOfRecipe
@@ -221,6 +221,15 @@ extension RecipeDetailsViewController {
             guard let self = self else { return }
             self.unfollowShowAlert()
         }
+    }
+}
+
+// MARK: - Actions
+extension RecipeDetailsViewController {
+    
+    @objc
+    func commentButtonAction() {
+        viewModel.commentButtonTapped()
     }
 }
 

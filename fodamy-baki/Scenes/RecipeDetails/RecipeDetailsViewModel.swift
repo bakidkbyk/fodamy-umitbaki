@@ -13,7 +13,6 @@ protocol RecipeDetailsViewDataSource {
     var userId: Int? { get }
     var recipeHeaderImageUrl: String? { get }
     var userImageUrl: String? { get }
-    // var userFollowedCount: Int? { get }
     var recipeName: String? { get }
     var recipeCount: Int? { get }
     var categoryName: String? { get }
@@ -45,7 +44,6 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
     var userId: Int?
     var recipeHeaderImageUrl: String?
     var userImageUrl: String?
-    // var userFollowedCount: Int?
     var recipeName: String?
     var recipeCount: Int?
     var categoryName: String?
@@ -93,7 +91,7 @@ extension RecipeDetailsViewModel {
     
     func likeButtonTapped() {
         guard keychain.get(Keychain.token) != nil else {
-            router.placeOnWindowLogin()
+            router.presentLogin()
             return
         }
         switch isLiked {
@@ -119,7 +117,11 @@ extension RecipeDetailsViewModel {
     }
     
     func commentButtonTapped() {
-        router.presentLoginWarningUp()
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLoginWarningUp()
+            return
+        }
+        router.pushCommentList(recipeId: recipeId)
     }
 }
 

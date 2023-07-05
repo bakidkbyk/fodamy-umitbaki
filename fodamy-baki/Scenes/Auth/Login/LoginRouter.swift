@@ -7,5 +7,5 @@
 
 final class LoginRouter: Router, LoginRouter.Routes {
     
-    typealias Routes = RegisterRoute & ForgotPasswordRoute & HomePlaceOnWindowRoute & RecipesRoute
+    typealias Routes = RegisterRoute & ForgotPasswordRoute & DismissableRoute
 }

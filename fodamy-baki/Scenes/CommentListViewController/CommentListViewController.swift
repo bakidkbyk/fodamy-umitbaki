@@ -24,6 +24,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         configureContents()
         setLocalize()
         subscribeViewModel()
+        sendButtonTapped()
         viewModel.getRecipeCommentList(isRefreshing: false, isPaging: false)
     }
 }
@@ -60,7 +61,7 @@ extension CommentListViewController {
         keyboardHelper.delegate = self
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
-        bottomViewBottomConstraint?.isActive = true        
+        bottomViewBottomConstraint?.isActive = true
     }
     
     private func setLocalize() {
@@ -77,6 +78,13 @@ extension CommentListViewController {
             viewModel.getRecipeCommentList(isRefreshing: true, isPaging: false)
         }
     }
+    
+    private func sendButtonTapped() {
+        commentInputView.sendButtonTapped = { [weak self] text in
+            guard let self = self else { return }
+            self.viewModel.sendButtonTapped(commentText: text)
+        }
+    }
 }
 
 // MARK: - Subscribe View Model
@@ -91,6 +99,11 @@ extension CommentListViewController {
         viewModel.endRefreshing = { [weak self] in
             guard let self = self else { return }
             self.refreshControl.endRefreshing()
+        }
+        
+        viewModel.postCommentDidSuccess = { [weak self] in
+            guard let self = self else { return }
+            self.commentInputView.textViewText = ""
         }
     }
 }

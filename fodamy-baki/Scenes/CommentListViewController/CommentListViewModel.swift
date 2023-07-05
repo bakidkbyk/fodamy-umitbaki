@@ -5,6 +5,9 @@
 //  Created by Baki Dikbıyık on 9.06.2023.
 //
 
+import Utilities
+import KeychainSwift
+
 protocol CommentListViewDataSource {
     func numberOfItemsAt() -> Int
     func cellItemsAt(_ indexPath: IndexPath) -> CommentCellProtocol
@@ -12,6 +15,7 @@ protocol CommentListViewDataSource {
 
 protocol CommentListViewEventSource {
     var didSuccessListComments: VoidClosure? { get set }
+    var postCommentDidSuccess: VoidClosure? { get set }
 }
 
 protocol CommentListViewProtocol: CommentListViewDataSource, CommentListViewEventSource {
@@ -20,13 +24,16 @@ protocol CommentListViewProtocol: CommentListViewDataSource, CommentListViewEven
 }
 
 final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListViewProtocol {
-
+    
     var recipeId: Int
     var page = 1
     var isRequestEnabled = false
     var isPagingEnabled = false
+    var keychain = KeychainSwift()
+    
     var endRefreshing: VoidClosure?
     var didSuccessListComments: VoidClosure?
+    var postCommentDidSuccess: VoidClosure?
     
     private var cellItems: [CommentCellProtocol] = []
     
@@ -78,7 +85,36 @@ extension CommentListViewModel {
         }
     }
     
+    func postRecipeComment(commentText: String) {
+        showLoading?()
+        let request = PostRecipeCommentRequest(recipeId: recipeId, commentText: commentText)
+        dataProvider.request(for: request) { [weak self] result in
+            guard let self = self else { return }
+            self.hideLoading?()
+            switch result {
+            case .success:
+                self.cellItems.removeAll()
+                self.getRecipeCommentList(isRefreshing: false, isPaging: false)
+                self.postCommentDidSuccess?()
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
+        }
+    }
+    
     func fetchMorePages() {
         getRecipeCommentList(isRefreshing: false, isPaging: true)
+    }
+}
+
+// MARK: - Actions
+extension CommentListViewModel {
+    
+    func sendButtonTapped(commentText: String) {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLogin()
+            return
+        }
+        postRecipeComment(commentText: commentText)
     }
 }

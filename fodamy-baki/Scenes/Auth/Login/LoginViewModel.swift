@@ -9,20 +9,16 @@ import KeychainSwift
 
 protocol LoginViewDataSource {}
 
-protocol LoginViewEventSource {
-    var pushHomeClosure: VoidClosure? { get }
-}
+protocol LoginViewEventSource {}
 
 protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
     func showRegisterScreen()
     func showForgotPasswordScreen()
-    func showHomeScreen()
     func sendLoginRequest(username: String, password: String)
 }
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
-    
-    var pushHomeClosure: VoidClosure?
+   
     let keyChainSwift = KeychainSwift()
 }
 
@@ -35,10 +31,6 @@ extension LoginViewModel {
     
     func showForgotPasswordScreen() {
         router.pushForgotPassword()
-    }
-    
-    func showHomeScreen() {
-        router.placeOnWindowHome()
     }
 }
 
@@ -53,7 +45,7 @@ extension LoginViewModel {
             switch result {
             case .success(let response):
                 self.keyChainSwift.set(response.token, forKey: Keychain.token)
-                self.pushHomeClosure?()
+                self.router.dismiss()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }

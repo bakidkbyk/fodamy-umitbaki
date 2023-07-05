@@ -61,7 +61,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         addSubViews()
         configureContents()
         setLocalize()
-        subscribeViewModel()
+        // subscribeViewModel()
     }
 }
 
@@ -185,10 +185,10 @@ extension LoginViewController {
 // MARK: - Subscribe View Model
 extension LoginViewController {
     
-    private func subscribeViewModel() {
-        viewModel.pushHomeClosure = { [weak self] in
-            guard let self = self else { return }
-            self.viewModel.showHomeScreen()
-        }
-    }
+//    private func subscribeViewModel() {
+//        viewModel.pushHomeClosure = { [weak self] in
+//            guard let self = self else { return }
+//            self.viewModel.dismissButtonTapped()
+//        }
+//    }
 }
