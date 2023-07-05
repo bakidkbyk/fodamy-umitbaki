@@ -72,6 +72,7 @@
 		FADE8AC6299A1BE6008A1A83 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8AC3299A1BE6008A1A83 /* RecipesViewController.swift */; };
 		FADE8AC7299A1BE6008A1A83 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8AC4299A1BE6008A1A83 /* RecipesViewModel.swift */; };
 		FADE8ACB299A6323008A1A83 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8ACA299A6323008A1A83 /* MainNavigationController.swift */; };
+		FAE1C8D02A5429B800705C63 /* DismissableRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1C8CF2A5429B800705C63 /* DismissableRoute.swift */; };
 		FAF3DA7D2A33124700A9E3D3 /* CommentListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DA7A2A33124700A9E3D3 /* CommentListRouter.swift */; };
 		FAF3DA7E2A33124700A9E3D3 /* CommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DA7B2A33124700A9E3D3 /* CommentListViewController.swift */; };
 		FAF3DA7F2A33124700A9E3D3 /* CommentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DA7C2A33124700A9E3D3 /* CommentListViewModel.swift */; };
@@ -149,6 +150,7 @@
 		FADE8AC3299A1BE6008A1A83 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		FADE8AC4299A1BE6008A1A83 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		FADE8ACA299A6323008A1A83 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		FAE1C8CF2A5429B800705C63 /* DismissableRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissableRoute.swift; sourceTree = "<group>"; };
 		FAF3DA7A2A33124700A9E3D3 /* CommentListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListRouter.swift; sourceTree = "<group>"; };
 		FAF3DA7B2A33124700A9E3D3 /* CommentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewController.swift; sourceTree = "<group>"; };
 		FAF3DA7C2A33124700A9E3D3 /* CommentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewModel.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 		FAC3A835298420960095A7C3 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				FAE1C8CE2A5429AD00705C63 /* Route */,
 				FAC3A83E298421570095A7C3 /* Transitions */,
 				FAC3A83B298420FB0095A7C3 /* Routers */,
 				FAC3A8362984209D0095A7C3 /* Core */,
@@ -445,6 +448,14 @@
 				FACE72FF298963C8001B98D4 /* WalkthroughRoute.swift */,
 			);
 			path = Walkthrough;
+			sourceTree = "<group>";
+		};
+		FAE1C8CE2A5429AD00705C63 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				FAE1C8CF2A5429B800705C63 /* DismissableRoute.swift */,
+			);
+			path = Route;
 			sourceTree = "<group>";
 		};
 		FAF3DA792A33121E00A9E3D3 /* CommentListViewController */ = {
@@ -646,6 +657,7 @@
 				FAB84899299656D2007D5CA7 /* HomeTabBarViewController.swift in Sources */,
 				FAB60DB6297FD9FD00F1DB9A /* Validation.swift in Sources */,
 				FAF3DA7F2A33124700A9E3D3 /* CommentListViewModel.swift in Sources */,
+				FAE1C8D02A5429B800705C63 /* DismissableRoute.swift in Sources */,
 				FAF3DA7D2A33124700A9E3D3 /* CommentListRouter.swift in Sources */,
 				FAF3DA7E2A33124700A9E3D3 /* CommentListViewController.swift in Sources */,
 				FACE72F229892447001B98D4 /* ForgotPasswordViewController.swift in Sources */,
