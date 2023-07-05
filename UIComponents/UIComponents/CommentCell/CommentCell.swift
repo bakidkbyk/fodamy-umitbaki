@@ -86,5 +86,4 @@ extension CommentCell {
         userView.height(65)
         userView.isShowsFollowButton = false
     }
-    
 }
