@@ -82,7 +82,6 @@ extension CommentInputView {
     
     private func configureContents() {
         textView.delegate = self
-        
         sendButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
     }
 }
