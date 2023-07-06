@@ -26,10 +26,7 @@ protocol RecipeDetailsViewDataSource {
     var timeOfRecipe: String? { get }
 }
 
-protocol RecipeDetailsViewEventSource {
-    var reloadDetailData: VoidClosure? { get set }
-    var reloadCommentData: VoidClosure? { get set }
-}
+protocol RecipeDetailsViewEventSource {}
 
 protocol RecipeDetailsViewProtocol: RecipeDetailsViewDataSource, RecipeDetailsViewEventSource {
     func didSelectComment()
@@ -39,7 +36,7 @@ protocol RecipeDetailsViewProtocol: RecipeDetailsViewDataSource, RecipeDetailsVi
 }
 
 final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDetailsViewProtocol {
- 
+    
     var username: String?
     var userId: Int?
     var recipeHeaderImageUrl: String?
@@ -60,8 +57,8 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
     var commentsCellItems: [CommentCellProtocol] = []
     private let recipeId: Int
     
-    var reloadDetailData: VoidClosure?
-    var reloadCommentData: VoidClosure?
+    var isGetDataDidSuccess: VoidClosure?
+    
     var likedStasus: VoidClosure?
     var followingStatus: VoidClosure?
     var unfollowShow: VoidClosure?
@@ -69,17 +66,25 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
     var isLiked = false
     var followedId: Int?
     private let keychain = KeychainSwift()
-
+    private let dispatchGroup = DispatchGroup()
+    private var isGetRecipeDetailSuccess = false
+    private var isGetRecipeCommentSuccess = false
+    
     init(recipeId: Int, router: RecipeDetailsRouter) {
         self.recipeId = recipeId
         super.init(router: router)
     }
     
     var userFollowedCount: Int? {
-            didSet {
-                recipeAndFollowerCountText = "\(recipeCount ?? 0) Tarif \(userFollowedCount ?? 0) Takipçi"
-            }
+        didSet {
+            recipeAndFollowerCountText = "\(recipeCount ?? 0) Tarif \(userFollowedCount ?? 0) Takipçi"
         }
+    }
+    
+    override func tryAgainButtonTapped() {
+        self.hideTryAgainButton?()
+        getData()
+    }
 }
 
 // MARK: - Actions
@@ -96,9 +101,9 @@ extension RecipeDetailsViewModel {
         }
         switch isLiked {
         case true:
-            self.getRecipeslikeRequest(likeType: .unlike)
+            self.recipeslikeRequest(likeType: .unlike)
         case false:
-            self.getRecipeslikeRequest(likeType: .like)
+            self.recipeslikeRequest(likeType: .like)
         }
     }
     
@@ -117,7 +122,7 @@ extension RecipeDetailsViewModel {
     }
     
     func commentButtonTapped() {
-        guard keychain.get(Keychain.token) != nil else {
+        guard  keychain.get(Keychain.token) != nil else {
             router.presentLoginWarningUp()
             return
         }
@@ -129,14 +134,15 @@ extension RecipeDetailsViewModel {
 extension RecipeDetailsViewModel {
     
     func getRecipesDetail() {
-        showLoading?()
-        dataProvider.request(for: GetRecipeDetailsRequest(recipeId: recipeId)) { [weak self] result in
+        let request = GetRecipeDetailsRequest(recipeId: recipeId)
+        dispatchGroup.enter()
+        dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
-            self.hideLoading?()
+            self.dispatchGroup.leave()
             switch result {
             case .success(let recipeDetails):
                 self.setData(recipeDetail: recipeDetails)
-                self.reloadDetailData?()
+                self.isGetRecipeDetailSuccess = true
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
@@ -144,25 +150,29 @@ extension RecipeDetailsViewModel {
     }
     
     func getRecipesDetailsComment() {
-        showLoading?()
-        dataProvider.request(for: GetRecipeCommentsRequest(recipeId: recipeId)) { [weak self] result in
+        let request = GetRecipeCommentsRequest(recipeId: recipeId)
+        dispatchGroup.enter()
+        dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
+            self.dispatchGroup.leave()
             switch result {
             case .success(let response):
                 let cellItems = response.data.prefix(3).map({ CommentCellModel(comment: $0) })
                 self.commentsCellItems.append(contentsOf: cellItems)
-                self.reloadCommentData?()
+                self.isGetRecipeCommentSuccess = true
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
         }
     }
     
-    func getRecipeslikeRequest(likeType: GetRecipesLikesRequest.LikeType) {
+    func recipeslikeRequest(likeType: RecipesLikesRequest.LikeType) {
         let recipeId = self.recipeId
-        let request = GetRecipesLikesRequest(recipeId: recipeId, likeType: likeType)
+        showLoading?()
+        let request = RecipesLikesRequest(recipeId: recipeId, likeType: likeType)
         dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
+            self.hideLoading?()
             switch result {
             case .success:
                 self.likedStasus?()
@@ -207,5 +217,29 @@ extension RecipeDetailsViewModel {
         timeOfRecipe = recipeDetail.timeOfRecipe.text
         followedId = recipeDetail.user.id
         isFollowing = recipeDetail.user.isFollowing
+    }
+    
+    func getData() {
+        if !isGetRecipeDetailSuccess || !isGetRecipeCommentSuccess {
+            showActivityIndicatorView?()
+        }
+        
+        if !isGetRecipeDetailSuccess {
+            getRecipesDetail()
+        }
+        
+        if !isGetRecipeCommentSuccess {
+            getRecipesDetailsComment()
+        }
+        
+        dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
+            guard let self = self else { return }
+            self.hideActivityIndicatorView?()
+            if self.isGetRecipeDetailSuccess && self.isGetRecipeCommentSuccess {
+                self.isGetDataDidSuccess?()
+            } else {
+                self.showTryAgainButton?()
+            }
+        }
     }
 }

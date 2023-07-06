@@ -5,7 +5,7 @@
 //  Created by Baki Dikbıyık on 26.06.2023.
 //
 
-public struct GetRecipesLikesRequest: APIDecodableResponseRequest {
+public struct RecipesLikesRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = SuccessResponse
     

@@ -36,7 +36,7 @@
 		FABFE92129B70F7B00F78DFD /* CategoryRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFE92029B70F7B00F78DFD /* CategoryRecipes.swift */; };
 		FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72EB2989117E001B98D4 /* LoginRequest.swift */; };
 		FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */; };
-		FAD32D0C2A4964DB0018052B /* GetRecipesLikesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD32D0B2A4964DB0018052B /* GetRecipesLikesRequest.swift */; };
+		FAD32D0C2A4964DB0018052B /* RecipesLikesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD32D0B2A4964DB0018052B /* RecipesLikesRequest.swift */; };
 		FAD32D0E2A4965E00018052B /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD32D0D2A4965E00018052B /* SuccessResponse.swift */; };
 		FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */; };
 		FAF3DCD829B0AC0700DDE6D8 /* FodamyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCD729B0AC0700DDE6D8 /* FodamyRequest.swift */; };
@@ -76,7 +76,7 @@
 		FABFE92029B70F7B00F78DFD /* CategoryRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRecipes.swift; sourceTree = "<group>"; };
 		FACE72EB2989117E001B98D4 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
-		FAD32D0B2A4964DB0018052B /* GetRecipesLikesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesLikesRequest.swift; sourceTree = "<group>"; };
+		FAD32D0B2A4964DB0018052B /* RecipesLikesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesLikesRequest.swift; sourceTree = "<group>"; };
 		FAD32D0D2A4965E00018052B /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
 		FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		FAF3DCD729B0AC0700DDE6D8 /* FodamyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FodamyRequest.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequest.swift */,
 				FABFE91E29B70F4600F78DFD /* GetCategoryRecipesRequest.swift */,
 				FA3DB65E29E7EA0B00888DB2 /* GetRecipeDetailsRequest.swift */,
-				FAD32D0B2A4964DB0018052B /* GetRecipesLikesRequest.swift */,
+				FAD32D0B2A4964DB0018052B /* RecipesLikesRequest.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 				FAF3DCD829B0AC0700DDE6D8 /* FodamyRequest.swift in Sources */,
 				FA910931296E8263005F8651 /* RequestEncoding.swift in Sources */,
 				FACE72EC2989117E001B98D4 /* LoginRequest.swift in Sources */,
-				FAD32D0C2A4964DB0018052B /* GetRecipesLikesRequest.swift in Sources */,
+				FAD32D0C2A4964DB0018052B /* RecipesLikesRequest.swift in Sources */,
 				FA910933296E8286005F8651 /* DataProviderProtocol.swift in Sources */,
 				FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */,
 				FA91092F296E8237005F8651 /* RequestMethod.swift in Sources */,

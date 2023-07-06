@@ -11,6 +11,11 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum BaseViewController {
+    /// Tekrar Dene
+    public static let errorTitle = L10n.tr("Localizable", "BaseViewController.errorTitle")
+  }
+
   public enum CommentList {
     /// Yorumlar
     public static let comments = L10n.tr("Localizable", "CommentList.comments")
