@@ -48,6 +48,12 @@ public class RecipeDetailsCountInfoView: UIView {
         }
     }
     
+    public var iconColor: UIColor? {
+        didSet {
+            actionImageButton.tintColor = iconColor
+        }
+    }
+    
     public var count: Int? {
         willSet {
             countLabel.text = newValue?.toString

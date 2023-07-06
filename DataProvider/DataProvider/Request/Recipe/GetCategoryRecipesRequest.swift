@@ -17,5 +17,4 @@ public struct GetCategoryRecipesRequest: APIDecodableResponseRequest {
     public init(page: Int) {
         parameters["page"] = page
     }
-    
 }

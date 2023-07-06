@@ -54,8 +54,8 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
         configureContents()
         setLocalize()
         subscribeViewModel()
-        viewModel.getRecipesDetail()
-        viewModel.getRecipesDetailsComment()
+        subscribeViewController()
+        viewModel.getData()
     }
 }
 
@@ -112,8 +112,10 @@ extension RecipeDetailsViewController {
     
     private func configureContents() {
         view.backgroundColor = .appZircon
+        
+        commentButton.addTarget(self, action: #selector(commentButtonAction), for: .touchUpInside)
     }
-    
+ 
     private func setLocalize() {
         commentCountInfoView.icon  = .icComment
         commentCountInfoView.info  = L10n.RecipeDetails.comment
@@ -138,28 +140,25 @@ extension RecipeDetailsViewController {
         userView.username                         = viewModel.username
         userView.recipeCountAndFollowersLabelText = viewModel.recipeAndFollowerCountText
         userView.userImgUrl                       = viewModel.userImageUrl
-        userView.isShowsFollowButton              = viewModel.isFollowing
         ingredientsView.iconSubtitle              = viewModel.numberOfPeople
         ingredientsView.ingredients               = viewModel.ingredients
         instructionsView.iconSubtitle             = viewModel.timeOfRecipe
         instructionsView.ingredients              = viewModel.recipeSteps
+        userView.isFollowing                      = viewModel.isFollowing
     }
 }
-
-// MARK: - Subscribe View Model
+// MARK: - Actions
 extension RecipeDetailsViewController {
     
-    private func subscribeViewModel() {
-        viewModel.reloadDetailData = { [weak self] in
-            guard let self = self else { return }
-            self.fillData()
-        }
-        
-        viewModel.reloadCommentData = { [weak self] in
-            guard let self = self else { return }
-            self.commentView.recipeCommentData = self.viewModel.commentsCellItems
-        }
-        
+    @objc
+    func commentButtonAction() {
+        viewModel.commentButtonTapped()
+    }
+}
+// MARK: - Subscribe View Controller
+extension RecipeDetailsViewController {
+    
+    private func subscribeViewController() {
         commentView.didFetchComment = { [weak self] in
             guard let self = self else { return }
             self.viewModel.didSelectComment()
@@ -174,5 +173,77 @@ extension RecipeDetailsViewController {
             guard let self = self else { return }
             self.viewModel.commentButtonTapped()
         }
+        
+        userView.followButtonTapped = { [weak self] in
+            self?.viewModel.followButtonTapped()
+        }
+    }
+}
+// MARK: - Subscribe View Model
+extension RecipeDetailsViewController {
+    
+    private func subscribeViewModel() {
+        viewModel.isGetDataDidSuccess = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.fillData()
+                self.commentView.recipeCommentData = self.viewModel.commentsCellItems
+            }
+        }
+        
+        viewModel.likedStasus = { [weak self] in
+            guard let self = self else { return }
+            let isLiked = self.viewModel.isLiked
+            if isLiked {
+                self.likesCountInfoView.iconColor = .appCinder
+                self.viewModel.likeCount? -= 1
+                self.likesCountInfoView.count = self.viewModel.likeCount
+                self.viewModel.isLiked = false
+            } else {
+                self.likesCountInfoView.iconColor = .appRed
+                self.viewModel.likeCount? += 1
+                self.likesCountInfoView.count = self.viewModel.likeCount
+                self.viewModel.isLiked = true
+            }
+        }
+        
+        viewModel.followingStatus = { [weak self] in
+            guard let self = self else { return }
+            let isFollowing = self.viewModel.isFollowing
+            if isFollowing {
+                self.viewModel.userFollowedCount? -= 1
+                self.viewModel.isFollowing = false
+                self.userView.isFollowing = false
+            } else {
+                self.viewModel.userFollowedCount? += 1
+                self.viewModel.isFollowing = true
+                self.userView.isFollowing = true
+            }
+            
+            self.userView.recipeCountAndFollowersLabelText = self.viewModel.recipeAndFollowerCountText
+        }
+        
+        viewModel.unfollowShow = { [weak self] in
+            guard let self = self else { return }
+            self.unfollowShowAlert()
+        }
+    }
+}
+
+// MARK: - Show Alert
+extension RecipeDetailsViewController {
+    
+    private func unfollowShowAlert() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let unfollowAction = UIAlertAction(title: L10n.RecipeDetails.unfollow, style: .destructive) {  [weak self] _ in
+            self?.viewModel.userFollowRequest(followType: .unfollow)
+        }
+        
+        let cancelAction = UIAlertAction(title: L10n.RecipeDetails.cancel, style: .cancel)
+        
+        alertController.addAction(unfollowAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

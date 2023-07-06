@@ -65,14 +65,14 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
 extension RecipesViewModel {
     
     func fetchRecipeListing(isRefreshing: Bool, isPaging: Bool) {
-        var request: GetRecipesRequestRequest
+        var request: GetRecipesRequest
         switch recipesListing {
         case .editorChoices:
-            request = GetRecipesRequestRequest(page: page, listType: .editorChoiceRecipes)
+            request = GetRecipesRequest(page: page, listType: .editorChoiceRecipes)
         case .lastAdded:
-            request = GetRecipesRequestRequest(page: page, listType: .lastAddedRecipes)
+            request = GetRecipesRequest(page: page, listType: .lastAddedRecipes)
         case .categoryRecipes(let categoryId):
-            request = GetRecipesRequestRequest(page: page, listType: .categoryRecipes(categoryId: categoryId))
+            request = GetRecipesRequest(page: page, listType: .categoryRecipes(categoryId: categoryId))
         }
         
         if isRefreshing == false {

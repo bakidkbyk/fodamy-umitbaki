@@ -5,9 +5,16 @@
 //  Created by Baki Dikbıyık on 3.01.2023.
 //
 
+import UIKit
+
 class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewController.LoadingProtocols {
     
     typealias LoadingProtocols = LoadingProtocol & ActivityIndicatorProtocol
+    
+    private let tryAgainButton = UIButtonBuilder()
+        .titleColor(.appWhite)
+        .titleFont(.font(.nunitoBold, size: .xLarge))
+        .build()
     
     var viewModel: V
     
@@ -28,6 +35,33 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
         subscribeLoading()
         subscribeActivityIndicator()
         subscribeToast()
+        
+    }
+    
+    private func addTryAgainButton() {
+        view.addSubview(tryAgainButton)
+        tryAgainButton.centerInSuperview()
+        tryAgainButton.size(CGSize(width: 200, height: 50))
+        tryAgainButton.setTitle(L10n.BaseViewController.errorTitle, for: .normal)
+        tryAgainButton.backgroundColor = .appRed
+        tryAgainButton.addTarget(self, action: #selector(tryAgainButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc
+    private func tryAgainButtonTapped() {
+        viewModel.tryAgainButtonTapped()
+    }
+    
+    func subscribeShowTryAgainButton() {
+        viewModel.showTryAgainButton = { [weak self] in
+            self?.addTryAgainButton()
+        }
+    }
+    
+    func subscribeHideTryAgainButton() {
+        viewModel.hideTryAgainButton = { [weak self] in
+            self?.tryAgainButton.removeFromSuperview()
+        }
     }
     
     private func subscribeActivityIndicator() {
@@ -66,5 +100,4 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
         debugPrint("deinit \(self)")
     }
     #endif
-    
 }

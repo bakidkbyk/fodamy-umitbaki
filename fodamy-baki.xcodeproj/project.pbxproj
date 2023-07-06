@@ -292,6 +292,7 @@
 		FAA8198D2964217F00B4C83A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FAB60D93297FAC9900F1DB9A /* Auth */,
 				FA1D9E322A458AF8008B0CA2 /* LoginWarningUp */,
 				FAF3DA792A33121E00A9E3D3 /* CommentListViewController */,
 				FA5BBD3729DAB32500220EAD /* RecipeDetails */,
@@ -299,7 +300,6 @@
 				FAB84895299656D2007D5CA7 /* HomeTabBar */,
 				FA271C1B299112CF0069CFE3 /* FavoritesControler */,
 				FACE72F829895EA2001B98D4 /* Walkthrough */,
-				FAB60D93297FAC9900F1DB9A /* Auth */,
 				FAA819B32964403200B4C83A /* Base */,
 				FAA819BE2964609A00B4C83A /* HomeViewController */,
 			);
