@@ -75,7 +75,7 @@ extension CommentListViewController {
     @objc
     func handleRefreshControl() {
         if refreshControl.isRefreshing {
-            viewModel.getRecipeCommentList(isRefreshing: true, isPaging: false)
+            viewModel.refreshData()
         }
     }
     
@@ -120,6 +120,10 @@ extension CommentListViewController {
             && viewModel.isRequestEnabled {
             viewModel.getRecipeCommentList(isRefreshing: false, isPaging: true)
         }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
     }
 }
 
@@ -172,6 +176,7 @@ extension CommentListViewController: KeyboardHelperDelegate {
     func keyboardWillHide() {
         UIView.animate(withDuration: 0.2) { [weak self] in
             guard let self = self else { return }
+            self.bottomViewBottomConstraint?.constant = 0
             self.view.layoutIfNeeded()
         }
     }

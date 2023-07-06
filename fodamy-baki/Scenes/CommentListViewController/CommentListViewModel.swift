@@ -44,6 +44,11 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
     func cellItemsAt(_ indexPath: IndexPath) -> CommentCellProtocol {
         return cellItems[indexPath.row]
     }
+    
+    func refreshData() {
+        page = 1
+        getRecipeCommentList(isRefreshing: false, isPaging: false)
+    }
 
     init(recipeId: Int, router: CommentListRouter) {
         self.recipeId = recipeId
@@ -63,7 +68,8 @@ extension CommentListViewModel {
             }
         }
         self.isRequestEnabled = false
-        dataProvider.request(for: GetRecipeCommentsRequest(recipeId: recipeId, page: page)) { [weak self] result in
+        let request = GetRecipeCommentsRequest(recipeId: recipeId, page: page)
+        dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
             if !isRefreshing {
                 self.hideLoading?()
@@ -94,6 +100,7 @@ extension CommentListViewModel {
             switch result {
             case .success:
                 self.cellItems.removeAll()
+                self.page = 1
                 self.getRecipeCommentList(isRefreshing: false, isPaging: false)
                 self.postCommentDidSuccess?()
             case .failure(let error):
