@@ -25,11 +25,11 @@ protocol CommentListViewProtocol: CommentListViewDataSource, CommentListViewEven
 
 final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListViewProtocol {
     
-    var recipeId: Int
-    var page = 1
+    private var recipeId: Int
+    private var page = 1
     var isRequestEnabled = false
     var isPagingEnabled = false
-    var keychain = KeychainSwift()
+    private let keychain = KeychainSwift()
     
     var endRefreshing: VoidClosure?
     var didSuccessListComments: VoidClosure?
