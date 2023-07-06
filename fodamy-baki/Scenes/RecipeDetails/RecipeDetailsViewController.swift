@@ -55,8 +55,7 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
         setLocalize()
         subscribeViewModel()
         subscribeViewController()
-        viewModel.getRecipesDetail()
-        viewModel.getRecipesDetailsComment()
+        viewModel.getData()
     }
 }
 
@@ -113,6 +112,8 @@ extension RecipeDetailsViewController {
     
     private func configureContents() {
         view.backgroundColor = .appZircon
+        
+        commentButton.addTarget(self, action: #selector(commentButtonAction), for: .touchUpInside)
     }
  
     private func setLocalize() {
@@ -139,12 +140,19 @@ extension RecipeDetailsViewController {
         userView.username                         = viewModel.username
         userView.recipeCountAndFollowersLabelText = viewModel.recipeAndFollowerCountText
         userView.userImgUrl                       = viewModel.userImageUrl
-        // userView.isShowsFollowButton              = viewModel.isFollowing
         ingredientsView.iconSubtitle              = viewModel.numberOfPeople
         ingredientsView.ingredients               = viewModel.ingredients
         instructionsView.iconSubtitle             = viewModel.timeOfRecipe
         instructionsView.ingredients              = viewModel.recipeSteps
         userView.isFollowing                      = viewModel.isFollowing
+    }
+}
+// MARK: - Actions
+extension RecipeDetailsViewController {
+    
+    @objc
+    func commentButtonAction() {
+        viewModel.commentButtonTapped()
     }
 }
 // MARK: - Subscribe View Controller
@@ -175,14 +183,12 @@ extension RecipeDetailsViewController {
 extension RecipeDetailsViewController {
     
     private func subscribeViewModel() {
-        viewModel.reloadDetailData = { [weak self] in
+        viewModel.isGetDataDidSuccess = { [weak self] in
             guard let self = self else { return }
-            self.fillData()
-        }
-        
-        viewModel.reloadCommentData = { [weak self] in
-            guard let self = self else { return }
-            self.commentView.recipeCommentData = self.viewModel.commentsCellItems
+            DispatchQueue.main.async {
+                self.fillData()
+                self.commentView.recipeCommentData = self.viewModel.commentsCellItems
+            }
         }
         
         viewModel.likedStasus = { [weak self] in
