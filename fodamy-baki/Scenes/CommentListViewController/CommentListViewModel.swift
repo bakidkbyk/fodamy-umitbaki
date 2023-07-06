@@ -5,7 +5,6 @@
 //  Created by Baki Dikbıyık on 9.06.2023.
 //
 
-import Utilities
 import KeychainSwift
 
 protocol CommentListViewDataSource {
@@ -19,7 +18,7 @@ protocol CommentListViewEventSource {
 }
 
 protocol CommentListViewProtocol: CommentListViewDataSource, CommentListViewEventSource {
-    func getRecipeCommentList(isRefreshing: Bool, isPaging: Bool)
+    func getRecipeCommentList(showloading: Bool)
     func fetchMorePages()
 }
 
@@ -47,7 +46,7 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
     
     func refreshData() {
         page = 1
-        getRecipeCommentList(isRefreshing: false, isPaging: false)
+        getRecipeCommentList(showloading: false)
     }
 
     init(recipeId: Int, router: CommentListRouter) {
@@ -59,24 +58,14 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
 // MARK: - Network
 extension CommentListViewModel {
     
-    func getRecipeCommentList(isRefreshing: Bool, isPaging: Bool) {
-        if isRefreshing == false {
-            if page == 1 && isPaging == false {
-                showLoading?()
-            } else {
-                showActivityIndicatorBottomView?()
-            }
-        }
+    func getRecipeCommentList(showloading: Bool) {
         self.isRequestEnabled = false
+        if showloading { self.showLoading?() }
         let request = GetRecipeCommentsRequest(recipeId: recipeId, page: page)
         dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
-            if !isRefreshing {
-                self.hideLoading?()
-                self.hideActivityIndicatorView?()
-            } else {
-                self.endRefreshing?()
-            }
+            self.hideLoading?()
+            self.endRefreshing?()
             self.isRequestEnabled = true
             switch result {
             case .success(let response):
@@ -101,7 +90,7 @@ extension CommentListViewModel {
             case .success:
                 self.cellItems.removeAll()
                 self.page = 1
-                self.getRecipeCommentList(isRefreshing: false, isPaging: false)
+                self.getRecipeCommentList(showloading: true)
                 self.postCommentDidSuccess?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
@@ -110,7 +99,7 @@ extension CommentListViewModel {
     }
     
     func fetchMorePages() {
-        getRecipeCommentList(isRefreshing: false, isPaging: true)
+        getRecipeCommentList(showloading: false)
     }
 }
 

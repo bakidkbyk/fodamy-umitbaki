@@ -25,7 +25,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         setLocalize()
         subscribeViewModel()
         sendButtonTapped()
-        viewModel.getRecipeCommentList(isRefreshing: false, isPaging: false)
+        viewModel.getRecipeCommentList(showloading: true)
     }
 }
 
@@ -118,7 +118,7 @@ extension CommentListViewController {
         
         if contentOffsetY > contentHeight - height && viewModel.isPagingEnabled
             && viewModel.isRequestEnabled {
-            viewModel.getRecipeCommentList(isRefreshing: false, isPaging: true)
+            viewModel.getRecipeCommentList(showloading: false)
         }
     }
     
