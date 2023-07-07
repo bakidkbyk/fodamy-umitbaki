@@ -63,6 +63,8 @@ public enum L10n {
     public static let loginButtonText = L10n.tr("Localizable", "Login.loginButtonText")
     /// Şifre
     public static let passwordPlaceHolder = L10n.tr("Localizable", "Login.passwordPlaceHolder")
+    /// Giriş Başarılı
+    public static let succeedLogin = L10n.tr("Localizable", "Login.succeedLogin")
     /// Giriş Yap
     public static let title = L10n.tr("Localizable", "Login.title")
     /// Kullanıcı adı

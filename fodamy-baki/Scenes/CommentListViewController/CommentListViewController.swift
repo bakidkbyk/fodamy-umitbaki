@@ -24,7 +24,8 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         configureContents()
         setLocalize()
         subscribeViewModel()
-        viewModel.getRecipeCommentList(isRefreshing: false, isPaging: false)
+        sendButtonTapped()
+        viewModel.getRecipeCommentList(showloading: true)
     }
 }
 
@@ -60,7 +61,7 @@ extension CommentListViewController {
         keyboardHelper.delegate = self
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
-        bottomViewBottomConstraint?.isActive = true        
+        bottomViewBottomConstraint?.isActive = true
     }
     
     private func setLocalize() {
@@ -74,7 +75,21 @@ extension CommentListViewController {
     @objc
     func handleRefreshControl() {
         if refreshControl.isRefreshing {
-            viewModel.getRecipeCommentList(isRefreshing: true, isPaging: false)
+            viewModel.refreshData()
+        }
+    }
+    
+    private func sendButtonTapped() {
+        commentInputView.sendButtonTapped = { [weak self] text in
+            guard let self = self else { return }
+            self.viewModel.sendButtonTapped(commentText: text)
+        }
+    }
+    
+    private func sendButtonTapped() {
+        commentInputView.sendButtonTapped = { [weak self] text in
+            guard let self = self else { return }
+            self.viewModel.sendButtonTapped(commentText: text)
         }
     }
 }
@@ -92,6 +107,11 @@ extension CommentListViewController {
             guard let self = self else { return }
             self.refreshControl.endRefreshing()
         }
+        
+        viewModel.postCommentDidSuccess = { [weak self] in
+            guard let self = self else { return }
+            self.commentInputView.textViewText = ""
+        }
     }
 }
 
@@ -105,8 +125,12 @@ extension CommentListViewController {
         
         if contentOffsetY > contentHeight - height && viewModel.isPagingEnabled
             && viewModel.isRequestEnabled {
-            viewModel.getRecipeCommentList(isRefreshing: false, isPaging: true)
+            viewModel.getRecipeCommentList(showloading: false)
         }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
     }
 }
 
@@ -159,6 +183,7 @@ extension CommentListViewController: KeyboardHelperDelegate {
     func keyboardWillHide() {
         UIView.animate(withDuration: 0.2) { [weak self] in
             guard let self = self else { return }
+            self.bottomViewBottomConstraint?.constant = 0
             self.view.layoutIfNeeded()
         }
     }

@@ -96,7 +96,7 @@ extension RecipeDetailsViewModel {
     
     func likeButtonTapped() {
         guard keychain.get(Keychain.token) != nil else {
-            router.placeOnWindowLogin()
+            router.presentLogin()
             return
         }
         switch isLiked {
