@@ -35,8 +35,12 @@ public class UserView: UIView {
     private lazy var followButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
     
     public var userImgUrl: String? {
-        willSet {
-            userImageView.setImage(newValue)
+        didSet {
+            if let url = userImgUrl, !url.isEmpty {
+                userImageView.setImage(url)
+            } else {
+                userImageView.image = .icUser
+            }
         }
     }
     
@@ -58,11 +62,19 @@ public class UserView: UIView {
         }
     }
     
+    public var isFollowing = false {
+        didSet {
+            updateFollowButton()
+        }
+    }
+    
     public var followButtonTitle: String? {
         willSet {
             followButton.setTitle(newValue, for: .normal)
         }
     }
+    
+    public var followButtonTapped: VoidClosure?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -105,7 +117,27 @@ extension UserView {
     
     private func configureContent() {
         backgroundColor = .appWhite
-        
+        followButton.addTarget(self, action: #selector(followButtonAction), for: .touchUpInside)
     }
     
+    private func updateFollowButton() {
+        if isFollowing {
+            followButton.setTitle(L10n.RecipeDetails.following, for: .normal)
+            followButton.setTitleColor(.white, for: .normal)
+            followButton.backgroundColor = .appRed
+        } else {
+            followButton.setTitle(L10n.RecipeDetails.follow, for: .normal)
+            followButton.setTitleColor(.appRed, for: .normal)
+            followButton.backgroundColor = .appWhite
+        }
+    }
+}
+
+// MARK: - Actions
+extension UserView {
+    
+    @objc
+    func followButtonAction() {
+        followButtonTapped?()
+    }
 }

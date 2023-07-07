@@ -18,6 +18,7 @@ protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
 }
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
+   
     let keyChainSwift = KeychainSwift()
 }
 
@@ -44,6 +45,8 @@ extension LoginViewModel {
             switch result {
             case .success(let response):
                 self.keyChainSwift.set(response.token, forKey: Keychain.token)
+                self.showWarningToast?(L10n.Login.succeedLogin)
+                self.router.dismiss()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }

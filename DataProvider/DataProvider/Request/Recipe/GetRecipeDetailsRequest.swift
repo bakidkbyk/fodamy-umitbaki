@@ -15,5 +15,4 @@ public struct GetRecipeDetailsRequest: APIDecodableResponseRequest {
     public init(recipeId: Int) {
         self.path = "recipe/\(recipeId)"
     }
-    
 }

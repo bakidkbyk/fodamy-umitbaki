@@ -5,7 +5,7 @@
 //  Created by Baki Dikbıyık on 2.03.2023.
 //
 
-public struct GetRecipesRequestRequest: FodamyRequest {
+public struct GetRecipesRequest: FodamyRequest {
     
     public typealias ResponseType = BaseResponse<[Recipe]>
     

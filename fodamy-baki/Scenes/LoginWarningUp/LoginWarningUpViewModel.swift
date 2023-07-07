@@ -23,6 +23,6 @@ final class LoginWarningUpViewModel: BaseViewModel<LoginWarningUpRouter>, LoginW
     }
     
     func loginButtonAction() {
-        router.placeOnWindowLogin()
+        router.presentLogin()
     }
 }

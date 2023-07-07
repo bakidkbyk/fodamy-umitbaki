@@ -6,20 +6,23 @@
   
 */
 
+// MARK: - Base View Controller
+"BaseViewController.errorTitle" = "Tekrar Dene";
+
 // MARK: - Walkthrough View Controller
-"Walkthrough.firstImageTitle"      = "Welcom to Fodamy Network!";
-"Walkthrough.firstImageSubtitle"   = "Fodamy is the best place to find your favorite
+"Walkthrough.firstImageTitle" = "Welcom to Fodamy Network!";
+"Walkthrough.firstImageSubtitle" = "Fodamy is the best place to find your favorite
 recipes in all around the word.";
-"Walkthrough.secondImageTitle"     = "Finding recipes were not that easy.";
-"Walkthrough.secondImageSubtitle"  = "Fodamy is the best place to find your favorite
+"Walkthrough.secondImageTitle" = "Finding recipes were not that easy.";
+"Walkthrough.secondImageSubtitle" = "Fodamy is the best place to find your favorite
  recipes in all around the word.";
-"Walkthrough.thirdImageTitle"      = "Add new recipe.";
-"Walkthrough.thirdImagesubtitle"   = "Fodamy is the best place to find your favorite
+"Walkthrough.thirdImageTitle" = "Add new recipe.";
+"Walkthrough.thirdImagesubtitle" = "Fodamy is the best place to find your favorite
  recipes in all around the word.";
-"Walkthrough.fourthImageTitle"     = "Share recipes with others.";
-"Walkthrough.fourthImageSubtitle"  = "Fodamy is the best place to find your favorite
+"Walkthrough.fourthImageTitle" = "Share recipes with others.";
+"Walkthrough.fourthImageSubtitle" = "Fodamy is the best place to find your favorite
  recipes in all around the word.";
-"Walkthrough.nextActionButtonNext"  = "İlerle";
+"Walkthrough.nextActionButtonNext" = "İlerle";
 "Walkthrough.nextActionButtonStart" = "Başla";
 
 // MARK: - Home View Controller
@@ -44,6 +47,7 @@ recipes in all around the word.";
 "Login.passwordPlaceHolder"      = "Şifre";
 "Login.emptyFields"              = "lütfen boş alanları doldurunuz";
 "Login.checkInformations"        = "lütfen bilgilerinizi kontrol ediniz.";
+"Login.succeedLogin" = "Giriş Başarılı";
 
 // MARK: - Register View Controller
 "Register.title"               = "Üye Ol";
@@ -69,10 +73,14 @@ recipes in all around the word.";
 "RecipeDetails.recipe" = "Tarif";
 "RecipeDetails.follower" = "Takipçi";
 "RecipeDetails.follow" = "Takip Et";
+"RecipeDetails.following" = "Takip Ediliyor";
 "RecipeDetails.ingredients" = "Malzemeler";
 "RecipeDetails.recipe" = "Yapılışı";
 "RecipeDetails.commentTitle" = "Yorumlar";
 "RecipeDetails.addComment" = "Yorum Ekle";
+"RecipeDetails.unfollow" = "Takibi Bırak";
+"RecipeDetails.cancel" = "İptal";
+
 
 // MARK: - Comment List View Controller
 "CommentList.comments" = "Yorumlar";

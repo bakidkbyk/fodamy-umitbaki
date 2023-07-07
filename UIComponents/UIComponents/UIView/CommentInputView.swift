@@ -33,14 +33,18 @@ public class CommentInputView: UIView {
         .tintColor(.appWhite)
         .build()
     
+    public var sendButtonTapped: StringClosure?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
+        configureContents()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addSubViews()
+        configureContents()
     }
     
     public var textViewText: String? {
@@ -55,7 +59,6 @@ extension CommentInputView {
     
     private func addSubViews() {
         backgroundColor = .appWhite
-        textView.delegate = self
         
         addSubview(textView)
         textView.topToSuperview().constant = 10
@@ -71,6 +74,25 @@ extension CommentInputView {
         sendButton.centerYToSuperview()
         sendButton.leftToRight(of: textView, offset: 15)
         sendButton.size(.init(width: 40, height: 40))
+    }
+}
+
+// MARK: - Configure Contents
+extension CommentInputView {
+    
+    private func configureContents() {
+        textView.delegate = self
+        sendButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
+    }
+}
+
+// MARK: - Actions
+extension CommentInputView {
+    
+    @objc
+    func sendButtonAction() {
+        textViewText = textView.text
+        sendButtonTapped?(textViewText ?? "")
     }
 }
 

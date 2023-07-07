@@ -11,6 +11,11 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum BaseViewController {
+    /// Tekrar Dene
+    public static let errorTitle = L10n.tr("Localizable", "BaseViewController.errorTitle")
+  }
+
   public enum CommentList {
     /// Yorumlar
     public static let comments = L10n.tr("Localizable", "CommentList.comments")
@@ -58,6 +63,8 @@ public enum L10n {
     public static let loginButtonText = L10n.tr("Localizable", "Login.loginButtonText")
     /// Şifre
     public static let passwordPlaceHolder = L10n.tr("Localizable", "Login.passwordPlaceHolder")
+    /// Giriş Başarılı
+    public static let succeedLogin = L10n.tr("Localizable", "Login.succeedLogin")
     /// Giriş Yap
     public static let title = L10n.tr("Localizable", "Login.title")
     /// Kullanıcı adı
@@ -76,6 +83,8 @@ public enum L10n {
   public enum RecipeDetails {
     /// Yorum Ekle
     public static let addComment = L10n.tr("Localizable", "RecipeDetails.addComment")
+    /// İptal
+    public static let cancel = L10n.tr("Localizable", "RecipeDetails.cancel")
     /// Yorum
     public static let comment = L10n.tr("Localizable", "RecipeDetails.comment")
     /// Yorumlar
@@ -84,12 +93,16 @@ public enum L10n {
     public static let follow = L10n.tr("Localizable", "RecipeDetails.follow")
     /// Takipçi
     public static let follower = L10n.tr("Localizable", "RecipeDetails.follower")
+    /// Takip Ediliyor
+    public static let following = L10n.tr("Localizable", "RecipeDetails.following")
     /// Malzemeler
     public static let ingredients = L10n.tr("Localizable", "RecipeDetails.ingredients")
     /// Beğeni
     public static let likes = L10n.tr("Localizable", "RecipeDetails.likes")
     /// Yapılışı
     public static let recipe = L10n.tr("Localizable", "RecipeDetails.recipe")
+    /// Takibi Bırak
+    public static let unfollow = L10n.tr("Localizable", "RecipeDetails.unfollow")
   }
 
   public enum Recipes {

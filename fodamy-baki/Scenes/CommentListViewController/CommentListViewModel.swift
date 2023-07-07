@@ -5,6 +5,8 @@
 //  Created by Baki Dikbıyık on 9.06.2023.
 //
 
+import KeychainSwift
+
 protocol CommentListViewDataSource {
     func numberOfItemsAt() -> Int
     func cellItemsAt(_ indexPath: IndexPath) -> CommentCellProtocol
@@ -12,21 +14,25 @@ protocol CommentListViewDataSource {
 
 protocol CommentListViewEventSource {
     var didSuccessListComments: VoidClosure? { get set }
+    var postCommentDidSuccess: VoidClosure? { get set }
 }
 
 protocol CommentListViewProtocol: CommentListViewDataSource, CommentListViewEventSource {
-    func getRecipeCommentList(isRefreshing: Bool, isPaging: Bool)
+    func getRecipeCommentList(showloading: Bool)
     func fetchMorePages()
 }
 
 final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListViewProtocol {
-
-    var recipeId: Int
-    var page = 1
+    
+    private var recipeId: Int
+    private var page = 1
     var isRequestEnabled = false
     var isPagingEnabled = false
+    private let keychain = KeychainSwift()
+    
     var endRefreshing: VoidClosure?
     var didSuccessListComments: VoidClosure?
+    var postCommentDidSuccess: VoidClosure?
     
     private var cellItems: [CommentCellProtocol] = []
     
@@ -36,6 +42,11 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
     
     func cellItemsAt(_ indexPath: IndexPath) -> CommentCellProtocol {
         return cellItems[indexPath.row]
+    }
+    
+    func refreshData() {
+        page = 1
+        getRecipeCommentList(showloading: false)
     }
 
     init(recipeId: Int, router: CommentListRouter) {
@@ -47,23 +58,14 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
 // MARK: - Network
 extension CommentListViewModel {
     
-    func getRecipeCommentList(isRefreshing: Bool, isPaging: Bool) {
-        if isRefreshing == false {
-            if page == 1 && isPaging == false {
-                showLoading?()
-            } else {
-                showActivityIndicatorBottomView?()
-            }
-        }
+    func getRecipeCommentList(showloading: Bool) {
         self.isRequestEnabled = false
-        dataProvider.request(for: GetRecipeCommentsRequest(recipeId: recipeId, page: page)) { [weak self] result in
+        if showloading { self.showLoading?() }
+        let request = GetRecipeCommentsRequest(recipeId: recipeId, page: page)
+        dataProvider.request(for: request) { [weak self] result in
             guard let self = self else { return }
-            if !isRefreshing {
-                self.hideLoading?()
-                self.hideActivityIndicatorView?()
-            } else {
-                self.endRefreshing?()
-            }
+            self.hideLoading?()
+            self.endRefreshing?()
             self.isRequestEnabled = true
             switch result {
             case .success(let response):
@@ -78,7 +80,49 @@ extension CommentListViewModel {
         }
     }
     
+    func postRecipeComment(commentText: String) {
+        showLoading?()
+        let request = PostRecipeCommentRequest(recipeId: recipeId, commentText: commentText)
+        dataProvider.request(for: request) { [weak self] result in
+            guard let self = self else { return }
+            self.hideLoading?()
+            switch result {
+            case .success:
+                self.cellItems.removeAll()
+                self.page = 1
+                self.getRecipeCommentList(showloading: true)
+                self.postCommentDidSuccess?()
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
+        }
+    }
+    
     func fetchMorePages() {
-        getRecipeCommentList(isRefreshing: false, isPaging: true)
+        getRecipeCommentList(showloading: false)
+    }
+}
+
+// MARK: - Actions
+extension CommentListViewModel {
+    
+    func sendButtonTapped(commentText: String) {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLogin()
+            return
+        }
+        postRecipeComment(commentText: commentText)
+    }
+}
+
+// MARK: - Actions
+extension CommentListViewModel {
+    
+    func sendButtonTapped(commentText: String) {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLogin()
+            return
+        }
+        postRecipeComment(commentText: commentText)
     }
 }
