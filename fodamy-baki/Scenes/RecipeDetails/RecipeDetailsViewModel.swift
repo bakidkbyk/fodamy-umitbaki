@@ -122,12 +122,9 @@ extension RecipeDetailsViewModel {
     }
     
     func commentButtonTapped() {
-        guard  keychain.get(Keychain.token) != nil else {
-            router.presentLoginWarningUp()
-            return
-        }
         router.pushCommentList(recipeId: recipeId)
     }
+
 }
 
 // MARK: - Network

@@ -85,13 +85,6 @@ extension CommentListViewController {
             self.viewModel.sendButtonTapped(commentText: text)
         }
     }
-    
-    private func sendButtonTapped() {
-        commentInputView.sendButtonTapped = { [weak self] text in
-            guard let self = self else { return }
-            self.viewModel.sendButtonTapped(commentText: text)
-        }
-    }
 }
 
 // MARK: - Subscribe View Model

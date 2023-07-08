@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 protocol LoginWarningUpViewDataSource {}
 
@@ -17,6 +18,8 @@ protocol LoginWarningUpViewProtocol: LoginWarningUpViewDataSource, LoginWarningU
 }
 
 final class LoginWarningUpViewModel: BaseViewModel<LoginWarningUpRouter>, LoginWarningUpViewProtocol {
+    
+    let keychain = KeychainSwift()
     
     func giveUpButtonAction() {
         router.close()
