@@ -6,5 +6,5 @@
 //
 
 final class CommentListRouter: Router, CommentListRouter.Routes {
-    typealias Routes = LoginRoute & LoginWarningUpRoute
+    typealias Routes = LoginRoute & LoginWarningUpRoute & CommentEditRoute
 }

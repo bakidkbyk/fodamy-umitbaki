@@ -54,7 +54,7 @@ extension CommentListViewController {
 extension CommentListViewController {
     
     private func configureContents() {
-        view.backgroundColor = .appWhite
+        view.backgroundColor = .appZircon
         collectionView.register(CommentCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -128,7 +128,12 @@ extension CommentListViewController {
 }
 
 // MARK: - UICollectionView Delegate
-extension CommentListViewController: UICollectionViewDelegate { }
+extension CommentListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
 
 // MARK: - UICollectionView DataSource
 extension CommentListViewController: UICollectionViewDataSource {
@@ -179,5 +184,26 @@ extension CommentListViewController: KeyboardHelperDelegate {
             self.bottomViewBottomConstraint?.constant = 0
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+// MARK: - Show Alert
+extension CommentListViewController {
+    
+    private func editShowAlert() {
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let editAction = UIAlertAction(title: L10n.CommentList.edit, style: .destructive) { [weak self] _ in
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: L10n.CommentList.cancel, style: .cancel)
+        
+        alertController.addAction(editAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
     }
 }
