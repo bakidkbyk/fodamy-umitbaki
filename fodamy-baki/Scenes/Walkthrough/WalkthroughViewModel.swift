@@ -5,6 +5,8 @@
 //  Created by Baki Dikbıyık on 31.01.2023.
 //
 
+import MobilliumUserDefaults
+
 protocol WalkthroughViewDataSource {
     func numberOfItemsAt() -> Int
     func cellItemAt(indexPath: IndexPath) -> WalkthroughCellProtocol
@@ -39,6 +41,7 @@ final class WalkthroughViewModel: BaseViewModel<WalkthroughRouter>, WalkthroughV
 extension WalkthroughViewModel {
     
     func didFinishWalkthrough() {
+        DefaultsKey.isWalkthroughFinished.value = true
         router.placeOnWindowTabBar()
     }
 }

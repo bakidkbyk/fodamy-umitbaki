@@ -108,19 +108,9 @@ extension CommentListViewModel {
     
     func sendButtonTapped(commentText: String) {
         guard keychain.get(Keychain.token) != nil else {
-            router.presentLogin()
-            return
-        }
-        postRecipeComment(commentText: commentText)
-    }
-}
-
-// MARK: - Actions
-extension CommentListViewModel {
-    
-    func sendButtonTapped(commentText: String) {
-        guard keychain.get(Keychain.token) != nil else {
-            router.presentLogin()
+            router.presentLoginWarningUp { [weak self] in 
+                self?.router.presentLogin()
+            }
             return
         }
         postRecipeComment(commentText: commentText)

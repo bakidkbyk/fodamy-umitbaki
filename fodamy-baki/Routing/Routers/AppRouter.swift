@@ -9,12 +9,16 @@ import MobilliumUserDefaults
  
 final class AppRouter: Router, AppRouter.Routes {
 
-    typealias Routes = WalkthroughRoute
+    typealias Routes = WalkthroughRoute & HomeTabBarRoute
     
     static let shared = AppRouter()
     
     func startApp() {
-       placeOnWindowWalkthrough()
+        if DefaultsKey.isWalkthroughFinished.value == true {
+            placeOnWindowTabBar()
+        } else {
+            placeOnWindowWalkthrough()
+        }
     }
 
     private func topViewController() -> UIViewController? {

@@ -230,15 +230,6 @@ extension RecipeDetailsViewController {
     }
 }
 
-// MARK: - Actions
-extension RecipeDetailsViewController {
-    
-    @objc
-    func commentButtonAction() {
-        viewModel.commentButtonTapped()
-    }
-}
-
 // MARK: - Show Alert
 extension RecipeDetailsViewController {
     

@@ -6,14 +6,14 @@
 //
 
 protocol LoginWarningUpRoute {
-    func presentLoginWarningUp()
+    func presentLoginWarningUp(loginButtonTapped: VoidClosure?)
 }
 
 extension LoginWarningUpRoute where Self: RouterProtocol {
     
-    func presentLoginWarningUp() {
+    func presentLoginWarningUp(loginButtonTapped: VoidClosure?) {
         let router = LoginWarningUpRouter()
-        let viewModel = LoginWarningUpViewModel(router: router)
+        let viewModel = LoginWarningUpViewModel(router: router, loginButtonTapped: loginButtonTapped)
         let viewController = LoginWarningUpViewController(viewModel: viewModel)
         
         let transition = ModalTransition()

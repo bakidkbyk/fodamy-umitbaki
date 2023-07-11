@@ -6,5 +6,5 @@
 //
 
 final class LoginWarningUpRouter: Router, LoginWarningUpRouter.Routes {
-    typealias Routes = LoginRoute
+    typealias Routes = LoginRoute & DismissableRoute
 }
