@@ -20,12 +20,20 @@ protocol LoginWarningUpViewProtocol: LoginWarningUpViewDataSource, LoginWarningU
 final class LoginWarningUpViewModel: BaseViewModel<LoginWarningUpRouter>, LoginWarningUpViewProtocol {
     
     let keychain = KeychainSwift()
+    var loginButtonTapped: VoidClosure?
     
     func giveUpButtonAction() {
         router.close()
     }
     
+    init(router: LoginWarningUpRouter, dataProvider: DataProviderProtocol = apiDataProvider, loginButtonTapped: VoidClosure?) {
+        self.loginButtonTapped = loginButtonTapped
+        super.init(router: router, dataProvider: dataProvider)
+        
+    }
     func loginButtonAction() {
-        router.presentLogin()
+        router.dismiss(isAnimated: false) { [weak self] in
+            self?.loginButtonTapped?()
+        }
     }
 }

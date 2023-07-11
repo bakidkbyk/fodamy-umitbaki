@@ -109,7 +109,9 @@ extension RecipeDetailsViewModel {
     
     func followButtonTapped() {
         guard keychain.get(Keychain.token) != nil else {
-            router.presentLoginWarningUp()
+            router.presentLoginWarningUp { [weak self] in
+                self?.router.presentLogin()
+            }
             return
         }
         

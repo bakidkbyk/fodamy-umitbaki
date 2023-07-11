@@ -108,7 +108,9 @@ extension CommentListViewModel {
     
     func sendButtonTapped(commentText: String) {
         guard keychain.get(Keychain.token) != nil else {
-            router.presentLoginWarningUp()
+            router.presentLoginWarningUp { [weak self] in 
+                self?.router.presentLogin()
+            }
             return
         }
         postRecipeComment(commentText: commentText)
