@@ -6,6 +6,7 @@
 //
 
 import KeychainSwift
+import MobilliumUserDefaults
 
 protocol LoginViewDataSource {}
 
@@ -45,6 +46,7 @@ extension LoginViewModel {
             switch result {
             case .success(let response):
                 self.keyChainSwift.set(response.token, forKey: Keychain.token)
+                DefaultsKey.userId.value = response.user.id
                 self.showWarningToast?(L10n.Login.succeedLogin)
                 self.router.dismiss()
             case .failure(let error):

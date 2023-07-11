@@ -6,15 +6,16 @@
 //
 
 protocol CommentEditRoute {
-    func pushCommentEdit()
+    func pushCommentEdit(recipeId: Int, commentId: Int, commentText: String?, commentEditDidSuccess: StringClosure?)
 }
 
 extension CommentEditRoute where Self: RouterProtocol {
     
-    func pushCommentEdit() {
+    func pushCommentEdit(recipeId: Int, commentId: Int, commentText: String?, commentEditDidSuccess: StringClosure?) {
         let router = CommentEditRouter()
-        let viewModel = CommentEditViewModel(router: router)
+        let viewModel = CommentEditViewModel(recipeId: recipeId, commentId: commentId, commentText: commentText, router: router)
         let viewController = CommentEditViewController(viewModel: viewModel)
+        viewModel.commentEditDidSuccess = commentEditDidSuccess
         
         let transition = PushTransition()
         router.viewController = viewController
