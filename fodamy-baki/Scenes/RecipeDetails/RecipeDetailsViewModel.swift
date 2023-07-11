@@ -126,7 +126,6 @@ extension RecipeDetailsViewModel {
     func commentButtonTapped() {
         router.pushCommentList(recipeId: recipeId)
     }
-
 }
 
 // MARK: - Network
