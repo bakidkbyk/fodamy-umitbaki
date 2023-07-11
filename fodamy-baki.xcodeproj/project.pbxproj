@@ -17,6 +17,10 @@
 		FA1D9E3A2A458B35008B0CA2 /* LoginWarningUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D9E372A458B35008B0CA2 /* LoginWarningUpViewModel.swift */; };
 		FA2DB7982962DF94004D38E2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FA2DB7972962DF94004D38E2 /* .swiftlint.yml */; };
 		FA2DB7B729631568004D38E2 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2DB7B629631568004D38E2 /* UIComponents.framework */; };
+		FA3A5B5A2A59484F009327B9 /* CommentEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A5B572A59484F009327B9 /* CommentEditRouter.swift */; };
+		FA3A5B5B2A59484F009327B9 /* CommentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A5B582A59484F009327B9 /* CommentEditViewController.swift */; };
+		FA3A5B5C2A59484F009327B9 /* CommentEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A5B592A59484F009327B9 /* CommentEditViewModel.swift */; };
+		FA3A5B5E2A59487B009327B9 /* CommentEditRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A5B5D2A59487B009327B9 /* CommentEditRoute.swift */; };
 		FA5BBD3929DAB34400220EAD /* RecipeDetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BBD3829DAB34400220EAD /* RecipeDetailsRoute.swift */; };
 		FA5BBD3D29DAB36700220EAD /* RecipeDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BBD3A29DAB36700220EAD /* RecipeDetailsRouter.swift */; };
 		FA5BBD3E29DAB36700220EAD /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BBD3B29DAB36700220EAD /* RecipeDetailsViewController.swift */; };
@@ -95,6 +99,10 @@
 		FA2DB7972962DF94004D38E2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FA2DB7AF296312A8004D38E2 /* fodamy-baki-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fodamy-baki-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA2DB7B629631568004D38E2 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3A5B572A59484F009327B9 /* CommentEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditRouter.swift; sourceTree = "<group>"; };
+		FA3A5B582A59484F009327B9 /* CommentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewController.swift; sourceTree = "<group>"; };
+		FA3A5B592A59484F009327B9 /* CommentEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewModel.swift; sourceTree = "<group>"; };
+		FA3A5B5D2A59487B009327B9 /* CommentEditRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditRoute.swift; sourceTree = "<group>"; };
 		FA5BBD3829DAB34400220EAD /* RecipeDetailsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsRoute.swift; sourceTree = "<group>"; };
 		FA5BBD3A29DAB36700220EAD /* RecipeDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsRouter.swift; sourceTree = "<group>"; };
 		FA5BBD3B29DAB36700220EAD /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +265,26 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		FA3A5B552A59470D009327B9 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3DA792A33121E00A9E3D3 /* CommentList */,
+				FA3A5B562A594726009327B9 /* CommentEdit */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		FA3A5B562A594726009327B9 /* CommentEdit */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A5B582A59484F009327B9 /* CommentEditViewController.swift */,
+				FA3A5B592A59484F009327B9 /* CommentEditViewModel.swift */,
+				FA3A5B572A59484F009327B9 /* CommentEditRouter.swift */,
+				FA3A5B5D2A59487B009327B9 /* CommentEditRoute.swift */,
+			);
+			path = CommentEdit;
+			sourceTree = "<group>";
+		};
 		FA5BBD3729DAB32500220EAD /* RecipeDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,7 +324,7 @@
 			children = (
 				FAB60D93297FAC9900F1DB9A /* Auth */,
 				FA1D9E322A458AF8008B0CA2 /* LoginWarningUp */,
-				FAF3DA792A33121E00A9E3D3 /* CommentListViewController */,
+				FA3A5B552A59470D009327B9 /* Comment */,
 				FA5BBD3729DAB32500220EAD /* RecipeDetails */,
 				FAB974DD29979EE300A10EFD /* Recipes */,
 				FAB84895299656D2007D5CA7 /* HomeTabBar */,
@@ -458,7 +486,7 @@
 			path = Route;
 			sourceTree = "<group>";
 		};
-		FAF3DA792A33121E00A9E3D3 /* CommentListViewController */ = {
+		FAF3DA792A33121E00A9E3D3 /* CommentList */ = {
 			isa = PBXGroup;
 			children = (
 				FAF3DA7B2A33124700A9E3D3 /* CommentListViewController.swift */,
@@ -466,7 +494,7 @@
 				FAF3DA7A2A33124700A9E3D3 /* CommentListRouter.swift */,
 				FAF3DA802A33257000A9E3D3 /* CommentListRoute.swift */,
 			);
-			path = CommentListViewController;
+			path = CommentList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -607,6 +635,7 @@
 				FADE8ACB299A6323008A1A83 /* MainNavigationController.swift in Sources */,
 				FA87472729751E6800039E92 /* APILogger.swift in Sources */,
 				FAB60DA2297FADCD00F1DB9A /* RegisterRouter.swift in Sources */,
+				FA3A5B5E2A59487B009327B9 /* CommentEditRoute.swift in Sources */,
 				FAA819C42964609A00B4C83A /* HomeViewRouter.swift in Sources */,
 				FAC3A84B298463220095A7C3 /* LoginRouter.swift in Sources */,
 				FA844E622A29CC1200E408A7 /* CommentCellModel+Extension.swift in Sources */,
@@ -616,6 +645,8 @@
 				FACE72F5298924B6001B98D4 /* ForgotPasswordRoute.swift in Sources */,
 				FAC3A846298421CF0095A7C3 /* Transition.swift in Sources */,
 				FAC3A84D298463220095A7C3 /* LoginViewModel.swift in Sources */,
+				FA3A5B5A2A59484F009327B9 /* CommentEditRouter.swift in Sources */,
+				FA3A5B5B2A59484F009327B9 /* CommentEditViewController.swift in Sources */,
 				FAC3A83A298420CE0095A7C3 /* Router.swift in Sources */,
 				FACE72F129892447001B98D4 /* ForgotPasswordRouter.swift in Sources */,
 				FA1D9E3A2A458B35008B0CA2 /* LoginWarningUpViewModel.swift in Sources */,
@@ -642,6 +673,7 @@
 				FAA819C62964609A00B4C83A /* HomeViewRoute.swift in Sources */,
 				FACE72FE29895EC1001B98D4 /* WalkthroughViewModel.swift in Sources */,
 				FAB60DA8297FB72800F1DB9A /* RegisterRoute.swift in Sources */,
+				FA3A5B5C2A59484F009327B9 /* CommentEditViewModel.swift in Sources */,
 				FAA819B72964406000B4C83A /* BaseViewModel.swift in Sources */,
 				FAC3A844298421AF0095A7C3 /* PushTransition.swift in Sources */,
 				FA8D3C0229A37B3D008056B5 /* RecipeCellModel+Extension.swift in Sources */,

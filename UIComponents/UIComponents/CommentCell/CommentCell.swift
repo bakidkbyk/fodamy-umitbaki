@@ -10,7 +10,7 @@ public class CommentCell: UICollectionViewCell, ReusableView {
     weak var viewModel: CommentCellProtocol?
     
     private let userView = UserView()
-    
+        
     private let stackView = UIStackViewBuilder()
         .axis(.vertical)
         .build()
@@ -25,6 +25,11 @@ public class CommentCell: UICollectionViewCell, ReusableView {
         .numberOfLines(0)
         .build()
     
+    private let moreButton = UIButtonBuilder()
+        .image(UIImage.icMore.withRenderingMode(.alwaysTemplate))
+        .tintColor(.appCinder)
+        .build()
+
     private lazy var width: NSLayoutConstraint = {
         let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
         width.isActive = true
@@ -63,6 +68,31 @@ extension CommentCell {
         stackView.edgesToSuperview(excluding: .top, insets: .init(top: 0, left: 20, bottom: 8, right: 20))
         stackView.addArrangedSubview(differenceLabel)
         stackView.addArrangedSubview(commentLabel)
+        
+        contentView.addSubview(moreButton)
+        moreButton.topToSuperview(offset: 10)
+        moreButton.trailingToSuperview().constant = -15
+        moreButton.leadingToTrailing(of: userView).constant = 15
+        moreButton.size(CGSize(width: 18, height: 10))
+        moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
+    }
+}
+
+// MARK: - Configure Contents
+extension CommentCell {
+    
+    private func configureContents() {
+        userView.height(65)
+        userView.isShowsFollowButton = false
+    }
+}
+
+// MARK: - Actions
+extension CommentCell {
+    
+    @objc
+    func moreButtonTapped() {
+        self.viewModel?.moreButtonTapped?()
     }
 }
 
@@ -76,14 +106,5 @@ public extension CommentCell {
         userView.recipeCountAndFollowersLabelText = viewModel.recipeAndFollowers
         differenceLabel.text = viewModel.timeDifferenceText
         commentLabel.text = viewModel.commentText
-    }
-}
-
-// MARK: - Configure Contents
-extension CommentCell {
-    
-    private func configureContents() {
-        userView.height(65)
-        userView.isShowsFollowButton = false
     }
 }
