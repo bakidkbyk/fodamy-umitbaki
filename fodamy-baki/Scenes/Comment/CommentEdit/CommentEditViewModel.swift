@@ -28,7 +28,6 @@ final class CommentEditViewModel: BaseViewModel<CommentEditRouter>, CommentEditV
     private let recipeId: Int
     private let commentId: Int
     var commentEditDidSuccess: StringClosure?
-    var commentDeleteDidSuccess: VoidClosure?
     
     init(recipeId: Int, commentId: Int, commentText: String?, router: CommentEditRouter) {
         self.recipeId = recipeId
@@ -50,6 +49,7 @@ extension CommentEditViewModel {
             switch result {
             case .success:
                 self.commentEditDidSuccess?(commentText)
+                self.router.close()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }
