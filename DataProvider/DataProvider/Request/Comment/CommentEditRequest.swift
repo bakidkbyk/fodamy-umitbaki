@@ -10,7 +10,7 @@ public struct CommentEditRequest: APIDecodableResponseRequest {
     public typealias ResponseType = SuccessResponse
     
     public var path: String = "recipe/{recipeId}/comment/{commentId}"
-    public var method: RequestMethod = .put
+    public let method: RequestMethod = .put
     public var parameters: RequestParameters = [:]
     
     public init(recipeId: Int, commentId: Int, commentText: String) {

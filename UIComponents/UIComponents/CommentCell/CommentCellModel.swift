@@ -22,7 +22,6 @@ public protocol CommentCellDataSource: AnyObject {
 
 public protocol CommentCellEventSource: AnyObject {
     var moreButtonTapped: VoidClosure? { get set }
-    
 }
 
 public protocol CommentCellProtocol: CommentCellDataSource, CommentCellEventSource {
