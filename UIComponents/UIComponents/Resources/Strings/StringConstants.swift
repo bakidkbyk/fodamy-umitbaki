@@ -16,9 +16,24 @@ public enum L10n {
     public static let errorTitle = L10n.tr("Localizable", "BaseViewController.errorTitle")
   }
 
+  public enum CommentEdit {
+    /// Error
+    public static let error = L10n.tr("Localizable", "CommentEdit.error")
+    /// Kaydet
+    public static let saveButton = L10n.tr("Localizable", "CommentEdit.saveButton")
+    /// Yorumlar
+    public static let title = L10n.tr("Localizable", "CommentEdit.title")
+  }
+
   public enum CommentList {
+    /// İptal
+    public static let cancel = L10n.tr("Localizable", "CommentList.cancel")
     /// Yorumlar
     public static let comments = L10n.tr("Localizable", "CommentList.comments")
+    /// Sil
+    public static let delete = L10n.tr("Localizable", "CommentList.delete")
+    /// Düzenle
+    public static let edit = L10n.tr("Localizable", "CommentList.edit")
     /// Bir şey yaz...
     public static let placeHolder = L10n.tr("Localizable", "CommentList.placeHolder")
   }

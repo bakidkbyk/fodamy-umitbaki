@@ -63,10 +63,7 @@ target 'Utilities' do
   
   project 'Utilities/Utilities.xcodeproj'
   
-  # Pods for UIComponents
-  
-  # Generater
-  
   # Helper
+  pod 'MobilliumUserDefaults', '~> 2.0'
   
   end

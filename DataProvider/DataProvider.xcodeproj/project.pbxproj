@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D63F47D2646322145BAA0DA0 /* Pods_DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22323BBCE392C93D6C53C81 /* Pods_DataProvider.framework */; };
 		FA38C6002A27DE7C0099C188 /* RecipeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38C5FF2A27DE7C0099C188 /* RecipeComment.swift */; };
+		FA3A5B602A594930009327B9 /* CommentEditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A5B5F2A594930009327B9 /* CommentEditRequest.swift */; };
 		FA3B3297296D590600FEF004 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B3296296D590600FEF004 /* Typealias.swift */; };
 		FA3B3299296D59DB00FEF004 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */; };
 		FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */; };
@@ -38,6 +39,7 @@
 		FACE72F72989384A001B98D4 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */; };
 		FAD32D0C2A4964DB0018052B /* RecipesLikesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD32D0B2A4964DB0018052B /* RecipesLikesRequest.swift */; };
 		FAD32D0E2A4965E00018052B /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD32D0D2A4965E00018052B /* SuccessResponse.swift */; };
+		FAD356F32A5C4B42001FB74F /* CommentDeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD356F22A5C4B42001FB74F /* CommentDeleteRequest.swift */; };
 		FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */; };
 		FAF3DCD829B0AC0700DDE6D8 /* FodamyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCD729B0AC0700DDE6D8 /* FodamyRequest.swift */; };
 		FAF3DCDA29B0B55C00DDE6D8 /* GetRecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequest.swift */; };
@@ -48,6 +50,7 @@
 		9D327312A71D591A66632443 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
 		B22323BBCE392C93D6C53C81 /* Pods_DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA38C5FF2A27DE7C0099C188 /* RecipeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeComment.swift; sourceTree = "<group>"; };
+		FA3A5B5F2A594930009327B9 /* CommentEditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditRequest.swift; sourceTree = "<group>"; };
 		FA3B3296296D590600FEF004 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		FA3B3298296D59DB00FEF004 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		FA3B329A296D5A7500FEF004 /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		FACE72F62989384A001B98D4 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
 		FAD32D0B2A4964DB0018052B /* RecipesLikesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesLikesRequest.swift; sourceTree = "<group>"; };
 		FAD32D0D2A4965E00018052B /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
+		FAD356F22A5C4B42001FB74F /* CommentDeleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDeleteRequest.swift; sourceTree = "<group>"; };
 		FADE8AD1299AAB64008A1A83 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		FAF3DCD729B0AC0700DDE6D8 /* FodamyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FodamyRequest.swift; sourceTree = "<group>"; };
 		FAF3DCD929B0B55C00DDE6D8 /* GetRecipesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipesRequest.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 			children = (
 				FA844E642A29D91F00E408A7 /* PostRecipeCommentRequest.swift */,
 				FA844E662A29DA0600E408A7 /* GetRecipeCommentRequest.swift */,
+				FA3A5B5F2A594930009327B9 /* CommentEditRequest.swift */,
+				FAD356F22A5C4B42001FB74F /* CommentDeleteRequest.swift */,
 			);
 			path = Comment;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3DB66529E8739000888DB2 /* NumberOfPerson.swift in Sources */,
+				FA3A5B602A594930009327B9 /* CommentEditRequest.swift in Sources */,
 				FA3DB66329E8719100888DB2 /* TimeOfRecipe.swift in Sources */,
 				FA3B329B296D5A7500FEF004 /* DecodableResponseRequest.swift in Sources */,
 				FA844E652A29D91F00E408A7 /* PostRecipeCommentRequest.swift in Sources */,
@@ -358,6 +365,7 @@
 				FAB60DB3297FD4C200F1DB9A /* Image.swift in Sources */,
 				FADE8AD2299AAB64008A1A83 /* LogoutRequest.swift in Sources */,
 				FAF3DCDA29B0B55C00DDE6D8 /* GetRecipesRequest.swift in Sources */,
+				FAD356F32A5C4B42001FB74F /* CommentDeleteRequest.swift in Sources */,
 				FA844E672A29DA0600E408A7 /* GetRecipeCommentRequest.swift in Sources */,
 				FA8D3BFD29A35072008056B5 /* Pagination.swift in Sources */,
 				FAB60DAF297FD48200F1DB9A /* Auth.swift in Sources */,

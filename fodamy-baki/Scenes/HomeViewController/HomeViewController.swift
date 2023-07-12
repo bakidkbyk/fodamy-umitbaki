@@ -36,6 +36,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         segmentioControlDidChange()
         configure()
         addNavigationFodamyLogo()
+        checkUserLogin()
         subscribeViewModelEvents()
     }
 }

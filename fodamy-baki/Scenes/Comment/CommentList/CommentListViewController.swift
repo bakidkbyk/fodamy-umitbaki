@@ -54,7 +54,7 @@ extension CommentListViewController {
 extension CommentListViewController {
     
     private func configureContents() {
-        view.backgroundColor = .appWhite
+        view.backgroundColor = .appZircon
         collectionView.register(CommentCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -76,13 +76,6 @@ extension CommentListViewController {
     func handleRefreshControl() {
         if refreshControl.isRefreshing {
             viewModel.refreshData()
-        }
-    }
-    
-    private func sendButtonTapped() {
-        commentInputView.sendButtonTapped = { [weak self] text in
-            guard let self = self else { return }
-            self.viewModel.sendButtonTapped(commentText: text)
         }
     }
     
@@ -135,7 +128,10 @@ extension CommentListViewController {
 }
 
 // MARK: - UICollectionView Delegate
-extension CommentListViewController: UICollectionViewDelegate { }
+extension CommentListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
+}
 
 // MARK: - UICollectionView DataSource
 extension CommentListViewController: UICollectionViewDataSource {
@@ -147,6 +143,12 @@ extension CommentListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CommentCell = collectionView.dequeueReusableCell(for: indexPath)
         let cellItem = viewModel.cellItemsAt(indexPath)
+        
+        cellItem.moreButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.moreButtonTapped(indexPath: indexPath)
+        }
+        
         cell.set(viewModel: cellItem)
         return cell
     }
