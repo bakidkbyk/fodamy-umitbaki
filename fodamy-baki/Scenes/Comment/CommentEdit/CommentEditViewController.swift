@@ -108,5 +108,4 @@ extension CommentEditViewController: KeyboardHelperDelegate {
             self.view.layoutIfNeeded()
         }
     }
-    
 }

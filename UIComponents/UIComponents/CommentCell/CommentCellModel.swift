@@ -41,7 +41,6 @@ public final class CommentCellModel: CommentCellProtocol {
     public var isOwner: Bool
     public var moreButtonTapped: VoidClosure?
 
-    
     public init(userId: Int,
                 usernameImageUrl: String?,
                 username: String?,
