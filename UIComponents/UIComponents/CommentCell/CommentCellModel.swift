@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Utilities
 
 public protocol CommentCellDataSource: AnyObject {
     var userId: Int { get }
@@ -16,11 +17,11 @@ public protocol CommentCellDataSource: AnyObject {
     var commentText: String? { get set }
     var timeDifferenceText: String? { get }
     var isOwner: Bool { get set }
-    var moreButtonTapped: VoidClosure? { get }
     
 }
 
 public protocol CommentCellEventSource: AnyObject {
+    var moreButtonTapped: VoidClosure? { get set }
     
 }
 
@@ -39,6 +40,7 @@ public final class CommentCellModel: CommentCellProtocol {
     public var timeDifferenceText: String?
     public var isOwner: Bool
     public var moreButtonTapped: VoidClosure?
+
     
     public init(userId: Int,
                 usernameImageUrl: String?,

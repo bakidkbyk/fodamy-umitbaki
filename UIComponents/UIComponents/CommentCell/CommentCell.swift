@@ -40,13 +40,18 @@ public class CommentCell: UICollectionViewCell, ReusableView {
         super.init(frame: frame)
         addSubviews()
         configureContents()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addSubviews()
         configureContents()
+    }
+    
+    public var isMoreButtonHidden: Bool? {
+        didSet {
+            moreButton.isHidden = isMoreButtonHidden ?? false
+        }
     }
     
     public override func systemLayoutSizeFitting(_ targetSize: CGSize,
@@ -84,6 +89,7 @@ extension CommentCell {
     private func configureContents() {
         userView.height(65)
         userView.isShowsFollowButton = false
+        moreButton.isHidden = true
     }
 }
 
@@ -106,5 +112,6 @@ public extension CommentCell {
         userView.recipeCountAndFollowersLabelText = viewModel.recipeAndFollowers
         differenceLabel.text = viewModel.timeDifferenceText
         commentLabel.text = viewModel.commentText
+        moreButton.isHidden = !viewModel.isOwner
     }
 }
