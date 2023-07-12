@@ -17,5 +17,4 @@ public struct CommentEditRequest: APIDecodableResponseRequest {
         self.path = "recipe/\(recipeId)/comment/\(commentId)"
         self.parameters["text"] = commentText
     }
-    
 }

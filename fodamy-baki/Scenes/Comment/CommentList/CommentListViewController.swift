@@ -130,9 +130,7 @@ extension CommentListViewController {
 // MARK: - UICollectionView Delegate
 extension CommentListViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
 }
 
 // MARK: - UICollectionView DataSource
@@ -192,4 +190,3 @@ extension CommentListViewController: KeyboardHelperDelegate {
         }
     }
 }
-
