@@ -145,6 +145,12 @@ extension CommentListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CommentCell = collectionView.dequeueReusableCell(for: indexPath)
         let cellItem = viewModel.cellItemsAt(indexPath)
+        
+        cellItem.moreButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.moreButtonTapped(indexPath: indexPath)
+        }
+        
         cell.set(viewModel: cellItem)
         return cell
     }
@@ -187,23 +193,3 @@ extension CommentListViewController: KeyboardHelperDelegate {
     }
 }
 
-// MARK: - Show Alert
-extension CommentListViewController {
-    
-    private func editShowAlert() {
-        
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        let editAction = UIAlertAction(title: L10n.CommentList.edit, style: .destructive) { [weak self] _ in
-            
-        }
-        
-        let cancelAction = UIAlertAction(title: L10n.CommentList.cancel, style: .cancel)
-        
-        alertController.addAction(editAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-        
-    }
-}
