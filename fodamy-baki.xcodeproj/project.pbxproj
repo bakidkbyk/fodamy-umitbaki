@@ -49,6 +49,7 @@
 		FAB60DA4297FADCD00F1DB9A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DA1297FADCD00F1DB9A /* RegisterViewModel.swift */; };
 		FAB60DA8297FB72800F1DB9A /* RegisterRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DA7297FB72800F1DB9A /* RegisterRoute.swift */; };
 		FAB60DB6297FD9FD00F1DB9A /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB60DB5297FD9FD00F1DB9A /* Validation.swift */; };
+		FAB743D42A5E865300FE9900 /* CommentActionsAlertRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB743D32A5E865300FE9900 /* CommentActionsAlertRoute.swift */; };
 		FAB84898299656D2007D5CA7 /* HomeTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB84896299656D2007D5CA7 /* HomeTabBarRoute.swift */; };
 		FAB84899299656D2007D5CA7 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB84897299656D2007D5CA7 /* HomeTabBarViewController.swift */; };
 		FABFE91D29B7097100F78DFD /* RecipesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFE91C29B7097100F78DFD /* RecipesRoute.swift */; };
@@ -131,6 +132,7 @@
 		FAB60DA1297FADCD00F1DB9A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		FAB60DA7297FB72800F1DB9A /* RegisterRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRoute.swift; sourceTree = "<group>"; };
 		FAB60DB5297FD9FD00F1DB9A /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		FAB743D32A5E865300FE9900 /* CommentActionsAlertRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentActionsAlertRoute.swift; sourceTree = "<group>"; };
 		FAB84896299656D2007D5CA7 /* HomeTabBarRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarRoute.swift; sourceTree = "<group>"; };
 		FAB84897299656D2007D5CA7 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		FABFE91C29B7097100F78DFD /* RecipesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRoute.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE1C8CF2A5429B800705C63 /* DismissableRoute.swift */,
+				FAB743D32A5E865300FE9900 /* CommentActionsAlertRoute.swift */,
 			);
 			path = Route;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				FAC3A84B298463220095A7C3 /* LoginRouter.swift in Sources */,
 				FA844E622A29CC1200E408A7 /* CommentCellModel+Extension.swift in Sources */,
 				FAA819C52964609A00B4C83A /* HomeViewController.swift in Sources */,
+				FAB743D42A5E865300FE9900 /* CommentActionsAlertRoute.swift in Sources */,
 				FA87472929751E8700039E92 /* DataProvider.swift in Sources */,
 				FAB60DA3297FADCD00F1DB9A /* RegisterViewController.swift in Sources */,
 				FACE72F5298924B6001B98D4 /* ForgotPasswordRoute.swift in Sources */,

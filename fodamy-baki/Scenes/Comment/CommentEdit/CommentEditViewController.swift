@@ -35,6 +35,7 @@ extension CommentEditViewController {
     
     private func addSubViews() {
         addTextView()
+        addSaveButtonView()
     }
     
     private func addTextView() {
@@ -59,6 +60,7 @@ extension CommentEditViewController {
     private func configureContents() {
         navigationItem.title = viewModel.title
         keyboardHelper.delegate = self
+        view.backgroundColor = .appWhite
         
         textView.text = viewModel.commentText
         textView.height(150)
