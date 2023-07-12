@@ -108,7 +108,6 @@ extension CommentListViewModel {
             self.isRequestEnabled = true
             switch result {
             case .success(let response):
-                print(self.recipeId)
                 let cellItems = response.data.map({ CommentCellModel(comment: $0) })
                 self.cellItems.append(contentsOf: cellItems)
                 self.page += 1

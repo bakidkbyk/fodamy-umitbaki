@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIComponents
 
 protocol CommentEditViewDataSource {
     var commentText: String? { get }
@@ -37,7 +36,7 @@ final class CommentEditViewModel: BaseViewModel<CommentEditRouter>, CommentEditV
     }
 }
 
-// MARK: URL
+// MARK: URL Request
 extension CommentEditViewModel {
     
     func commentEdit(commentText: String) {

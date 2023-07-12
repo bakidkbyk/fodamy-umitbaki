@@ -78,8 +78,7 @@ extension CommentCell {
         moreButton.topToSuperview(offset: 10)
         moreButton.trailingToSuperview().constant = -15
         moreButton.leadingToTrailing(of: userView).constant = 15
-        moreButton.size(CGSize(width: 18, height: 10))
-        moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
+ 
     }
 }
 
@@ -89,7 +88,10 @@ extension CommentCell {
     private func configureContents() {
         userView.height(65)
         userView.isShowsFollowButton = false
+        
         moreButton.isHidden = true
+        moreButton.size(CGSize(width: 18, height: 10))
+        moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
     }
 }
 

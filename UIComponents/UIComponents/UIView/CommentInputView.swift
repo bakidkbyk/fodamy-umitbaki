@@ -27,7 +27,7 @@ public class CommentInputView: UIView {
     
     private let sendButton = UIButtonBuilder()
         .cornerRadius(20)
-        .backgroundColor(.appRed)
+        .backgroundColor(.gray)
         .clipsToBounds(true)
         .image(UIImage.icSend.withRenderingMode(.alwaysTemplate))
         .tintColor(.appWhite)

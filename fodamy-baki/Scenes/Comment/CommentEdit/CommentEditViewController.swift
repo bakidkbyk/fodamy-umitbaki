@@ -41,6 +41,7 @@ extension CommentEditViewController {
     private func addTextView() {
         view.addSubview(textView)
         textView.edgesToSuperview(excluding: .bottom, insets: UIEdgeInsets(top: 26, left: 15, bottom: 0, right: 15), usingSafeArea: true)
+        textView.height(150)
     }
     
     private func addSaveButtonView() {
@@ -51,6 +52,7 @@ extension CommentEditViewController {
         saveButtonView.addSubview(saveButton)
         saveButton.topToSuperview()
         saveButton.centerXToSuperview()
+        saveButtonView.height(80)
     }
 }
 
@@ -63,11 +65,9 @@ extension CommentEditViewController {
         view.backgroundColor = .appWhite
         
         textView.text = viewModel.commentText
-        textView.height(150)
         
         bottomViewBottomConstraint?.isActive = true
         
-        saveButtonView.height(80)
         saveButton.size(.init(width: 162.5, height: 50))
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
