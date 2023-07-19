@@ -114,10 +114,8 @@ extension RecipeDetailsViewController {
         view.backgroundColor = .appZircon
         
         commentButton.addTarget(self, action: #selector(commentButtonAction), for: .touchUpInside)
-        NotificationCenter.default.addObserver(forName: .updateDetailView, object: nil, queue: nil) { [weak self] _ in
-            self?.viewModel.resetData()
-            self?.viewModel.getData()
-        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationCenterEvent), name: .updateDetailView, object: nil)
     }
  
     private func setLocalize() {
@@ -157,6 +155,12 @@ extension RecipeDetailsViewController {
     @objc
     func commentButtonAction() {
         viewModel.commentButtonTapped()
+    }
+    
+    @objc
+    func notificationCenterEvent() {
+        viewModel.resetData()
+        viewModel.getData()
     }
 }
 // MARK: - Subscribe View Controller
