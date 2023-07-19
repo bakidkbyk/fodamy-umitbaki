@@ -46,7 +46,6 @@ final class RecipeDetailsViewController: BaseViewController<RecipeDetailsViewMod
     private let buttonContainerView = UIView()
     
     private let commentButton = ButtonFactory.createPrimaryButton(style: .large)
-
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -159,7 +158,6 @@ extension RecipeDetailsViewController {
     func commentButtonAction() {
         viewModel.commentButtonTapped()
     }
-
 }
 // MARK: - Subscribe View Controller
 extension RecipeDetailsViewController {
