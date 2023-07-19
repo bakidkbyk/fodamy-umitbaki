@@ -85,6 +85,13 @@ final class RecipeDetailsViewModel: BaseViewModel<RecipeDetailsRouter>, RecipeDe
         self.hideTryAgainButton?()
         getData()
     }
+    
+    func resetData() {
+        imagesCellItems.removeAll()
+        commentsCellItems.removeAll()
+        isGetRecipeDetailSuccess = false
+        isGetRecipeCommentSuccess = false
+    }
 }
 
 // MARK: - Actions

@@ -22,6 +22,7 @@ protocol CommentListViewEventSource {
 protocol CommentListViewProtocol: CommentListViewDataSource, CommentListViewEventSource {
     func getRecipeCommentList(showloading: Bool)
     func fetchMorePages()
+    func postNotification()
 }
 
 final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListViewProtocol {
@@ -65,7 +66,9 @@ extension CommentListViewModel {
         
     func sendButtonTapped(commentText: String) {
         guard keychain.get(Keychain.token) != nil else {
-            router.presentLogin()
+            router.presentLoginWarningUp {
+                self.router.presentLogin()
+            }
             return
         }
         postRecipeComment(commentText: commentText)
@@ -80,6 +83,7 @@ extension CommentListViewModel {
             self.commentEditDidSuccess = { [weak self] text in
                 self?.cellItems[indexPath.row].commentText = text
                 self?.didSuccessListComments?()
+                self?.postNotification()
             }
             
             self.router.pushCommentEdit(recipeId: self.recipeId,
@@ -157,5 +161,9 @@ extension CommentListViewModel {
     
     func fetchMorePages() {
         getRecipeCommentList(showloading: false)
+    }
+    
+    func postNotification() {
+        NotificationCenter.default.post(name: .updateDetailView, object: nil)
     }
 }
