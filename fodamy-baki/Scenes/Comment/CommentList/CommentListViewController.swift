@@ -104,6 +104,14 @@ extension CommentListViewController {
         viewModel.postCommentDidSuccess = { [weak self] in
             guard let self = self else { return }
             self.commentInputView.textViewText = ""
+            self.view.endEditing(true)
+            self.viewModel.postNotification()
+        }
+        
+        viewModel.deleteCommentDidSuccess = { [weak self] indexPath in
+            guard let self = self else { return }
+            self.collectionView.deleteItems(at: [indexPath])
+            self.viewModel.postNotification()
         }
     }
 }

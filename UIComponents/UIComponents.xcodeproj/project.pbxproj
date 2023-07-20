@@ -39,6 +39,7 @@
 		FA791CC829686746001B6985 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA791CC729686746001B6985 /* Localize.swift */; };
 		FA844E692A2A341400E408A7 /* RecipeDetailsCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA844E682A2A341400E408A7 /* RecipeDetailsCommentView.swift */; };
 		FA87472E29753ED900039E92 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472D29753ED900039E92 /* ButtonFactory.swift */; };
+		FA87CDE62A6803F0003AF916 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87CDE52A6803F0003AF916 /* NotificationName+Extension.swift */; };
 		FA8A3C3B2A28F79300E43142 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A3C392A28F79300E43142 /* CommentCell.swift */; };
 		FA8A3C3C2A28F79300E43142 /* CommentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A3C3A2A28F79300E43142 /* CommentCellModel.swift */; };
 		FA954483298CDB2700F55E23 /* WalkthroughCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA954482298CDB2700F55E23 /* WalkthroughCell.swift */; };
@@ -99,6 +100,7 @@
 		FA791CC729686746001B6985 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		FA844E682A2A341400E408A7 /* RecipeDetailsCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsCommentView.swift; sourceTree = "<group>"; };
 		FA87472D29753ED900039E92 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
+		FA87CDE52A6803F0003AF916 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		FA8A3C392A28F79300E43142 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		FA8A3C3A2A28F79300E43142 /* CommentCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellModel.swift; sourceTree = "<group>"; };
 		FA954482298CDB2700F55E23 /* WalkthroughCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughCell.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				FAA6DFD529ACA41F00918961 /* UIImage+Extensions.swift */,
 				FAC26D0C29B87079005A84B4 /* PaddingLabel.swift */,
 				FA55F3CA29CAF3CB006EABC6 /* UICollectionView+Extensions.swift */,
+				FA87CDE52A6803F0003AF916 /* NotificationName+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				FA4C1C092979539C006C5C8D /* StringConstants.swift in Sources */,
 				FAE5D40C2A3716AE00F026CA /* CommentInputView.swift in Sources */,
 				FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */,
+				FA87CDE62A6803F0003AF916 /* NotificationName+Extension.swift in Sources */,
 				FAC26D0D29B87079005A84B4 /* PaddingLabel.swift in Sources */,
 				FA954483298CDB2700F55E23 /* WalkthroughCell.swift in Sources */,
 				FA6FF2EF299B651200D2172D /* RecipeCell.swift in Sources */,
