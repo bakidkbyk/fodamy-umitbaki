@@ -21,6 +21,7 @@ target 'fodamy-baki' do
   pod 'SwiftEntryKit', '~> 2.0.0'
   pod 'KeychainSwift', '~> 19.0'
   pod 'Segmentio', '~> 4.1'
+  pod 'SKPhotoBrowser'
   
   # UI
   pod 'TinyConstraints', '~> 4.0'
@@ -51,6 +52,7 @@ target 'UIComponents' do
   pod 'SwiftEntryKit', '~> 2.0.0'
   pod 'SwiftGen', '~> 6.0'
   pod 'Segmentio', '~> 4.1'
+  pod 'SKPhotoBrowser'
   
   # UI
   pod 'TinyConstraints', '~> 4.0'
@@ -65,5 +67,6 @@ target 'Utilities' do
   
   # Helper
   pod 'MobilliumUserDefaults', '~> 2.0'
+  pod 'SKPhotoBrowser'
   
   end
