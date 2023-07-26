@@ -37,6 +37,7 @@
 		FA791CB1296856CA001B6985 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = FA791CB0296856CA001B6985 /* swiftgen.yml */; };
 		FA791CC2296863A2001B6985 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA791CC1296863A2001B6985 /* Localizable.strings */; };
 		FA791CC829686746001B6985 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA791CC729686746001B6985 /* Localize.swift */; };
+		FA7DDCEC2A6FCED7008BE069 /* PhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7DDCEB2A6FCED7008BE069 /* PhotoBrowserDelegate.swift */; };
 		FA844E692A2A341400E408A7 /* RecipeDetailsCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA844E682A2A341400E408A7 /* RecipeDetailsCommentView.swift */; };
 		FA87472E29753ED900039E92 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87472D29753ED900039E92 /* ButtonFactory.swift */; };
 		FA87CDE62A6803F0003AF916 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87CDE52A6803F0003AF916 /* NotificationName+Extension.swift */; };
@@ -98,6 +99,7 @@
 		FA791CB0296856CA001B6985 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		FA791CC1296863A2001B6985 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FA791CC729686746001B6985 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		FA7DDCEB2A6FCED7008BE069 /* PhotoBrowserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBrowserDelegate.swift; sourceTree = "<group>"; };
 		FA844E682A2A341400E408A7 /* RecipeDetailsCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsCommentView.swift; sourceTree = "<group>"; };
 		FA87472D29753ED900039E92 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		FA87CDE52A6803F0003AF916 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		FA2DB79B29631242004D38E2 = {
 			isa = PBXGroup;
 			children = (
+				FA7DDCEA2A6FCEC3008BE069 /* Delegate */,
 				FA791CB0296856CA001B6985 /* swiftgen.yml */,
 				FA2DB7A729631242004D38E2 /* UIComponents */,
 				FA2DB7A629631242004D38E2 /* Products */,
@@ -285,6 +288,14 @@
 				FA791CC729686746001B6985 /* Localize.swift */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		FA7DDCEA2A6FCEC3008BE069 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA7DDCEB2A6FCED7008BE069 /* PhotoBrowserDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		FA87472C29753EBD00039E92 /* ButtonFactory */ = {
@@ -529,6 +540,7 @@
 			files = (
 				FABA47A9299F79FF00706BA9 /* UIImageView+Etensions .swift in Sources */,
 				FAB5A641299E2E94001A018D /* UserView.swift in Sources */,
+				FA7DDCEC2A6FCED7008BE069 /* PhotoBrowserDelegate.swift in Sources */,
 				FA4C1C092979539C006C5C8D /* StringConstants.swift in Sources */,
 				FAE5D40C2A3716AE00F026CA /* CommentInputView.swift in Sources */,
 				FAAEAC7D296569E200459E43 /* ToastWarningView.swift in Sources */,
