@@ -8,7 +8,7 @@
 import UIKit
 import SKPhotoBrowser
 
-public class RecipeDetailImageView: UIView, SKPhotoBrowserDelegate {
+public class RecipeDetailImageView: UIView {
     
     private let collectionView = UICollectionViewBuilder()
         .scrollDirection(.horizontal)
@@ -68,7 +68,7 @@ extension RecipeDetailImageView {
 }
 
 // MARK: - Actions
-extension RecipeDetailImageView {
+extension RecipeDetailImageView: SKPhotoBrowserDelegate {
     
     private func matchPhotoBrowserDelegate() {
         photoBrowserDelegate.showPhotoIndex = { [weak self] index in
