@@ -21,14 +21,12 @@ public class RecipeDetailImageView: UIView {
         super.init(frame: frame)
         addSubViews()
         configureContents()
-        matchPhotoBrowserDelegate()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addSubViews()
         configureContents()
-        matchPhotoBrowserDelegate()
     }
     
     public var recipeImageData: [RecipeHeaderCellProtocol] = [] {
@@ -37,7 +35,7 @@ public class RecipeDetailImageView: UIView {
         }
     }
     
-    var photoBrowserDelegate = PhotoBrowserDelegate()
+    let photoBrowserDelegate = PhotoBrowserDelegate()
     public var skPhotoBrowser: SkPhotoBrowserClosure?
     var currentPageIndex: Int = 0
     var initPageIndex: Int = 0
@@ -70,12 +68,9 @@ extension RecipeDetailImageView {
 // MARK: - Actions
 extension RecipeDetailImageView: SKPhotoBrowserDelegate {
     
-    private func matchPhotoBrowserDelegate() {
-        photoBrowserDelegate.showPhotoIndex = { [weak self] index in
-            guard let self = self else { return }
-            let indexPath = IndexPath(item: index, section: 0)
-            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
+    public func didShowPhotoAtIndex(_ browser: SKPhotoBrowser, index: Int) {
+        let indexPath = IndexPath(item: index, section: 0)
+        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
     func callSKPhotoBrowser(photos: [String], initialPageIndex: Int) -> SKPhotoBrowser {
