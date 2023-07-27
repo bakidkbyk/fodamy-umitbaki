@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SKPhotoBrowser
 
 public class RecipeDetailImageView: UIView {
     
@@ -19,11 +20,13 @@ public class RecipeDetailImageView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
+        configureContents()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addSubViews()
+        configureContents()
     }
     
     public var recipeImageData: [RecipeHeaderCellProtocol] = [] {
@@ -32,6 +35,10 @@ public class RecipeDetailImageView: UIView {
         }
     }
     
+    let photoBrowserDelegate = PhotoBrowserDelegate()
+    public var skPhotoBrowser: SkPhotoBrowserClosure?
+    var currentPageIndex: Int = 0
+    var initPageIndex: Int = 0
 }
 
 // MARK: - UILayout
@@ -48,9 +55,41 @@ extension RecipeDetailImageView {
     }
 }
 
+// MARK: - Configure Contents
+extension RecipeDetailImageView {
+    
+    private func configureContents() {
+        SKPhotoBrowserOptions.displayAction = false
+        SKPhotoBrowserOptions.displayHorizontalScrollIndicator = false
+        SKPhotoBrowserOptions.displayVerticalScrollIndicator = false
+    }
+}
+
+// MARK: - Actions
+extension RecipeDetailImageView: SKPhotoBrowserDelegate {
+    
+    public func didShowPhotoAtIndex(_ browser: SKPhotoBrowser, index: Int) {
+        let indexPath = IndexPath(item: index, section: 0)
+        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+    func callSKPhotoBrowser(photos: [String], initialPageIndex: Int) -> SKPhotoBrowser {
+        let skPhotos = photos.map { SKPhoto.photoWithImageURL($0) }
+        let skBrowser = SKPhotoBrowser(photos: skPhotos, initialPageIndex: initialPageIndex)
+        self.currentPageIndex = min(initialPageIndex, photos.count - 1)
+        self.initPageIndex = self.currentPageIndex
+        skBrowser.delegate = self
+        return skBrowser
+    }
+}
+
 // MARK: - UICollectionView Delegate
 extension RecipeDetailImageView: UICollectionViewDelegate {
     
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photos = recipeImageData.map { $0.imageUrl }
+        self.skPhotoBrowser?(callSKPhotoBrowser(photos: photos, initialPageIndex: indexPath.row))
+    }
 }
 
 // MARK: - UICollectionView DataSource

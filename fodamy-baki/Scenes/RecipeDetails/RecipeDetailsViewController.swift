@@ -185,6 +185,11 @@ extension RecipeDetailsViewController {
         userView.followButtonTapped = { [weak self] in
             self?.viewModel.followButtonTapped()
         }
+        
+        imagesHeaderView.skPhotoBrowser = { [weak self] skBrowser in
+            guard let self = self else { return }
+            self.present(skBrowser, animated: true, completion: {})
+        }
     }
 }
 // MARK: - Subscribe View Model
